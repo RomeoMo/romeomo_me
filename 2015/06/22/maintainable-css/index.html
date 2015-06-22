@@ -4,22 +4,34 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Coming Soon | RomeoMo</title>
+    <title>编写可维护的CSS | RomeoMo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="RomeoMo">
     
 
     
-    <meta name="description" content="折腾了半天的hexo(时间肯定大于半天)终于搞定了。本人的博客是自己关于生活，工作等等的感(tu)悟(cao)。所以想看就看，不想看就直接用Control + W 关闭本页面。">
+    <meta name="description" content="传统CSS书写存在的问题
+就算加了注释,代码也很难维护
+为了保证样式被覆盖,CSS的权重可能会变得非常⾼ 
+
+Sass方式书写何为Sass？  Sass是CSS的预处理程序，其思想是用一种专门的编程语言，进行网页样式设计，然后再编译成正常的CSS文件。同样也有Less，Stylus等其他预处理程序，而本人在平常中没有实践过其他预处理程序，所以在此按下不表。SCSS实现了Sass的所有功能，并且有类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Coming Soon">
-<meta property="og:url" content="http://romeomo.me/2015/04/15/comming-soon/index.html">
+<meta property="og:title" content="编写可维护的CSS">
+<meta property="og:url" content="http://romeomo.me/2015/06/22/maintainable-css/index.html">
 <meta property="og:site_name" content="RomeoMo">
-<meta property="og:description" content="折腾了半天的hexo(时间肯定大于半天)终于搞定了。本人的博客是自己关于生活，工作等等的感(tu)悟(cao)。所以想看就看，不想看就直接用Control + W 关闭本页面。">
+<meta property="og:description" content="传统CSS书写存在的问题
+就算加了注释,代码也很难维护
+为了保证样式被覆盖,CSS的权重可能会变得非常⾼ 
+
+Sass方式书写何为Sass？  Sass是CSS的预处理程序，其思想是用一种专门的编程语言，进行网页样式设计，然后再编译成正常的CSS文件。同样也有Less，Stylus等其他预处理程序，而本人在平常中没有实践过其他预处理程序，所以在此按下不表。SCSS实现了Sass的所有功能，并且有类">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Coming Soon">
-<meta name="twitter:description" content="折腾了半天的hexo(时间肯定大于半天)终于搞定了。本人的博客是自己关于生活，工作等等的感(tu)悟(cao)。所以想看就看，不想看就直接用Control + W 关闭本页面。">
+<meta name="twitter:title" content="编写可维护的CSS">
+<meta name="twitter:description" content="传统CSS书写存在的问题
+就算加了注释,代码也很难维护
+为了保证样式被覆盖,CSS的权重可能会变得非常⾼ 
+
+Sass方式书写何为Sass？  Sass是CSS的预处理程序，其思想是用一种专门的编程语言，进行网页样式设计，然后再编译成正常的CSS文件。同样也有Less，Stylus等其他预处理程序，而本人在平常中没有实践过其他预处理程序，所以在此按下不表。SCSS实现了Sass的所有功能，并且有类">
 
     
     
@@ -77,20 +89,44 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/04/15/comming-soon/" title="Coming Soon" itemprop="url">Coming Soon</a>
+      <a href="/2015/06/22/maintainable-css/" title="编写可维护的CSS" itemprop="url">编写可维护的CSS</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://romeomo.me/about" title="RomeoMo" target="_blank" itemprop="author">RomeoMo</a>
 		
   <p class="article-time">
-    <time datetime="2015-04-15T15:09:28.000Z" itemprop="datePublished"> 发表于 2015-04-15</time>
+    <time datetime="2015-06-21T16:00:00.000Z" itemprop="datePublished"> 发表于 2015-06-22</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
-		<p>折腾了半天的hexo(时间肯定大于半天)终于搞定了。本人的博客是<strong>自己</strong>关于生活，工作等等的感(tu)悟(cao)。所以想看就看，不想看就直接用Control + W 关闭本页面。</p>
+		<h2 id="传统CSS书写">传统CSS书写</h2><h3 id="存在的问题">存在的问题</h3><ol>
+<li>就算加了注释,代码也很难维护</li>
+<li>为了保证样式被覆盖,CSS的权重可能会变得非常⾼ </li>
+</ol>
+<h2 id="Sass方式书写">Sass方式书写</h2><h3 id="何为Sass？">何为Sass？</h3><p>  Sass是CSS的预处理程序，其思想是用一种专门的编程语言，进行网页样式设计，然后再编译成正常的CSS文件。同样也有Less，Stylus等其他预处理程序，而本人在平常中没有实践过其他预处理程序，所以在此按下不表。SCSS实现了Sass的所有功能，并且有类似于css的句法，所以在工作中，我更偏爱SCSS。</p>
+<h3 id="存在的问题-1">存在的问题</h3><p>  使用SCSS容易造成嵌套层级过多，导致css权重过高的问题。大漠在<a href="http://www.zhihu.com/question/30170210" title="别让你的嵌套层级超过四层" target="_blank" rel="external">知乎上的回答</a>写着<strong>“别让你的嵌套层级超过四层”</strong>，而腾讯的AlloyTeam在Code Guide上写着”<a href="http://alloyteam.github.io/CodeGuide/#css-SCSS" title="嵌套最多不能超过5层" target="_blank" rel="external">嵌套最多不能超过5层</a>“。为了减少嵌套层级，我认为解决方法为：<strong>提取公因式</strong>。<br><br><br><strong>提取公因式</strong>就是把相同表现类似的css用同一个class表示，而独特表现的元素单独写。要熟练使用此方法需要透彻了解css的权重。</p>
+<h2 id="使用Compass">使用Compass</h2><p>  在使用SCSS中，最实用的是<a href="http://sass-lang.com/guide#topic-6 “Mixins”" target="_blank" rel="external">@mixin</a>, 类似于c语言中的宏，使用@mixin能大大提升写代码的效率。<br><br><br>  在平常工作中，特别是在使用css3时需要注意浏览器前缀问题。如果不想手写css3的浏览器前缀，想让工具生成这些属性，那<a href="http://compass-style.org/" title="Compass Official Site" target="_blank" rel="external">Compass</a> 就是一个很好的选择。</p>
+<h3 id="关于Compass应该知道的知识">关于Compass应该知道的知识</h3><p>  Compass是Sass的一种工具库（toolkit），引用阮一峰博客上的一句话：“<a href="http://www.ruanyifeng.com/blog/2012/11/compass.html" title="Compass的强大" target="_blank" rel="external">Sass是一种”CSS预处理器”，可以让CSS的开发变得简单和可维护。但是，只有搭配Compass，它才能显出真正的威力</a>”。<br><br></p>
+<h4 id="Compass主要分为七部分">Compass主要分为七部分</h4><ol>
+<li>reset(normalize)*：重写浏览器的默认样式 </li>
+<li>layout：⻚面布局</li>
+<li>css3：跨浏览器的css3<strong>（使用最为频繁）</strong></li>
+<li>typography：文本样式</li>
+<li>helper：类似于Sass语法的，一系列函数,</li>
+<li>utilities:除去以上5点的其他工具,多为@mixin</li>
+<li><strong>Browser Support</strong>：浏览器支持，直接决定了以上6点的表现</li>
+</ol>
+<p><strong>PS：</strong> reset与<a href="http://necolas.github.io/normalize.css/" title="Normalize Official Site" target="_blank" rel="external">Normalize</a>的区别：reset是“暴力”的重写浏览器默认样式。而Normalize分为8个部分进行重写，分别为：base, html5, links, typography, embeds, groups, forms以及tables。Normalize可以整体引入也可以分开引入。所以是使用reset还是Normalize，就看各位看官了（本人更偏向于Normalize）。</p>
+<h2 id="使用SCSS+Compass的总结">使用SCSS+Compass的总结</h2><h3 id="优点">优点</h3><ol>
+<li>css权重尽可能低，容易修改、覆盖。加上适当注释后，更容易阅读代码</li>
+<li>不⽤担⼼css3兼容性问题，直接配置解决</li>
+</ol>
+<h3 id="缺点">缺点</h3><ol>
+<li>从css到SCSS,再到Compass, 难度逐渐增加。</li>
+</ol>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -98,7 +134,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/水/">水</a>
+  <a class="article-category-link" href="/categories/CSS/">CSS</a>
 </div>
 
 
@@ -108,7 +144,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://romeomo.me/2015/04/15/comming-soon/" data-title="Coming Soon | RomeoMo" data-tsina="null" class="share clearfix">
+	  <div data-url="http://romeomo.me/2015/06/22/maintainable-css/" data-title="编写可维护的CSS | RomeoMo" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -121,14 +157,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/04/18/being-full-stack-developer/" title="成为全栈工程师">
-  <strong>上一篇：</strong><br/>
-  <span>
-  成为全栈工程师</span>
+
+<div class="next">
+<a href="/2015/05/24/becoming-truly-full-stack-unrealistic-try/"  title="成为全栈工程师或许只是梦想，但你值得为此奋斗">
+ <strong>下一篇：</strong><br/> 
+ <span>成为全栈工程师或许只是梦想，但你值得为此奋斗
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -140,7 +176,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#传统CSS书写"><span class="toc-number">1.</span> <span class="toc-text">传统CSS书写</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#存在的问题"><span class="toc-number">1.1.</span> <span class="toc-text">存在的问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sass方式书写"><span class="toc-number">2.</span> <span class="toc-text">Sass方式书写</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#何为Sass？"><span class="toc-number">2.1.</span> <span class="toc-text">何为Sass？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存在的问题-1"><span class="toc-number">2.2.</span> <span class="toc-text">存在的问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用Compass"><span class="toc-number">3.</span> <span class="toc-text">使用Compass</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于Compass应该知道的知识"><span class="toc-number">3.1.</span> <span class="toc-text">关于Compass应该知道的知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Compass主要分为七部分"><span class="toc-number">3.1.1.</span> <span class="toc-text">Compass主要分为七部分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用SCSS+Compass的总结"><span class="toc-number">4.</span> <span class="toc-text">使用SCSS+Compass的总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#优点"><span class="toc-number">4.1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缺点"><span class="toc-number">4.2.</span> <span class="toc-text">缺点</span></a></li></ol></li></ol>
  
   </div>
 
