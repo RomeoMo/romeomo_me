@@ -4,26 +4,26 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
   
-    <title>使用MEAN成为JavaScript的全栈工程师 | RomeoMo</title>
+    <title>函数式系列(1)：Map, ForEach 及 Filter, Reduce | RomeoMo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="RomeoMo">
     
 
     
-    <meta name="description" content="说明：本文来自SitePoint，作者：Adam Bretz 文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。自从1995年发布以来，JavaScript 有了很大的发展。我们已经看到了ECMAScript 规格的几个重要版本及单页Web应用的崛起，这些都被客户端的JavaScript 架构支持。起初，所有的JavaScript 开发和创新都只能在浏览器实现，这是由于浏览器是支持这种">
+    <meta name="description" content="Map, ForEach 及 Filter, Reduce概念map, foreach, 及 filter, reduce 为典型的函数式编程实践，均为高阶函数（Higher-Order Functions）。 高阶函数指的是一个函数能作为值传递到另一个函数中，或者，一个函数可以作为另一个函数的输出。 区别 map filter 和 reduce 均有返回值，而 forEach 是没有返回值的 f">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用MEAN成为JavaScript的全栈工程师">
-<meta property="og:url" content="http://romeomo.me/2015/05/10/full-stack-javaScript-development-with-MEAN/index.html">
+<meta property="og:title" content="函数式系列(1)：Map, ForEach 及 Filter, Reduce">
+<meta property="og:url" content="http://romeomo.me/2019/05/03/map-foreach-filter-reduce/index.html">
 <meta property="og:site_name" content="RomeoMo">
-<meta property="og:description" content="说明：本文来自SitePoint，作者：Adam Bretz 文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。自从1995年发布以来，JavaScript 有了很大的发展。我们已经看到了ECMAScript 规格的几个重要版本及单页Web应用的崛起，这些都被客户端的JavaScript 架构支持。起初，所有的JavaScript 开发和创新都只能在浏览器实现，这是由于浏览器是支持这种">
+<meta property="og:description" content="Map, ForEach 及 Filter, Reduce概念map, foreach, 及 filter, reduce 为典型的函数式编程实践，均为高阶函数（Higher-Order Functions）。 高阶函数指的是一个函数能作为值传递到另一个函数中，或者，一个函数可以作为另一个函数的输出。 区别 map filter 和 reduce 均有返回值，而 forEach 是没有返回值的 f">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/09/18dc117a46810b53.jpg">
-<meta property="og:updated_time" content="2019-09-23T07:32:07.015Z">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/09/cf6513f815170214.png">
+<meta property="og:updated_time" content="2019-09-23T13:09:53.703Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用MEAN成为JavaScript的全栈工程师">
-<meta name="twitter:description" content="说明：本文来自SitePoint，作者：Adam Bretz 文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。自从1995年发布以来，JavaScript 有了很大的发展。我们已经看到了ECMAScript 规格的几个重要版本及单页Web应用的崛起，这些都被客户端的JavaScript 架构支持。起初，所有的JavaScript 开发和创新都只能在浏览器实现，这是由于浏览器是支持这种">
-<meta name="twitter:image" content="https://ftp.bmp.ovh/imgs/2019/09/18dc117a46810b53.jpg">
+<meta name="twitter:title" content="函数式系列(1)：Map, ForEach 及 Filter, Reduce">
+<meta name="twitter:description" content="Map, ForEach 及 Filter, Reduce概念map, foreach, 及 filter, reduce 为典型的函数式编程实践，均为高阶函数（Higher-Order Functions）。 高阶函数指的是一个函数能作为值传递到另一个函数中，或者，一个函数可以作为另一个函数的输出。 区别 map filter 和 reduce 均有返回值，而 forEach 是没有返回值的 f">
+<meta name="twitter:image" content="https://ftp.bmp.ovh/imgs/2019/09/cf6513f815170214.png">
 
     
     <link rel="alternative" href="/atom.xml" title="RomeoMo" type="application/atom+xml">
@@ -83,32 +83,44 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/05/10/full-stack-javaScript-development-with-MEAN/" title="使用MEAN成为JavaScript的全栈工程师" itemprop="url">使用MEAN成为JavaScript的全栈工程师</a>
+      <a href="/2019/05/03/map-foreach-filter-reduce/" title="函数式系列(1)：Map, ForEach 及 Filter, Reduce" itemprop="url">函数式系列(1)：Map, ForEach 及 Filter, Reduce</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="RomeoMo" target="_blank" itemprop="author">RomeoMo</a>
 		
   <p class="article-time">
-    <time datetime="2015-05-09T16:00:00.000Z" itemprop="datePublished"> 发表于 2015-05-10</time>
+    <time datetime="2019-05-02T16:00:00.000Z" itemprop="datePublished"> 发表于 2019-05-03</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
-		<p><strong>说明：</strong>本文来自<a href="http://www.sitepoint.com/full-stack-javascript-development-mean/" target="_blank" rel="noopener">SitePoint</a>，作者：<a href="http://www.sitepoint.com/author/abretz/" target="_blank" rel="noopener">Adam Bretz</a></p>
-<h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>自从1995年发布以来，JavaScript 有了很大的发展。我们已经看到了ECMAScript 规格的几个重要版本及单页Web应用的崛起，这些都被客户端的JavaScript 架构支持。起初，所有的JavaScript 开发和创新都只能在浏览器实现，这是由于浏览器是支持这种语言的唯一环境。随着时间的推移，Web开发者开始意识到JavaScript 的很多实用的特性（没有块级作用域，事件驱动以及与许多其他语言相似）使其能对其他环境而不仅仅是浏览器。这促使JavaScript 社区进行了第二轮创新最终使JavaScript 运行于服务端和数据库。</p>
-<p>突然，了解JavaScript 不会把你自动归类在“前端开发者”中。如果你熟悉这门语言，你能建立服务器和数据库，以及丰富前端用户体验。现在，第一次有了开发者能通过只用JavaScript 就能建立整个Web应用。这种趋势常常被称为“全栈的JavaScript”或“纯JavaScript解决方案”。组合了四种流行的JavaScript 技术：MongoDB, Express, AngularJS, and Node.js 建立Web应用受到欢迎了，这被成为“MEAN 全栈”。</p>
-<p><img src="https://ftp.bmp.ovh/imgs/2019/09/18dc117a46810b53.jpg" alt="MEAN"></p>
-<ol>
-<li><strong>MongoDB</strong> - MongoDB 是一种NoSQL的数据库。它是一种文件导向数据库管理系统, 而不是由行、列和表格组成的。主要用于存储JSON 数据；这完美契合由JavaScript 编写的应用。数据的关系性操作和严厉遵守图式的缺乏，这使MongoDB 具有快速，伸缩性强及易用的特性。</li>
-<li><strong>Express</strong> - Express是一种轻量级的服务器级框架，被用来使Node 搭建的Web服务更简单及更强的可维护性。框架的灵活性提供给开发者高度的可定制性以及足够“低端”的用于操作Node 框架。Express 提供简单方式使用路由，cookie管理，静态文件服务和其他HTTP模块用于搭建企业级的服务。</li>
-<li><strong>AngularJS</strong> - AngularJS 是一种客户端富应用的MVC JavaScript 框架。它可用于建立健壮的和复杂的单页Web应用。双向数据绑定和基于HTML的框架语言。AngularJS 也有称为“命令”的特性允许你拓展HTML的新的属性，甚至是新的元素。AngularJS 同样也经过了高强度的测试，这可能不会成为开发的有趣方面，但这对于AngularJS 来说是重要的并且经常管理客户端代码。最后，AngularJS 提供了协议和最佳实践用于帮助开发者建立客户端的解决方案。</li>
-<li><strong>Node</strong> - Node 是JavaScript 的运行环境用于建立服务及网络应用。它提供了在客户端的所有JavaScript 的特性并且加入了文件以及网络I/O。Node使用了Google 的V8引擎（同样也用于Google Chrome）用于执行JavaScript 。其同样也是非常活跃的开发者社区和Node 模块的生态系统（Express就是其中一个模块）的基础。与此同时，也有很多其他在客户端的JavaScript 实践，到目前为止，就粉丝和大公司而言都成功采用的。</li>
+		<h1 id="Map-ForEach-及-Filter-Reduce"><a href="#Map-ForEach-及-Filter-Reduce" class="headerlink" title="Map, ForEach 及 Filter, Reduce"></a>Map, ForEach 及 Filter, Reduce</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="noopener">map</a>, <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank" rel="noopener">foreach</a>, 及 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank" rel="noopener">filter</a>, <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank" rel="noopener">reduce</a> 为典型的函数式编程实践，均为高阶函数（Higher-Order Functions）。</p>
+<p>高阶函数指的是一个函数能作为值传递到另一个函数中，或者，一个函数可以作为另一个函数的输出。</p>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><ul>
+<li>map filter 和 reduce 均有返回值，而 forEach 是没有返回值的</li>
+<li>forEach 能终止循化，而 map, filter 和 reduce 是无法终止的</li>
+</ul>
+<p>map filter 和 reduce 的区别如图所示。<br><img src="https://ftp.bmp.ovh/imgs/2019/09/cf6513f815170214.png" alt="map, filter 和 reduce"></p>
+<h2 id="map-filter-和-reduce"><a href="#map-filter-和-reduce" class="headerlink" title="map filter 和 reduce"></a>map filter 和 reduce</h2><h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>map 是将数组的每一项通过同样的操作进行变换，得到一个新的数组，且新数组与原数组的长度是一致的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var array1 = [1, 4, 9, 16];</span><br><span class="line"></span><br><span class="line">const map1 = array1.map(x =&gt; x * 2);</span><br><span class="line"></span><br><span class="line">console.log(map1); // 输出：[2, 8, 18, 32]</span><br><span class="line"></span><br><span class="line">console.log(array1); // 输出： [1, 4, 9, 16]</span><br></pre></td></tr></table></figure>
+
+<h3 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h3><p>filter 是保留数组中符合条件的数据，得到一个新的数组，且新数组的长度不大于原数组的长度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var array1 = [1, 4, 9, 16];</span><br><span class="line"></span><br><span class="line">const filter1 = array1.filter(x =&gt; x &gt; 0);</span><br><span class="line"></span><br><span class="line">console.log(filter1); // 输出：[1, 4, 9, 16]</span><br><span class="line"></span><br><span class="line">console.log(array1); // 输出： [1, 4, 9, 16]</span><br></pre></td></tr></table></figure>
+
+<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><p>reduce 是合并数组的每一项数据，最终返回一个新的数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var array1 = [1, 2, 3, 4];</span><br><span class="line"></span><br><span class="line">const reducer = (accumulator, currentValue) =&gt; accumulator + currentValue;</span><br><span class="line"></span><br><span class="line">console.log(array1.reduce(reducer, 5)); // 输出：10</span><br><span class="line"></span><br><span class="line">console.log(array1); // 输出： [1, 2, 3, 4]</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong>三个例子中，原来的数组是<strong>没有</strong>发生任何改变的。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><p><a href="https://medium.com/python-pandemonium/never-write-for-loops-again-91a5a4c84baf" target="_blank" rel="noopener">“You (Probably) Don’t Need For-Loops”</a></p>
+</li>
+<li><p><a href="https://medium.com/@RhinoDavid/processing-javascript-arrays-with-foreach-map-reduce-bf40d1e5eac4" target="_blank" rel="noopener">“Breaking the Loop: How to use higher order functions to process arrays in JavaScript”</a>;</p>
+</li>
+<li><p><a href="https://eloquentjavascript.net/05_higher_order.html" target="_blank" rel="noopener">Higher-Order Functions</a></p>
+</li>
 </ol>
-<p>如果你像我一样都是JavaScript 的粉丝，你应该兴奋于只用JavaScript 就可以建立整个Web应用的前景。MEAN全栈是相当受欢迎的话题，在网络上也有很多如何开始这些技术的信息。事实上，有很多关于这项技术的信息，仅仅是有关“开始”的就可以“令人畏惧”。</p>
-<h2 id="译者按"><a href="#译者按" class="headerlink" title="译者按"></a>译者按</h2><p>最后作者介绍自己和Colin Ihrig共同编写的<a href="https://www.sitepoint.com/premium/books/mean1/?_ga=1.182917350.1798398705.1429097916" target="_blank" rel="noopener">“MEAN全栈”</a>书籍 有兴趣的朋友可以关注一下。</p>
-<p>正如作者所说，仅仅使用JavaScript 就能建立这个Web应用是一件令人兴奋地事情。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -116,7 +128,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Full-Stack/">Full Stack</a>
+  <a class="article-category-link" href="/categories/Functional-Programming/">Functional Programming</a>
 </div>
 
 
@@ -126,7 +138,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://romeomo.me/2015/05/10/full-stack-javaScript-development-with-MEAN/" data-title="使用MEAN成为JavaScript的全栈工程师 | RomeoMo" data-tsina="" class="share clearfix">
+	  <div data-url="http://romeomo.me/2019/05/03/map-foreach-filter-reduce/" data-title="函数式系列(1)：Map, ForEach 及 Filter, Reduce | RomeoMo" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -139,19 +151,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/05/24/becoming-truly-full-stack-unrealistic-try/" title="成为全栈工程师或许只是梦想，但你值得为此奋斗">
-  <strong>上一篇：</strong><br/>
-  <span>
-  成为全栈工程师或许只是梦想，但你值得为此奋斗</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/04/18/being-full-stack-developer/"  title="成为全栈工程师">
+<a href="/2019/04/21/about-functional-programming/"  title="函数式编程">
  <strong>下一篇：</strong><br/> 
- <span>成为全栈工程师
+ <span>函数式编程
 </span>
 </a>
 </div>
