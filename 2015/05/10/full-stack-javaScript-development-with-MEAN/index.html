@@ -1,0 +1,456 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  
+    <title>使用MEAN成为JavaScript的全栈工程师 | RomeoMo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="RomeoMo">
+    
+
+    
+    <meta name="description" content="说明：本文来自SitePoint，作者：Adam Bretz 文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。自从1995年发布以来，JavaScript 有了很大的发展。我们已经看到了ECMAScript 规格的几个重要版本及单页Web应用的崛起，这些都被客户端的JavaScript 架构支持。起初，所有的JavaScript 开发和创新都只能在浏览器实现，这是由于浏览器是支持这种">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用MEAN成为JavaScript的全栈工程师">
+<meta property="og:url" content="http://romeomo.me/2015/05/10/full-stack-javaScript-development-with-MEAN/index.html">
+<meta property="og:site_name" content="RomeoMo">
+<meta property="og:description" content="说明：本文来自SitePoint，作者：Adam Bretz 文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。自从1995年发布以来，JavaScript 有了很大的发展。我们已经看到了ECMAScript 规格的几个重要版本及单页Web应用的崛起，这些都被客户端的JavaScript 架构支持。起初，所有的JavaScript 开发和创新都只能在浏览器实现，这是由于浏览器是支持这种">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/09/18dc117a46810b53.jpg">
+<meta property="og:updated_time" content="2019-09-23T02:09:15.006Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用MEAN成为JavaScript的全栈工程师">
+<meta name="twitter:description" content="说明：本文来自SitePoint，作者：Adam Bretz 文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。自从1995年发布以来，JavaScript 有了很大的发展。我们已经看到了ECMAScript 规格的几个重要版本及单页Web应用的崛起，这些都被客户端的JavaScript 架构支持。起初，所有的JavaScript 开发和创新都只能在浏览器实现，这是由于浏览器是支持这种">
+<meta name="twitter:image" content="https://ftp.bmp.ovh/imgs/2019/09/18dc117a46810b53.jpg">
+
+    
+    <link rel="alternative" href="/atom.xml" title="RomeoMo" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="RomeoMo" title="RomeoMo"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="RomeoMo">RomeoMo</a></h1>
+				<h2 class="blog-motto">种一棵树最好的时间是十年前，而后是现在</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:romeomo.me">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/05/10/full-stack-javaScript-development-with-MEAN/" title="使用MEAN成为JavaScript的全栈工程师" itemprop="url">使用MEAN成为JavaScript的全栈工程师</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="RomeoMo" target="_blank" itemprop="author">RomeoMo</a>
+		
+  <p class="article-time">
+    <time datetime="2015-05-09T16:00:00.000Z" itemprop="datePublished"> 发表于 2015-05-10</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<p><strong>说明：</strong>本文来自<a href="http://www.sitepoint.com/full-stack-javascript-development-mean/" target="_blank" rel="noopener">SitePoint</a>，作者：<a href="http://www.sitepoint.com/author/abretz/" target="_blank" rel="noopener">Adam Bretz</a></p>
+<h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>自从1995年发布以来，JavaScript 有了很大的发展。我们已经看到了ECMAScript 规格的几个重要版本及单页Web应用的崛起，这些都被客户端的JavaScript 架构支持。起初，所有的JavaScript 开发和创新都只能在浏览器实现，这是由于浏览器是支持这种语言的唯一环境。随着时间的推移，Web开发者开始意识到JavaScript 的很多实用的特性（没有块级作用域，事件驱动以及与许多其他语言相似）使其能对其他环境而不仅仅是浏览器。这促使JavaScript 社区进行了第二轮创新最终使JavaScript 运行于服务端和数据库。</p>
+<p>突然，了解JavaScript 不会把你自动归类在“前端开发者”中。如果你熟悉这门语言，你能建立服务器和数据库，以及丰富前端用户体验。现在，第一次有了开发者能通过只用JavaScript 就能建立整个Web应用。这种趋势常常被称为“全栈的JavaScript”或“纯JavaScript解决方案”。组合了四种流行的JavaScript 技术：MongoDB, Express, AngularJS, and Node.js 建立Web应用受到欢迎了，这被成为“MEAN 全栈”。</p>
+<p><img src="https://ftp.bmp.ovh/imgs/2019/09/18dc117a46810b53.jpg" alt="MEAN"></p>
+<ol>
+<li><strong>MongoDB</strong> - MongoDB 是一种NoSQL的数据库。它是一种文件导向数据库管理系统, 而不是由行、列和表格组成的。主要用于存储JSON 数据；这完美契合由JavaScript 编写的应用。数据的关系性操作和严厉遵守图式的缺乏，这使MongoDB 具有快速，伸缩性强及易用的特性。</li>
+<li><strong>Express</strong> - Express是一种轻量级的服务器级框架，被用来使Node 搭建的Web服务更简单及更强的可维护性。框架的灵活性提供给开发者高度的可定制性以及足够“低端”的用于操作Node 框架。Express 提供简单方式使用路由，cookie管理，静态文件服务和其他HTTP模块用于搭建企业级的服务。</li>
+<li><strong>AngularJS</strong> - AngularJS 是一种客户端富应用的MVC JavaScript 框架。它可用于建立健壮的和复杂的单页Web应用。双向数据绑定和基于HTML的框架语言。AngularJS 也有称为“命令”的特性允许你拓展HTML的新的属性，甚至是新的元素。AngularJS 同样也经过了高强度的测试，这可能不会成为开发的有趣方面，但这对于AngularJS 来说是重要的并且经常管理客户端代码。最后，AngularJS 提供了协议和最佳实践用于帮助开发者建立客户端的解决方案。</li>
+<li><strong>Node</strong> - Node 是JavaScript 的运行环境用于建立服务及网络应用。它提供了在客户端的所有JavaScript 的特性并且加入了文件以及网络I/O。Node使用了Google 的V8引擎（同样也用于Google Chrome）用于执行JavaScript 。其同样也是非常活跃的开发者社区和Node 模块的生态系统（Express就是其中一个模块）的基础。与此同时，也有很多其他在客户端的JavaScript 实践，到目前为止，就粉丝和大公司而言都成功采用的。</li>
+</ol>
+<p>如果你像我一样都是JavaScript 的粉丝，你应该兴奋于只用JavaScript 就可以建立整个Web应用的前景。MEAN全栈是相当受欢迎的话题，在网络上也有很多如何开始这些技术的信息。事实上，有很多关于这项技术的信息，仅仅是有关“开始”的就可以“令人畏惧”。</p>
+<h2 id="译者按"><a href="#译者按" class="headerlink" title="译者按"></a>译者按</h2><p>最后作者介绍自己和Colin Ihrig共同编写的<a href="https://www.sitepoint.com/premium/books/mean1/?_ga=1.182917350.1798398705.1429097916" target="_blank" rel="noopener">“MEAN全栈”</a>书籍 有兴趣的朋友可以关注一下。</p>
+<p>正如作者所说，仅仅使用JavaScript 就能建立这个Web应用是一件令人兴奋地事情。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Full-Stack/">Full Stack</a>
+</div>
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://romeomo.me/2015/05/10/full-stack-javaScript-development-with-MEAN/" data-title="使用MEAN成为JavaScript的全栈工程师 | RomeoMo" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/05/24/becoming-truly-full-stack-unrealistic-try/" title="成为全栈工程师或许只是梦想，但你值得为此奋斗">
+  <strong>上一篇：</strong><br/>
+  <span>
+  成为全栈工程师或许只是梦想，但你值得为此奋斗</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/04/18/being-full-stack-developer/"  title="成为全栈工程师">
+ <strong>下一篇：</strong><br/> 
+ <span>成为全栈工程师
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/CSS/" title="CSS">CSS<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Full-Stack/" title="Full Stack">Full Stack<sup>3</sup></a></li>
+		  
+		
+		  
+		
+		  
+			<li><a href="/categories/Functional-Programming/" title="Functional Programming">Functional Programming<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/水/" title="水">水<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://sell.moe" target="_blank" title="橙的记事本">橙的记事本</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> You Will Never Know Your Limits. <br/>
+			Do What You Want To.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2019 
+		
+		<a href="/about" target="_blank" title="RomeoMo">RomeoMo</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?7ffe19d7e813fdc4fe4f13d3026c7ae2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
