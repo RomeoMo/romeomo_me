@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/09/588399b3fe6a6077.png">
 <meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/09/b5f9768d18ef3327.png">
 <meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/09/73037e271fc40076.png">
-<meta property="og:updated_time" content="2019-09-30T03:49:33.844Z">
+<meta property="og:updated_time" content="2019-09-30T03:54:58.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="详解 JavaScript 事件循环">
 <meta name="twitter:description" content="说明： 本文来自Medium，作者：Anoop Raveendran文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。“JavaScript 的异步和单线程是怎样实现的？”简单来说，JavaScript 是单线程的但异步并不是在 JavaScript 中实现的，而是基于浏览器中 JavaScript 内核之上实现的并且通过浏览器 APIs 进行访问。 现在我试着通过两个简单的片段详细解">
@@ -118,7 +118,7 @@
 <blockquote><p>所以在 setTimeout（函数，延迟时间）中的延迟参数，并不是函数延迟执行的准确时间。它代表在此之后某个时间点执行功能的最短等待时间。</p>
 </blockquote>
 
-<h2 id="片段2：深入理解"><a href="#片段2：深入理解" class="headerlink" title="片段2：深入理解"></a>片段2：深入理解</h2><p><img src="https://ftp.bmp.ovh/imgs/2019/09/73037e271fc40076.png" alt="深入解释时间循环"></p>
+<h2 id="片段2：深入理解"><a href="#片段2：深入理解" class="headerlink" title="片段2：深入理解"></a>片段2：深入理解</h2><p><img src="https://ftp.bmp.ovh/imgs/2019/09/73037e271fc40076.png" alt="深入解释事件循环"></p>
 <ul>
 <li>runWhileLoopForNSeconds() 函数表示的和名字一致。其会不停的检查经过的时间是否等于此函数传入的第二个参数。重要的是记住 while 循环（与其他语言类似）是一个阻塞语句，意味着，它的执行是发生在执行栈中并且不会使用浏览器 APIs。所以它会阻塞后续的语句，直到完成执行。</li>
 <li>所以就上方的代码，尽管 setTimeout 只需等待 0 毫秒并且 while 循环执行 3 秒， 回调函数 exec() 语句卡在消息队列 3 秒。直到 3 秒以后 while 循环一直在执行栈中运行（单线程）。在执行栈为空之后，回调函数 exec() 才移动到执行栈并开始执行。</li>
