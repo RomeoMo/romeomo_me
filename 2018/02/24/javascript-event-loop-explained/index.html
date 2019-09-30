@@ -4,24 +4,28 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
   
-    <title>编写可维护的 CSS | RomeoMo</title>
+    <title>详解 JavaScript 事件循环 | RomeoMo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="RomeoMo">
     
 
     
-    <meta name="description" content="传统CSS书写存在的问题 就算加了注释,代码也很难维护 为了保证样式被覆盖,CSS的权重可能会变得非常⾼  Sass方式书写何为Sass？Sass是CSS的预处理程序，其思想是用一种专门的编程语言，进行网页样式设计，然后再编译成正常的CSS文件。同样也有Less，Stylus等其他预处理程序，而本人在平常中没有实践过其他预处理程序，所以在此按下不表。SCSS实现了Sass的所有功能，并且有类似于c">
+    <meta name="description" content="说明： 本文来自Medium，作者：Anoop Raveendran文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。“JavaScript 的异步和单线程是怎样实现的？”简单来说，JavaScript 是单线程的但异步并不是在 JavaScript 中实现的，而是基于浏览器中 JavaScript 内核之上实现的并且通过浏览器 APIs 进行访问。 现在我试着通过两个简单的片段详细解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编写可维护的 CSS">
-<meta property="og:url" content="http://romeomo.me/2015/06/22/maintainable-css/index.html">
+<meta property="og:title" content="详解 JavaScript 事件循环">
+<meta property="og:url" content="http://romeomo.me/2018/02/24/javascript-event-loop-explained/index.html">
 <meta property="og:site_name" content="RomeoMo">
-<meta property="og:description" content="传统CSS书写存在的问题 就算加了注释,代码也很难维护 为了保证样式被覆盖,CSS的权重可能会变得非常⾼  Sass方式书写何为Sass？Sass是CSS的预处理程序，其思想是用一种专门的编程语言，进行网页样式设计，然后再编译成正常的CSS文件。同样也有Less，Stylus等其他预处理程序，而本人在平常中没有实践过其他预处理程序，所以在此按下不表。SCSS实现了Sass的所有功能，并且有类似于c">
+<meta property="og:description" content="说明： 本文来自Medium，作者：Anoop Raveendran文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。“JavaScript 的异步和单线程是怎样实现的？”简单来说，JavaScript 是单线程的但异步并不是在 JavaScript 中实现的，而是基于浏览器中 JavaScript 内核之上实现的并且通过浏览器 APIs 进行访问。 现在我试着通过两个简单的片段详细解">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-23T07:34:17.975Z">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/09/588399b3fe6a6077.png">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/09/b5f9768d18ef3327.png">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/09/73037e271fc40076.png">
+<meta property="og:updated_time" content="2019-09-30T03:49:33.844Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="编写可维护的 CSS">
-<meta name="twitter:description" content="传统CSS书写存在的问题 就算加了注释,代码也很难维护 为了保证样式被覆盖,CSS的权重可能会变得非常⾼  Sass方式书写何为Sass？Sass是CSS的预处理程序，其思想是用一种专门的编程语言，进行网页样式设计，然后再编译成正常的CSS文件。同样也有Less，Stylus等其他预处理程序，而本人在平常中没有实践过其他预处理程序，所以在此按下不表。SCSS实现了Sass的所有功能，并且有类似于c">
+<meta name="twitter:title" content="详解 JavaScript 事件循环">
+<meta name="twitter:description" content="说明： 本文来自Medium，作者：Anoop Raveendran文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。“JavaScript 的异步和单线程是怎样实现的？”简单来说，JavaScript 是单线程的但异步并不是在 JavaScript 中实现的，而是基于浏览器中 JavaScript 内核之上实现的并且通过浏览器 APIs 进行访问。 现在我试着通过两个简单的片段详细解">
+<meta name="twitter:image" content="https://ftp.bmp.ovh/imgs/2019/09/588399b3fe6a6077.png">
 
     
     <link rel="alternative" href="/atom.xml" title="RomeoMo" type="application/atom+xml">
@@ -81,41 +85,50 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/06/22/maintainable-css/" title="编写可维护的 CSS" itemprop="url">编写可维护的 CSS</a>
+      <a href="/2018/02/24/javascript-event-loop-explained/" title="详解 JavaScript 事件循环" itemprop="url">详解 JavaScript 事件循环</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="RomeoMo" target="_blank" itemprop="author">RomeoMo</a>
 		
   <p class="article-time">
-    <time datetime="2015-06-21T16:00:00.000Z" itemprop="datePublished"> 发表于 2015-06-22</time>
+    <time datetime="2018-02-23T16:00:00.000Z" itemprop="datePublished"> 发表于 2018-02-24</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
-		<h2 id="传统CSS书写"><a href="#传统CSS书写" class="headerlink" title="传统CSS书写"></a>传统CSS书写</h2><h3 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h3><ol>
-<li>就算加了注释,代码也很难维护</li>
-<li>为了保证样式被覆盖,CSS的权重可能会变得非常⾼</li>
+		<h4 id="说明：-本文来自Medium，作者：Anoop-Raveendran"><a href="#说明：-本文来自Medium，作者：Anoop-Raveendran" class="headerlink" title="说明： 本文来自Medium，作者：Anoop Raveendran"></a><strong>说明：</strong> 本文来自<a href="https://medium.com/front-end-weekly/javascript-event-loop-explained-4cd26af121d4" target="_blank" rel="noopener">Medium</a>，作者：<a href="https://medium.com/@anooprav7" target="_blank" rel="noopener">Anoop Raveendran</a></h4><h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>“JavaScript 的异步和单线程是怎样实现的？”简单来说，JavaScript 是单线程的但异步并不是在 JavaScript 中实现的，而是基于浏览器中 JavaScript 内核之上实现的并且通过浏览器 APIs 进行访问。</p>
+<p>现在我试着通过两个简单的片段详细解释事件循环。</p>
+<h2 id="基础结构"><a href="#基础结构" class="headerlink" title="基础结构"></a>基础结构</h2><p><img src="https://ftp.bmp.ovh/imgs/2019/09/588399b3fe6a6077.png" alt="浏览器主要组件概述"></p>
+<ul>
+<li><strong>堆（Heap）</strong>—— 对象存储在堆中，堆表示了内存中一个大的非结构化的区域。</li>
+<li><strong>栈（Stack）</strong>—— 这个表示了 JavaScript 代码执行时的单线程。函数的调用组成了栈的帧（详情见下面的描述）。</li>
+<li><strong>浏览器或是 Web APIs</strong> 是在浏览器中实现的，能从浏览器和电脑系统得到数据并且在此基础上执行复杂的事情。这些并不属于 JavaScript 语言本身，而是基于浏览器中 JavaScript 内核之上实现的，为你在使用 JavaScript 代码提供了额外的超能力。 举个栗子🌰，<a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation" target="_blank" rel="noopener">地理位置定位 API </a> 提供了一些简单的 JavaScript 方法来检索位置数据，例如在 Google Map 中标记你的位置。在其背后的实现，浏览器其实是调用了一些复杂的底层代码（比如 C++）和设备的 GPS 硬件（或是任何可以定义位置信息）来获取位置信息，返回到浏览器中并在你的 JavaScript 代码中使用。对开发者来言，这些 API 抽象了复杂度。</li>
+</ul>
+<h2 id="片段1：详细解释"><a href="#片段1：详细解释" class="headerlink" title="片段1：详细解释"></a>片段1：详细解释</h2><p>现在我们有一个主函数包含了在两个 console.log 语句分别在控制台输出 “A” 和 “C”。在两者之间，有一个等待 0 毫秒的 setTimeOut 打印 “B” 的函数。</p>
+<p><img src="https://ftp.bmp.ovh/imgs/2019/09/b5f9768d18ef3327.png" alt="执行过程的内部实现"></p>
+<ol>
+<li>首先是调用主函数（作为帧）加入到栈中。随后浏览器把 console.log(‘A’) 作为第一条语句加入到栈。这条语句执行完成并且此帧弹出。于是在控制台展示了字母 “A”。</li>
+<li>下一条语句（ 回调为 exec() 且等待0毫秒，执行的setTimeout() ），推入了执行栈（call stack）并开始执行。setTimeout 函数调用的浏览器的 APIs 用于等待执行回调函数。这一帧（使用 setTimeOut）弹出并且完成交由浏览器。</li>
+<li>当浏览器的定时器（timer）执行回调方法 exec() 时，console.log(‘C’) 加入到栈中。在特定的时候，正如延迟 0 毫秒的时候，（理想情况下）一旦浏览器收到回调，这个回调函数加入到消息队列（message queue）。</li>
+<li>当执行完成主函数的最后一个语句时，这个 main() 函数从执行栈弹出，因此执行栈为空。浏览器从队列向执行栈传递数据时，必须执行栈为空作为前提。这就是为什么就算 setTimeout() 的等待时间为 0 毫秒，它的回调 exec() 必须等到执行栈的所有帧完成。</li>
+<li>现在回调函数 exec() 调入到执行栈并开始执行。控制台显示字母 “C”。这就是 JavaScript 的事件循环。</li>
 </ol>
-<h2 id="Sass方式书写"><a href="#Sass方式书写" class="headerlink" title="Sass方式书写"></a>Sass方式书写</h2><h3 id="何为Sass？"><a href="#何为Sass？" class="headerlink" title="何为Sass？"></a>何为Sass？</h3><p>Sass是CSS的预处理程序，其思想是用一种专门的编程语言，进行网页样式设计，然后再编译成正常的CSS文件。同样也有Less，Stylus等其他预处理程序，而本人在平常中没有实践过其他预处理程序，所以在此按下不表。SCSS实现了Sass的所有功能，并且有类似于css的句法，所以在工作中，我更偏爱SCSS。</p>
-<h3 id="存在的问题-1"><a href="#存在的问题-1" class="headerlink" title="存在的问题"></a>存在的问题</h3><p>使用SCSS容易造成嵌套层级过多，导致 CSS 权重过高的问题。大漠在<a href="http://www.zhihu.com/question/30170210" target="_blank" rel="noopener">知乎上的回答</a>写着<strong>“别让你的嵌套层级超过四层”</strong>，而腾讯的AlloyTeam在Code Guide上写着”<a href="http://alloyteam.github.io/CodeGuide/#css-SCSS" target="_blank" rel="noopener">嵌套最多不能超过5层</a>“。为了减少嵌套层级，我认为解决方法为：<strong>提取公因式</strong>。</p>
-<p>提取公因式就是把相同表现类似的css用同一个class表示，而独特表现的元素单独写。要熟练使用此方法需要透彻了解css的权重。</p>
-<h2 id="使用Compass"><a href="#使用Compass" class="headerlink" title="使用Compass"></a>使用Compass</h2><p>在使用SCSS中，最实用的是[@mixin](<a href="http://sass-lang.com/guide#topic-6" target="_blank" rel="noopener">http://sass-lang.com/guide#topic-6</a> “Mixins”), 类似于c语言中的宏，使用@mixin能大大提升写代码的效率。</p>
-<p>在平常工作中，特别是在使用css3时需要注意浏览器前缀问题。如果不想手写 CSS3 的浏览器前缀，想让工具生成这些属性，那<a href="http://compass-style.org/" target="_blank" rel="noopener">Compass</a> 就是一个很好的选择。</p>
-<h3 id="关于Compass应该知道的知识"><a href="#关于Compass应该知道的知识" class="headerlink" title="关于Compass应该知道的知识"></a>关于Compass应该知道的知识</h3><p>Compass是Sass的一种工具库（toolkit），引用阮一峰博客上的一句话：“<a href="http://www.ruanyifeng.com/blog/2012/11/compass.html" target="_blank" rel="noopener">Sass是一种”CSS预处理器”，可以让CSS的开发变得简单和可维护。但是，只有搭配Compass，它才能显出真正的威力</a>”。</p>
-<h3 id="Compass主要分为七部分"><a href="#Compass主要分为七部分" class="headerlink" title="Compass主要分为七部分"></a>Compass主要分为七部分</h3><ol>
-<li>reset(normalize)*：重写浏览器的默认样式</li>
-<li>layout：⻚面布局</li>
-<li>CSS3：跨浏览器的CSS3<strong>（使用最为频繁）</strong></li>
-<li>typography：文本样式</li>
-<li>helper：类似于Sass语法的，一系列函数,</li>
-<li>utilities:除去以上5点的其他工具,多为@mixin</li>
-<li>Browser Support：浏览器支持，直接决定了以上6点的表现</li>
+<blockquote><p>所以在 setTimeout（函数，延迟时间）中的延迟参数，并不是函数延迟执行的准确时间。它代表在此之后某个时间点执行功能的最短等待时间。</p>
+</blockquote>
+
+<h2 id="片段2：深入理解"><a href="#片段2：深入理解" class="headerlink" title="片段2：深入理解"></a>片段2：深入理解</h2><p><img src="https://ftp.bmp.ovh/imgs/2019/09/73037e271fc40076.png" alt="深入解释时间循环"></p>
+<ul>
+<li>runWhileLoopForNSeconds() 函数表示的和名字一致。其会不停的检查经过的时间是否等于此函数传入的第二个参数。重要的是记住 while 循环（与其他语言类似）是一个阻塞语句，意味着，它的执行是发生在执行栈中并且不会使用浏览器 APIs。所以它会阻塞后续的语句，直到完成执行。</li>
+<li>所以就上方的代码，尽管 setTimeout 只需等待 0 毫秒并且 while 循环执行 3 秒， 回调函数 exec() 语句卡在消息队列 3 秒。直到 3 秒以后 while 循环一直在执行栈中运行（单线程）。在执行栈为空之后，回调函数 exec() 才移动到执行栈并开始执行。</li>
+<li>所以 setTimeout() 的等待参数并不保证一定等于执行开始到结束的时间。它是等待部分的最短时间。</li>
+</ul>
+<h2 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h2><ol>
+<li><a href="https://zhuanlan.zhihu.com/p/33058983" target="_blank" rel="noopener">详解JavaScript中的Event Loop（事件循环）机制</a></li>
+<li><a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ" target="_blank" rel="noopener">JS Event Loop</a>(需翻墙，强烈推荐 12:50~17:20 之间的内容)</li>
+<li><a href="http://latentflip.com/loupe/" target="_blank" rel="noopener">JavaScript 事件循环可视化（”JS Event Loop” 演讲示例）</a></li>
 </ol>
-<p><strong>PS</strong>：reset与<a href="http://necolas.github.io/normalize.css/" target="_blank" rel="noopener">Normalize</a>的区别：reset是“暴力”的重写浏览器默认样式。而Normalize分为8个部分进行重写，分别为：base, html5, links, typography, embeds, groups, forms以及tables。Normalize可以整体引入也可以分开引入。所以是使用reset还是Normalize，就看各位看官了（本人更偏向于Normalize）。</p>
-<h2 id="使用SCSS-Compass的总结"><a href="#使用SCSS-Compass的总结" class="headerlink" title="使用SCSS+Compass的总结"></a>使用SCSS+Compass的总结</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>CSS 权重尽可能低，容易修改、覆盖。加上适当注释后，更容易阅读代码<br>不⽤担⼼ CSS3 兼容性问题，直接配置解决</p>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>从 CSS 到 SCSS，再到 Compass, 难度逐渐增加。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -123,7 +136,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
 </div>
 
 
@@ -133,7 +146,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://romeomo.me/2015/06/22/maintainable-css/" data-title="编写可维护的 CSS | RomeoMo" data-tsina="" class="share clearfix">
+	  <div data-url="http://romeomo.me/2018/02/24/javascript-event-loop-explained/" data-title="详解 JavaScript 事件循环 | RomeoMo" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -147,18 +160,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/04/21/currying-in-functional-javascript/" title="初学者的柯里化指南">
+ <a href="/2019/04/21/about-functional-programming/" title="函数式编程">
   <strong>上一篇：</strong><br/>
   <span>
-  初学者的柯里化指南</span>
+  函数式编程</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/05/24/becoming-truly-full-stack-unrealistic-try/"  title="成为全栈工程师或许只是梦想，但你值得为此奋斗">
+<a href="/2016/04/21/currying-in-functional-javascript/"  title="初学者的柯里化指南">
  <strong>下一篇：</strong><br/> 
- <span>成为全栈工程师或许只是梦想，但你值得为此奋斗
+ <span>初学者的柯里化指南
 </span>
 </a>
 </div>
