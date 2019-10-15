@@ -4,24 +4,28 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
   
-    <title>成为全栈工程师或许只是梦想，但你值得为此奋斗 | RomeoMo</title>
+    <title>介绍 CSSOM | RomeoMo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="RomeoMo">
     
 
     
-    <meta name="description" content="说明：本文来自SitePoint，作者：Tim Evko 文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。Web开发者是由多种职位构成的。你可以是前端开发者，用户体验设计师，软件工程师，或者是后端开发者。如果这样说太笼统了，你也可以自称为JavaScript 专家，Bootstrap 开发者甚至是Node 明星。 在Web开发中包含着无止境（甚至是奇怪）的职位名称。那么，为何会有这么">
+    <meta name="description" content="说明： 本文来自Varvy，作者：Patrick Sexton文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。前不久，在微博上看到貘吃馍香在吐槽  于是去搜索和查阅了相关资料，也做了一些复习，加上 W3C Plus 相关文章收费，因此在此做个记录。 CSSOM 是什么？ CSSOM 代表着 CSS Object Model CSSOM 基本上是页面中 CSS 的“映射” CSSOM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="成为全栈工程师或许只是梦想，但你值得为此奋斗">
-<meta property="og:url" content="http://romeomo.me/2015/05/24/becoming-truly-full-stack-unrealistic-try/index.html">
+<meta property="og:title" content="介绍 CSSOM">
+<meta property="og:url" content="http://romeomo.me/2019/09/27/cssom/index.html">
 <meta property="og:site_name" content="RomeoMo">
-<meta property="og:description" content="说明：本文来自SitePoint，作者：Tim Evko 文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。Web开发者是由多种职位构成的。你可以是前端开发者，用户体验设计师，软件工程师，或者是后端开发者。如果这样说太笼统了，你也可以自称为JavaScript 专家，Bootstrap 开发者甚至是Node 明星。 在Web开发中包含着无止境（甚至是奇怪）的职位名称。那么，为何会有这么">
+<meta property="og:description" content="说明： 本文来自Varvy，作者：Patrick Sexton文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。前不久，在微博上看到貘吃馍香在吐槽  于是去搜索和查阅了相关资料，也做了一些复习，加上 W3C Plus 相关文章收费，因此在此做个记录。 CSSOM 是什么？ CSSOM 代表着 CSS Object Model CSSOM 基本上是页面中 CSS 的“映射” CSSOM">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-23T07:32:01.415Z">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/10/ab5ed35f02f25aa3.png">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/10/d423a6d9b195d974.png">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/10/3b52ab0861f42eaa.png">
+<meta property="og:updated_time" content="2019-10-15T09:12:57.079Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="成为全栈工程师或许只是梦想，但你值得为此奋斗">
-<meta name="twitter:description" content="说明：本文来自SitePoint，作者：Tim Evko 文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。Web开发者是由多种职位构成的。你可以是前端开发者，用户体验设计师，软件工程师，或者是后端开发者。如果这样说太笼统了，你也可以自称为JavaScript 专家，Bootstrap 开发者甚至是Node 明星。 在Web开发中包含着无止境（甚至是奇怪）的职位名称。那么，为何会有这么">
+<meta name="twitter:title" content="介绍 CSSOM">
+<meta name="twitter:description" content="说明： 本文来自Varvy，作者：Patrick Sexton文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。前不久，在微博上看到貘吃馍香在吐槽  于是去搜索和查阅了相关资料，也做了一些复习，加上 W3C Plus 相关文章收费，因此在此做个记录。 CSSOM 是什么？ CSSOM 代表着 CSS Object Model CSSOM 基本上是页面中 CSS 的“映射” CSSOM">
+<meta name="twitter:image" content="https://ftp.bmp.ovh/imgs/2019/10/ab5ed35f02f25aa3.png">
 
     
     <link rel="alternative" href="/atom.xml" title="RomeoMo" type="application/atom+xml">
@@ -81,48 +85,67 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/05/24/becoming-truly-full-stack-unrealistic-try/" title="成为全栈工程师或许只是梦想，但你值得为此奋斗" itemprop="url">成为全栈工程师或许只是梦想，但你值得为此奋斗</a>
+      <a href="/2019/09/27/cssom/" title="介绍 CSSOM" itemprop="url">介绍 CSSOM</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="RomeoMo" target="_blank" itemprop="author">RomeoMo</a>
 		
   <p class="article-time">
-    <time datetime="2015-05-23T16:00:00.000Z" itemprop="datePublished"> 发表于 2015-05-24</time>
+    <time datetime="2019-09-26T16:00:00.000Z" itemprop="datePublished"> 发表于 2019-09-27</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
-		<p><strong>说明：</strong>本文来自<a href="http://www.sitepoint.com/becoming-truly-full-stack-unrealistic-try/" target="_blank" rel="noopener">SitePoint</a>，作者：<a href="http://www.sitepoint.com/author/tevko/" target="_blank" rel="noopener">Tim Evko</a></p>
-<h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>Web开发者是由多种职位构成的。你可以是前端开发者，用户体验设计师，软件工程师，或者是后端开发者。如果这样说太笼统了，你也可以自称为JavaScript 专家，Bootstrap 开发者甚至是Node 明星。 在Web开发中包含着无止境（甚至是奇怪）的职位名称。那么，为何会有这么多职位的存在？它们的存在是由于在建设Web时某个职位只能做很少的事情。过去在前端和后端开发者之间有着一条明显的分界线。同样这些种类也有自己的分支。前端开发者专长于CSS或者工作在基于UI设计的JavaScript，然而后端开发者专注Ruby或者其他语言。这样在Web开发者中产生了很多争论。如果你想在领域中取得成绩，你应该专注于那些方面？需要专注所有方面吗？需要成为在前端和后端环境都突出的全栈开发者，还是杰出于在某个方面？</p>
-<h2 id="雇主的要求"><a href="#雇主的要求" class="headerlink" title="雇主的要求"></a>雇主的要求</h2><p>我认为真正的问题在于单一类型的开发者是否更容易雇佣。基于这种想法，有意义的回顾一下以及试图找出当前雇主的要求。</p>
-<p>随着Web发展，雇主希望熟悉于更多技术和框架的开发者。这是由于站点变的越来越变幻莫测，并且在原生应用以及浏览器应用的程序之间的分界逐渐模糊。正如我工作的公司，越来越多的用户要求网站胜任现代的Web应用，而不仅仅是单传的静态站点。</p>
-<p>那些主要以静态为主的网站，其在持续减少对Web开发者的需要。事实上，其中几个公司的产品能符合建立静态站点商城的需求，使客户能够创建自己的网站,而自己无需编写一行代码。WordPress.com、Squarespace，和Wix，这些都能降低成本，每个平台都有简单的学习曲线和普通的UI。不要求编程能力。</p>
-<p>然而我不认为这些站点能在商业上使用，我很确定它们降低了HTML，CSS和JavaScript 能力的价值，同样我认为雇主开始意识到这个问题。他们开始寻找懂得整个架构的更全面和更有经验的开发者，从下拉菜单样式到部署服务器。</p>
-<p>然而，我不认为真正的全栈开发者是实际存在的，我相信了解整个架构的开发者更容易被雇佣。而这并不意味着你需要知道Web开发的方方面面。取而代之的是，我认为应该有清单能让每个开发者开发的去学习，并且随着时间逐渐提高。</p>
-<h2 id="清单"><a href="#清单" class="headerlink" title="清单"></a>清单</h2><p><a href="http://devchat.tv/js-jabber/118-jsj-web-developer-skills" target="_blank" rel="noopener">Javascript Jabber</a> 最近放出的播客就是专注于这个话题。他们列出了大量的技术要求Web开发者应该知道的。我总结了一下最重要的技能列表如下。</p>
-<ul>
-<li>HTML, CSS, Javascript</li>
-<li>一门后端语言</li>
-<li>版本控制</li>
-<li>命令行使用</li>
-<li>Node/Ruby 工具</li>
-<li>客户端MVC框架</li>
-<li>流行的工具和框架，例如Angular，Laravel，Rails等</li>
-<li>数据库知识</li>
-<li>服务器知识</li>
-<li>站点部署策略</li>
-<li>搭建和使用REST API</li>
-<li>响应式Web开发</li>
-<li>易用性</li>
-<li>代码测试</li>
+		<h4 id="说明：-本文来自Varvy，作者：Patrick-Sexton"><a href="#说明：-本文来自Varvy，作者：Patrick-Sexton" class="headerlink" title="说明： 本文来自Varvy，作者：Patrick Sexton"></a><strong>说明：</strong> 本文来自<a href="https://varvy.com/performance/cssom.html" target="_blank" rel="noopener">Varvy</a>，作者：<a href="https://plus.google.com/+PatrickSexton" target="_blank" rel="noopener">Patrick Sexton</a></h4><h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>前不久，在微博上看到貘吃馍香在吐槽</p>
+<p><img src="https://ftp.bmp.ovh/imgs/2019/10/ab5ed35f02f25aa3.png" alt="貘大的吐槽"></p>
+<p>于是去搜索和查阅了相关资料，也做了一些复习，加上 W3C Plus <a href="https://www.w3cplus.com/javascript/cssom-css-typed-om.html" target="_blank" rel="noopener">相关文章</a>收费，因此在此做个记录。</p>
+<h2 id="CSSOM-是什么？"><a href="#CSSOM-是什么？" class="headerlink" title="CSSOM 是什么？"></a>CSSOM 是什么？</h2><ul>
+<li>CSSOM 代表着 CSS Object Model</li>
+<li>CSSOM 基本上是页面中 CSS 的“映射”</li>
+<li>CSSOM 与 CSS 的关系类似于 DOM 之于 HTML</li>
+<li>CSSOM 与 DOM 相结合使浏览器渲染页面</li>
 </ul>
-<p><a href="http://www.impressivewebs.com/skills-front-end-developers/" target="_blank" rel="noopener">这有另外一张Louis Lazaris的清单</a>。虽然有一些年份了，但其中很多技术现在依然很常用。</p>
-<h2 id="不要害怕"><a href="#不要害怕" class="headerlink" title="不要害怕"></a>不要害怕</h2><p>看到表中列的技术，你应该开始意识到，最基本的，应该听过它们之间的绝大多数。 此外，没有人能精通每个Web开发工具或者技术。反而，我们应该开放的去学习Web开发，尽可能的知道更多的技术和工具。</p>
-<p>还有记住普遍水平的了解技术就已经很好了。比如开发者能熟练运用复杂的CSS布局，同样也能通过JavaScript 增加一个新的功能。一些公司或者机构由一个开发者写前端代码，另一个写后端。如团队基础的工作流就很好，这能让开发者大致了解其他部分的工作。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以某些具体的工具或者技术为中心的思想会产生不良影响以至于组织技术的提高。随着Web技术的发展，要求Web开发者需要更多的懂得整个架构。我们依然有在特定领域做的更好的自由，但是正如排版变得越发容易以及交互性的更大的需求，基本的前端技能以及应用开发会受到更多的追捧。听到雇主雇佣全栈而不是专业的开发者可能会令人不安，但<a href="http://andyshora.com/full-stack-developers.html" target="_blank" rel="noopener">Andy Shora</a>的结论揭示了这样的状况。</p>
-<p>的确，没有人能指望你能从前端到后端，开始到结束只靠一个人完成。同样你也不应该为提这样需求的人工作。如果你熟练五到十种技术/工具，同样也有意愿去了解其他100多种你不熟悉的，那么你就是高价值的商品了。</p>
+<p><img src="https://ftp.bmp.ovh/imgs/2019/10/d423a6d9b195d974.png" alt="CSSOM"></p>
+<p>CSSOM 是页面渲染不可缺少的部分。</p>
+<p>CSSOM 是 关键路径渲染（<a href="https://varvy.com/pagespeed/critical-render-path.html" target="_blank" rel="noopener">critical rendering path</a>）的基础和关键，理解 CSSOM 做了什么是对页面优化（页面加载更快）的重要部分。</p>
+<h2 id="CSSOM-做了什么？"><a href="#CSSOM-做了什么？" class="headerlink" title="CSSOM 做了什么？"></a>CSSOM 做了什么？</h2><p>CSSOM 将样式表中的规则映射到页面上需要样式化的内容。</p>
+<p>为此，CSSOM 做了许多复杂的操作，但是 CSSOM 的最终是将样式映射到这些样式需要去的地方。</p>
+<p>（更精确的说，CSSOM 定义了令牌（token）并将其隐藏的链接到树结构的节点中。页面中节点及其样式的所有映射就是 CSS Object Mode）。</p>
+<h2 id="浏览器使用-CSSOM-渲染页面"><a href="#浏览器使用-CSSOM-渲染页面" class="headerlink" title="浏览器使用 CSSOM 渲染页面"></a>浏览器使用 CSSOM 渲染页面</h2><p>为了渲染页面，浏览器必须执行一些操作。此时，我们将其简化一下并讨论四个主要步骤，这些步骤将说明 CSSOM 的重要性。</p>
+<ol>
+<li>浏览器执行 HTML 并构建出 DOM（Document Object Model）。</li>
+<li>浏览器执行 CSS 并构建出 CSSOM（CSS Object Model）。</li>
+<li>浏览器组合 DOM 和 CSSOM 用于创建渲染树。</li>
+<li>浏览器展示 web 页面。</li>
+</ol>
+<p>如上所示，CSSOM 确实是展示 web 页面的重要部分。</p>
+<h2 id="好消息"><a href="#好消息" class="headerlink" title="好消息"></a>好消息</h2><p>为了优化 web 页面，其实你不需要了解 CSSOM 到底是如何工作的。</p>
+<p>你只需要知道 CSSOM 的几个关键点就可以对页面进行非常实际的优化。</p>
+<ol>
+<li>知道CSSOM 阻止任何东西的渲染。</li>
+<li>知道当载入新页面时，CSSOM 需要重新构建。</li>
+<li>知道渲染页面时，javascript 和 CSS 之间的关系。</li>
+</ol>
+<p>让我们快速的了解这几点，然后为了优化页面我们能做什么。</p>
+<h3 id="1-CSSOM-阻止任何东西的渲染"><a href="#1-CSSOM-阻止任何东西的渲染" class="headerlink" title="1. CSSOM 阻止任何东西的渲染"></a>1. CSSOM 阻止任何东西的渲染</h3><p>所有 CSS 是阻塞式渲染（意味着直到 CSS 处理完成，将不会展示任何东西）。</p>
+<p>这样做的原因是，如果在 CSS 执行之前就展现 web 页面，那你看到的 web 页面是没有样式的，然后过了一会，页面有了样式。如果这样做的话，体验是相当糟糕的。</p>
+<p><img src="https://ftp.bmp.ovh/imgs/2019/10/3b52ab0861f42eaa.png" alt="CSS 阻塞式渲染"></p>
+<p>由于 CSSOM 用来帮助创建渲染树，如果在页面中的 CSS 不能高效的完成，那么将会产生严重的问题。</p>
+<p>主要问题是加载 web 页面时的白屏。</p>
+<h3 id="2-当载入新页面时，CSSOM-需要重新构建"><a href="#2-当载入新页面时，CSSOM-需要重新构建" class="headerlink" title="2. 当载入新页面时，CSSOM 需要重新构建"></a>2. 当载入新页面时，CSSOM 需要重新构建</h3><p>对你来说，这个可能不是相当明显，但确实是非常重要的一点。</p>
+<p>意思是尽管你的 CSS 被缓存了，并不意味着 CSSOM 是针对每个页面构建的。</p>
+<p>用户访问其他页面时，CSSOM 必须重新进行构建（尽管浏览器可能已经缓存了所需要的所有 CSS 文件）。</p>
+<p>换句话说，如果你的 CSS 是劣质和庞大并且编写相当糟糕的，那么在渲染页面时会带来副作用。</p>
+<h3 id="3-渲染页面时，javascript-和-CSS-之间的关系"><a href="#3-渲染页面时，javascript-和-CSS-之间的关系" class="headerlink" title="3. 渲染页面时，javascript 和 CSS 之间的关系"></a>3. 渲染页面时，javascript 和 CSS 之间的关系</h3><p>在 web 页面中使用 javascript 可能（或者说经常）会阻塞 CSSOM 的构建。</p>
+<p>简而言之—页面展现需要 CSSOM。如果 CSSOM 没有完成，页面将不会展现任何内容。如果阻塞了 CSSOM 的构建，那么 CSSOM 将会花费更长的时间，意思是页面展现将会花费更长的时间。如果 javascript 阻塞了 CSSOM 的构建，那么用户将会花费比原本更多时间停留在空白页面。</p>
+<h2 id="CSSOM-的优化方法"><a href="#CSSOM-的优化方法" class="headerlink" title="CSSOM 的优化方法"></a>CSSOM 的优化方法</h2><p>这里有些最佳实践用于加快 CSSOM 的构建（因此页面能加载的更快）。</p>
+<ul>
+<li>优化<a href="https://varvy.com/pagespeed/critical-render-path.html" target="_blank" rel="noopener">关键路径渲染</a></li>
+<li>确保页面在<a href="https://varvy.com/pagespeed/style-script-order.html" target="_blank" rel="noopener">加载 javascript 前加载 css</a></li>
+<li>确保<a href="https://varvy.com/pagespeed/optimize-css-delivery.html" target="_blank" rel="noopener">优化 CSS 交付（CSS delivery）</a></li>
+</ul>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -130,7 +153,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Full-Stack/">Full Stack</a>
+  <a class="article-category-link" href="/categories/CSS/">CSS</a>
 </div>
 
 
@@ -140,7 +163,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://romeomo.me/2015/05/24/becoming-truly-full-stack-unrealistic-try/" data-title="成为全栈工程师或许只是梦想，但你值得为此奋斗 | RomeoMo" data-tsina="" class="share clearfix">
+	  <div data-url="http://romeomo.me/2019/09/27/cssom/" data-title="介绍 CSSOM | RomeoMo" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -153,19 +176,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/06/22/maintainable-css/" title="编写可维护的 CSS">
-  <strong>上一篇：</strong><br/>
-  <span>
-  编写可维护的 CSS</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/05/10/full-stack-javaScript-development-with-MEAN/"  title="使用MEAN成为JavaScript的全栈工程师">
+<a href="/2019/06/09/closures-and-currying-in-javascript/"  title="函数式系列(2)：闭包和柯里化">
  <strong>下一篇：</strong><br/> 
- <span>使用MEAN成为JavaScript的全栈工程师
+ <span>函数式系列(2)：闭包和柯里化
 </span>
 </a>
 </div>
