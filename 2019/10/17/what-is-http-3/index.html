@@ -4,26 +4,27 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
   
-    <title>使用MEAN成为JavaScript的全栈工程师 | RomeoMo</title>
+    <title>HTTP/3 是什么？ | RomeoMo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="RomeoMo">
     
 
     
-    <meta name="description" content="说明：本文来自SitePoint，作者：Adam Bretz 文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。自从1995年发布以来，JavaScript 有了很大的发展。我们已经看到了ECMAScript 规格的几个重要版本及单页Web应用的崛起，这些都被客户端的JavaScript 架构支持。起初，所有的JavaScript 开发和创新都只能在浏览器实现，这是由于浏览器是支持这种">
+    <meta name="description" content="说明： 本文来自Medium，作者：Grigor Khachatryan文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。这段时间在研究 HTTP/2 的相关知识，没想到 HTTP/3 也在酝酿中，于是乎找到一篇介绍 HTTP/3 的文章，学习并在此进行记录。  HTTP-over-QUIC 这个实验性的协议会被命名为 HTTP/3，IETF 的一位成员披露了这条消息。 从 HTTP/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用MEAN成为JavaScript的全栈工程师">
-<meta property="og:url" content="http://romeomo.me/2015/05/10/full-stack-javaScript-development-with-MEAN/index.html">
+<meta property="og:title" content="HTTP&#x2F;3 是什么？">
+<meta property="og:url" content="http://romeomo.me/2019/10/17/what-is-http-3/index.html">
 <meta property="og:site_name" content="RomeoMo">
-<meta property="og:description" content="说明：本文来自SitePoint，作者：Adam Bretz 文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。自从1995年发布以来，JavaScript 有了很大的发展。我们已经看到了ECMAScript 规格的几个重要版本及单页Web应用的崛起，这些都被客户端的JavaScript 架构支持。起初，所有的JavaScript 开发和创新都只能在浏览器实现，这是由于浏览器是支持这种">
+<meta property="og:description" content="说明： 本文来自Medium，作者：Grigor Khachatryan文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。这段时间在研究 HTTP/2 的相关知识，没想到 HTTP/3 也在酝酿中，于是乎找到一篇介绍 HTTP/3 的文章，学习并在此进行记录。  HTTP-over-QUIC 这个实验性的协议会被命名为 HTTP/3，IETF 的一位成员披露了这条消息。 从 HTTP/">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/09/18dc117a46810b53.jpg">
-<meta property="og:updated_time" content="2019-09-23T07:32:07.015Z">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/10/ed8e728764c1fd32.gif">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/10/13869dc51fbc75ca.gif">
+<meta property="og:updated_time" content="2019-10-23T12:30:31.999Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用MEAN成为JavaScript的全栈工程师">
-<meta name="twitter:description" content="说明：本文来自SitePoint，作者：Adam Bretz 文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。自从1995年发布以来，JavaScript 有了很大的发展。我们已经看到了ECMAScript 规格的几个重要版本及单页Web应用的崛起，这些都被客户端的JavaScript 架构支持。起初，所有的JavaScript 开发和创新都只能在浏览器实现，这是由于浏览器是支持这种">
-<meta name="twitter:image" content="https://ftp.bmp.ovh/imgs/2019/09/18dc117a46810b53.jpg">
+<meta name="twitter:title" content="HTTP&#x2F;3 是什么？">
+<meta name="twitter:description" content="说明： 本文来自Medium，作者：Grigor Khachatryan文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。这段时间在研究 HTTP/2 的相关知识，没想到 HTTP/3 也在酝酿中，于是乎找到一篇介绍 HTTP/3 的文章，学习并在此进行记录。  HTTP-over-QUIC 这个实验性的协议会被命名为 HTTP/3，IETF 的一位成员披露了这条消息。 从 HTTP/">
+<meta name="twitter:image" content="https://ftp.bmp.ovh/imgs/2019/10/ed8e728764c1fd32.gif">
 
     
     <link rel="alternative" href="/atom.xml" title="RomeoMo" type="application/atom+xml">
@@ -83,32 +84,46 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/05/10/full-stack-javaScript-development-with-MEAN/" title="使用MEAN成为JavaScript的全栈工程师" itemprop="url">使用MEAN成为JavaScript的全栈工程师</a>
+      <a href="/2019/10/17/what-is-http-3/" title="HTTP/3 是什么？" itemprop="url">HTTP/3 是什么？</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="RomeoMo" target="_blank" itemprop="author">RomeoMo</a>
 		
   <p class="article-time">
-    <time datetime="2015-05-09T16:00:00.000Z" itemprop="datePublished"> 发表于 2015-05-10</time>
+    <time datetime="2019-10-16T16:00:00.000Z" itemprop="datePublished"> 发表于 2019-10-17</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
-		<p><strong>说明：</strong>本文来自<a href="http://www.sitepoint.com/full-stack-javascript-development-mean/" target="_blank" rel="noopener">SitePoint</a>，作者：<a href="http://www.sitepoint.com/author/abretz/" target="_blank" rel="noopener">Adam Bretz</a></p>
-<h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>自从1995年发布以来，JavaScript 有了很大的发展。我们已经看到了ECMAScript 规格的几个重要版本及单页Web应用的崛起，这些都被客户端的JavaScript 架构支持。起初，所有的JavaScript 开发和创新都只能在浏览器实现，这是由于浏览器是支持这种语言的唯一环境。随着时间的推移，Web开发者开始意识到JavaScript 的很多实用的特性（没有块级作用域，事件驱动以及与许多其他语言相似）使其能对其他环境而不仅仅是浏览器。这促使JavaScript 社区进行了第二轮创新最终使JavaScript 运行于服务端和数据库。</p>
-<p>突然，了解JavaScript 不会把你自动归类在“前端开发者”中。如果你熟悉这门语言，你能建立服务器和数据库，以及丰富前端用户体验。现在，第一次有了开发者能通过只用JavaScript 就能建立整个Web应用。这种趋势常常被称为“全栈的JavaScript”或“纯JavaScript解决方案”。组合了四种流行的JavaScript 技术：MongoDB, Express, AngularJS, and Node.js 建立Web应用受到欢迎了，这被成为“MEAN 全栈”。</p>
-<p><img src="https://ftp.bmp.ovh/imgs/2019/09/18dc117a46810b53.jpg" alt="MEAN"></p>
+		<h4 id="说明：-本文来自Medium，作者：Grigor-Khachatryan"><a href="#说明：-本文来自Medium，作者：Grigor-Khachatryan" class="headerlink" title="说明： 本文来自Medium，作者：Grigor Khachatryan"></a><strong>说明：</strong> 本文来自<a href="https://medium.com/devgorilla/what-is-http-3-94335c57823f" target="_blank" rel="noopener">Medium</a>，作者：<a href="https://medium.com/@Grigorkh" target="_blank" rel="noopener">Grigor Khachatryan</a></h4><h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>这段时间在研究 HTTP/2 的相关知识，没想到 HTTP/3 也在酝酿中，于是乎找到一篇介绍 HTTP/3 的文章，学习并在此进行记录。</p>
+<p><img src="https://ftp.bmp.ovh/imgs/2019/10/ed8e728764c1fd32.gif" alt="HTTP/3"></p>
+<p>HTTP-over-QUIC 这个实验性的协议会被命名为 HTTP/3，IETF 的一位成员披露了这条消息。</p>
+<p>从 HTTP/1.1（发布于1999年）到  <a href="https://medium.com/@Grigorkh/why-we-need-to-use-http-2-in-2017-e9e38d95a5e5" target="_blank" rel="noopener">HTTP/2</a> 已经过了许多年，而在 2019 年将大大推动 HTTP/3 的发展。</p>
+<p>HTTP/3 由 Google 的 QUIC 协议发展而来。它开始于 Mark Nottingham 的<a href="https://mailarchive.ietf.org/arch/msg/quic/RLRs4nB1lwFCZ_7k0iuz0ZBa35s" target="_blank" rel="noopener">建议</a>。</p>
+<p>所以啥是 QUIC ？</p>
+<p>QUIC（Quick UDP Internet Connections / 快速 UDP 网络连接）是一种新的传输模式，与 TCP 相比减少了延迟。大体来说，QUIC 类似于 UDP 上实现 TCP + TLS + HTTP/2。由于 TCP 在操作系统内核和中间件之上实现的，导致对于 TCP 进行重大更新几乎是不可能的。然而，QUIC 基于 UDP 之上实现，所以就没有这些限制。</p>
+<p>QUIC 于现有 TCP + TLS + HTTP/2 上的主要功能包括:</p>
+<ul>
+<li>大大减少建立时间</li>
+<li>改善拥塞控制（congestion control）</li>
+<li>无队头阻塞（Head-of-line blocking）的多路复用</li>
+<li>前向纠错（Forward error correction）</li>
+<li>连接迁移（Connection migration） </li>
+</ul>
+<p>Google<a href="https://blog.chromium.org/2015/04/a-quic-update-on-googles-experimental.html" target="_blank" rel="noopener">说</a>，从 Chrome 到 Google 服务器的所有请求中，大约有一半是通过 QUIC 提供的，并且他们还在继续增加 QUIC 的占比，最终使其成为Google 客户端——Chrome 以及移动 apps 到 Google 服务器之间的默认传输方式。Google 计划正式向 IETF 提出 QUIC，使其成为一个网络标准，但首先还需要做一些工作，比如更新线路标准并将其实现从 SPDY-over-QUIC 更新为 HTTP2-over-QUIC（当前的 <a href="https://tools.ietf.org/html/draft-ietf-quic-http-16#page-4" target="_blank" rel="noopener">HTTP-over-QUIC 协议草案</a> 使用最新发布的 TLS 1.3 协议）。在接下来的几个月内，Google 打算减少握手开销以便用于更好的服务器扩展，提升前向纠错和改善拥塞避免，同时增加对多路径链接（multipath connections）的支持。</p>
+<p><img src="https://ftp.bmp.ovh/imgs/2019/10/13869dc51fbc75ca.gif" alt="HTTPS over TCP + TLS vs HTTPS over QUIC"></p>
+<p>reddit 的<a href="https://www.reddit.com/user/AyrA_ch" target="_blank" rel="noopener">一位用户</a>对 TCP 和 QUIC 的区分有个很好的解释：</p>
+<p>开发 TCP 的时候需要通过比现在更大丢包率的网络进行数据包传递，并且当时的计算机系统需要更长的时间来响应 TCP 消息。例如，即便在 5 秒内无法完成 TCP 握手，主机的链接超时仍为 20 秒，即使在你不太可能获得响应的情况下。长时间的延迟是网络应用存在停滞时间过长的原因。我们无法更改这个 70 年代产生的协议，尽管在看到可靠性以及速度有很大提升的情况下。</p>
+<p>在最大限度的与当前 TCP 兼容，而不是最终减少不会改变包的默认值的情况下，协议开发者开始使用 UDP 并在此基础上实现自己 TCP。 向 IPv6 的转变是修改 TCP 诸多问题的理想时间，例如大部分的超时，窗口尺寸（window size）以及 TCP 的慢启动。有些值可以在你的操作系统中调整，但是最烦人的超时是不能调整的。如果你终止已经有 5 秒超时的一条 TCP 套接字（TCP socket）， 操作系统依旧需要为此保持打开状态，直到 20 秒以后结束，这会消耗系统资源。</p>
+<p>参考资料：</p>
 <ol>
-<li><strong>MongoDB</strong> - MongoDB 是一种NoSQL的数据库。它是一种文件导向数据库管理系统, 而不是由行、列和表格组成的。主要用于存储JSON 数据；这完美契合由JavaScript 编写的应用。数据的关系性操作和严厉遵守图式的缺乏，这使MongoDB 具有快速，伸缩性强及易用的特性。</li>
-<li><strong>Express</strong> - Express是一种轻量级的服务器级框架，被用来使Node 搭建的Web服务更简单及更强的可维护性。框架的灵活性提供给开发者高度的可定制性以及足够“低端”的用于操作Node 框架。Express 提供简单方式使用路由，cookie管理，静态文件服务和其他HTTP模块用于搭建企业级的服务。</li>
-<li><strong>AngularJS</strong> - AngularJS 是一种客户端富应用的MVC JavaScript 框架。它可用于建立健壮的和复杂的单页Web应用。双向数据绑定和基于HTML的框架语言。AngularJS 也有称为“命令”的特性允许你拓展HTML的新的属性，甚至是新的元素。AngularJS 同样也经过了高强度的测试，这可能不会成为开发的有趣方面，但这对于AngularJS 来说是重要的并且经常管理客户端代码。最后，AngularJS 提供了协议和最佳实践用于帮助开发者建立客户端的解决方案。</li>
-<li><strong>Node</strong> - Node 是JavaScript 的运行环境用于建立服务及网络应用。它提供了在客户端的所有JavaScript 的特性并且加入了文件以及网络I/O。Node使用了Google 的V8引擎（同样也用于Google Chrome）用于执行JavaScript 。其同样也是非常活跃的开发者社区和Node 模块的生态系统（Express就是其中一个模块）的基础。与此同时，也有很多其他在客户端的JavaScript 实践，到目前为止，就粉丝和大公司而言都成功采用的。</li>
+<li><a href="https://http3-explained.haxx.se/zh/" target="_blank" rel="noopener">HTTP/3详解</a></li>
+<li><a href="https://www.youtube.com/watch?v=RIFnXaiRs_o" target="_blank" rel="noopener">What is QUIC?</a></li>
+<li><a href="https://www.youtube.com/watch?v=idViw4anA6E" target="_blank" rel="noopener">HTTP/3 - HTTP over QUIC is the next generation by Daniel Stenberg</a> （墙裂推荐）</li>
+<li><a href="https://www.slideshare.net/bagder/http3-129039527" target="_blank" rel="noopener">上一条视频的幻灯片</a></li>
 </ol>
-<p>如果你像我一样都是JavaScript 的粉丝，你应该兴奋于只用JavaScript 就可以建立整个Web应用的前景。MEAN全栈是相当受欢迎的话题，在网络上也有很多如何开始这些技术的信息。事实上，有很多关于这项技术的信息，仅仅是有关“开始”的就可以“令人畏惧”。</p>
-<h2 id="译者按"><a href="#译者按" class="headerlink" title="译者按"></a>译者按</h2><p>最后作者介绍自己和Colin Ihrig共同编写的<a href="https://www.sitepoint.com/premium/books/mean1/?_ga=1.182917350.1798398705.1429097916" target="_blank" rel="noopener">“MEAN全栈”</a>书籍 有兴趣的朋友可以关注一下。</p>
-<p>正如作者所说，仅仅使用JavaScript 就能建立这个Web应用是一件令人兴奋地事情。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -116,7 +131,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Full-Stack/">Full Stack</a>
+  <a class="article-category-link" href="/categories/HTTP/">HTTP</a>
 </div>
 
 
@@ -126,7 +141,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://romeomo.me/2015/05/10/full-stack-javaScript-development-with-MEAN/" data-title="使用MEAN成为JavaScript的全栈工程师 | RomeoMo" data-tsina="" class="share clearfix">
+	  <div data-url="http://romeomo.me/2019/10/17/what-is-http-3/" data-title="HTTP/3 是什么？ | RomeoMo" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -139,19 +154,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/05/24/becoming-truly-full-stack-unrealistic-try/" title="成为全栈工程师或许只是梦想，但你值得为此奋斗">
-  <strong>上一篇：</strong><br/>
-  <span>
-  成为全栈工程师或许只是梦想，但你值得为此奋斗</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/04/18/being-full-stack-developer/"  title="成为全栈工程师">
+<a href="/2019/09/27/cssom/"  title="介绍 CSSOM">
  <strong>下一篇：</strong><br/> 
- <span>成为全栈工程师
+ <span>介绍 CSSOM
 </span>
 </a>
 </div>
