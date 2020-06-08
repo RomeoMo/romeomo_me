@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="UTF-8">
   
     <title>初学者的柯里化指南 | RomeoMo</title>
@@ -11,17 +11,17 @@
     
 
     
-    <meta name="description" content="说明： 本文来自SitePoint，作者：M. David Green文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。柯里化（Currying），或称为偏函数应用（Partial Application），是函数式编程中会给听起来给更熟悉传统的JavaScript编程的人带来困惑。但只要使用得当，柯里化会让你的函数式JavaScript更加易读。 更易读以及更具有扩展性函数式Java">
+    <meta name="description" content="说明： 本文来自SitePoint，作者：M. David Green文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。柯里化（Currying），或称为偏函数应用（Partial Application），是函数式编程中会给听起来给更熟悉传统的JavaScript编程的人带来困惑。但只要使用得当，柯里化会让你的函数式JavaScript更加易读。 更易读以及更具有扩展性函数式Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初学者的柯里化指南">
 <meta property="og:url" content="http://romeomo.me/2016/04/21/currying-in-functional-javascript/index.html">
 <meta property="og:site_name" content="RomeoMo">
-<meta property="og:description" content="说明： 本文来自SitePoint，作者：M. David Green文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。柯里化（Currying），或称为偏函数应用（Partial Application），是函数式编程中会给听起来给更熟悉传统的JavaScript编程的人带来困惑。但只要使用得当，柯里化会让你的函数式JavaScript更加易读。 更易读以及更具有扩展性函数式Java">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-23T03:25:02.445Z">
+<meta property="og:description" content="说明： 本文来自SitePoint，作者：M. David Green文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。柯里化（Currying），或称为偏函数应用（Partial Application），是函数式编程中会给听起来给更熟悉传统的JavaScript编程的人带来困惑。但只要使用得当，柯里化会让你的函数式JavaScript更加易读。 更易读以及更具有扩展性函数式Java">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-04-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-09-23T03:25:02.000Z">
+<meta property="article:author" content="RomeoMo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="初学者的柯里化指南">
-<meta name="twitter:description" content="说明： 本文来自SitePoint，作者：M. David Green文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。柯里化（Currying），或称为偏函数应用（Partial Application），是函数式编程中会给听起来给更熟悉传统的JavaScript编程的人带来困惑。但只要使用得当，柯里化会让你的函数式JavaScript更加易读。 更易读以及更具有扩展性函数式Java">
 
     
     <link rel="alternative" href="/atom.xml" title="RomeoMo" type="application/atom+xml">
@@ -33,9 +33,13 @@
     <link rel="apple-touch-icon" href="/img/jacman.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
+    
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/%02.css">
+<link rel="stylesheet" href="/.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
   <body>
     <header>
       
@@ -100,36 +104,33 @@
 <h2 id="什么是柯里化？"><a href="#什么是柯里化？" class="headerlink" title="什么是柯里化？"></a>什么是柯里化？</h2><p>简而言之，柯里化是一种允许偏函数应用作为参数组成新的函数。意味着为了获取函数结果，你可以传递函数所需要的所有参数，或者也可以传递一部分参数得到结果作为其余函数的参数。情况就是这么简单。</p>
 <p>柯里化是如Haskell和Scala这样的函数式语言的基础。JavaScript具有函数式编写的能力，但柯里化并不实现于其中（至少在目前版本是这样的）。但我们已经知道一些函数式的方法，能让我们能在JavaScript中使用柯里化。</p>
 <p>为了给你展现柯里化是如何实现的，我们写了JavaScript中第一个入门的柯里化函数，使用熟悉的方法创建了柯里化函数。我们想通过名字用来打招呼作为例子。我们知道如何通过创造一个简单的、包含使用名字和处理的打招呼的函数，并使用控制台打印名字。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var greetCurried = function(greeting) &#123;</span><br><span class="line">  return function(name) &#123;</span><br><span class="line">    console.log(greeting + &quot;, &quot; + name);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var greetCurried &#x3D; function(greeting) &#123;</span><br><span class="line">  return function(name) &#123;</span><br><span class="line">    console.log(greeting + &quot;, &quot; + name);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>这个函数需要两个参数–名称和方式才能正常的使用。但是我们可以仅通过简单的嵌套柯里化重写此函数，使之基本函数只需要传递方式，返回一个函数用于接受我们任意传递的名称。</p>
-<h2 id="第一次柯里化"><a href="#第一次柯里化" class="headerlink" title="第一次柯里化"></a>第一次柯里化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var greetCurried = function(greeting) &#123;</span><br><span class="line">  return function(name) &#123;</span><br><span class="line">    console.log(greeting + &quot;, &quot; + name);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="第一次柯里化"><a href="#第一次柯里化" class="headerlink" title="第一次柯里化"></a>第一次柯里化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var greetCurried &#x3D; function(greeting) &#123;</span><br><span class="line">  return function(name) &#123;</span><br><span class="line">    console.log(greeting + &quot;, &quot; + name);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>这个小小的改变，让我们创建了一个可为任何类型方式的新函数，并且接受我们任意传递的名称。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var greetHello = greetCurried(&quot;Hello&quot;);</span><br><span class="line">greetHello(&quot;Heidi&quot;); //&quot;Hello, Heidi&quot;</span><br><span class="line">greetHello(&quot;Eddie&quot;); //&quot;Hello, Eddie&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var greetHello &#x3D; greetCurried(&quot;Hello&quot;);</span><br><span class="line">greetHello(&quot;Heidi&quot;); &#x2F;&#x2F;&quot;Hello, Heidi&quot;</span><br><span class="line">greetHello(&quot;Eddie&quot;); &#x2F;&#x2F;&quot;Hello, Eddie&quot;</span><br></pre></td></tr></table></figure>
 
 <p>我们也可以对原始函数进行柯里化调用，只需要使用左到右的方式从传入参数的集合中分离参数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">greetCurried(&quot;Hi there&quot;)(&quot;Howard&quot;); //&quot;Hi there, Howard&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">greetCurried(&quot;Hi there&quot;)(&quot;Howard&quot;); &#x2F;&#x2F;&quot;Hi there, Howard&quot;</span><br></pre></td></tr></table></figure>
 
 <p>为何不在浏览器中尝试一下此代码呢？</p>
 <p><a href="https://jsbin.com/basoyi/1/edit" target="_blank" rel="noopener">此为JS Bin的链接</a></p>
 <h2 id="全部柯里化！"><a href="#全部柯里化！" class="headerlink" title="全部柯里化！"></a>全部柯里化！</h2><p>最酷的是，现在我们学习了可以使用这种方式处理参数用于改变传统函数，我们能对任意数量的参数使用此方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var greetDeeplyCurried = function(greeting) &#123;</span><br><span class="line">  return function(separator) &#123;</span><br><span class="line">    return function(emphasis) &#123;</span><br><span class="line">      return function(name) &#123;</span><br><span class="line">        console.log(greeting + separator + name + emphasis);</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var greetDeeplyCurried &#x3D; function(greeting) &#123;</span><br><span class="line">  return function(separator) &#123;</span><br><span class="line">    return function(emphasis) &#123;</span><br><span class="line">      return function(name) &#123;</span><br><span class="line">        console.log(greeting + separator + name + emphasis);</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>我们四个参数的函数和两个参数的函数有同样的灵活度。无论嵌套有多深，我们都可以创造出一个包含任意人数的函数来满足我们的预期：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var greetAwkwardly = greetDeeplyCurried(&quot;Hello&quot;)(&quot;...&quot;)(&quot;?&quot;);</span><br><span class="line">greetAwkwardly(&quot;Heidi&quot;); //&quot;Hello...Heidi?&quot;</span><br><span class="line">greetAwkwardly(&quot;Eddie&quot;); //&quot;Hello...Eddie?&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var greetAwkwardly &#x3D; greetDeeplyCurried(&quot;Hello&quot;)(&quot;...&quot;)(&quot;?&quot;);</span><br><span class="line">greetAwkwardly(&quot;Heidi&quot;); &#x2F;&#x2F;&quot;Hello...Heidi?&quot;</span><br><span class="line">greetAwkwardly(&quot;Eddie&quot;); &#x2F;&#x2F;&quot;Hello...Eddie?&quot;</span><br></pre></td></tr></table></figure>
 
 <p><a href="https://jsbin.com/tetugu/2/edit" target="_blank" rel="noopener">此为JS Bin的链接</a></p>
 <h2 id="柯里化传统函数"><a href="#柯里化传统函数" class="headerlink" title="柯里化传统函数"></a>柯里化传统函数</h2><p>你能看到这样的尝试非常强大，特别是如果你需要创造一堆具体的函数的情况下。唯一的问题在于语法。一旦写出柯里化的函数，你需要不停地嵌套返回函数，调用每个都包含自有参数变量的新函数。这样会变得相当复杂。</p>
 <p>为了解决这个问题，创造出一个包含不用包含所有嵌套返回的现存函数名称的快速和脏的柯里化函数。一个柯里化的函数需要放出参数列表，并且使用它们用于返回原始函数的当前版本。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var curryIt = function(uncurried) &#123;</span><br><span class="line">  var parameters = Array.prototype.slice.call(arguments, 1);</span><br><span class="line">  return function() &#123;</span><br><span class="line">    return uncurried.apply(this, parameters.concat(</span><br><span class="line">      Array.prototype.slice.call(arguments, 0)</span><br><span class="line">    ));</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var curryIt &#x3D; function(uncurried) &#123;</span><br><span class="line">  var parameters &#x3D; Array.prototype.slice.call(arguments, 1);</span><br><span class="line">  return function() &#123;</span><br><span class="line">    return uncurried.apply(this, parameters.concat(</span><br><span class="line">      Array.prototype.slice.call(arguments, 0)</span><br><span class="line">    ));</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>为了使用这个，我们设定号存放任何参数数量的函数，和我们初始设定的参数一致。然后我们获得了一个包含等待剩余参数的函数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var greeter = function(greeting, separator, emphasis, name) &#123;</span><br><span class="line">  console.log(greeting + separator + name + emphasis);</span><br><span class="line">&#125;;</span><br><span class="line">var greetHello = curryIt(greeter, &quot;Hello&quot;, &quot;, &quot;, &quot;.&quot;);</span><br><span class="line">greetHello(&quot;Heidi&quot;); //&quot;Hello, Heidi.&quot;</span><br><span class="line">greetHello(&quot;Eddie&quot;); //&quot;Hello, Eddie.&quot;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var greeter &#x3D; function(greeting, separator, emphasis, name) &#123;</span><br><span class="line">  console.log(greeting + separator + name + emphasis);</span><br><span class="line">&#125;;</span><br><span class="line">var greetHello &#x3D; curryIt(greeter, &quot;Hello&quot;, &quot;, &quot;, &quot;.&quot;);</span><br><span class="line">greetHello(&quot;Heidi&quot;); &#x2F;&#x2F;&quot;Hello, Heidi.&quot;</span><br><span class="line">greetHello(&quot;Eddie&quot;); &#x2F;&#x2F;&quot;Hello, Eddie.&quot;</span><br></pre></td></tr></table></figure>
 <p>和之前一样，我们使用从原始函数中分离出没有限制参数的函数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var greetGoodbye = curryIt(greeter, &quot;Goodbye&quot;, &quot;, &quot;);</span><br><span class="line">greetGoodbye(&quot;.&quot;, &quot;Joe&quot;); //&quot;Goodbye, Joe.&quot;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var greetGoodbye &#x3D; curryIt(greeter, &quot;Goodbye&quot;, &quot;, &quot;);</span><br><span class="line">greetGoodbye(&quot;.&quot;, &quot;Joe&quot;); &#x2F;&#x2F;&quot;Goodbye, Joe.&quot;</span><br></pre></td></tr></table></figure>
 <p><a href="https://jsbin.com/hayaka/2/edit?html,js,output" target="_blank" rel="noopener">此为JS Bin的链接</a></p>
 <h2 id="开始严肃对待柯里化"><a href="#开始严肃对待柯里化" class="headerlink" title="开始严肃对待柯里化"></a>开始严肃对待柯里化</h2><p>我们的小柯里化函数并不包括所有情况，比如没有或者可选参数，但是它做的有意义同样严格按照语法传递参数。</p>
 <p>以<strong><a href="https://ramdajs.com/" target="_blank" rel="noopener">Ramda</a></strong>为代表的一些函数式JavaScript库又更灵活的柯里化方式以至于可以用来打破函数所必须的参数，并且可以让你挨个或者组团传递参数用于生成自定义的柯里化参数。如果你想更广泛的柯里化，这个可能是一种方法。</p>
@@ -214,8 +215,6 @@
 		  
 		
 		  
-		
-		  
 			<li><a href="/categories/Functional-Programming/" title="Functional Programming">Functional Programming<sup>4</sup></a></li>
 		  
 		
@@ -285,7 +284,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2019 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2020 
 		
 		<a href="/about" target="_blank" title="RomeoMo">RomeoMo</a>
 		
