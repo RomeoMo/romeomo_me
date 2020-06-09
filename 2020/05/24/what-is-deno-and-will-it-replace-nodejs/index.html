@@ -1,0 +1,488 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Deno 是什么，它能代替 NodeJS 吗？ | RomeoMo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="RomeoMo">
+    
+
+    
+    <meta name="description" content="说明： 本文来自Medium ,作者：Fernando Doglio文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。Deno v1.0.0 计划于 5 月 13 号发布。这里有一些有趣的事实，可能对确定 Deno 起作用。  确定的是，（显然）太早了来讨论这个事情，但这些事实可能可以确定 Deno。 对于初学者来说，Deno 由创建过 Node.js 的 Ryan Dahl 编写，是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deno 是什么，它能代替 NodeJS 吗？">
+<meta property="og:url" content="http://romeomo.me/2020/05/24/what-is-deno-and-will-it-replace-nodejs/index.html">
+<meta property="og:site_name" content="RomeoMo">
+<meta property="og:description" content="说明： 本文来自Medium ,作者：Fernando Doglio文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。Deno v1.0.0 计划于 5 月 13 号发布。这里有一些有趣的事实，可能对确定 Deno 起作用。  确定的是，（显然）太早了来讨论这个事情，但这些事实可能可以确定 Deno。 对于初学者来说，Deno 由创建过 Node.js 的 Ryan Dahl 编写，是">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/06/08/tfNiOs.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/06/09/t4D5M6.png">
+<meta property="article:published_time" content="2020-05-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-06-09T16:35:26.333Z">
+<meta property="article:author" content="RomeoMo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/06/08/tfNiOs.jpg">
+
+    
+    <link rel="alternative" href="/atom.xml" title="RomeoMo" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/%02.css">
+<link rel="stylesheet" href="/.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="RomeoMo" title="RomeoMo"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="RomeoMo">RomeoMo</a></h1>
+				<h2 class="blog-motto">种一棵树最好的时间是十年前，而后是现在</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:romeomo.me">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2020/05/24/what-is-deno-and-will-it-replace-nodejs/" title="Deno 是什么，它能代替 NodeJS 吗？" itemprop="url">Deno 是什么，它能代替 NodeJS 吗？</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="RomeoMo" target="_blank" itemprop="author">RomeoMo</a>
+		
+  <p class="article-time">
+    <time datetime="2020-05-23T16:00:00.000Z" itemprop="datePublished"> 发表于 2020-05-24</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<h4 id="说明：-本文来自Medium-作者：Fernando-Doglio"><a href="#说明：-本文来自Medium-作者：Fernando-Doglio" class="headerlink" title="说明： 本文来自Medium ,作者：Fernando Doglio"></a><strong>说明：</strong> 本文来自<a href="https://blog.bitsrc.io/what-is-deno-and-will-it-replace-nodejs-a13aa1734a74" target="_blank" rel="noopener">Medium</a> ,作者：<a href="https://blog.bitsrc.io/@deleteman123?source=post_page-----a13aa1734a74----------------------" target="_blank" rel="noopener">Fernando Doglio</a></h4><h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。</h3><p><em>Deno v1.0.0 计划于 5 月 13 号发布。这里有一些有趣的事实，可能对确定 Deno 起作用。</em></p>
+<p><img src="https://s1.ax1x.com/2020/06/08/tfNiOs.jpg" alt="Deno"></p>
+<p>确定的是，（显然）太早了来讨论这个事情，但这些事实可能可以确定 Deno。</p>
+<p>对于初学者来说，<a href="https://deno.land/" target="_blank" rel="noopener">Deno</a> 由创建过 Node.js 的 Ryan Dahl 编写，是不是听起来很熟？这是不是意味着 Deno 是 Node 的替代方案并且可以计划我们对重构进行冲刺了？当然不是！但如果你想了解更多，请继续读下去!</p>
+<h2 id="让我们从头开始"><a href="#让我们从头开始" class="headerlink" title="让我们从头开始"></a>让我们从头开始</h2><p>在 2018 年，Ryan 讲了他认为做 Node.js 时犯的错误的前十名，并且在演讲的最后，他揭示了 Deno，在那个时候，这只是一个可以称为 Node.js 第二的小项目，提供了更多的安全方案。</p>
+<p><a href="https://www.youtube.com/watch?v=M3BM9TB-8yA" target="_blank" rel="noopener">点击这里观看视频（请自备梯子）</a>。</p>
+<p>两年后，Deno 1.0 官方发布日期确定了：5 月 13 号。为后端开发准备的全新的 JavasSript 运行时，使用 Rust 而不是 C++ 编写而成，基于 <a href="https://tokio.rs/" target="_blank" rel="noopener">Tokio</a> 平台（为 JavaScript 提供必备的异步运行时），依旧运行于 Google V8 引擎之上。</p>
+<h2 id="但还有什么新东西呢？"><a href="#但还有什么新东西呢？" class="headerlink" title="但还有什么新东西呢？"></a>但还有什么新东西呢？</h2><p>我们讨论的不仅仅是与当前的 Node.js 完全兼容的新的 JavaScript 运行时，取而代之的是，Ryan 为 Deno 添加了在创建 Node.js 时没有考虑到的特性。</p>
+<h3 id="安全集成"><a href="#安全集成" class="headerlink" title="安全集成"></a>安全集成</h3><p>一般来说，Node.js 允许你具有访问所有内容，意思是你可以在文件系统中进行读写操作，向外发布请求，访问环境变量等等。尽管对于开发者来说，获取这些权限是有益的，但代码可能不小心留下安全隐患。</p>
+<p>取而代之的是，Deno 使用命令行参数用于是否开启不同的安全措施。比如你的代码需要访问 /etc 目录，则需要：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deno --allow-read=/etc myscript.ts</span><br></pre></td></tr></table></figure>
+
+<p>这允许代码读取该目录，除此之外会报安全错误。这与其他平台的安全措施类似。如果你是安卓用户，许多应用在使用时会向你询问是否能获取系统权限（比如联系人，通行记录，文件夹等），同样的原理也应用于此。通过使用这些选项来执行你的代码，提供了代码所需的权限。</p>
+<h3 id="更完整的标准库"><a href="#更完整的标准库" class="headerlink" title="更完整的标准库"></a>更完整的标准库</h3><p>自从第一个 Node 版本开始，JavaScript 改进了其标准库，但与其他语言相比，它还有很长的路要走。Deno 试图为开发者提供完善标准库用于完成基础任务，而使用外部库（也就是 NPM）用于更复杂的任务。</p>
+<p>实质上，开箱即用的是，Deno 为终端文字增加了<a href="https://deno.land/std/fmt/colors.ts" target="_blank" rel="noopener">颜色</a>，使用<a href="https://deno.land/std/encoding/README.md" target="_blank" rel="noopener">外部数据结构</a>（比如 binary, csv, yaml 等），生成 <a href="https://deno.land/std/uuid/README.md" target="_blank" rel="noopener">UUIDs</a> 甚至是编写 <a href="https://deno.land/std/ws/README.md" target="_blank" rel="noopener">websockets</a>。还有些其他的，更多可使用的基础模块，比如访问文件系统，日期助手（date helper）方法，http 关联方法以及<a href="https://deno.land/std/" target="_blank" rel="noopener">其他库</a>。</p>
+<h3 id="TypeScript-集成"><a href="#TypeScript-集成" class="headerlink" title="TypeScript 集成"></a>TypeScript 集成</h3><p>你没看错，如果你是 TypeScript 粉丝，那么 Deno 帮你解决了，而不需要额外工具，默认在内部完成编译为 JavaScript 。</p>
+<p>尽管在默认情况下，Deno 会解决许多问题，你可以使用 tsconfig.json 进行设定：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deno run -c tsconfig.json [your-script.ts]</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下使用<strong>严格模式</strong>，因此，任何不良的编码将立即收到警告。</p>
+<h3 id="不再有-NPM-或-node-modules-目录"><a href="#不再有-NPM-或-node-modules-目录" class="headerlink" title="不再有 NPM 或 node_modules 目录"></a>不再有 NPM 或 node_modules 目录</h3><p>这是一个问题，因为每个包和其父类的都有依赖。这是不是显得太臃肿了？这是分发依赖关系的错误方式吗？这无疑是Node 最具争议的方面之一，而 Deno 确定彻底摆脱这种方式？</p>
+<p>所以 Deno 是如何处理依赖的？自此，允许你可从任意地方引用。换句话说，你可以这样做：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import * as <span class="built_in">log</span> from <span class="string">"https://deno.land/std/log/mod.ts"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>自身不再需要的集中式存储库，但需要小心进行实践，无法控制第三方导入的模块，导致处于暴露状态。</p>
+<p>事实上，我们也没有 package.json，使用包含模块列表以及其依赖的 URL 的 deps.ts 文件用于模块管理。但版本管理呢？我知道你会提问的。你可以在 URL 上标明版本号，这样并不优雅，但的确可行。</p>
+<p>deps.ts 文件示例如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> &#123; assert &#125; from <span class="string">"https://deno.land/std@v0.39.0/testing/asserts.ts"</span>;</span><br><span class="line"><span class="built_in">export</span> &#123; green, bold &#125; from <span class="string">"https://deno.land/std@v0.39.0/fmt/colors.ts"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>只需要简单的更改 URL ，你就可以重新导出模块并改变其版本。</p>
+<p>随便说一下，导入的代码会被缓存，第一次运行代码时，需要增加 –reload 标签进行重新构建。</p>
+<h3 id="还有什么呢？"><a href="#还有什么呢？" class="headerlink" title="还有什么呢？"></a>还有什么呢？</h3><p>Deno 还包括了另一些模块，比如开箱即用的工具，例如测试运行器（test runner）、调试、文件监听等等。但话又说过来，其中一些只是语言提供的 APIs，你需要编写自己的工具进行使用。</p>
+<p>比如文件监听 API，由 Deno.watchFs 提供，你可以使用类似于 <a href="https://www.npmjs.com/package/nodemon" target="_blank" rel="noopener">nodemon</a> 进行构建。这里仅仅使用 23 行代码就能解决类似的问题：</p>
+<p><img src="https://s1.ax1x.com/2020/06/09/t4D5M6.png" alt="Deno.watchFs"></p>
+<p>这段代码是 Caesar2011 发布的其中一段，你可以在<a href="https://github.com/Caesar2011/rhinoder/blob/master/mod.ts" target="_blank" rel="noopener">这里</a>看到完整代码。</p>
+<h3 id="所以，Deno-会很快代替-Node-js-吗？"><a href="#所以，Deno-会很快代替-Node-js-吗？" class="headerlink" title="所以，Deno 会很快代替 Node.js 吗？"></a>所以，Deno 会很快代替 Node.js 吗？</h3><p>实话实说，并不会，这里有些标题党了。我们使用 Node.js 可以追溯到 0.10 版本，并且已经用在实际产品中了！告诉你真相可能有些恐怖，但我们这么做是因为当时没有其他可选方案。无论是 PHP、Python 还是 Ruby (更不用说 Java 或 . net )，都无法与后端同时使用 JavaScript 和异步 I/O 模型相提并论。这些年来，Node（和 JavaScript ）已经成为工业的必备。这是不是很完美？当然不是！与生活类似，当涉及到编程语言时，没有是完美的。</p>
+<p>Deno 并没有区别，只是因为现在，它是花了两年时间在一个想法上的成果。其还没有在实际产品中进行编码和测试。尚未对 Deno 进行检测，也没有放入怪异和意外的用例中，以了解是如何处理边界情况的。直到这些完成，Deno 只是尝鲜者把玩的玩具。可能过了一年，我们开始听到公司是使用 Deno 的经历，他们是如何解决发现的问题，其背后的社区将对其进行怎样的调整，使其能够发挥作用。Deno 是否能代替 Node 呢？谁知道呢？只有时间才能给出答案。</p>
+<p>所以，你是怎样认为的呢？</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Deno/">Deno</a>
+</div>
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://romeomo.me/2020/05/24/what-is-deno-and-will-it-replace-nodejs/" data-title="Deno 是什么，它能代替 NodeJS 吗？ | RomeoMo" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2019/10/17/what-is-http-3/"  title="HTTP/3 是什么？">
+ <strong>下一篇：</strong><br/> 
+ <span>HTTP/3 是什么？
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/CSS/" title="CSS">CSS<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Deno/" title="Deno">Deno<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Full-Stack/" title="Full Stack">Full Stack<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Functional-Programming/" title="Functional Programming">Functional Programming<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/HTTP/" title="HTTP">HTTP<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/JavaScript/" title="JavaScript">JavaScript<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/水/" title="水">水<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://sell.moe" target="_blank" title="橙的记事本">橙的记事本</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> You Will Never Know Your Limits. <br/>
+			Do What You Want To.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2020 
+		
+		<a href="/about" target="_blank" title="RomeoMo">RomeoMo</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?7ffe19d7e813fdc4fe4f13d3026c7ae2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

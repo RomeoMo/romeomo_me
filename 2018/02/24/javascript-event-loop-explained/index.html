@@ -18,14 +18,14 @@
 <meta property="og:site_name" content="RomeoMo">
 <meta property="og:description" content="说明： 本文来自Medium，作者：Anoop Raveendran文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。“JavaScript 的异步和单线程是怎样实现的？”简单来说，JavaScript 是单线程的但异步并不是在 JavaScript 中实现的，而是基于浏览器中 JavaScript 内核之上实现的并且通过浏览器 APIs 进行访问。 现在我试着通过两个简单的片段详细解">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/09/588399b3fe6a6077.png">
-<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/09/b5f9768d18ef3327.png">
-<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/09/73037e271fc40076.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/06/09/tI0TXV.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/06/09/tI0HmT.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/06/09/tI0o60.png">
 <meta property="article:published_time" content="2018-02-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2019-09-30T03:54:58.000Z">
+<meta property="article:modified_time" content="2020-06-09T15:42:06.114Z">
 <meta property="article:author" content="RomeoMo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ftp.bmp.ovh/imgs/2019/09/588399b3fe6a6077.png">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/06/09/tI0TXV.png">
 
     
     <link rel="alternative" href="/atom.xml" title="RomeoMo" type="application/atom+xml">
@@ -104,14 +104,14 @@
 		
 		<h4 id="说明：-本文来自Medium，作者：Anoop-Raveendran"><a href="#说明：-本文来自Medium，作者：Anoop-Raveendran" class="headerlink" title="说明： 本文来自Medium，作者：Anoop Raveendran"></a><strong>说明：</strong> 本文来自<a href="https://medium.com/front-end-weekly/javascript-event-loop-explained-4cd26af121d4" target="_blank" rel="noopener">Medium</a>，作者：<a href="https://medium.com/@anooprav7" target="_blank" rel="noopener">Anoop Raveendran</a></h4><h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>“JavaScript 的异步和单线程是怎样实现的？”简单来说，JavaScript 是单线程的但异步并不是在 JavaScript 中实现的，而是基于浏览器中 JavaScript 内核之上实现的并且通过浏览器 APIs 进行访问。</p>
 <p>现在我试着通过两个简单的片段详细解释事件循环。</p>
-<h2 id="基础结构"><a href="#基础结构" class="headerlink" title="基础结构"></a>基础结构</h2><p><img src="https://ftp.bmp.ovh/imgs/2019/09/588399b3fe6a6077.png" alt="浏览器主要组件概述"></p>
+<h2 id="基础结构"><a href="#基础结构" class="headerlink" title="基础结构"></a>基础结构</h2><p><img src="https://s1.ax1x.com/2020/06/09/tI0TXV.png" alt="浏览器主要组件概述"></p>
 <ul>
 <li><strong>堆（Heap）</strong>—— 对象存储在堆中，堆表示了内存中一个大的非结构化的区域。</li>
 <li><strong>栈（Stack）</strong>—— 这个表示了 JavaScript 代码执行时的单线程。函数的调用组成了栈的帧（详情见下面的描述）。</li>
 <li><strong>浏览器或是 Web APIs</strong> 是在浏览器中实现的，能从浏览器和电脑系统得到数据并且在此基础上执行复杂的事情。这些并不属于 JavaScript 语言本身，而是基于浏览器中 JavaScript 内核之上实现的，为你在使用 JavaScript 代码提供了额外的超能力。 举个栗子🌰，<a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation" target="_blank" rel="noopener">地理位置定位 API </a> 提供了一些简单的 JavaScript 方法来检索位置数据，例如在 Google Map 中标记你的位置。在其背后的实现，浏览器其实是调用了一些复杂的底层代码（比如 C++）和设备的 GPS 硬件（或是任何可以定义位置信息）来获取位置信息，返回到浏览器中并在你的 JavaScript 代码中使用。对开发者来言，这些 API 抽象了复杂度。</li>
 </ul>
 <h2 id="片段1：详细解释"><a href="#片段1：详细解释" class="headerlink" title="片段1：详细解释"></a>片段1：详细解释</h2><p>现在我们有一个主函数包含了在两个 console.log 语句分别在控制台输出 “A” 和 “C”。在两者之间，有一个等待 0 毫秒的 setTimeOut 打印 “B” 的函数。</p>
-<p><img src="https://ftp.bmp.ovh/imgs/2019/09/b5f9768d18ef3327.png" alt="执行过程的内部实现"></p>
+<p><img src="https://s1.ax1x.com/2020/06/09/tI0HmT.png" alt="执行过程的内部实现"></p>
 <ol>
 <li>首先是调用主函数（作为帧）加入到栈中。随后浏览器把 console.log(‘A’) 作为第一条语句加入到栈。这条语句执行完成并且此帧弹出。于是在控制台展示了字母 “A”。</li>
 <li>下一条语句（ 回调为 exec() 且等待0毫秒，执行的setTimeout() ），推入了执行栈（call stack）并开始执行。setTimeout 函数调用的浏览器的 APIs 用于等待执行回调函数。这一帧（使用 setTimeOut）弹出并且完成交由浏览器。</li>
@@ -122,7 +122,7 @@
 <blockquote><p>所以在 setTimeout（函数，延迟时间）中的延迟参数，并不是函数延迟执行的准确时间。它代表在此之后某个时间点执行功能的最短等待时间。</p>
 </blockquote>
 
-<h2 id="片段2：深入理解"><a href="#片段2：深入理解" class="headerlink" title="片段2：深入理解"></a>片段2：深入理解</h2><p><img src="https://ftp.bmp.ovh/imgs/2019/09/73037e271fc40076.png" alt="深入解释事件循环"></p>
+<h2 id="片段2：深入理解"><a href="#片段2：深入理解" class="headerlink" title="片段2：深入理解"></a>片段2：深入理解</h2><p><img src="https://s1.ax1x.com/2020/06/09/tI0o60.png" alt="深入解释事件循环"></p>
 <ul>
 <li>runWhileLoopForNSeconds() 函数表示的和名字一致。其会不停的检查经过的时间是否等于此函数传入的第二个参数。重要的是记住 while 循环（与其他语言类似）是一个阻塞语句，意味着，它的执行是发生在执行栈中并且不会使用浏览器 APIs。所以它会阻塞后续的语句，直到完成执行。</li>
 <li>所以就上方的代码，尽管 setTimeout 只需等待 0 毫秒并且 while 循环执行 3 秒， 回调函数 exec() 语句卡在消息队列 3 秒。直到 3 秒以后 while 循环一直在执行栈中运行（单线程）。在执行栈为空之后，回调函数 exec() 才移动到执行栈并开始执行。</li>
@@ -203,6 +203,10 @@
 		
 		  
 			<li><a href="/categories/CSS/" title="CSS">CSS<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Deno/" title="Deno">Deno<sup>1</sup></a></li>
 		  
 		
 		  
