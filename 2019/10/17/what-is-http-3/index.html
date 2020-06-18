@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-CN">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
   
     <title>HTTP/3 是什么？ | RomeoMo</title>
@@ -11,20 +11,20 @@
     
 
     
-    <meta name="description" content="说明： 本文来自Medium，作者：Grigor Khachatryan文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。这段时间在研究 HTTP&#x2F;2 的相关知识，没想到 HTTP&#x2F;3 也在酝酿中，于是乎找到一篇介绍 HTTP&#x2F;3 的文章，学习并在此进行记录。  HTTP-over-QUIC 这个实验性的协议会被命名为 HTTP&#x2F;3，IETF 的一位成员披露了这条消息。 从 HTTP&#x2F;">
+    <meta name="description" content="说明： 本文来自Medium，作者：Grigor Khachatryan文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。这段时间在研究 HTTP/2 的相关知识，没想到 HTTP/3 也在酝酿中，于是乎找到一篇介绍 HTTP/3 的文章，学习并在此进行记录。  HTTP-over-QUIC 这个实验性的协议会被命名为 HTTP/3，IETF 的一位成员披露了这条消息。 从 HTTP/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTTP&#x2F;3 是什么？">
 <meta property="og:url" content="http://romeomo.me/2019/10/17/what-is-http-3/index.html">
 <meta property="og:site_name" content="RomeoMo">
-<meta property="og:description" content="说明： 本文来自Medium，作者：Grigor Khachatryan文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。这段时间在研究 HTTP&#x2F;2 的相关知识，没想到 HTTP&#x2F;3 也在酝酿中，于是乎找到一篇介绍 HTTP&#x2F;3 的文章，学习并在此进行记录。  HTTP-over-QUIC 这个实验性的协议会被命名为 HTTP&#x2F;3，IETF 的一位成员披露了这条消息。 从 HTTP&#x2F;">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s1.ax1x.com/2020/06/08/tfEAd1.gif">
-<meta property="og:image" content="https://s1.ax1x.com/2020/06/08/tfu3wQ.gif">
-<meta property="article:published_time" content="2019-10-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-06-08T08:22:53.365Z">
-<meta property="article:author" content="RomeoMo">
+<meta property="og:description" content="说明： 本文来自Medium，作者：Grigor Khachatryan文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。这段时间在研究 HTTP/2 的相关知识，没想到 HTTP/3 也在酝酿中，于是乎找到一篇介绍 HTTP/3 的文章，学习并在此进行记录。  HTTP-over-QUIC 这个实验性的协议会被命名为 HTTP/3，IETF 的一位成员披露了这条消息。 从 HTTP/">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/10/ed8e728764c1fd32.gif">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/10/13869dc51fbc75ca.gif">
+<meta property="og:updated_time" content="2019-10-23T12:30:31.999Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s1.ax1x.com/2020/06/08/tfEAd1.gif">
+<meta name="twitter:title" content="HTTP&#x2F;3 是什么？">
+<meta name="twitter:description" content="说明： 本文来自Medium，作者：Grigor Khachatryan文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。这段时间在研究 HTTP/2 的相关知识，没想到 HTTP/3 也在酝酿中，于是乎找到一篇介绍 HTTP/3 的文章，学习并在此进行记录。  HTTP-over-QUIC 这个实验性的协议会被命名为 HTTP/3，IETF 的一位成员披露了这条消息。 从 HTTP/">
+<meta name="twitter:image" content="https://ftp.bmp.ovh/imgs/2019/10/ed8e728764c1fd32.gif">
 
     
     <link rel="alternative" href="/atom.xml" title="RomeoMo" type="application/atom+xml">
@@ -36,13 +36,9 @@
     <link rel="apple-touch-icon" href="/img/jacman.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
-    
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/%02.css">
-<link rel="stylesheet" href="/.css">
-
-<meta name="generator" content="Hexo 4.2.1"></head>
-
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
   <body>
     <header>
       
@@ -102,7 +98,7 @@
 	<div class="article-content">
 		
 		<h4 id="说明：-本文来自Medium，作者：Grigor-Khachatryan"><a href="#说明：-本文来自Medium，作者：Grigor-Khachatryan" class="headerlink" title="说明： 本文来自Medium，作者：Grigor Khachatryan"></a><strong>说明：</strong> 本文来自<a href="https://medium.com/devgorilla/what-is-http-3-94335c57823f" target="_blank" rel="noopener">Medium</a>，作者：<a href="https://medium.com/@Grigorkh" target="_blank" rel="noopener">Grigor Khachatryan</a></h4><h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>这段时间在研究 HTTP/2 的相关知识，没想到 HTTP/3 也在酝酿中，于是乎找到一篇介绍 HTTP/3 的文章，学习并在此进行记录。</p>
-<p><img src="https://s1.ax1x.com/2020/06/08/tfEAd1.gif" alt="HTTP/3"></p>
+<p><img src="https://ftp.bmp.ovh/imgs/2019/10/ed8e728764c1fd32.gif" alt="HTTP/3"></p>
 <p>HTTP-over-QUIC 这个实验性的协议会被命名为 HTTP/3，IETF 的一位成员披露了这条消息。</p>
 <p>从 HTTP/1.1（发布于1999年）到  <a href="https://medium.com/@Grigorkh/why-we-need-to-use-http-2-in-2017-e9e38d95a5e5" target="_blank" rel="noopener">HTTP/2</a> 已经过了许多年，而在 2019 年将大大推动 HTTP/3 的发展。</p>
 <p>HTTP/3 由 Google 的 QUIC 协议发展而来。它开始于 Mark Nottingham 的<a href="https://mailarchive.ietf.org/arch/msg/quic/RLRs4nB1lwFCZ_7k0iuz0ZBa35s" target="_blank" rel="noopener">建议</a>。</p>
@@ -117,7 +113,7 @@
 <li>连接迁移（Connection migration） </li>
 </ul>
 <p>Google<a href="https://blog.chromium.org/2015/04/a-quic-update-on-googles-experimental.html" target="_blank" rel="noopener">说</a>，从 Chrome 到 Google 服务器的所有请求中，大约有一半是通过 QUIC 提供的，并且他们还在继续增加 QUIC 的占比，最终使其成为Google 客户端——Chrome 以及移动 apps 到 Google 服务器之间的默认传输方式。Google 计划正式向 IETF 提出 QUIC，使其成为一个网络标准，但首先还需要做一些工作，比如更新线路标准并将其实现从 SPDY-over-QUIC 更新为 HTTP2-over-QUIC（当前的 <a href="https://tools.ietf.org/html/draft-ietf-quic-http-16#page-4" target="_blank" rel="noopener">HTTP-over-QUIC 协议草案</a> 使用最新发布的 TLS 1.3 协议）。在接下来的几个月内，Google 打算减少握手开销以便用于更好的服务器扩展，提升前向纠错和改善拥塞避免，同时增加对多路径链接（multipath connections）的支持。</p>
-<p><img src="https://s1.ax1x.com/2020/06/08/tfu3wQ.gif" alt="HTTPS over TCP + TLS vs HTTPS over QUIC"></p>
+<p><img src="https://ftp.bmp.ovh/imgs/2019/10/13869dc51fbc75ca.gif" alt="HTTPS over TCP + TLS vs HTTPS over QUIC"></p>
 <p>reddit 的<a href="https://www.reddit.com/user/AyrA_ch" target="_blank" rel="noopener">一位用户</a>对 TCP 和 QUIC 的区分有个很好的解释：</p>
 <p>开发 TCP 的时候需要通过比现在更大丢包率的网络进行数据包传递，并且当时的计算机系统需要更长的时间来响应 TCP 消息。例如，即便在 5 秒内无法完成 TCP 握手，主机的链接超时仍为 20 秒，即使在你不太可能获得响应的情况下。长时间的延迟是网络应用存在停滞时间过长的原因。我们无法更改这个 70 年代产生的协议，尽管在看到可靠性以及速度有很大提升的情况下。</p>
 <p>在最大限度的与当前 TCP 兼容，而不是最终减少不会改变包的默认值的情况下，协议开发者开始使用 UDP 并在此基础上实现自己 TCP。 向 IPv6 的转变是修改 TCP 诸多问题的理想时间，例如大部分的超时，窗口尺寸（window size）以及 TCP 的慢启动。有些值可以在你的操作系统中调整，但是最烦人的超时是不能调整的。如果你终止已经有 5 秒超时的一条 TCP 套接字（TCP socket）， 操作系统依旧需要为此保持打开状态，直到 20 秒以后结束，这会消耗系统资源。</p>
@@ -158,14 +154,6 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2020/05/24/what-is-deno-and-will-it-replace-nodejs/" title="Deno 是什么，它能代替 NodeJS 吗？">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Deno 是什么，它能代替 NodeJS 吗？</span>
-</a>
-</div>
-
 
 <div class="next">
 <a href="/2019/09/27/cssom/"  title="介绍 CSSOM">
@@ -201,11 +189,9 @@
 		  
 		
 		  
-			<li><a href="/categories/Deno/" title="Deno">Deno<sup>1</sup></a></li>
+			<li><a href="/categories/Full-Stack/" title="Full Stack">Full Stack<sup>3</sup></a></li>
 		  
 		
-		  
-			<li><a href="/categories/Full-Stack/" title="Full Stack">Full Stack<sup>3</sup></a></li>
 		  
 		
 		  
@@ -278,7 +264,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2020 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2019 
 		
 		<a href="/about" target="_blank" title="RomeoMo">RomeoMo</a>
 		
