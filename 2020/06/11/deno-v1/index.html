@@ -1,0 +1,484 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Deno 1.0 | RomeoMo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="RomeoMo">
+    
+
+    
+    <meta name="description" content="说明： 本文来自 Deno ,作者：Ryan Dahl, Bert Belder, and Bartek Iwańczuk文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。本文不翻译鸣谢部分。 动态语言是有用的工具。脚本允许用户快速高效的将复杂的系统连接在一起，并且在不需要关心诸如内存管理或者构建系统等细节中表达想法。最近几年，像 Rust 以及 Go 这样的语言，使机器代码更易生成；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deno 1.0">
+<meta property="og:url" content="http://romeomo.me/2020/06/11/deno-v1/index.html">
+<meta property="og:site_name" content="RomeoMo">
+<meta property="og:description" content="说明： 本文来自 Deno ,作者：Ryan Dahl, Bert Belder, and Bartek Iwańczuk文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。本文不翻译鸣谢部分。 动态语言是有用的工具。脚本允许用户快速高效的将复杂的系统连接在一起，并且在不需要关心诸如内存管理或者构建系统等细节中表达想法。最近几年，像 Rust 以及 Go 这样的语言，使机器代码更易生成；">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/06/15/NphfbQ.jpg">
+<meta property="article:published_time" content="2020-06-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-06-18T09:05:30.313Z">
+<meta property="article:author" content="RomeoMo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/06/15/NphfbQ.jpg">
+
+    
+    <link rel="alternative" href="/atom.xml" title="RomeoMo" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/%02.css">
+<link rel="stylesheet" href="/.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="RomeoMo" title="RomeoMo"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="RomeoMo">RomeoMo</a></h1>
+				<h2 class="blog-motto">种一棵树最好的时间是十年前，而后是现在</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:romeomo.me">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2020/06/11/deno-v1/" title="Deno 1.0" itemprop="url">Deno 1.0</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="RomeoMo" target="_blank" itemprop="author">RomeoMo</a>
+		
+  <p class="article-time">
+    <time datetime="2020-06-10T16:00:00.000Z" itemprop="datePublished"> 发表于 2020-06-11</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<h4 id="说明：-本文来自-Deno-作者：Ryan-Dahl-Bert-Belder-and-Bartek-Iwanczuk"><a href="#说明：-本文来自-Deno-作者：Ryan-Dahl-Bert-Belder-and-Bartek-Iwanczuk" class="headerlink" title="说明： 本文来自 Deno ,作者：Ryan Dahl, Bert Belder, and Bartek Iwańczuk"></a><strong>说明：</strong> 本文来自 <a href="https://deno.land/v1" target="_blank" rel="noopener">Deno</a> ,作者：Ryan Dahl, Bert Belder, and Bartek Iwańczuk</h4><h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。本文不翻译鸣谢部分。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。本文不翻译鸣谢部分。" class="headerlink" title="文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。本文不翻译鸣谢部分。"></a>文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。本文不翻译鸣谢部分。</h3><p><img src="https://s1.ax1x.com/2020/06/15/NphfbQ.jpg" alt="Deno 1.0"></p>
+<p>动态语言是有用的工具。脚本允许用户快速高效的将复杂的系统连接在一起，并且在不需要关心诸如内存管理或者构建系统等细节中表达想法。最近几年，像 Rust 以及 Go 这样的语言，使机器代码更易生成；这些项目使得计算机基础架构获得了极大的发展。然而，我们认为拥有一个强大的脚本环境来处理各种问题依旧重要。</p>
+<p>JavaScript 是最广泛使用的动态语言，运行于各种浏览器中。大量程序员精通 JavaScript，并且已经在优化其执行方面投入了大量精力。通过如 ECMA 这样的组织的建立，JavaScript 得到了谨慎并且持续的进步。我们相信 JavaScript 是动态语言工具的必然选择；无论是在浏览器环境还是作为独立进程。</p>
+<p>我们是这块实践的先行者，Node.js 被证明是非常成功的平台。Node.js 足以构建 Web 开发工具、创建独立进程以及无数其他案例。在 2009 设计 Node 时，JavaScript 是截然不同的。出于必要，Node 发明了一些概念，这些概念随后由标准组织采用，并以不同的方式添加到语言中。在 <a href="https://www.youtube.com/watch?v=M3BM9TB-8yA" target="_blank" rel="noopener">《Node 的设计问题》</a> （译者注：安利这个演讲，一定要看哦。）演讲中，提供了更多细节。由于 Node 已经有大量的使用，使得这一系统发展变得困难并且缓慢。</p>
+<p>随着 JavaScript 的更新，以及 TypeScript 的加入，构建 Node 项目可能会变得很艰难，涉及到管理构建系统和其他繁重的工具，这使动态语言丧失了乐趣。除此之外，通过 NPM 存储库从根本上集中了链接到外部库的机制，与 web 的理念并相冲突。</p>
+<p>我们认为 JavaScript 和相关的软件基础架构已经发生了足够的变化，值得进行简化。我们寻求一种有趣且高效的脚本环境，可用于多种任务。</p>
+<h3 id="用于命令行脚本的-web-浏览器"><a href="#用于命令行脚本的-web-浏览器" class="headerlink" title="用于命令行脚本的 web 浏览器"></a>用于命令行脚本的 web 浏览器</h3><p>Deno 是一种在 web 浏览器之外用于执行 JavaScript 和 TypeScript 的全新运行时（runtime）。</p>
+<p>Deno 试图提供一个独立的工具来快速编写复杂功能的脚本。Deno 是（并且永远是）一个单一的可执行文件。正如 web 浏览器，它知道如何获取外部代码。在 Deno 中，单个文件无需任何其他工具即可定义任意复杂的行为。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; serve &#125; <span class="keyword">from</span> <span class="string">"https://deno.land/std@0.50.0/http/server.ts"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="keyword">await</span> (<span class="keyword">const</span> req <span class="keyword">of</span> serve(&#123; <span class="attr">port</span>: <span class="number">8000</span> &#125;)) &#123;</span><br><span class="line">  req.respond(&#123; <span class="attr">body</span>: <span class="string">"Hello World\n"</span> &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这里，只需一行代码，一个完整的 HTTP 服务器作为一个模块即添加完成。不需要额外的配置文件，也不要提前安装，只需要：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deno run example.js</span><br></pre></td></tr></table></figure>
+
+<p>与浏览器一致，代码默认运行于安全的沙盒中。代码无法访问硬件、打开网络连接或者是在没有许可的情况下进行任何潜在的恶意操作。浏览器提供了访问摄像头和麦克风的 API，但前提是通过用户的认证。Deno 在终端中提供类似的行为。上面的示例在没有标明 <em>–allow-net</em> 下会失败。</p>
+<p>Deno 小心的不要偏离标准的浏览器 JavaScript API。当然，并不是每个浏览器 API 都与 Deno 相关，但无论它们在哪里，Deno 都不会偏离标准。</p>
+<h3 id="TypeScript-的默认支持"><a href="#TypeScript-的默认支持" class="headerlink" title="TypeScript 的默认支持"></a>TypeScript 的默认支持</h3><p>我们希望 Deno 适用于广泛的问题领域：从简单的一行代码，到复杂的服务端商业逻辑。随着程序变得越来越复杂，有一定的类型检测变得越来越重要。TypeScript 是 JavaScript 语言的扩展，允许用户选择性地提供类型信息。</p>
+<p>Deno 在不需要任何外部工具下支持 TypeScript，内置 TypeScript 是其设计理念。<em>deno types</em> 命令是 Deno 提供的所有内容提供类型声明。Deno 的所有标准模块由 TypeScript 编写而成。</p>
+<h3 id="Promises-贯穿其中"><a href="#Promises-贯穿其中" class="headerlink" title="Promises 贯穿其中"></a>Promises 贯穿其中</h3><p>在 javascript 之前 Node 设计时就引入了 Promises 或者是 async / await 的概念。Node 的 Promises 对应的是 EventEmitter，所有重要的 API 都基于这个，比如 sockets 和 HTTP。抛去对编程时使用 async / await 的好处来看，EventEmitter 存在背压（back-pressure）问题。拿 TCP 套接字（socket）来举例，套接字在接收到传入数据包时将发出“ 数据（data） ”事件。这些“ 数据 ”的回调将以不受限制的方式发出，从而使事件（events）充满整个过程。由于 Node 会持续接受数据事件，基础 TCP 套接字没有适当的背压，远程发送端并不知道服务端已经过载而继续发送数据。为了降低此风险，添加了 <em>pause()</em> 方法。解决了这个问题，但需要额外代码。由于只有在进程非常忙碌的时候，这个问题才会出现，导致 Node 程序充满了数据。结果是系统严重的尾延迟（tail latency）。</p>
+<p>在 Deno 中，套接字依旧是异步的，但在接受新数据时，需要用户明确使用 <em>read()</em>。正确的构造接收套接字而不需要额外的暂停语义。这不是 TCP 套接字所独有的。系统的最底级别绑定层从根本上与 Promise 相关联，我们称之为“ ops ”。Deno 中所有的绑定是 Promises 的一种实现或提升。</p>
+<p>Rust 有自己类似于 Promise 的抽象，称之为 Futures。通过 “ op ” 抽象，Deno 使基于 future 的 Rust API 巧妙的与 JavaScript 的 Promises 绑定在一起。</p>
+<h3 id="Rust-API"><a href="#Rust-API" class="headerlink" title="Rust API"></a>Rust API</h3><p>我们提供的主要组件是 Deno 命令行界面（CLI）。今天（5 月 13日）CLI 正式发布了 1.0 版本。 Deno 并不是一个单一的程序，而是设计为 Rust 的集合，允许在不同层级的集成。</p>
+<p><a href="https://crates.io/crates/deno_core" target="_blank" rel="noopener">deno_core</a> 是 Deno 的基础，它不依赖 TypeScript 和 <a href="https://tokio.rs/" target="_blank" rel="noopener">Tokio</a>。它简单的提供了 Op 和 Resource 模块。deno_core 提供了绑定 Rust futures 和 JavaScript promises 的组织方式。因此 CLI 完全建立在 deno_core 之上。</p>
+<p><a href="https://crates.io/crates/rusty_v8" target="_blank" rel="noopener">rusty_v8</a> 为 Rust 和 V8 的 C++ API 提供了高质量的绑定。这个 API 试着还原所有原先 C++ API。这是零成本的绑定，Rust 暴露出的对象正是 C++ 的操作的对象（举个🌰，之前 Rust V8 的绑定尝试强制使用持久句柄（handles））。这个模块提供了建立于 Github Actions CI 之上的二进制代码，同样也允许用户从头编译 V8 并调整它的构建配置。所有 V8 源代码均在此模块进行分发。最后，rusty_v8 试着成为一个安全的接口。现在还没有 100% 完成，但我们在逐步接近于此。能够以一种安全的方式与像 V8 这样复杂的 VM 交互是非常令人惊奇的，这让我们发现 Deno 本身存在许多困难的bug。</p>
+<h3 id="稳定性"><a href="#稳定性" class="headerlink" title="稳定性"></a>稳定性</h3><p>我们承诺在 Deno 中维护一个稳定的 API。Deno 有大量的接口和模块，所以对我们来说的”稳定”保持透明是很重要的。我们创建用于与操作系统交互的 JavaScript API 都可以在“ Deno ”命名空间中找到（例如 <em>Deno.open()</em>）。这些已经被仔细检查过了，我们定会对它们做向后兼容的更改。</p>
+<p>在使用 <em>–unstable</em> 命令行标志之前，所有还没有稳定的方法将会被隐藏。你可以在<a href="https://doc.deno.land/https/raw.githubusercontent.com/denoland/deno/master/cli/js/lib.deno.unstable.d.ts" target="_blank" rel="noopener">这</a>查看没有稳定的接口。在接下来的时间中，其中的 API 也会逐渐稳定下来。</p>
+<p>在全局命名空间中，你可以发现各种其他对象（例如 <em>setTimeout()</em> 和 <em>fetch()</em>）。我们努力保持这些接口和浏览器中一致，但是如果发现意外的不兼容性，我们将进行更正。浏览器标准定义了自身的接口，而不是我们。任意错误的更正只会是修复问题，而不是更新接口。如果与浏览器的标准 API 不兼容，可能会在大版本发布之前进行修复。</p>
+<p>Deno 还有很多 Rust API，比如 deno_core 和 rusty_v8 模块。这些 API 都还没有达到1.0。我们会继续对它们进行迭代。</p>
+<h3 id="局限性"><a href="#局限性" class="headerlink" title="局限性"></a>局限性</h3><p>需要了解的是 Deno 并不是 Node 的一个翻版，它是一种全新的实现。Deno 只是开发了两年，而开发 Node 已经超过十年。基于到对 Deno 的兴趣，我们希望它能继续发展和成熟。</p>
+<p>对于一些应用来说，Deno 是一种好的选择，对于其他的则不是。这取决于需求。我们想说明 Deno 的局限性来帮助人们选择 Deno 。</p>
+<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p>不幸的是，令人沮丧是许多用户会发现与现有 JavaScript 工具缺乏兼容性。Deno 通常与 Node（npm）包不兼容。初步建立在 <a href="https://deno.land/std/node/" target="_blank" rel="noopener">https://deno.land/std/node/</a>，但还远远没有完善。尽管 Deno 采取了强硬的方法来简化模块系统，最终 Deno 和 Node 是有着相似的目标和相似的系统。随着时间的推移，我们希望 Deno 可以开箱即用的运行比 Node 更多的系统。</p>
+<h3 id="HTTP-服务器性能"><a href="#HTTP-服务器性能" class="headerlink" title="HTTP 服务器性能"></a>HTTP 服务器性能</h3><p><a href="https://deno.land/benchmarks" target="_blank" rel="noopener">我们持续追踪 Deno HTTP 服务器的性能</a>。每秒 25000 次使用 Deno HTTP 服务器请求 hello-world 最多延迟 1.3 毫秒。类似的 Node 程序每秒请求 34000 次，而最大的延迟在 2 ~ 300 毫秒之间。</p>
+<p>Deno 的 HTTP 服务器是在原生 TCP 套接字之上的 TypeScript 中实现的。Node 的 HTTP 服务器是由 C 语言编写的，并暴露给 JavaScript 的高级绑定。我们阻止了将本地 HTTP 服务器绑定到 Deno 的冲动，因为我们想优化 TCP 套接字层，以及更普遍的 op 接口。</p>
+<p>Deno 是适当的异步服务器，能应付每秒 25000 次的请求，可以满足大多数的需求。（如果不满足，JavaScript 可能并不是最好的选择。）不仅如此，我们预计，由于普遍使用了Promise (之前已经讨论过了)，Deno 在尾延迟方面表现得更好。综上所述，我们的确相信该系统还有更多的性能优势，希望在将来的版本中实现这一目标。</p>
+<h3 id="TSC-的瓶颈"><a href="#TSC-的瓶颈" class="headerlink" title="TSC 的瓶颈"></a>TSC 的瓶颈</h3><p>Deno 在内部使用微软的 TypeScript 编译器来进行类型检测和生成 JavaScript 。与使用 V8 直接编译 JavaScript 相比，这样做非常缓慢。之前，我们想使用“ V8 快照（V8 Snapshots）”来大幅度提升性能。快照当然有帮助，但它仍然很慢。我们认为可以在现有 TypeScript 编译器的基础上进行一些改进，但是很明显，类型检查最终需要在Rust中实现。这是个艰巨的任务，可能在短时间内不会发生；但它可以让开发人员在经历关键路径中提供数量级上的性能改进。TSC 需要移植到 Rust上。如果你对这个问题感兴趣，请联系我们。</p>
+<h3 id="插件-挂件"><a href="#插件-挂件" class="headerlink" title="插件 / 挂件"></a>插件 / 挂件</h3><p>我们有一个使用自定义 ops 来对 Deno 运行时进行初步扩展的插件系统。这个接口还在开发中，已经标记为非稳定版。因此，访问 Deno 提供的系统以外的本地系统是很困难。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Deno/">Deno</a>
+</div>
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://romeomo.me/2020/06/11/deno-v1/" data-title="Deno 1.0 | RomeoMo" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2020/05/24/what-is-deno-and-will-it-replace-nodejs/"  title="Deno 是什么，它能代替 NodeJS 吗？">
+ <strong>下一篇：</strong><br/> 
+ <span>Deno 是什么，它能代替 NodeJS 吗？
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/CSS/" title="CSS">CSS<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Deno/" title="Deno">Deno<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Full-Stack/" title="Full Stack">Full Stack<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Functional-Programming/" title="Functional Programming">Functional Programming<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/HTTP/" title="HTTP">HTTP<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/JavaScript/" title="JavaScript">JavaScript<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/水/" title="水">水<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://sell.moe" target="_blank" title="橙的记事本">橙的记事本</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> You Will Never Know Your Limits. <br/>
+			Do What You Want To.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2020 
+		
+		<a href="/about" target="_blank" title="RomeoMo">RomeoMo</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?7ffe19d7e813fdc4fe4f13d3026c7ae2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

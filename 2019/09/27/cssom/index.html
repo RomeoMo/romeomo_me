@@ -1,7 +1,7 @@
 
  <!DOCTYPE HTML>
 <html lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="UTF-8">
   
     <title>介绍 CSSOM | RomeoMo</title>
@@ -11,21 +11,21 @@
     
 
     
-    <meta name="description" content="说明： 本文来自Varvy，作者：Patrick Sexton文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。前不久，在微博上看到貘吃馍香在吐槽  于是去搜索和查阅了相关资料，也做了一些复习，加上 W3C Plus 相关文章收费，因此在此做个记录。 CSSOM 是什么？ CSSOM 代表着 CSS Object Model CSSOM 基本上是页面中 CSS 的“映射” CSSOM">
+    <meta name="description" content="说明： 本文来自Varvy，作者：Patrick Sexton文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。前不久，在微博上看到貘吃馍香在吐槽  于是去搜索和查阅了相关资料，也做了一些复习，加上 W3C Plus 相关文章收费，因此在此做个记录。 CSSOM 是什么？ CSSOM 代表着 CSS Object Model CSSOM 基本上是页面中 CSS 的“映射” CSSOM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="介绍 CSSOM">
 <meta property="og:url" content="http://romeomo.me/2019/09/27/cssom/index.html">
 <meta property="og:site_name" content="RomeoMo">
-<meta property="og:description" content="说明： 本文来自Varvy，作者：Patrick Sexton文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。前不久，在微博上看到貘吃馍香在吐槽  于是去搜索和查阅了相关资料，也做了一些复习，加上 W3C Plus 相关文章收费，因此在此做个记录。 CSSOM 是什么？ CSSOM 代表着 CSS Object Model CSSOM 基本上是页面中 CSS 的“映射” CSSOM">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/10/ab5ed35f02f25aa3.png">
-<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/10/d423a6d9b195d974.png">
-<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/10/3b52ab0861f42eaa.png">
-<meta property="og:updated_time" content="2019-10-15T09:12:57.079Z">
+<meta property="og:description" content="说明： 本文来自Varvy，作者：Patrick Sexton文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。前不久，在微博上看到貘吃馍香在吐槽  于是去搜索和查阅了相关资料，也做了一些复习，加上 W3C Plus 相关文章收费，因此在此做个记录。 CSSOM 是什么？ CSSOM 代表着 CSS Object Model CSSOM 基本上是页面中 CSS 的“映射” CSSOM">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/06/08/tfECM4.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/06/08/tfAzGT.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/06/08/tfESRU.png">
+<meta property="article:published_time" content="2019-09-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-06-08T08:18:08.527Z">
+<meta property="article:author" content="RomeoMo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="介绍 CSSOM">
-<meta name="twitter:description" content="说明： 本文来自Varvy，作者：Patrick Sexton文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。前不久，在微博上看到貘吃馍香在吐槽  于是去搜索和查阅了相关资料，也做了一些复习，加上 W3C Plus 相关文章收费，因此在此做个记录。 CSSOM 是什么？ CSSOM 代表着 CSS Object Model CSSOM 基本上是页面中 CSS 的“映射” CSSOM">
-<meta name="twitter:image" content="https://ftp.bmp.ovh/imgs/2019/10/ab5ed35f02f25aa3.png">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/06/08/tfECM4.png">
 
     
     <link rel="alternative" href="/atom.xml" title="RomeoMo" type="application/atom+xml">
@@ -37,9 +37,13 @@
     <link rel="apple-touch-icon" href="/img/jacman.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
+    
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/%02.css">
+<link rel="stylesheet" href="/.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
   <body>
     <header>
       
@@ -99,7 +103,7 @@
 	<div class="article-content">
 		
 		<h4 id="说明：-本文来自Varvy，作者：Patrick-Sexton"><a href="#说明：-本文来自Varvy，作者：Patrick-Sexton" class="headerlink" title="说明： 本文来自Varvy，作者：Patrick Sexton"></a><strong>说明：</strong> 本文来自<a href="https://varvy.com/performance/cssom.html" target="_blank" rel="noopener">Varvy</a>，作者：<a href="https://plus.google.com/+PatrickSexton" target="_blank" rel="noopener">Patrick Sexton</a></h4><h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>前不久，在微博上看到貘吃馍香在吐槽</p>
-<p><img src="https://ftp.bmp.ovh/imgs/2019/10/ab5ed35f02f25aa3.png" alt="貘大的吐槽"></p>
+<p><img src="https://s1.ax1x.com/2020/06/08/tfECM4.png" alt="貘大的吐槽"></p>
 <p>于是去搜索和查阅了相关资料，也做了一些复习，加上 W3C Plus <a href="https://www.w3cplus.com/javascript/cssom-css-typed-om.html" target="_blank" rel="noopener">相关文章</a>收费，因此在此做个记录。</p>
 <h2 id="CSSOM-是什么？"><a href="#CSSOM-是什么？" class="headerlink" title="CSSOM 是什么？"></a>CSSOM 是什么？</h2><ul>
 <li>CSSOM 代表着 CSS Object Model</li>
@@ -107,7 +111,7 @@
 <li>CSSOM 与 CSS 的关系类似于 DOM 之于 HTML</li>
 <li>CSSOM 与 DOM 相结合使浏览器渲染页面</li>
 </ul>
-<p><img src="https://ftp.bmp.ovh/imgs/2019/10/d423a6d9b195d974.png" alt="CSSOM"></p>
+<p><img src="https://s1.ax1x.com/2020/06/08/tfAzGT.png" alt="CSSOM"></p>
 <p>CSSOM 是页面渲染不可缺少的部分。</p>
 <p>CSSOM 是 关键路径渲染（<a href="https://varvy.com/pagespeed/critical-render-path.html" target="_blank" rel="noopener">critical rendering path</a>）的基础和关键，理解 CSSOM 做了什么是对页面优化（页面加载更快）的重要部分。</p>
 <h2 id="CSSOM-做了什么？"><a href="#CSSOM-做了什么？" class="headerlink" title="CSSOM 做了什么？"></a>CSSOM 做了什么？</h2><p>CSSOM 将样式表中的规则映射到页面上需要样式化的内容。</p>
@@ -131,7 +135,7 @@
 <p>让我们快速的了解这几点，然后为了优化页面我们能做什么。</p>
 <h3 id="1-CSSOM-阻止任何东西的渲染"><a href="#1-CSSOM-阻止任何东西的渲染" class="headerlink" title="1. CSSOM 阻止任何东西的渲染"></a>1. CSSOM 阻止任何东西的渲染</h3><p>所有 CSS 是阻塞式渲染（意味着直到 CSS 处理完成，将不会展示任何东西）。</p>
 <p>这样做的原因是，如果在 CSS 执行之前就展现 web 页面，那你看到的 web 页面是没有样式的，然后过了一会，页面有了样式。如果这样做的话，体验是相当糟糕的。</p>
-<p><img src="https://ftp.bmp.ovh/imgs/2019/10/3b52ab0861f42eaa.png" alt="CSS 阻塞式渲染"></p>
+<p><img src="https://s1.ax1x.com/2020/06/08/tfESRU.png" alt="CSS 阻塞式渲染"></p>
 <p>由于 CSSOM 用来帮助创建渲染树，如果在页面中的 CSS 不能高效的完成，那么将会产生严重的问题。</p>
 <p>主要问题是加载 web 页面时的白屏。</p>
 <h3 id="2-当载入新页面时，CSSOM-需要重新构建"><a href="#2-当载入新页面时，CSSOM-需要重新构建" class="headerlink" title="2. 当载入新页面时，CSSOM 需要重新构建"></a>2. 当载入新页面时，CSSOM 需要重新构建</h3><p>对你来说，这个可能不是相当明显，但确实是非常重要的一点。</p>
@@ -219,9 +223,11 @@
 		  
 		
 		  
-			<li><a href="/categories/Full-Stack/" title="Full Stack">Full Stack<sup>3</sup></a></li>
+			<li><a href="/categories/Deno/" title="Deno">Deno<sup>2</sup></a></li>
 		  
 		
+		  
+			<li><a href="/categories/Full-Stack/" title="Full Stack">Full Stack<sup>3</sup></a></li>
 		  
 		
 		  
@@ -294,7 +300,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2019 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2020 
 		
 		<a href="/about" target="_blank" title="RomeoMo">RomeoMo</a>
 		
