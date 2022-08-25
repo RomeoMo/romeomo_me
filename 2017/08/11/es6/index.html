@@ -4,26 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>使用MEAN成为JavaScript的全栈工程师 | RomeoMo</title>
+    <title>ES6 &amp; ES7 脑图 | RomeoMo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="RomeoMo">
     
 
     
-    <meta name="description" content="说明：本文来自SitePoint，作者：Adam Bretz 文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。自从1995年发布以来，JavaScript 有了很大的发展。我们已经看到了ECMAScript 规格的几个重要版本及单页Web应用的崛起，这些都被客户端的JavaScript 架构支持。起初，所有的JavaScript 开发和创新都只能在浏览器实现，这是由于浏览器是支持这种">
+    <meta name="description" content="说明：本图基于 Nicholas C. Zakas《深入理解ES6》豆瓣链接及相关 MDN 文档">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用MEAN成为JavaScript的全栈工程师">
-<meta property="og:url" content="http://romeomo.me/2015/05/10/full-stack-javaScript-development-with-MEAN/index.html">
+<meta property="og:title" content="ES6 &amp; ES7 脑图">
+<meta property="og:url" content="http://romeomo.me/2017/08/11/es6/index.html">
 <meta property="og:site_name" content="RomeoMo">
-<meta property="og:description" content="说明：本文来自SitePoint，作者：Adam Bretz 文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。自从1995年发布以来，JavaScript 有了很大的发展。我们已经看到了ECMAScript 规格的几个重要版本及单页Web应用的崛起，这些都被客户端的JavaScript 架构支持。起初，所有的JavaScript 开发和创新都只能在浏览器实现，这是由于浏览器是支持这种">
+<meta property="og:description" content="说明：本图基于 Nicholas C. Zakas《深入理解ES6》豆瓣链接及相关 MDN 文档">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2019/09/18dc117a46810b53.jpg">
-<meta property="article:published_time" content="2015-05-09T16:00:00.000Z">
-<meta property="article:modified_time" content="2019-09-23T07:32:06.000Z">
+<meta property="og:image" content="https://s1.ax1x.com/2022/08/25/v2CrjK.png">
+<meta property="article:published_time" content="2017-08-11T09:32:08.000Z">
+<meta property="article:modified_time" content="2022-08-25T08:16:51.229Z">
 <meta property="article:author" content="RomeoMo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ftp.bmp.ovh/imgs/2019/09/18dc117a46810b53.jpg">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/08/25/v2CrjK.png">
 
     
     <link rel="alternative" href="/atom.xml" title="RomeoMo" type="application/atom+xml">
@@ -87,32 +87,20 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/05/10/full-stack-javaScript-development-with-MEAN/" title="使用MEAN成为JavaScript的全栈工程师" itemprop="url">使用MEAN成为JavaScript的全栈工程师</a>
+      <a href="/2017/08/11/es6/" title="ES6 &amp; ES7 脑图" itemprop="url">ES6 &amp; ES7 脑图</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="RomeoMo" target="_blank" itemprop="author">RomeoMo</a>
 		
   <p class="article-time">
-    <time datetime="2015-05-09T16:00:00.000Z" itemprop="datePublished"> 发表于 2015-05-10</time>
+    <time datetime="2017-08-11T09:32:08.000Z" itemprop="datePublished"> 发表于 2017-08-11</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
-		<p><strong>说明：</strong>本文来自<a href="http://www.sitepoint.com/full-stack-javascript-development-mean/" target="_blank" rel="noopener">SitePoint</a>，作者：<a href="http://www.sitepoint.com/author/abretz/" target="_blank" rel="noopener">Adam Bretz</a></p>
-<h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站/原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>自从1995年发布以来，JavaScript 有了很大的发展。我们已经看到了ECMAScript 规格的几个重要版本及单页Web应用的崛起，这些都被客户端的JavaScript 架构支持。起初，所有的JavaScript 开发和创新都只能在浏览器实现，这是由于浏览器是支持这种语言的唯一环境。随着时间的推移，Web开发者开始意识到JavaScript 的很多实用的特性（没有块级作用域，事件驱动以及与许多其他语言相似）使其能对其他环境而不仅仅是浏览器。这促使JavaScript 社区进行了第二轮创新最终使JavaScript 运行于服务端和数据库。</p>
-<p>突然，了解JavaScript 不会把你自动归类在“前端开发者”中。如果你熟悉这门语言，你能建立服务器和数据库，以及丰富前端用户体验。现在，第一次有了开发者能通过只用JavaScript 就能建立整个Web应用。这种趋势常常被称为“全栈的JavaScript”或“纯JavaScript解决方案”。组合了四种流行的JavaScript 技术：MongoDB, Express, AngularJS, and Node.js 建立Web应用受到欢迎了，这被成为“MEAN 全栈”。</p>
-<p><img src="https://ftp.bmp.ovh/imgs/2019/09/18dc117a46810b53.jpg" alt="MEAN"></p>
-<ol>
-<li><strong>MongoDB</strong> - MongoDB 是一种NoSQL的数据库。它是一种文件导向数据库管理系统, 而不是由行、列和表格组成的。主要用于存储JSON 数据；这完美契合由JavaScript 编写的应用。数据的关系性操作和严厉遵守图式的缺乏，这使MongoDB 具有快速，伸缩性强及易用的特性。</li>
-<li><strong>Express</strong> - Express是一种轻量级的服务器级框架，被用来使Node 搭建的Web服务更简单及更强的可维护性。框架的灵活性提供给开发者高度的可定制性以及足够“低端”的用于操作Node 框架。Express 提供简单方式使用路由，cookie管理，静态文件服务和其他HTTP模块用于搭建企业级的服务。</li>
-<li><strong>AngularJS</strong> - AngularJS 是一种客户端富应用的MVC JavaScript 框架。它可用于建立健壮的和复杂的单页Web应用。双向数据绑定和基于HTML的框架语言。AngularJS 也有称为“命令”的特性允许你拓展HTML的新的属性，甚至是新的元素。AngularJS 同样也经过了高强度的测试，这可能不会成为开发的有趣方面，但这对于AngularJS 来说是重要的并且经常管理客户端代码。最后，AngularJS 提供了协议和最佳实践用于帮助开发者建立客户端的解决方案。</li>
-<li><strong>Node</strong> - Node 是JavaScript 的运行环境用于建立服务及网络应用。它提供了在客户端的所有JavaScript 的特性并且加入了文件以及网络I/O。Node使用了Google 的V8引擎（同样也用于Google Chrome）用于执行JavaScript 。其同样也是非常活跃的开发者社区和Node 模块的生态系统（Express就是其中一个模块）的基础。与此同时，也有很多其他在客户端的JavaScript 实践，到目前为止，就粉丝和大公司而言都成功采用的。</li>
-</ol>
-<p>如果你像我一样都是JavaScript 的粉丝，你应该兴奋于只用JavaScript 就可以建立整个Web应用的前景。MEAN全栈是相当受欢迎的话题，在网络上也有很多如何开始这些技术的信息。事实上，有很多关于这项技术的信息，仅仅是有关“开始”的就可以“令人畏惧”。</p>
-<h2 id="译者按"><a href="#译者按" class="headerlink" title="译者按"></a>译者按</h2><p>最后作者介绍自己和Colin Ihrig共同编写的<a href="https://www.sitepoint.com/premium/books/mean1/?_ga=1.182917350.1798398705.1429097916" target="_blank" rel="noopener">“MEAN全栈”</a>书籍 有兴趣的朋友可以关注一下。</p>
-<p>正如作者所说，仅仅使用JavaScript 就能建立这个Web应用是一件令人兴奋地事情。</p>
+		<h3 id="说明：本图基于-Nicholas-C-Zakas《深入理解ES6》豆瓣链接及相关-MDN-文档"><a href="#说明：本图基于-Nicholas-C-Zakas《深入理解ES6》豆瓣链接及相关-MDN-文档" class="headerlink" title="说明：本图基于 Nicholas C. Zakas《深入理解ES6》豆瓣链接及相关 MDN 文档"></a>说明：本图基于 Nicholas C. Zakas《深入理解ES6》<a href="https://book.douban.com/subject/27072230/" target="_blank" rel="noopener">豆瓣链接</a>及相关 MDN 文档</h3><p><img src="https://s1.ax1x.com/2022/08/25/v2CrjK.png" alt="ES6 &amp; ES7"></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -120,7 +108,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Full-Stack/">Full Stack</a>
+  <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
 </div>
 
 
@@ -130,7 +118,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://romeomo.me/2015/05/10/full-stack-javaScript-development-with-MEAN/" data-title="使用MEAN成为JavaScript的全栈工程师 | RomeoMo" data-tsina="" class="share clearfix">
+	  <div data-url="http://romeomo.me/2017/08/11/es6/" data-title="ES6 &amp; ES7 脑图 | RomeoMo" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -144,18 +132,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/05/24/becoming-truly-full-stack-unrealistic-try/" title="成为全栈工程师或许只是梦想，但你值得为此奋斗">
+ <a href="/2018/02/24/javascript-event-loop-explained/" title="详解 JavaScript 事件循环">
   <strong>上一篇：</strong><br/>
   <span>
-  成为全栈工程师或许只是梦想，但你值得为此奋斗</span>
+  详解 JavaScript 事件循环</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/04/18/being-full-stack-developer/"  title="成为全栈工程师">
+<a href="/2016/04/21/currying-in-functional-javascript/"  title="初学者的柯里化指南">
  <strong>下一篇：</strong><br/> 
- <span>成为全栈工程师
+ <span>初学者的柯里化指南
 </span>
 </a>
 </div>
