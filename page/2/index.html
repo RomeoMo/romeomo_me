@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -186,6 +186,108 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/05/03/map-foreach-filter-reduce/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/logo.png">
+      <meta itemprop="name" content="RomeoMo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RomeoMo">
+      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | RomeoMo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/05/03/map-foreach-filter-reduce/" class="post-title-link" itemprop="url">函数式系列(1)：Map, ForEach 及 Filter, Reduce</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-05-03 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-03T00:00:00+08:00">2019-05-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Functional-Programming/" itemprop="url" rel="index"><span itemprop="name">Functional Programming</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Map-ForEach-及-Filter-Reduce"><a href="#Map-ForEach-及-Filter-Reduce" class="headerlink" title="Map, ForEach 及 Filter, Reduce"></a>Map, ForEach 及 Filter, Reduce</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map">map</a>, <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">foreach</a>, 及 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">filter</a>, <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">reduce</a> 为典型的函数式编程实践，均为高阶函数（Higher-Order Functions）。</p>
+<p>高阶函数指的是一个函数能作为值传递到另一个函数中，或者，一个函数可以作为另一个函数的输出。</p>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><ul>
+<li>map filter 和 reduce 均有返回值，而 forEach 是没有返回值的</li>
+<li>forEach 能终止循化，而 map, filter 和 reduce 是无法终止的</li>
+</ul>
+<p>map filter 和 reduce 的区别如图所示。<br><img src="https://ftp.bmp.ovh/imgs/2019/09/cf6513f815170214.png" alt="map, filter 和 reduce"></p>
+<h2 id="map-filter-和-reduce"><a href="#map-filter-和-reduce" class="headerlink" title="map filter 和 reduce"></a>map filter 和 reduce</h2><h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>map 是将数组的每一项通过同样的操作进行变换，得到一个新的数组，且新数组与原数组的长度是一致的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var array1 = [1, 4, 9, 16];</span><br><span class="line"></span><br><span class="line">const map1 = array1.map(x =&gt; x * 2);</span><br><span class="line"></span><br><span class="line">console.log(map1); // 输出：[2, 8, 18, 32]</span><br><span class="line"></span><br><span class="line">console.log(array1); // 输出： [1, 4, 9, 16]</span><br></pre></td></tr></table></figure>
+
+<h3 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h3><p>filter 是保留数组中符合条件的数据，得到一个新的数组，且新数组的长度不大于原数组的长度。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var array1 = [1, 4, 9, 16];</span><br><span class="line"></span><br><span class="line">const filter1 = array1.filter(x =&gt; x &gt; 0);</span><br><span class="line"></span><br><span class="line">console.log(filter1); // 输出：[1, 4, 9, 16]</span><br><span class="line"></span><br><span class="line">console.log(array1); // 输出： [1, 4, 9, 16]</span><br></pre></td></tr></table></figure>
+
+<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><p>reduce 是合并数组的每一项数据，最终返回一个新的数据。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var array1 = [1, 2, 3, 4];</span><br><span class="line"></span><br><span class="line">const reducer = (accumulator, currentValue) =&gt; accumulator + currentValue;</span><br><span class="line"></span><br><span class="line">console.log(array1.reduce(reducer, 5)); // 输出：10</span><br><span class="line"></span><br><span class="line">console.log(array1); // 输出： [1, 2, 3, 4]</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：<strong>三个例子中，原来的数组是</strong>没有</strong>发生任何改变的。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><p><a target="_blank" rel="noopener" href="https://medium.com/python-pandemonium/never-write-for-loops-again-91a5a4c84baf">“You (Probably) Don’t Need For-Loops”</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://medium.com/@RhinoDavid/processing-javascript-arrays-with-foreach-map-reduce-bf40d1e5eac4">“Breaking the Loop: How to use higher order functions to process arrays in JavaScript”</a>;</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://eloquentjavascript.net/05_higher_order.html">Higher-Order Functions</a></p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
