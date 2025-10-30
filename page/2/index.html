@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -186,6 +186,131 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/09/27/cssom/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/logo.png">
+      <meta itemprop="name" content="RomeoMo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RomeoMo">
+      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | RomeoMo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/09/27/cssom/" class="post-title-link" itemprop="url">介绍 CSSOM</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-09-27 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-27T00:00:00+08:00">2019-09-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="说明：-本文来自Varvy，作者：Patrick-Sexton"><a href="#说明：-本文来自Varvy，作者：Patrick-Sexton" class="headerlink" title="说明： 本文来自Varvy，作者：Patrick Sexton"></a><strong>说明：</strong> 本文来自<a target="_blank" rel="noopener" href="https://varvy.com/performance/cssom.html">Varvy</a>，作者：<a target="_blank" rel="noopener" href="https://plus.google.com/+PatrickSexton">Patrick Sexton</a></h4><h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>前不久，在微博上看到貘吃馍香在吐槽</p>
+<p><img src="https://s1.ax1x.com/2020/06/08/tfECM4.png" alt="貘大的吐槽"></p>
+<p>于是去搜索和查阅了相关资料，也做了一些复习，加上 W3C Plus <a target="_blank" rel="noopener" href="https://www.w3cplus.com/javascript/cssom-css-typed-om.html">相关文章</a>收费，因此在此做个记录。</p>
+<h2 id="CSSOM-是什么？"><a href="#CSSOM-是什么？" class="headerlink" title="CSSOM 是什么？"></a>CSSOM 是什么？</h2><ul>
+<li>CSSOM 代表着 CSS Object Model</li>
+<li>CSSOM 基本上是页面中 CSS 的“映射”</li>
+<li>CSSOM 与 CSS 的关系类似于 DOM 之于 HTML</li>
+<li>CSSOM 与 DOM 相结合使浏览器渲染页面</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/06/08/tfAzGT.png" alt="CSSOM"></p>
+<p>CSSOM 是页面渲染不可缺少的部分。</p>
+<p>CSSOM 是 关键路径渲染（<a target="_blank" rel="noopener" href="https://varvy.com/pagespeed/critical-render-path.html">critical rendering path</a>）的基础和关键，理解 CSSOM 做了什么是对页面优化（页面加载更快）的重要部分。</p>
+<h2 id="CSSOM-做了什么？"><a href="#CSSOM-做了什么？" class="headerlink" title="CSSOM 做了什么？"></a>CSSOM 做了什么？</h2><p>CSSOM 将样式表中的规则映射到页面上需要样式化的内容。</p>
+<p>为此，CSSOM 做了许多复杂的操作，但是 CSSOM 的最终是将样式映射到这些样式需要去的地方。</p>
+<p>（更精确的说，CSSOM 定义了令牌（token）并将其隐藏的链接到树结构的节点中。页面中节点及其样式的所有映射就是 CSS Object Mode）。</p>
+<h2 id="浏览器使用-CSSOM-渲染页面"><a href="#浏览器使用-CSSOM-渲染页面" class="headerlink" title="浏览器使用 CSSOM 渲染页面"></a>浏览器使用 CSSOM 渲染页面</h2><p>为了渲染页面，浏览器必须执行一些操作。此时，我们将其简化一下并讨论四个主要步骤，这些步骤将说明 CSSOM 的重要性。</p>
+<ol>
+<li>浏览器执行 HTML 并构建出 DOM（Document Object Model）。</li>
+<li>浏览器执行 CSS 并构建出 CSSOM（CSS Object Model）。</li>
+<li>浏览器组合 DOM 和 CSSOM 用于创建渲染树。</li>
+<li>浏览器展示 web 页面。</li>
+</ol>
+<p>如上所示，CSSOM 确实是展示 web 页面的重要部分。</p>
+<h2 id="好消息"><a href="#好消息" class="headerlink" title="好消息"></a>好消息</h2><p>为了优化 web 页面，其实你不需要了解 CSSOM 到底是如何工作的。</p>
+<p>你只需要知道 CSSOM 的几个关键点就可以对页面进行非常实际的优化。</p>
+<ol>
+<li>知道CSSOM 阻止任何东西的渲染。</li>
+<li>知道当载入新页面时，CSSOM 需要重新构建。</li>
+<li>知道渲染页面时，javascript 和 CSS 之间的关系。</li>
+</ol>
+<p>让我们快速的了解这几点，然后为了优化页面我们能做什么。</p>
+<h3 id="1-CSSOM-阻止任何东西的渲染"><a href="#1-CSSOM-阻止任何东西的渲染" class="headerlink" title="1. CSSOM 阻止任何东西的渲染"></a>1. CSSOM 阻止任何东西的渲染</h3><p>所有 CSS 是阻塞式渲染（意味着直到 CSS 处理完成，将不会展示任何东西）。</p>
+<p>这样做的原因是，如果在 CSS 执行之前就展现 web 页面，那你看到的 web 页面是没有样式的，然后过了一会，页面有了样式。如果这样做的话，体验是相当糟糕的。</p>
+<p><img src="https://s1.ax1x.com/2020/06/08/tfESRU.png" alt="CSS 阻塞式渲染"></p>
+<p>由于 CSSOM 用来帮助创建渲染树，如果在页面中的 CSS 不能高效的完成，那么将会产生严重的问题。</p>
+<p>主要问题是加载 web 页面时的白屏。</p>
+<h3 id="2-当载入新页面时，CSSOM-需要重新构建"><a href="#2-当载入新页面时，CSSOM-需要重新构建" class="headerlink" title="2. 当载入新页面时，CSSOM 需要重新构建"></a>2. 当载入新页面时，CSSOM 需要重新构建</h3><p>对你来说，这个可能不是相当明显，但确实是非常重要的一点。</p>
+<p>意思是尽管你的 CSS 被缓存了，并不意味着 CSSOM 是针对每个页面构建的。</p>
+<p>用户访问其他页面时，CSSOM 必须重新进行构建（尽管浏览器可能已经缓存了所需要的所有 CSS 文件）。</p>
+<p>换句话说，如果你的 CSS 是劣质和庞大并且编写相当糟糕的，那么在渲染页面时会带来副作用。</p>
+<h3 id="3-渲染页面时，javascript-和-CSS-之间的关系"><a href="#3-渲染页面时，javascript-和-CSS-之间的关系" class="headerlink" title="3. 渲染页面时，javascript 和 CSS 之间的关系"></a>3. 渲染页面时，javascript 和 CSS 之间的关系</h3><p>在 web 页面中使用 javascript 可能（或者说经常）会阻塞 CSSOM 的构建。</p>
+<p>简而言之—页面展现需要 CSSOM。如果 CSSOM 没有完成，页面将不会展现任何内容。如果阻塞了 CSSOM 的构建，那么 CSSOM 将会花费更长的时间，意思是页面展现将会花费更长的时间。如果 javascript 阻塞了 CSSOM 的构建，那么用户将会花费比原本更多时间停留在空白页面。</p>
+<h2 id="CSSOM-的优化方法"><a href="#CSSOM-的优化方法" class="headerlink" title="CSSOM 的优化方法"></a>CSSOM 的优化方法</h2><p>这里有些最佳实践用于加快 CSSOM 的构建（因此页面能加载的更快）。</p>
+<ul>
+<li>优化<a target="_blank" rel="noopener" href="https://varvy.com/pagespeed/critical-render-path.html">关键路径渲染</a></li>
+<li>确保页面在<a target="_blank" rel="noopener" href="https://varvy.com/pagespeed/style-script-order.html">加载 javascript 前加载 css</a></li>
+<li>确保<a target="_blank" rel="noopener" href="https://varvy.com/pagespeed/optimize-css-delivery.html">优化 CSS 交付（CSS delivery）</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1080,162 +1205,6 @@
 <p>如果你像我一样都是JavaScript 的粉丝，你应该兴奋于只用JavaScript 就可以建立整个Web应用的前景。MEAN全栈是相当受欢迎的话题，在网络上也有很多如何开始这些技术的信息。事实上，有很多关于这项技术的信息，仅仅是有关“开始”的就可以“令人畏惧”。</p>
 <h2 id="译者按"><a href="#译者按" class="headerlink" title="译者按"></a>译者按</h2><p>最后作者介绍自己和Colin Ihrig共同编写的<a target="_blank" rel="noopener" href="https://www.sitepoint.com/premium/books/mean1/?_ga=1.182917350.1798398705.1429097916">“MEAN全栈”</a>书籍 有兴趣的朋友可以关注一下。</p>
 <p>正如作者所说，仅仅使用JavaScript 就能建立这个Web应用是一件令人兴奋地事情。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2015/04/18/being-full-stack-developer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/logo.png">
-      <meta itemprop="name" content="RomeoMo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RomeoMo">
-      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | RomeoMo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/04/18/being-full-stack-developer/" class="post-title-link" itemprop="url">成为全栈工程师</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2015-04-18 00:00:00" itemprop="dateCreated datePublished" datetime="2015-04-18T00:00:00+08:00">2015-04-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2019-09-18 00:00:00" itemprop="dateModified" datetime="2019-09-18T00:00:00+08:00">2019-09-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Full-Stack/" itemprop="url" rel="index"><span itemprop="name">Full Stack</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><pre><code>时间：2019年9月18号
-说明：更新图片，原文链接链接已失效，更新备用链接
-</code></pre>
-<p>**说明：**本文来自<a target="_blank" rel="noopener" href="http://www.sitepoint.com/full-stack-developer/">SitePoint</a>，<a target="_blank" rel="noopener" href="https://qianggan.wordpress.com/2017/02/01/being-a-full-stack-developer/">备用链接</a>，作者：<a target="_blank" rel="noopener" href="http://www.sitepoint.com/author/gfekete/">George Fekete</a></p>
-<h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>成为Web开发者进入Web开发领域的门槛依然很低，但Web开发变得越来越复杂。</p>
-<p>整个行业的动态特性使需求常常转移到最受欢迎和“下个更好”的工具以及编程语言。</p>
-<p>从前开发者只需一种编程语言或者掌握某特定流程的要求已经一去不复返了。现在为了做更棒的事情，开发者需要了解跨领域的大量知识。</p>
-<h2 id="全栈工程师意味什么？"><a href="#全栈工程师意味什么？" class="headerlink" title="全栈工程师意味什么？"></a>全栈工程师意味什么？</h2><p>全栈指的是工程师能懂得后端及前端的技术。</p>
-<p>更详细的说，这意味着开发者能在PHP, HTML,CSS,JavaScript以及它们之间进行工作，并且能把PS的设计转化成前端代码</p>
-<p>全栈工程师不需要成为所有领域和技术的大家，因为这几乎不可能。他只需要能在这些技术上掌握的知道即可，但这也是很多事情需要去做。</p>
-<h2 id="全栈在2000年和现在意味着什么？"><a href="#全栈在2000年和现在意味着什么？" class="headerlink" title="全栈在2000年和现在意味着什么？"></a>全栈在2000年和现在意味着什么？</h2><p><img src="https://s1.ax1x.com/2020/06/08/tfEiL9.png" alt="being-full-stack-developer"></p>
-<p>2000年已经是很久之前了，当时PHP 4.0才发布。是的，4.0。回到当年，一个优秀的开发者知道一些HTML，CSS和一点过程式的PHP，因为直到5.0版本才出现合适的面向对象。</p>
-<p>LAMP (Linux – Apache – MySQL – Perl&#x2F;PHP)框架在那些年处于统治地位，只有很少或根本没有其他选择。在21世纪初，如果有人使用版本控制会被认为不是技术极客就是巫师。但这现在很少能听到了。</p>
-<p>所以，我们划分现在全栈工程师需要掌握的关键技术：</p>
-<h3 id="系统管理"><a href="#系统管理" class="headerlink" title="系统管理"></a><strong>系统管理</strong></h3><ol>
-<li>Linux及基本的shell命令</li>
-<li>云计算：Amazon, Rackspace等</li>
-<li>后台处理：Gearman, Redis</li>
-<li>搜索：Elasticsearch, Sphinx, Solr</li>
-<li>缓存：Varnish, Memcached, APC &#x2F; OpCache</li>
-<li>监控：Nagios</li>
-</ol>
-<p>Linux驱动着绝大多数的网站，这在Web开发上是事实上的操作系统（这里不讨论.NET）。此外，全栈工程师应该知道如何使用云进行工作，Amazon&#x2F;Rackspace等供应商都提供了API。</p>
-<p>搜索在大部分的网站上是必须的部分。开发者需要直到如何建立以及使用如Sphinx或Elasticsearch的搜索服务。</p>
-<p>缓存同样很重要，比如<a target="_blank" rel="noopener" href="http://zh.wikipedia.org/wiki/Varnish_cache">Varnish</a>-反向网站快取服务器, Memcached及opcode缓存。全栈工程师需要知道这些是什么及如何使用。</p>
-<h3 id="Web开发工具"><a href="#Web开发工具" class="headerlink" title="Web开发工具"></a><strong>Web开发工具</strong></h3><ol>
-<li>版本控制：Git, Mercurial, SVN</li>
-<li>虚拟化：VirtualBox, Vagrant, Docker</li>
-<li>现在，不做版本控制是不能接受的，即便是单人开发也是如此。</li>
-</ol>
-<p>使用虚拟化工具,在每个项目的基础使用单独的开发环境是容易获得的，至少在建立VirtualBox和Vagrant是很容易的。</p>
-<p>如果你想在Vagrant上进行工作，Ruby和shell的基本命令是必不可很少的。</p>
-<h3 id="后端技术"><a href="#后端技术" class="headerlink" title="后端技术"></a><strong>后端技术</strong></h3><ol>
-<li>Web服务器：Apache,Nginx</li>
-<li>编程语言：PHP,NodeJS,Ruby</li>
-<li>数据库：MySQL,MongoDB,Cassandra,Redis,SQL&#x2F;JSON</li>
-<li>Apache和Nginx是Web开发的基准。全栈工程师应该知道如何建立这些应用使之服务于网站。</li>
-</ol>
-<p>PHP是需要熟练掌握的，NodeJS，Ruby同样也需要掌握。</p>
-<p>除了Web服务器和编程语言外，数据库管理也是全栈工程师需要击败的野兽。</p>
-<p>全栈工程师需要知道关系型数据库（比如MySQL, PostgreSQL）与非关系型数据库（例如MongoDB, Redis或者Cassandra）的区别，同样也需要知道XML &#x2F; JSON的语法。</p>
-<h3 id="前端语言"><a href="#前端语言" class="headerlink" title="前端语言"></a><strong>前端语言</strong></h3><ol>
-<li>HTML &#x2F; HTML5: Semantic web</li>
-<li>CSS &#x2F; CSS3: LESS, SASS, 媒体查询</li>
-<li>JavaScript: jQuery, AngularJS, Knockout, etc.</li>
-<li>浏览器兼容性</li>
-<li>响应式布局</li>
-<li>AJAX, JSON, XML, WebSocket</li>
-</ol>
-<p>有趣的是，如果你想更好的呈现网站，最好知道浏览器的怪癖。</p>
-<p>JavaScript在早些年就是个笑话，但现在发展成为最流行和强大的语言。每天都会有新的方法论和框架提出，MVC， MVVM，MVP，Angular，Knockout， Ember等等。</p>
-<p>和HTML，CSS, JavaScript一起，全栈工程师应该知道响应式设计和使用媒体查询进行工作以及CSS预处理程序，例如LESS和SASS。</p>
-<p>使用AJAX或WebSockets与后端进行通信也是必须知道的。</p>
-<h3 id="设计"><a href="#设计" class="headerlink" title="设计"></a><strong>设计</strong></h3><ol>
-<li>网站设计转换成前端代码</li>
-<li>UI</li>
-<li>UX</li>
-</ol>
-<p>除了前端技术，全栈工程师应该知道根据设计(Photoshop&#x2F;Illustrator文件)，那些是可以使用HTML&#x2F;CSS&#x2F;JavaScript进行转化而那些不能。</p>
-<p>开发者可以不了解或者不使用提到的很多技术，比如Ruby或者是特定的Javascript库，但是它们之间都是相连的。</p>
-<p>比如，如果你需要知道Ruby命令才能建立Vagrant， 最基本的，比如你想操作DOM元素，jQuery是值得了解的。</p>
-<p><strong>移动端技术</strong>是另一个值得提到的种类。这是一个充满活力的行业并且接近于Web开发。</p>
-<ol>
-<li>iOS</li>
-<li>Android</li>
-<li>跨平台：PhoneGap, Appcelerator</li>
-</ol>
-<p>现在Web和移动开发的鸿沟依然很大，但这个差距在迅速逐渐缩小。</p>
-<p>全栈工程师同样也需要知道这些技术。</p>
-<h2 id="成为全栈工程师会更好吗？"><a href="#成为全栈工程师会更好吗？" class="headerlink" title="成为全栈工程师会更好吗？"></a>成为全栈工程师会更好吗？</h2><p>成为全栈工程师意味着队新技术抱有开放的态度，对此亲力亲，并且懂得使一个Web应用从概念设计到最终的产品发布。</p>
-<p>“全栈工程师”的理念并不意味着在所有游刃有余于所有的技术，毕竟专门化的存在是有原因的。它更像了解不同领域，能够聪明的与团队成员进行交流，并且成为解决方法的资源。</p>
-<p>全栈工程师会在未来的Web开发中扮演越来越重要的角色，特别是例如像<a target="_blank" rel="noopener" href="http://zh.wikipedia.org/wiki/DevOps">DevOps</a>之类的开发方法成为软件开发公司必不可少的部分时，代码开发者和管理者,谁负责代码部署和设置的之间的界限会越来越模糊。</p>
 
       
     </div>
