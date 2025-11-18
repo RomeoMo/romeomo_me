@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon-16x16.png">
+  <link rel="mask-icon" href="/uploads/logo.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="VI. Information Architecture38. What is Information Architecture? What: Information Architecture (IA) is the idea of giving a bunch of information some structure (i.e., organizing it, somehow). IA can">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（2）">
+<meta property="og:url" content="http://example.com/2025/05/18/ux-for-beginners-a-crash-course-in-100-short-lessons-2/index.html">
+<meta property="og:site_name" content="RomeoMo">
+<meta property="og:description" content="VI. Information Architecture38. What is Information Architecture? What: Information Architecture (IA) is the idea of giving a bunch of information some structure (i.e., organizing it, somehow). IA can">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-05-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-05-17T16:00:00.000Z">
+<meta property="article:author" content="RomeoMo">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2025/05/18/ux-for-beginners-a-crash-course-in-100-short-lessons-2/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2025/05/18/ux-for-beginners-a-crash-course-in-100-short-lessons-2/","path":"2025/05/18/ux-for-beginners-a-crash-course-in-100-short-lessons-2/","title":"《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（2）"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（2） | RomeoMo</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LWY0FNC2T7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LWY0FNC2T7');
+</script>
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">RomeoMo</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">种一棵树最好的时间是十年前，而后是现在</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#VI-Information-Architecture"><span class="nav-text">VI. Information Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#38-What-is-Information-Architecture"><span class="nav-text">38. What is Information Architecture?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#39-User-Stories"><span class="nav-text">39. User Stories</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#40-Types-of-Information-Architecture"><span class="nav-text">40. Types of Information Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#41-Static-and-Dynamic-Pages"><span class="nav-text">41. Static and Dynamic Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#42-What-is-a-Flow"><span class="nav-text">42. What is a Flow?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#43-Users-Don%E2%80%99t-Go-Backward"><span class="nav-text">43. Users Don’t Go Backward</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VII-Designing-Behavior"><span class="nav-text">VII Designing Behavior</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#44-Designing-with-Intention"><span class="nav-text">44. Designing with Intention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#45-Rewards-and-Punishments"><span class="nav-text">45. Rewards and Punishments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#46-Conditioning-and-Addiction"><span class="nav-text">46. Conditioning and Addiction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#47-Gamification"><span class="nav-text">47. Gamification</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#48-Social-Viral-Structure"><span class="nav-text">48. Social &#x2F; Viral Structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#49-How-to-Create-Trust"><span class="nav-text">49. How to Create Trust</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#50-How-Experience-Changes-Experience"><span class="nav-text">50. How Experience Changes Experience</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VIII-Visual-Design-Principles"><span class="nav-text">VIII Visual Design Principles</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#51-Visual-Weight-Contrast-and-Size"><span class="nav-text">51. Visual Weight (Contrast and Size)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#52-Color"><span class="nav-text">52. Color</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#53-Repetition-and-Pattern-Breaking"><span class="nav-text">53. Repetition and Pattern-Breaking</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#54-Line-Tension-and-Edge-Tension"><span class="nav-text">54. Line Tension and Edge Tension</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#55-Alignment-and-Proximity"><span class="nav-text">55. Alignment and Proximity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#56-Using-Motion-for-UX"><span class="nav-text">56. Using Motion for UX</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IX-Wireframes-and-Prototypes"><span class="nav-text">IX Wireframes and Prototypes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-a-Wireframe"><span class="nav-text">What is a Wireframe?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-isn%E2%80%99t-a-Wireframe"><span class="nav-text">What isn’t a Wireframe?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#59-Learn-Skills-Not-Tools"><span class="nav-text">59. Learn Skills, Not Tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#60-Avoid-Convenient-Examples"><span class="nav-text">60. Avoid Convenient Examples</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#61-What-is-a-Design-Pattern"><span class="nav-text">61. What is a Design Pattern ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#62-Z-Pattern-F-Pattern-Visual-Hierarchy"><span class="nav-text">62. Z-Pattern, F-Pattern, Visual Hierarchy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#63-Layout-Page-Framework"><span class="nav-text">63. Layout: Page Framework</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#64-Layout-The-Fold-Images-and-Headlines"><span class="nav-text">64. Layout: The Fold, Images, and Headlines</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#65-Layout-The-Axis-of-Interaction"><span class="nav-text">65. Layout: The Axis of Interaction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#66-Forms"><span class="nav-text">66. Forms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#67-Primary-and-Secondary-Buttons"><span class="nav-text">67. Primary and Secondary Buttons</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#68-Adaptive-and-Responsive-Design"><span class="nav-text">68. Adaptive and Responsive Design</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#69-To-Design-or-Redesign"><span class="nav-text">69. To Design or Redesign?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#70-Touch-versus-Mouse"><span class="nav-text">70. Touch versus Mouse</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="RomeoMo"
+      src="/uploads/logo.png">
+  <p class="site-author-name" itemprop="name">RomeoMo</p>
+  <div class="site-description" itemprop="description">关于技术、生活、工作的吐槽、感悟</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+  </nav>
+</div>
+
+          
+          
+            <div class="sidebar-inner sidebar-blogroll">
+              <div class="links-of-blogroll animated">
+                <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+                  友情链接
+                </div>
+                <ul class="links-of-blogroll-list">
+                    <li class="links-of-blogroll-item">
+                      <a href="https://sell.moe/" title="https:&#x2F;&#x2F;sell.moe&#x2F;" rel="noopener" target="_blank">橙的记事本</a>
+                    </li>
+                </ul>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/05/18/ux-for-beginners-a-crash-course-in-100-short-lessons-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/logo.png">
+      <meta itemprop="name" content="RomeoMo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RomeoMo">
+      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（2） | RomeoMo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（2）
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-05-18 00:00:00" itemprop="dateCreated datePublished" datetime="2025-05-18T00:00:00+08:00">2025-05-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/HCI/" itemprop="url" rel="index"><span itemprop="name">HCI</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="VI-Information-Architecture"><a href="#VI-Information-Architecture" class="headerlink" title="VI. Information Architecture"></a>VI. Information Architecture</h2><h3 id="38-What-is-Information-Architecture"><a href="#38-What-is-Information-Architecture" class="headerlink" title="38. What is Information Architecture?"></a>38. What is Information Architecture?</h3><ul>
+<li>What: <code>Information Architecture</code> (IA) is the idea of giving a bunch of information some structure (i.e., organizing it, somehow). IA can be relatively simple with a small project, and incredibly complicated with a large project. IA is invisible. To work with it, we need to draw a <code>site map</code>.</li>
+<li>Some general guidelines:<ul>
+<li>Just because it looks simple, doesn’t mean it makes sense.</li>
+<li>Keep it clear and readable.</li>
+<li>We usually draw top-to-bottom, not left-to-right.</li>
+<li>Don’t make a site map “fancy.” It’s a technical document, not a fashion show.</li>
+</ul>
+</li>
+<li>Deep or Flat<ul>
+<li>Deep: simpler menus, but more clicks to get where you’re going.</li>
+<li>Flat: includes more sections in the menu and requires less</li>
+</ul>
+</li>
+<li>If your site is deep and flat, that’s bad. You might want to simplify your goals, or design a good search as a core feature.</li>
+</ul>
+<h3 id="39-User-Stories"><a href="#39-User-Stories" class="headerlink" title="39. User Stories"></a>39. User Stories</h3><ul>
+<li>A user story describes one possible path a user can take in your site or app. It should be short, but complete. You will need many user stories to describe your whole design.</li>
+<li>Notice that nothing in the story tells me speciically how to solve or design those actions, just that they are possible. The purpose of these stories is to describe flows. Sequences of user choices. Not the final UI.</li>
+<li>A user story is basically a list of features or functions, and that has a major effect on the final solution.</li>
+<li>The UX Designer writes user stories to communicate to the team, not the other way around.</li>
+</ul>
+<h3 id="40-Types-of-Information-Architecture"><a href="#40-Types-of-Information-Architecture" class="headerlink" title="40. Types of Information Architecture"></a>40. Types of Information Architecture</h3><ul>
+<li><code>Categories</code>: When you click those categories, you expect to see content that its in that category.</li>
+<li><code>Tasks</code>: Another way to organize your site or app is by the goals the users need to achieve.</li>
+<li><code>Search</code>: If your site is very complex, or if it is mostly full of user-generated content, a search-based architecture like YouTube might make more sense.</li>
+<li><code>Time</code>: Design IA that changes with time(Time-based IA design).</li>
+<li><code>People</code>: Facebook—or any social network—is IA based on people.All of the pages are designed around who the information is about, and the relationships between them.</li>
+</ul>
+<h3 id="41-Static-and-Dynamic-Pages"><a href="#41-Static-and-Dynamic-Pages" class="headerlink" title="41. Static and Dynamic Pages"></a>41. Static and Dynamic Pages</h3><ul>
+<li><code>Static</code> Page: A static page (or screen) is the most basic form of a digital layout. It will look precisely the same every time, for every user. It is <code>hardcoded</code>.</li>
+<li><code>Dynamic</code> Page: A dynamic page is a page that isn’t always the same.<ul>
+<li>A dynamic page might react to your choices.</li>
+<li>A dynamic page might look different depending on the user.</li>
+<li>A dynamic page might act as a template for lots of content.</li>
+</ul>
+</li>
+<li>Static vs. Dynamic:<ul>
+<li>Static design is more about the exact layout.</li>
+<li>For dynamic pages you have to design containers, not the content itself.</li>
+</ul>
+</li>
+<li>Don’t be afraid to create useful limitations so users will make more effective choices.</li>
+</ul>
+<h3 id="42-What-is-a-Flow"><a href="#42-What-is-a-Flow" class="headerlink" title="42. What is a Flow?"></a>42. What is a Flow?</h3><ul>
+<li>Architecture without getting stuck or lost, and the easier it is for them to “flow” to where they want to go, the better your design will perform and the happier the users will be.</li>
+<li>It is more important to give people the right information at the right time so they know whether to turn left or right.</li>
+<li>Make sure there is always somewhere to go, and make sure the users know how to get there.</li>
+</ul>
+<h3 id="43-Users-Don’t-Go-Backward"><a href="#43-Users-Don’t-Go-Backward" class="headerlink" title="43. Users Don’t Go Backward"></a>43. Users Don’t Go Backward</h3><ul>
+<li>If users can always click forward, they never have to stop and decide where to go next. Decisions are hard. Doing the same thing over and over is easy.</li>
+</ul>
+<h2 id="VII-Designing-Behavior"><a href="#VII-Designing-Behavior" class="headerlink" title="VII Designing Behavior"></a>VII Designing Behavior</h2><h3 id="44-Designing-with-Intention"><a href="#44-Designing-with-Intention" class="headerlink" title="44. Designing with Intention"></a>44. Designing with Intention</h3><ul>
+<li>UX is the science of design. It’s all about results. But to get good results, you need to motivate users to be more effective. This also means that one UX design can be “more right” than another, regardless of which one everybody likes better. And we can prove it. Sometimes even the users prefer the wrong one!</li>
+</ul>
+<h3 id="45-Rewards-and-Punishments"><a href="#45-Rewards-and-Punishments" class="headerlink" title="45. Rewards and Punishments"></a>45. Rewards and Punishments</h3><ul>
+<li>The designer, can control what happens, that means you can control the feedback. Which means you can train your users by rewarding them for something you consider good, and punish them for something you consider bad.</li>
+<li>Pay attention to when users feel good and bad. Over time, those rewards and punishments can create lasting associations and behaviors that boost engagement through the roof, or crush your entire company.</li>
+</ul>
+<h3 id="46-Conditioning-and-Addiction"><a href="#46-Conditioning-and-Addiction" class="headerlink" title="46. Conditioning and Addiction"></a>46. Conditioning and Addiction</h3><ul>
+<li>People will do a little work or pay a little cash to get a reward, if the reward is worth it. But, the first reward should be free.</li>
+<li>Type of conditioning<ul>
+<li>Classical: Connect a signal of your choice to an existing behavior.</li>
+<li>Operant: Reward or punish a random action.</li>
+</ul>
+</li>
+<li>Focus on giving so there is a sense of progress over time. Plus, your users will become loyal instead of resenting you.</li>
+<li>Random rewards based on the quality of content—like blogging or social media comments — will raise the level of content overall.</li>
+</ul>
+<h3 id="47-Gamification"><a href="#47-Gamification" class="headerlink" title="47. Gamification"></a>47. Gamification</h3><p>two major elements of game design:</p>
+<ul>
+<li>Feedback Loops<ul>
+<li>motivation</li>
+<li>action</li>
+<li>feedback (emotion)</li>
+</ul>
+</li>
+<li>Progressive Challenges: it’s not about just getting it done anymore. It’s about getting it done better. To create progression, you merely have to create a bigger, better, harder way to do what the user already knows.</li>
+</ul>
+<h3 id="48-Social-Viral-Structure"><a href="#48-Social-Viral-Structure" class="headerlink" title="48. Social &#x2F; Viral Structure"></a>48. Social &#x2F; Viral Structure</h3><ul>
+<li>The Basic Formula: Action from User A &#x3D; Feedback for User B &#x3D; Content for User C</li>
+<li>Viral structure achieves a few things when done right:<ul>
+<li>2-in-1 actions</li>
+<li>Good shit ﬂoats</li>
+<li>Social proof</li>
+<li>Self-promotion</li>
+<li>Network saturation</li>
+</ul>
+</li>
+</ul>
+<h3 id="49-How-to-Create-Trust"><a href="#49-How-to-Create-Trust" class="headerlink" title="49. How to Create Trust"></a>49. How to Create Trust</h3><ol>
+<li>Professionalism: Part of that is visual design, part isn’t.</li>
+<li>Nothing is 100% positive or negative: Top-rated product reviews are both positive and negative. It has also been shown that app ratings and book reviews are most-trusted when they do not have all 5-star ratings.</li>
+<li>Democratize: As a group your users can be like a quality filter.</li>
+<li>Accountability: Trust can be built by showing information and by <code>hiding</code> it.</li>
+<li>Handle negativity with grace: When a company receives negative feedback and then deals with it gracefully in public they actually build more trust than positive feedback does.</li>
+<li>Keep users informed: It is better to tell the truth than let the user worry about it. Even when the truth isn’t the answer the users want.</li>
+<li>Use simple words: Just speak like a normal person would speak.</li>
+</ol>
+<h3 id="50-How-Experience-Changes-Experience"><a href="#50-How-Experience-Changes-Experience" class="headerlink" title="50. How Experience Changes Experience"></a>50. How Experience Changes Experience</h3><ul>
+<li>If you want millions of happy users, design for the distracted idiots, not the obsessed geniuses.</li>
+<li>Visible features will always be used more and discovered more than hidden features.</li>
+<li>The users will use fewer and fewer features. Not more and more.</li>
+<li>Habits are created very quickly in your users’ minds, so you should design a “fast way” to do key features, which might not be as obvious.</li>
+</ul>
+<h2 id="VIII-Visual-Design-Principles"><a href="#VIII-Visual-Design-Principles" class="headerlink" title="VIII Visual Design Principles"></a>VIII Visual Design Principles</h2><h3 id="51-Visual-Weight-Contrast-and-Size"><a href="#51-Visual-Weight-Contrast-and-Size" class="headerlink" title="51. Visual Weight (Contrast and Size)"></a>51. Visual Weight (Contrast and Size)</h3><ul>
+<li>Remember: visual weight is relative. All visual principles are about comparing a design element to whatever is around it.</li>
+<li>Contrast: The difference between light things and dark things is called contrast.</li>
+<li>Depth and Size: In the real world, we notice things that are close to us more than things that are far away.</li>
+<li>As a general rule, you want more important things to be bigger than less important things. This creates a visual “hierarchy” on the page and makes it easier to scan, but it also allows you to choose what the user notices first.</li>
+</ul>
+<h3 id="52-Color"><a href="#52-Color" class="headerlink" title="52. Color"></a>52. Color</h3><ul>
+<li>Sometimes color is function. Like traffic lights, or making the color of a popsicle match the flavor.</li>
+<li>If you don’t need to indicate something like that, let the UI designer choose colors. But if you do, let your wireframes do the talking.</li>
+<li>Colorful wireframes just get in the way of the functional details. Use colors where they matter, but don’t make your wireframes blue like blueprints, or dress them up for clients.</li>
+</ul>
+<h3 id="53-Repetition-and-Pattern-Breaking"><a href="#53-Repetition-and-Pattern-Breaking" class="headerlink" title="53. Repetition and Pattern-Breaking"></a>53. Repetition and Pattern-Breaking</h3><ul>
+<li>You could expect more people to click the options on the left, and fewer people to click the options on the right.</li>
+<li>Pattern-breaking can also lead the user’s eyes away from other important things. Before you can break a pattern, you have to make one.</li>
+</ul>
+<h3 id="54-Line-Tension-and-Edge-Tension"><a href="#54-Line-Tension-and-Edge-Tension" class="headerlink" title="54. Line Tension and Edge Tension"></a>54. Line Tension and Edge Tension</h3><ul>
+<li>Line Tension: The perception of a line or a “path” when there isn’t one. Our eyes will follow the path to see where it goes.</li>
+<li>Edge Tension: Layout-wise, this can be an excellent way to put more focus on something small, like a label. Or you can create visual paths leading to the button you want people to click.</li>
+</ul>
+<h3 id="55-Alignment-and-Proximity"><a href="#55-Alignment-and-Proximity" class="headerlink" title="55. Alignment and Proximity"></a>55. Alignment and Proximity</h3><ul>
+<li>Alignment: Different levels of content can be aligned. Information can be in a grid of rows and columns like a spreadsheet to create complex meaning.</li>
+<li>Proximity<ul>
+<li>The closeness or distance between two objects creates a feeling of those objects being related or unrelated. That distance is called proximity.</li>
+<li>In your designs, put related elements closer together and unrelated elements farther apart.</li>
+</ul>
+</li>
+</ul>
+<h3 id="56-Using-Motion-for-UX"><a href="#56-Using-Motion-for-UX" class="headerlink" title="56. Using Motion for UX"></a>56. Using Motion for UX</h3><ul>
+<li>If Motion Makes People Wait, It’s Bad</li>
+<li>If you made a list of the things your brain notices, in order of priority, motion would be first.</li>
+<li>If you are using motion to highlight key features or tell users where to go, straight lines are a good choice.</li>
+<li>Curved lines make people follow the curve - Like when you’re explaining your app for the first time.</li>
+</ul>
+<h2 id="IX-Wireframes-and-Prototypes"><a href="#IX-Wireframes-and-Prototypes" class="headerlink" title="IX Wireframes and Prototypes"></a>IX Wireframes and Prototypes</h2><h3 id="What-is-a-Wireframe"><a href="#What-is-a-Wireframe" class="headerlink" title="What is a Wireframe?"></a>What is a Wireframe?</h3><ul>
+<li>A wireframe is a technical document. Lines, boxes, labels. Maybe a color or two.</li>
+</ul>
+<h3 id="What-isn’t-a-Wireframe"><a href="#What-isn’t-a-Wireframe" class="headerlink" title="What isn’t a Wireframe?"></a>What isn’t a Wireframe?</h3><ul>
+<li>A wireframe is a planning document. It is a technical instruction document for the “builders.”</li>
+<li>Top 5 unforgivable (!) wireframe sins:<ol>
+<li>Wireframes are not a basic sketch: Explain early concepts&#x2F;thoughts in words and pictures, not with wireframes.</li>
+<li>Good wireframes take time: Wireframes are 90% thinking, 10% drawing. Make sure everyone respects the need for the 90% part.</li>
+<li>Wireframes aren’t presented in phases: Everything made by humans goes through “drafts” as we perfect our ideas, but wireframes are either ready or they’re not.</li>
+<li>Wireframes should be taken seriously: Plan enough time for wireframes—especially in large projects. Label and describe (i.e., annotate) each element of each page so a developer never has to ask you what a button is supposed to do.</li>
+<li>Wireframes are not meant for display.</li>
+</ol>
+</li>
+</ul>
+<h3 id="59-Learn-Skills-Not-Tools"><a href="#59-Learn-Skills-Not-Tools" class="headerlink" title="59. Learn Skills, Not Tools"></a>59. Learn Skills, Not Tools</h3><ul>
+<li>Find and use the simplest tool that can handle the project and make files that your team can share easily and cheaply.</li>
+<li><code>Always</code> design what you want first, and then use wireframes to make it into a technical document.</li>
+<li>My first recommendation to all new UX designers is to use a pencil and paper for wireframing until you need to be so specific and technically accurate that something digital is required.</li>
+</ul>
+<h3 id="60-Avoid-Convenient-Examples"><a href="#60-Avoid-Convenient-Examples" class="headerlink" title="60. Avoid Convenient Examples"></a>60. Avoid Convenient Examples</h3><ul>
+<li>In my experience, conversations about UX design focus on the way you want users to use your stuff, not the way they could use it. That’s dangerous.</li>
+</ul>
+<h3 id="61-What-is-a-Design-Pattern"><a href="#61-What-is-a-Design-Pattern" class="headerlink" title="61. What is a Design Pattern ?"></a>61. What is a Design Pattern ?</h3><ul>
+<li>A design is not necessarily good just because it’s common. To be a “good” design pattern, a solution must be common and usable.</li>
+</ul>
+<h3 id="62-Z-Pattern-F-Pattern-Visual-Hierarchy"><a href="#62-Z-Pattern-F-Pattern-Visual-Hierarchy" class="headerlink" title="62. Z-Pattern, F-Pattern, Visual Hierarchy"></a>62. Z-Pattern, F-Pattern, Visual Hierarchy</h3><ul>
+<li>It is easy to imagine every user excitedly reading every letter you write and every pixel you make. Get over it, because real users won’t. They scan.</li>
+<li>“Scanning” means the user only stops to read when something catches their eye. This lesson is about scanning patterns.</li>
+<li>In a design like that—which I hope you never create—users will generally scan it in a pattern something like a “Z,” starting in the upper left and ending in the lower right. Anything in the layout that isn’t near the Z probably won’t be noticed.</li>
+<li>The F-Pattern works like this:<ol>
+<li>Start in the upper-left corner, like the Z-Pattern.</li>
+<li>Read&#x2F;scan the first (head)line of the text.</li>
+<li>Scan down the left side of the column until you ind something interesting.</li>
+<li>Read the interesting thing more carefully.</li>
+<li>Continue scanning down.</li>
+<li>By repeating that method over and over, the scanning pattern starts to look like an “E” or an “F,” hence the name.</li>
+</ol>
+</li>
+<li>A button in the upper left will get more clicks than a button in the upper right, which will get more clicks than a button in the lower left, which will get more clicks than a button in the lower right. And all of those will get more clicks than something randomly stuck in the middle, unless you do something about it.</li>
+<li>Some designers think visual hierarchy is good because it looks better, but the truth is that it feels better because it is easier to scan.</li>
+</ul>
+<h3 id="63-Layout-Page-Framework"><a href="#63-Layout-Page-Framework" class="headerlink" title="63. Layout: Page Framework"></a>63. Layout: Page Framework</h3><ul>
+<li>Start with the big parts, then ill in the details.</li>
+<li>Footers: A footer is typically a list of static links that are too general and too insignificant to get a place in the main navigation.</li>
+<li>Navigation:<ul>
+<li>Main Meu: If you did your information architecture properly, then you already know what should be in the main menu. It’s the first level of links in your site map (below the home page).</li>
+<li>Submenu: The main thing with the submenu is that it should ideally be in the same place on every page, even if the links change all the time. That way, users will quickly learn where to ind it.</li>
+</ul>
+</li>
+<li>Everything-in-one-menu is the laziest design in the universe.</li>
+<li>Create navigation and footers that work for all of the pages&#x2F; screens in your app before you get into content.</li>
+</ul>
+<h3 id="64-Layout-The-Fold-Images-and-Headlines"><a href="#64-Layout-The-Fold-Images-and-Headlines" class="headerlink" title="64. Layout: The Fold, Images, and Headlines"></a>64. Layout: The Fold, Images, and Headlines</h3><ul>
+<li>Give people something to focus on before they scroll.</li>
+<li>Make it obvious that they can scroll.</li>
+<li>Choose images that add emotion and direct the user’s eyes.</li>
+<li>Use headlines to direct users to what matters most.</li>
+</ul>
+<h3 id="65-Layout-The-Axis-of-Interaction"><a href="#65-Layout-The-Axis-of-Interaction" class="headerlink" title="65. Layout: The Axis of Interaction"></a>65. Layout: The Axis of Interaction</h3><ul>
+<li>The <code>axis of interaction</code> is the imaginary “edge” your eye follows naturally. The closer something is to the axis, the more visible it is to the user.</li>
+</ul>
+<h3 id="66-Forms"><a href="#66-Forms" class="headerlink" title="66. Forms"></a>66. Forms</h3><ul>
+<li>The main thing is to make a form <code>feel</code> simple. Keep related questions together; eliminate questions you don’t really need; and use as many pages as you need, no more, no less.</li>
+<li>Whether you use a standard text field or a super-custom slider, you should choose the input type that gives you the highest quality answers.</li>
+<li>When you’re labeling your inputs – how else will the user know what to do with them? — be short, clear, legible, and put the labels close to the input.</li>
+<li>Preventing and Handling Mistakes<ul>
+<li>You can prevent mistakes by adding some intelligence to the inputs.</li>
+<li>Giving users an example of the input you expect can also reduce errors.</li>
+<li>When users miss a question or make a mistake, you should alert them so they can ix it.</li>
+<li>Do not use inline error handling if you can’t verify the input, like when people type their name.</li>
+<li>When the user clicks “next” or “done,” you can check the form for missed questions or mistakes. If there is a problem, make it visually obvious which ones they missed and why they are wrong.</li>
+</ul>
+</li>
+<li>A form with labels that are left-aligned and above the input will get users through it as fast as possible. It keeps everything on the Axis of Interaction.</li>
+<li>For most forms, put the “done” button on the left, on the Axis of Interaction.</li>
+</ul>
+<h3 id="67-Primary-and-Secondary-Buttons"><a href="#67-Primary-and-Secondary-Buttons" class="headerlink" title="67. Primary and Secondary Buttons"></a>67. Primary and Secondary Buttons</h3><ul>
+<li>As a general guideline, you will need only two button styles:<ol>
+<li>Primary Actions that are helpful to our goals.</li>
+<li>Secondary Actions that are not.</li>
+</ol>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Action</th>
+<th>Style</th>
+<th>Position</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Primary Buttons</td>
+<td>Those are primary actions, or things that we want the user to do as often as possible. Buttons that execute primary actions—primary buttons should be as visible as possible.</td>
+<td>High contrast compared to the background (very different color or shade).</td>
+<td>On or near the Axis of Interaction so users notice them first, by reflex.</td>
+</tr>
+<tr>
+<td>Secondary Buttons</td>
+<td>They remove or stop the creation of new things. Those are secondary actions, or things we don’t want the user to do, but we provide the option for the sake of usability. Buttons that execute secondary options—secondary buttons—should be less visible, to prevent accidental or “reflexive” clicks.</td>
+<td>Low contrast compared to the background (a similar color or shade).</td>
+<td>Away from the Axis of Interaction so users notice them only when they are looking for them.</td>
+</tr>
+</tbody></table>
+<ul>
+<li>It is a good idea to give this button a <code>warning</code> color that indicates the importance of the action (red, orange, yellow, etc.).</li>
+<li>In some cases, you will have one type of action that is unique to your site or app, which requires special focus. Design a special button for this so it stands out in your design (pattern breaking).</li>
+</ul>
+<h3 id="68-Adaptive-and-Responsive-Design"><a href="#68-Adaptive-and-Responsive-Design" class="headerlink" title="68. Adaptive and Responsive Design"></a>68. Adaptive and Responsive Design</h3><ul>
+<li>Adaptive design is really just a couple of different designs.</li>
+<li>Responsive design is one design that fits all screens.</li>
+</ul>
+<h3 id="69-To-Design-or-Redesign"><a href="#69-To-Design-or-Redesign" class="headerlink" title="69. To Design or Redesign?"></a>69. To Design or Redesign?</h3><ul>
+<li>If you don’t know what you’re solving, you don’t know how to solve it. So, first, decide exactly what result you’re aiming for, and think about how far your current design is from doing that.</li>
+<li>Sometimes doing everything is simpler than doing one thing. When you have a sense of the problem and what it might take to solve that problem, don’t look for the biggest, coolest way to solve it. Look for the minimum number of changes you can make that will get the job done.</li>
+<li>A new design from scratch takes away all the baggage of the old design, but it means that you have to be more careful about using all of the existing data and managing expectations.</li>
+<li>Adding features isn’t always the right choice. It is always worth asking yourself if you can solve a problem by taking things away.</li>
+</ul>
+<h3 id="70-Touch-versus-Mouse"><a href="#70-Touch-versus-Mouse" class="headerlink" title="70. Touch versus Mouse"></a>70. Touch versus Mouse</h3><ul>
+<li>The Mouse’s Advantages:<ul>
+<li>Small and accurate</li>
+<li>Ability to hover</li>
+<li>Selects items easily</li>
+<li>Hidden options&#x2F;navigation</li>
+<li>Can change shape</li>
+</ul>
+</li>
+<li>The Finger’s Advantages:<ul>
+<li>Built-in feedback</li>
+<li>Direct-to-interface</li>
+<li>Creates a physical orientation</li>
+<li>Always available</li>
+<li>Gestures and multitouch</li>
+<li>Fully trained right out of the box</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/05/10/ux-for-beginners-a-crash-course-in-100-short-lessons-1/" rel="prev" title="《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（1）">
+                  <i class="fa fa-angle-left"></i> 《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（1）
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2015 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-face-kiss-wink-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">RomeoMo</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
