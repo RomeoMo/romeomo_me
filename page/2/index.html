@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -186,6 +186,121 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/05/24/what-is-deno-and-will-it-replace-nodejs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/logo.png">
+      <meta itemprop="name" content="RomeoMo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RomeoMo">
+      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | RomeoMo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/05/24/what-is-deno-and-will-it-replace-nodejs/" class="post-title-link" itemprop="url">Deno 是什么，它能代替 NodeJS 吗？</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-05-24 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-24T00:00:00+08:00">2020-05-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Deno/" itemprop="url" rel="index"><span itemprop="name">Deno</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="说明：-本文来自Medium-作者：Fernando-Doglio"><a href="#说明：-本文来自Medium-作者：Fernando-Doglio" class="headerlink" title="说明： 本文来自Medium ,作者：Fernando Doglio"></a><strong>说明：</strong> 本文来自<a target="_blank" rel="noopener" href="https://blog.bitsrc.io/what-is-deno-and-will-it-replace-nodejs-a13aa1734a74">Medium</a> ,作者：<a target="_blank" rel="noopener" href="https://blog.bitsrc.io/@deleteman123?source=post_page-----a13aa1734a74----------------------">Fernando Doglio</a></h4><h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。</h3><p><em>Deno v1.0.0 计划于 5 月 13 号发布。这里有一些有趣的事实，可能对确定 Deno 起作用。</em></p>
+<p><img src="https://s1.ax1x.com/2020/06/08/tfNiOs.jpg" alt="Deno"></p>
+<p>确定的是，（显然）太早了来讨论这个事情，但这些事实可能可以确定 Deno。</p>
+<p>对于初学者来说，<a target="_blank" rel="noopener" href="https://deno.land/">Deno</a> 由创建过 Node.js 的 Ryan Dahl 编写，是不是听起来很熟？这是不是意味着 Deno 是 Node 的替代方案并且可以计划我们对重构进行冲刺了？当然不是！但如果你想了解更多，请继续读下去!</p>
+<h2 id="让我们从头开始"><a href="#让我们从头开始" class="headerlink" title="让我们从头开始"></a>让我们从头开始</h2><p>在 2018 年，Ryan 讲了他认为做 Node.js 时犯的错误的前十名，并且在演讲的最后，他揭示了 Deno，在那个时候，这只是一个可以称为 Node.js 第二的小项目，提供了更多的安全方案。</p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=M3BM9TB-8yA">点击这里观看视频（请自备梯子）</a>。</p>
+<p>两年后，Deno 1.0 官方发布日期确定了：5 月 13 号。为后端开发准备的全新的 JavasSript 运行时，使用 Rust 而不是 C++ 编写而成，基于 <a target="_blank" rel="noopener" href="https://tokio.rs/">Tokio</a> 平台（为 JavaScript 提供必备的异步运行时），依旧运行于 Google V8 引擎之上。</p>
+<h2 id="但还有什么新东西呢？"><a href="#但还有什么新东西呢？" class="headerlink" title="但还有什么新东西呢？"></a>但还有什么新东西呢？</h2><p>我们讨论的不仅仅是与当前的 Node.js 完全兼容的新的 JavaScript 运行时，取而代之的是，Ryan 为 Deno 添加了在创建 Node.js 时没有考虑到的特性。</p>
+<h3 id="安全集成"><a href="#安全集成" class="headerlink" title="安全集成"></a>安全集成</h3><p>一般来说，Node.js 允许你具有访问所有内容，意思是你可以在文件系统中进行读写操作，向外发布请求，访问环境变量等等。尽管对于开发者来说，获取这些权限是有益的，但代码可能不小心留下安全隐患。</p>
+<p>取而代之的是，Deno 使用命令行参数用于是否开启不同的安全措施。比如你的代码需要访问 &#x2F;etc 目录，则需要：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deno --allow-read=/etc myscript.ts</span><br></pre></td></tr></table></figure>
+
+<p>这允许代码读取该目录，除此之外会报安全错误。这与其他平台的安全措施类似。如果你是安卓用户，许多应用在使用时会向你询问是否能获取系统权限（比如联系人，通行记录，文件夹等），同样的原理也应用于此。通过使用这些选项来执行你的代码，提供了代码所需的权限。</p>
+<h3 id="更完整的标准库"><a href="#更完整的标准库" class="headerlink" title="更完整的标准库"></a>更完整的标准库</h3><p>自从第一个 Node 版本开始，JavaScript 改进了其标准库，但与其他语言相比，它还有很长的路要走。Deno 试图为开发者提供完善标准库用于完成基础任务，而使用外部库（也就是 NPM）用于更复杂的任务。</p>
+<p>实质上，开箱即用的是，Deno 为终端文字增加了<a target="_blank" rel="noopener" href="https://deno.land/std/fmt/colors.ts">颜色</a>，使用<a target="_blank" rel="noopener" href="https://deno.land/std/encoding/README.md">外部数据结构</a>（比如 binary, csv, yaml 等），生成 <a target="_blank" rel="noopener" href="https://deno.land/std/uuid/README.md">UUIDs</a> 甚至是编写 <a target="_blank" rel="noopener" href="https://deno.land/std/ws/README.md">websockets</a>。还有些其他的，更多可使用的基础模块，比如访问文件系统，日期助手（date helper）方法，http 关联方法以及<a target="_blank" rel="noopener" href="https://deno.land/std/">其他库</a>。</p>
+<h3 id="TypeScript-集成"><a href="#TypeScript-集成" class="headerlink" title="TypeScript 集成"></a>TypeScript 集成</h3><p>你没看错，如果你是 TypeScript 粉丝，那么 Deno 帮你解决了，而不需要额外工具，默认在内部完成编译为 JavaScript 。</p>
+<p>尽管在默认情况下，Deno 会解决许多问题，你可以使用 tsconfig.json 进行设定：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deno run -c tsconfig.json [your-script.ts]</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下使用<strong>严格模式</strong>，因此，任何不良的编码将立即收到警告。</p>
+<h3 id="不再有-NPM-或-node-modules-目录"><a href="#不再有-NPM-或-node-modules-目录" class="headerlink" title="不再有 NPM 或 node_modules 目录"></a>不再有 NPM 或 node_modules 目录</h3><p>这是一个问题，因为每个包和其父类的都有依赖。这是不是显得太臃肿了？这是分发依赖关系的错误方式吗？这无疑是Node 最具争议的方面之一，而 Deno 确定彻底摆脱这种方式？</p>
+<p>所以 Deno 是如何处理依赖的？自此，允许你可从任意地方引用。换句话说，你可以这样做：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import * as <span class="built_in">log</span> from <span class="string">&quot;https://deno.land/std/log/mod.ts&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>自身不再需要的集中式存储库，但需要小心进行实践，无法控制第三方导入的模块，导致处于暴露状态。</p>
+<p>事实上，我们也没有 package.json，使用包含模块列表以及其依赖的 URL 的 deps.ts 文件用于模块管理。但版本管理呢？我知道你会提问的。你可以在 URL 上标明版本号，这样并不优雅，但的确可行。</p>
+<p>deps.ts 文件示例如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> &#123; assert &#125; from <span class="string">&quot;https://deno.land/std@v0.39.0/testing/asserts.ts&quot;</span>;</span><br><span class="line"><span class="built_in">export</span> &#123; green, bold &#125; from <span class="string">&quot;https://deno.land/std@v0.39.0/fmt/colors.ts&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>只需要简单的更改 URL ，你就可以重新导出模块并改变其版本。</p>
+<p>随便说一下，导入的代码会被缓存，第一次运行代码时，需要增加 –reload 标签进行重新构建。</p>
+<h3 id="还有什么呢？"><a href="#还有什么呢？" class="headerlink" title="还有什么呢？"></a>还有什么呢？</h3><p>Deno 还包括了另一些模块，比如开箱即用的工具，例如测试运行器（test runner）、调试、文件监听等等。但话又说过来，其中一些只是语言提供的 APIs，你需要编写自己的工具进行使用。</p>
+<p>比如文件监听 API，由 Deno.watchFs 提供，你可以使用类似于 <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/nodemon">nodemon</a> 进行构建。这里仅仅使用 23 行代码就能解决类似的问题：</p>
+<p><img src="https://s1.ax1x.com/2020/06/09/t4D5M6.png" alt="Deno.watchFs"></p>
+<p>这段代码是 Caesar2011 发布的其中一段，你可以在<a target="_blank" rel="noopener" href="https://github.com/Caesar2011/rhinoder/blob/master/mod.ts">这里</a>看到完整代码。</p>
+<h3 id="所以，Deno-会很快代替-Node-js-吗？"><a href="#所以，Deno-会很快代替-Node-js-吗？" class="headerlink" title="所以，Deno 会很快代替 Node.js 吗？"></a>所以，Deno 会很快代替 Node.js 吗？</h3><p>实话实说，并不会，这里有些标题党了。我们使用 Node.js 可以追溯到 0.10 版本，并且已经用在实际产品中了！告诉你真相可能有些恐怖，但我们这么做是因为当时没有其他可选方案。无论是 PHP、Python 还是 Ruby (更不用说 Java 或 . net )，都无法与后端同时使用 JavaScript 和异步 I&#x2F;O 模型相提并论。这些年来，Node（和 JavaScript ）已经成为工业的必备。这是不是很完美？当然不是！与生活类似，当涉及到编程语言时，没有是完美的。</p>
+<p>Deno 并没有区别，只是因为现在，它是花了两年时间在一个想法上的成果。其还没有在实际产品中进行编码和测试。尚未对 Deno 进行检测，也没有放入怪异和意外的用例中，以了解是如何处理边界情况的。直到这些完成，Deno 只是尝鲜者把玩的玩具。可能过了一年，我们开始听到公司是使用 Deno 的经历，他们是如何解决发现的问题，其背后的社区将对其进行怎样的调整，使其能够发挥作用。Deno 是否能代替 Node 呢？谁知道呢？只有时间才能给出答案。</p>
+<p>所以，你是怎样认为的呢？</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1113,112 +1228,6 @@
 <p><strong>PS</strong>：reset与<a target="_blank" rel="noopener" href="http://necolas.github.io/normalize.css/">Normalize</a>的区别：reset是“暴力”的重写浏览器默认样式。而Normalize分为8个部分进行重写，分别为：base, html5, links, typography, embeds, groups, forms以及tables。Normalize可以整体引入也可以分开引入。所以是使用reset还是Normalize，就看各位看官了（本人更偏向于Normalize）。</p>
 <h2 id="使用SCSS-Compass的总结"><a href="#使用SCSS-Compass的总结" class="headerlink" title="使用SCSS+Compass的总结"></a>使用SCSS+Compass的总结</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>CSS 权重尽可能低，容易修改、覆盖。加上适当注释后，更容易阅读代码<br>不⽤担⼼ CSS3 兼容性问题，直接配置解决</p>
 <h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>从 CSS 到 SCSS，再到 Compass, 难度逐渐增加。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2015/05/24/becoming-truly-full-stack-unrealistic-try/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/logo.png">
-      <meta itemprop="name" content="RomeoMo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RomeoMo">
-      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | RomeoMo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/05/24/becoming-truly-full-stack-unrealistic-try/" class="post-title-link" itemprop="url">成为全栈工程师或许只是梦想，但你值得为此奋斗</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2015-05-24 00:00:00" itemprop="dateCreated datePublished" datetime="2015-05-24T00:00:00+08:00">2015-05-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Full-Stack/" itemprop="url" rel="index"><span itemprop="name">Full Stack</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>**说明：**本文来自<a target="_blank" rel="noopener" href="http://www.sitepoint.com/becoming-truly-full-stack-unrealistic-try/">SitePoint</a>，作者：<a target="_blank" rel="noopener" href="http://www.sitepoint.com/author/tevko/">Tim Evko</a></p>
-<h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>Web开发者是由多种职位构成的。你可以是前端开发者，用户体验设计师，软件工程师，或者是后端开发者。如果这样说太笼统了，你也可以自称为JavaScript 专家，Bootstrap 开发者甚至是Node 明星。 在Web开发中包含着无止境（甚至是奇怪）的职位名称。那么，为何会有这么多职位的存在？它们的存在是由于在建设Web时某个职位只能做很少的事情。过去在前端和后端开发者之间有着一条明显的分界线。同样这些种类也有自己的分支。前端开发者专长于CSS或者工作在基于UI设计的JavaScript，然而后端开发者专注Ruby或者其他语言。这样在Web开发者中产生了很多争论。如果你想在领域中取得成绩，你应该专注于那些方面？需要专注所有方面吗？需要成为在前端和后端环境都突出的全栈开发者，还是杰出于在某个方面？</p>
-<h2 id="雇主的要求"><a href="#雇主的要求" class="headerlink" title="雇主的要求"></a>雇主的要求</h2><p>我认为真正的问题在于单一类型的开发者是否更容易雇佣。基于这种想法，有意义的回顾一下以及试图找出当前雇主的要求。</p>
-<p>随着Web发展，雇主希望熟悉于更多技术和框架的开发者。这是由于站点变的越来越变幻莫测，并且在原生应用以及浏览器应用的程序之间的分界逐渐模糊。正如我工作的公司，越来越多的用户要求网站胜任现代的Web应用，而不仅仅是单传的静态站点。</p>
-<p>那些主要以静态为主的网站，其在持续减少对Web开发者的需要。事实上，其中几个公司的产品能符合建立静态站点商城的需求，使客户能够创建自己的网站,而自己无需编写一行代码。WordPress.com、Squarespace，和Wix，这些都能降低成本，每个平台都有简单的学习曲线和普通的UI。不要求编程能力。</p>
-<p>然而我不认为这些站点能在商业上使用，我很确定它们降低了HTML，CSS和JavaScript 能力的价值，同样我认为雇主开始意识到这个问题。他们开始寻找懂得整个架构的更全面和更有经验的开发者，从下拉菜单样式到部署服务器。</p>
-<p>然而，我不认为真正的全栈开发者是实际存在的，我相信了解整个架构的开发者更容易被雇佣。而这并不意味着你需要知道Web开发的方方面面。取而代之的是，我认为应该有清单能让每个开发者开发的去学习，并且随着时间逐渐提高。</p>
-<h2 id="清单"><a href="#清单" class="headerlink" title="清单"></a>清单</h2><p><a target="_blank" rel="noopener" href="http://devchat.tv/js-jabber/118-jsj-web-developer-skills">Javascript Jabber</a> 最近放出的播客就是专注于这个话题。他们列出了大量的技术要求Web开发者应该知道的。我总结了一下最重要的技能列表如下。</p>
-<ul>
-<li>HTML, CSS, Javascript</li>
-<li>一门后端语言</li>
-<li>版本控制</li>
-<li>命令行使用</li>
-<li>Node&#x2F;Ruby 工具</li>
-<li>客户端MVC框架</li>
-<li>流行的工具和框架，例如Angular，Laravel，Rails等</li>
-<li>数据库知识</li>
-<li>服务器知识</li>
-<li>站点部署策略</li>
-<li>搭建和使用REST API</li>
-<li>响应式Web开发</li>
-<li>易用性</li>
-<li>代码测试</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="http://www.impressivewebs.com/skills-front-end-developers/">这有另外一张Louis Lazaris的清单</a>。虽然有一些年份了，但其中很多技术现在依然很常用。</p>
-<h2 id="不要害怕"><a href="#不要害怕" class="headerlink" title="不要害怕"></a>不要害怕</h2><p>看到表中列的技术，你应该开始意识到，最基本的，应该听过它们之间的绝大多数。 此外，没有人能精通每个Web开发工具或者技术。反而，我们应该开放的去学习Web开发，尽可能的知道更多的技术和工具。</p>
-<p>还有记住普遍水平的了解技术就已经很好了。比如开发者能熟练运用复杂的CSS布局，同样也能通过JavaScript 增加一个新的功能。一些公司或者机构由一个开发者写前端代码，另一个写后端。如团队基础的工作流就很好，这能让开发者大致了解其他部分的工作。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以某些具体的工具或者技术为中心的思想会产生不良影响以至于组织技术的提高。随着Web技术的发展，要求Web开发者需要更多的懂得整个架构。我们依然有在特定领域做的更好的自由，但是正如排版变得越发容易以及交互性的更大的需求，基本的前端技能以及应用开发会受到更多的追捧。听到雇主雇佣全栈而不是专业的开发者可能会令人不安，但<a target="_blank" rel="noopener" href="http://andyshora.com/full-stack-developers.html">Andy Shora</a>的结论揭示了这样的状况。</p>
-<p>的确，没有人能指望你能从前端到后端，开始到结束只靠一个人完成。同样你也不应该为提这样需求的人工作。如果你熟练五到十种技术&#x2F;工具，同样也有意愿去了解其他100多种你不熟悉的，那么你就是高价值的商品了。</p>
 
       
     </div>
