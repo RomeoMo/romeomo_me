@@ -25,7 +25,7 @@
       "url": "https://romeomo.me"
     }
   ]
-}</script><link rel="shortcut icon" href="/uploads/favicon-32x32.png"><link rel="canonical" href="https://romeomo.me/2018/02/24/javascript-event-loop-explained/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+}</script><link rel="shortcut icon" href="/uploads/favicon-32x32.png"><link rel="canonical" href="https://romeomo.me/2018/02/24/javascript-event-loop-explained/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
     (() => {
       
     const saveToLocal = {
@@ -115,7 +115,14 @@
     detectApple()
   
     })()
-  </script><script>const GLOBAL_CONFIG = {
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-LWY0FNC2T7"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-LWY0FNC2T7')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-LWY0FNC2T7', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
   localSearch: undefined,
