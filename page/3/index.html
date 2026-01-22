@@ -1,659 +1,152 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon-16x16.png">
-  <link rel="mask-icon" href="/uploads/logo.png" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
-
-    <meta name="description" content="关于技术、生活、工作的吐槽、感悟">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>RomeoMo - 种一棵树最好的时间是十年前，而后是现在</title><meta name="author" content="RomeoMo"><meta name="copyright" content="RomeoMo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="关于技术、生活、工作的吐槽、感悟">
 <meta property="og:type" content="website">
 <meta property="og:title" content="RomeoMo">
-<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:url" content="https://romeomo.me/page/3/index.html">
 <meta property="og:site_name" content="RomeoMo">
 <meta property="og:description" content="关于技术、生活、工作的吐槽、感悟">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://romeomo.me/uploads/logo.png">
 <meta property="article:author" content="RomeoMo">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://romeomo.me/uploads/logo.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/uploads/favicon-32x32.png"><link rel="canonical" href="https://romeomo.me/page/3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
 
-
-<link rel="canonical" href="http://example.com/page/3/">
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"page/3/index.html","title":""}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>RomeoMo</title>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LWY0FNC2T7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LWY0FNC2T7');
-</script>
-
-
-
-
-
-
-
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
-<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
 
-  
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
 
-
-
-
-
-
-  
-
-
-
-
-
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --></head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">RomeoMo</h1>
-      <i class="logo-line"></i>
-    </a>
-      <p class="site-subtitle" itemprop="description">种一棵树最好的时间是十年前，而后是现在</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-  </ul>
-</nav>
-
-
-
-
-</header>
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
         
-  
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="RomeoMo"
-      src="/uploads/logo.png">
-  <p class="site-author-name" itemprop="name">RomeoMo</p>
-  <div class="site-description" itemprop="description">关于技术、生活、工作的吐槽、感悟</div>
-</div>
-<div class="site-state-wrap animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">24</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">分类</span>
-      </div>
-  </nav>
-</div>
-
-          
-          
-            <div class="sidebar-inner sidebar-blogroll">
-              <div class="links-of-blogroll animated">
-                <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-                  友情链接
-                </div>
-                <ul class="links-of-blogroll-list">
-                    <li class="links-of-blogroll-item">
-                      <a href="https://sell.moe/" title="https:&#x2F;&#x2F;sell.moe&#x2F;" rel="noopener" target="_blank">橙的记事本</a>
-                    </li>
-                </ul>
-              </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </aside>
-
-
-    </div>
-
-    <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2015/05/24/becoming-truly-full-stack-unrealistic-try/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/logo.png">
-      <meta itemprop="name" content="RomeoMo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RomeoMo">
-      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | RomeoMo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/05/24/becoming-truly-full-stack-unrealistic-try/" class="post-title-link" itemprop="url">成为全栈工程师或许只是梦想，但你值得为此奋斗</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2015-05-24 00:00:00" itemprop="dateCreated datePublished" datetime="2015-05-24T00:00:00+08:00">2015-05-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Full-Stack/" itemprop="url" rel="index"><span itemprop="name">Full Stack</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>**说明：**本文来自<a target="_blank" rel="noopener" href="http://www.sitepoint.com/becoming-truly-full-stack-unrealistic-try/">SitePoint</a>，作者：<a target="_blank" rel="noopener" href="http://www.sitepoint.com/author/tevko/">Tim Evko</a></p>
-<h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>Web开发者是由多种职位构成的。你可以是前端开发者，用户体验设计师，软件工程师，或者是后端开发者。如果这样说太笼统了，你也可以自称为JavaScript 专家，Bootstrap 开发者甚至是Node 明星。 在Web开发中包含着无止境（甚至是奇怪）的职位名称。那么，为何会有这么多职位的存在？它们的存在是由于在建设Web时某个职位只能做很少的事情。过去在前端和后端开发者之间有着一条明显的分界线。同样这些种类也有自己的分支。前端开发者专长于CSS或者工作在基于UI设计的JavaScript，然而后端开发者专注Ruby或者其他语言。这样在Web开发者中产生了很多争论。如果你想在领域中取得成绩，你应该专注于那些方面？需要专注所有方面吗？需要成为在前端和后端环境都突出的全栈开发者，还是杰出于在某个方面？</p>
-<h2 id="雇主的要求"><a href="#雇主的要求" class="headerlink" title="雇主的要求"></a>雇主的要求</h2><p>我认为真正的问题在于单一类型的开发者是否更容易雇佣。基于这种想法，有意义的回顾一下以及试图找出当前雇主的要求。</p>
-<p>随着Web发展，雇主希望熟悉于更多技术和框架的开发者。这是由于站点变的越来越变幻莫测，并且在原生应用以及浏览器应用的程序之间的分界逐渐模糊。正如我工作的公司，越来越多的用户要求网站胜任现代的Web应用，而不仅仅是单传的静态站点。</p>
-<p>那些主要以静态为主的网站，其在持续减少对Web开发者的需要。事实上，其中几个公司的产品能符合建立静态站点商城的需求，使客户能够创建自己的网站,而自己无需编写一行代码。WordPress.com、Squarespace，和Wix，这些都能降低成本，每个平台都有简单的学习曲线和普通的UI。不要求编程能力。</p>
-<p>然而我不认为这些站点能在商业上使用，我很确定它们降低了HTML，CSS和JavaScript 能力的价值，同样我认为雇主开始意识到这个问题。他们开始寻找懂得整个架构的更全面和更有经验的开发者，从下拉菜单样式到部署服务器。</p>
-<p>然而，我不认为真正的全栈开发者是实际存在的，我相信了解整个架构的开发者更容易被雇佣。而这并不意味着你需要知道Web开发的方方面面。取而代之的是，我认为应该有清单能让每个开发者开发的去学习，并且随着时间逐渐提高。</p>
-<h2 id="清单"><a href="#清单" class="headerlink" title="清单"></a>清单</h2><p><a target="_blank" rel="noopener" href="http://devchat.tv/js-jabber/118-jsj-web-developer-skills">Javascript Jabber</a> 最近放出的播客就是专注于这个话题。他们列出了大量的技术要求Web开发者应该知道的。我总结了一下最重要的技能列表如下。</p>
-<ul>
-<li>HTML, CSS, Javascript</li>
-<li>一门后端语言</li>
-<li>版本控制</li>
-<li>命令行使用</li>
-<li>Node&#x2F;Ruby 工具</li>
-<li>客户端MVC框架</li>
-<li>流行的工具和框架，例如Angular，Laravel，Rails等</li>
-<li>数据库知识</li>
-<li>服务器知识</li>
-<li>站点部署策略</li>
-<li>搭建和使用REST API</li>
-<li>响应式Web开发</li>
-<li>易用性</li>
-<li>代码测试</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="http://www.impressivewebs.com/skills-front-end-developers/">这有另外一张Louis Lazaris的清单</a>。虽然有一些年份了，但其中很多技术现在依然很常用。</p>
-<h2 id="不要害怕"><a href="#不要害怕" class="headerlink" title="不要害怕"></a>不要害怕</h2><p>看到表中列的技术，你应该开始意识到，最基本的，应该听过它们之间的绝大多数。 此外，没有人能精通每个Web开发工具或者技术。反而，我们应该开放的去学习Web开发，尽可能的知道更多的技术和工具。</p>
-<p>还有记住普遍水平的了解技术就已经很好了。比如开发者能熟练运用复杂的CSS布局，同样也能通过JavaScript 增加一个新的功能。一些公司或者机构由一个开发者写前端代码，另一个写后端。如团队基础的工作流就很好，这能让开发者大致了解其他部分的工作。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以某些具体的工具或者技术为中心的思想会产生不良影响以至于组织技术的提高。随着Web技术的发展，要求Web开发者需要更多的懂得整个架构。我们依然有在特定领域做的更好的自由，但是正如排版变得越发容易以及交互性的更大的需求，基本的前端技能以及应用开发会受到更多的追捧。听到雇主雇佣全栈而不是专业的开发者可能会令人不安，但<a target="_blank" rel="noopener" href="http://andyshora.com/full-stack-developers.html">Andy Shora</a>的结论揭示了这样的状况。</p>
-<p>的确，没有人能指望你能从前端到后端，开始到结束只靠一个人完成。同样你也不应该为提这样需求的人工作。如果你熟练五到十种技术&#x2F;工具，同样也有意愿去了解其他100多种你不熟悉的，那么你就是高价值的商品了。</p>
-
       
-    </div>
-
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
     
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
       
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
   
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2015/05/10/full-stack-javaScript-development-with-MEAN/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/logo.png">
-      <meta itemprop="name" content="RomeoMo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RomeoMo">
-      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | RomeoMo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/05/10/full-stack-javaScript-development-with-MEAN/" class="post-title-link" itemprop="url">使用MEAN成为JavaScript的全栈工程师</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2015-05-10 00:00:00" itemprop="dateCreated datePublished" datetime="2015-05-10T00:00:00+08:00">2015-05-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Full-Stack/" itemprop="url" rel="index"><span itemprop="name">Full Stack</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>**说明：**本文来自<a target="_blank" rel="noopener" href="http://www.sitepoint.com/full-stack-javascript-development-mean/">SitePoint</a>，作者：<a target="_blank" rel="noopener" href="http://www.sitepoint.com/author/abretz/">Adam Bretz</a></p>
-<h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>自从1995年发布以来，JavaScript 有了很大的发展。我们已经看到了ECMAScript 规格的几个重要版本及单页Web应用的崛起，这些都被客户端的JavaScript 架构支持。起初，所有的JavaScript 开发和创新都只能在浏览器实现，这是由于浏览器是支持这种语言的唯一环境。随着时间的推移，Web开发者开始意识到JavaScript 的很多实用的特性（没有块级作用域，事件驱动以及与许多其他语言相似）使其能对其他环境而不仅仅是浏览器。这促使JavaScript 社区进行了第二轮创新最终使JavaScript 运行于服务端和数据库。</p>
-<p>突然，了解JavaScript 不会把你自动归类在“前端开发者”中。如果你熟悉这门语言，你能建立服务器和数据库，以及丰富前端用户体验。现在，第一次有了开发者能通过只用JavaScript 就能建立整个Web应用。这种趋势常常被称为“全栈的JavaScript”或“纯JavaScript解决方案”。组合了四种流行的JavaScript 技术：MongoDB, Express, AngularJS, and Node.js 建立Web应用受到欢迎了，这被成为“MEAN 全栈”。</p>
-<p><img src="https://ftp.bmp.ovh/imgs/2019/09/18dc117a46810b53.jpg" alt="MEAN"></p>
-<ol>
-<li><strong>MongoDB</strong> - MongoDB 是一种NoSQL的数据库。它是一种文件导向数据库管理系统, 而不是由行、列和表格组成的。主要用于存储JSON 数据；这完美契合由JavaScript 编写的应用。数据的关系性操作和严厉遵守图式的缺乏，这使MongoDB 具有快速，伸缩性强及易用的特性。</li>
-<li><strong>Express</strong> - Express是一种轻量级的服务器级框架，被用来使Node 搭建的Web服务更简单及更强的可维护性。框架的灵活性提供给开发者高度的可定制性以及足够“低端”的用于操作Node 框架。Express 提供简单方式使用路由，cookie管理，静态文件服务和其他HTTP模块用于搭建企业级的服务。</li>
-<li><strong>AngularJS</strong> - AngularJS 是一种客户端富应用的MVC JavaScript 框架。它可用于建立健壮的和复杂的单页Web应用。双向数据绑定和基于HTML的框架语言。AngularJS 也有称为“命令”的特性允许你拓展HTML的新的属性，甚至是新的元素。AngularJS 同样也经过了高强度的测试，这可能不会成为开发的有趣方面，但这对于AngularJS 来说是重要的并且经常管理客户端代码。最后，AngularJS 提供了协议和最佳实践用于帮助开发者建立客户端的解决方案。</li>
-<li><strong>Node</strong> - Node 是JavaScript 的运行环境用于建立服务及网络应用。它提供了在客户端的所有JavaScript 的特性并且加入了文件以及网络I&#x2F;O。Node使用了Google 的V8引擎（同样也用于Google Chrome）用于执行JavaScript 。其同样也是非常活跃的开发者社区和Node 模块的生态系统（Express就是其中一个模块）的基础。与此同时，也有很多其他在客户端的JavaScript 实践，到目前为止，就粉丝和大公司而言都成功采用的。</li>
-</ol>
-<p>如果你像我一样都是JavaScript 的粉丝，你应该兴奋于只用JavaScript 就可以建立整个Web应用的前景。MEAN全栈是相当受欢迎的话题，在网络上也有很多如何开始这些技术的信息。事实上，有很多关于这项技术的信息，仅仅是有关“开始”的就可以“令人畏惧”。</p>
-<h2 id="译者按"><a href="#译者按" class="headerlink" title="译者按"></a>译者按</h2><p>最后作者介绍自己和Colin Ihrig共同编写的<a target="_blank" rel="noopener" href="https://www.sitepoint.com/premium/books/mean1/?_ga=1.182917350.1798398705.1429097916">“MEAN全栈”</a>书籍 有兴趣的朋友可以关注一下。</p>
-<p>正如作者所说，仅仅使用JavaScript 就能建立这个Web应用是一件令人兴奋地事情。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2015/04/18/being-full-stack-developer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/logo.png">
-      <meta itemprop="name" content="RomeoMo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RomeoMo">
-      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | RomeoMo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/04/18/being-full-stack-developer/" class="post-title-link" itemprop="url">成为全栈工程师</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2015-04-18 00:00:00" itemprop="dateCreated datePublished" datetime="2015-04-18T00:00:00+08:00">2015-04-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2019-09-18 00:00:00" itemprop="dateModified" datetime="2019-09-18T00:00:00+08:00">2019-09-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Full-Stack/" itemprop="url" rel="index"><span itemprop="name">Full Stack</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><pre><code>时间：2019年9月18号
-说明：更新图片，原文链接链接已失效，更新备用链接
-</code></pre>
-<p>**说明：**本文来自<a target="_blank" rel="noopener" href="http://www.sitepoint.com/full-stack-developer/">SitePoint</a>，<a target="_blank" rel="noopener" href="https://qianggan.wordpress.com/2017/02/01/being-a-full-stack-developer/">备用链接</a>，作者：<a target="_blank" rel="noopener" href="http://www.sitepoint.com/author/gfekete/">George Fekete</a></p>
-<h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>成为Web开发者进入Web开发领域的门槛依然很低，但Web开发变得越来越复杂。</p>
-<p>整个行业的动态特性使需求常常转移到最受欢迎和“下个更好”的工具以及编程语言。</p>
-<p>从前开发者只需一种编程语言或者掌握某特定流程的要求已经一去不复返了。现在为了做更棒的事情，开发者需要了解跨领域的大量知识。</p>
-<h2 id="全栈工程师意味什么？"><a href="#全栈工程师意味什么？" class="headerlink" title="全栈工程师意味什么？"></a>全栈工程师意味什么？</h2><p>全栈指的是工程师能懂得后端及前端的技术。</p>
-<p>更详细的说，这意味着开发者能在PHP, HTML,CSS,JavaScript以及它们之间进行工作，并且能把PS的设计转化成前端代码</p>
-<p>全栈工程师不需要成为所有领域和技术的大家，因为这几乎不可能。他只需要能在这些技术上掌握的知道即可，但这也是很多事情需要去做。</p>
-<h2 id="全栈在2000年和现在意味着什么？"><a href="#全栈在2000年和现在意味着什么？" class="headerlink" title="全栈在2000年和现在意味着什么？"></a>全栈在2000年和现在意味着什么？</h2><p><img src="https://s1.ax1x.com/2020/06/08/tfEiL9.png" alt="being-full-stack-developer"></p>
-<p>2000年已经是很久之前了，当时PHP 4.0才发布。是的，4.0。回到当年，一个优秀的开发者知道一些HTML，CSS和一点过程式的PHP，因为直到5.0版本才出现合适的面向对象。</p>
-<p>LAMP (Linux – Apache – MySQL – Perl&#x2F;PHP)框架在那些年处于统治地位，只有很少或根本没有其他选择。在21世纪初，如果有人使用版本控制会被认为不是技术极客就是巫师。但这现在很少能听到了。</p>
-<p>所以，我们划分现在全栈工程师需要掌握的关键技术：</p>
-<h3 id="系统管理"><a href="#系统管理" class="headerlink" title="系统管理"></a><strong>系统管理</strong></h3><ol>
-<li>Linux及基本的shell命令</li>
-<li>云计算：Amazon, Rackspace等</li>
-<li>后台处理：Gearman, Redis</li>
-<li>搜索：Elasticsearch, Sphinx, Solr</li>
-<li>缓存：Varnish, Memcached, APC &#x2F; OpCache</li>
-<li>监控：Nagios</li>
-</ol>
-<p>Linux驱动着绝大多数的网站，这在Web开发上是事实上的操作系统（这里不讨论.NET）。此外，全栈工程师应该知道如何使用云进行工作，Amazon&#x2F;Rackspace等供应商都提供了API。</p>
-<p>搜索在大部分的网站上是必须的部分。开发者需要直到如何建立以及使用如Sphinx或Elasticsearch的搜索服务。</p>
-<p>缓存同样很重要，比如<a target="_blank" rel="noopener" href="http://zh.wikipedia.org/wiki/Varnish_cache">Varnish</a>-反向网站快取服务器, Memcached及opcode缓存。全栈工程师需要知道这些是什么及如何使用。</p>
-<h3 id="Web开发工具"><a href="#Web开发工具" class="headerlink" title="Web开发工具"></a><strong>Web开发工具</strong></h3><ol>
-<li>版本控制：Git, Mercurial, SVN</li>
-<li>虚拟化：VirtualBox, Vagrant, Docker</li>
-<li>现在，不做版本控制是不能接受的，即便是单人开发也是如此。</li>
-</ol>
-<p>使用虚拟化工具,在每个项目的基础使用单独的开发环境是容易获得的，至少在建立VirtualBox和Vagrant是很容易的。</p>
-<p>如果你想在Vagrant上进行工作，Ruby和shell的基本命令是必不可很少的。</p>
-<h3 id="后端技术"><a href="#后端技术" class="headerlink" title="后端技术"></a><strong>后端技术</strong></h3><ol>
-<li>Web服务器：Apache,Nginx</li>
-<li>编程语言：PHP,NodeJS,Ruby</li>
-<li>数据库：MySQL,MongoDB,Cassandra,Redis,SQL&#x2F;JSON</li>
-<li>Apache和Nginx是Web开发的基准。全栈工程师应该知道如何建立这些应用使之服务于网站。</li>
-</ol>
-<p>PHP是需要熟练掌握的，NodeJS，Ruby同样也需要掌握。</p>
-<p>除了Web服务器和编程语言外，数据库管理也是全栈工程师需要击败的野兽。</p>
-<p>全栈工程师需要知道关系型数据库（比如MySQL, PostgreSQL）与非关系型数据库（例如MongoDB, Redis或者Cassandra）的区别，同样也需要知道XML &#x2F; JSON的语法。</p>
-<h3 id="前端语言"><a href="#前端语言" class="headerlink" title="前端语言"></a><strong>前端语言</strong></h3><ol>
-<li>HTML &#x2F; HTML5: Semantic web</li>
-<li>CSS &#x2F; CSS3: LESS, SASS, 媒体查询</li>
-<li>JavaScript: jQuery, AngularJS, Knockout, etc.</li>
-<li>浏览器兼容性</li>
-<li>响应式布局</li>
-<li>AJAX, JSON, XML, WebSocket</li>
-</ol>
-<p>有趣的是，如果你想更好的呈现网站，最好知道浏览器的怪癖。</p>
-<p>JavaScript在早些年就是个笑话，但现在发展成为最流行和强大的语言。每天都会有新的方法论和框架提出，MVC， MVVM，MVP，Angular，Knockout， Ember等等。</p>
-<p>和HTML，CSS, JavaScript一起，全栈工程师应该知道响应式设计和使用媒体查询进行工作以及CSS预处理程序，例如LESS和SASS。</p>
-<p>使用AJAX或WebSockets与后端进行通信也是必须知道的。</p>
-<h3 id="设计"><a href="#设计" class="headerlink" title="设计"></a><strong>设计</strong></h3><ol>
-<li>网站设计转换成前端代码</li>
-<li>UI</li>
-<li>UX</li>
-</ol>
-<p>除了前端技术，全栈工程师应该知道根据设计(Photoshop&#x2F;Illustrator文件)，那些是可以使用HTML&#x2F;CSS&#x2F;JavaScript进行转化而那些不能。</p>
-<p>开发者可以不了解或者不使用提到的很多技术，比如Ruby或者是特定的Javascript库，但是它们之间都是相连的。</p>
-<p>比如，如果你需要知道Ruby命令才能建立Vagrant， 最基本的，比如你想操作DOM元素，jQuery是值得了解的。</p>
-<p><strong>移动端技术</strong>是另一个值得提到的种类。这是一个充满活力的行业并且接近于Web开发。</p>
-<ol>
-<li>iOS</li>
-<li>Android</li>
-<li>跨平台：PhoneGap, Appcelerator</li>
-</ol>
-<p>现在Web和移动开发的鸿沟依然很大，但这个差距在迅速逐渐缩小。</p>
-<p>全栈工程师同样也需要知道这些技术。</p>
-<h2 id="成为全栈工程师会更好吗？"><a href="#成为全栈工程师会更好吗？" class="headerlink" title="成为全栈工程师会更好吗？"></a>成为全栈工程师会更好吗？</h2><p>成为全栈工程师意味着队新技术抱有开放的态度，对此亲力亲，并且懂得使一个Web应用从概念设计到最终的产品发布。</p>
-<p>“全栈工程师”的理念并不意味着在所有游刃有余于所有的技术，毕竟专门化的存在是有原因的。它更像了解不同领域，能够聪明的与团队成员进行交流，并且成为解决方法的资源。</p>
-<p>全栈工程师会在未来的Web开发中扮演越来越重要的角色，特别是例如像<a target="_blank" rel="noopener" href="http://zh.wikipedia.org/wiki/DevOps">DevOps</a>之类的开发方法成为软件开发公司必不可少的部分时，代码开发者和管理者,谁负责代码部署和设置的之间的界限会越来越模糊。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2015/04/15/comming-soon/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/logo.png">
-      <meta itemprop="name" content="RomeoMo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RomeoMo">
-      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | RomeoMo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/04/15/comming-soon/" class="post-title-link" itemprop="url">Coming Soon</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2015-04-15 00:00:00" itemprop="dateCreated datePublished" datetime="2015-04-15T00:00:00+08:00">2015-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%B0%B4/" itemprop="url" rel="index"><span itemprop="name">水</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>折腾了半天的hexo(时间肯定大于半天)终于搞定了。本人的博客是自己关于技术、生活，工作等等的感(tu)悟(cao)。所以想看就看，不想看就直接用Command + W 关闭本页面。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-  <div class="copyright">
-    &copy; 2015 – 
-    <span itemprop="copyrightYear">2025</span>
-    <span class="with-love">
-      <i class="fa fa-face-kiss-wink-heart"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">RomeoMo</span>
-  </div>
-
-    </div>
-  </footer>
-
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-  <div class="sidebar-dimmer"></div>
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up fa-lg"></i>
-    <span>0%</span>
-  </div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-</body>
-</html>
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'RomeoMo',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/uploads/logo.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Links</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">RomeoMo</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Links</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">RomeoMo</h1></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2015/06/22/maintainable-css/" title="编写可维护的 CSS">编写可维护的 CSS</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2015-06-21T16:00:00.000Z" title="发表于 2015-06-22 00:00:00">2015-06-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/CSS/">CSS</a></span></div><div class="content">传统CSS书写存在的问题 就算加了注释,代码也很难维护 为了保证样式被覆盖,CSS的权重可能会变得非常⾼  Sass方式书写何为Sass？Sass是CSS的预处理程序，其思想是用一种专门的编程语言，进行网页样式设计，然后再编译成正常的CSS文件。同样也有Less，Stylus等其他预处理程序，而本人在平常中没有实践过其他预处理程序，所以在此按下不表。SCSS实现了Sass的所有功能，并且有类似于css的句法，所以在工作中，我更偏爱SCSS。 存在的问题使用SCSS容易造成嵌套层级过多，导致 CSS 权重过高的问题。大漠在知乎上的回答写着**“别让你的嵌套层级超过四层”**，而腾讯的AlloyTeam在Code Guide上写着”嵌套最多不能超过5层“。为了减少嵌套层级，我认为解决方法为：提取公因式。 提取公因式就是把相同表现类似的css用同一个class表示，而独特表现的元素单独写。要熟练使用此方法需要透彻了解css的权重。 使用Compass在使用SCSS中，最实用的是[@mixin](http://sass-lang.com/guide#topic-6 “Mixins”), ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2015/05/24/becoming-truly-full-stack-unrealistic-try/" title="成为全栈工程师或许只是梦想，但你值得为此奋斗">成为全栈工程师或许只是梦想，但你值得为此奋斗</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2015-05-23T16:00:00.000Z" title="发表于 2015-05-24 00:00:00">2015-05-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Full-Stack/">Full Stack</a></span></div><div class="content">**说明：**本文来自SitePoint，作者：Tim Evko 文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。Web开发者是由多种职位构成的。你可以是前端开发者，用户体验设计师，软件工程师，或者是后端开发者。如果这样说太笼统了，你也可以自称为JavaScript 专家，Bootstrap 开发者甚至是Node 明星。 在Web开发中包含着无止境（甚至是奇怪）的职位名称。那么，为何会有这么多职位的存在？它们的存在是由于在建设Web时某个职位只能做很少的事情。过去在前端和后端开发者之间有着一条明显的分界线。同样这些种类也有自己的分支。前端开发者专长于CSS或者工作在基于UI设计的JavaScript，然而后端开发者专注Ruby或者其他语言。这样在Web开发者中产生了很多争论。如果你想在领域中取得成绩，你应该专注于那些方面？需要专注所有方面吗？需要成为在前端和后端环境都突出的全栈开发者，还是杰出于在某个方面？ 雇主的要求我认为真正的问题在于单一类型的开发者是否更容易雇佣。基于这种想法，有意义的回顾一下以及试图找出当前雇主的要求。 随着Web发展，雇主希望熟悉...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2015/05/10/full-stack-javaScript-development-with-MEAN/" title="使用MEAN成为JavaScript的全栈工程师">使用MEAN成为JavaScript的全栈工程师</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2015-05-09T16:00:00.000Z" title="发表于 2015-05-10 00:00:00">2015-05-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Full-Stack/">Full Stack</a></span></div><div class="content">**说明：**本文来自SitePoint，作者：Adam Bretz 文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。自从1995年发布以来，JavaScript 有了很大的发展。我们已经看到了ECMAScript 规格的几个重要版本及单页Web应用的崛起，这些都被客户端的JavaScript 架构支持。起初，所有的JavaScript 开发和创新都只能在浏览器实现，这是由于浏览器是支持这种语言的唯一环境。随着时间的推移，Web开发者开始意识到JavaScript 的很多实用的特性（没有块级作用域，事件驱动以及与许多其他语言相似）使其能对其他环境而不仅仅是浏览器。这促使JavaScript 社区进行了第二轮创新最终使JavaScript 运行于服务端和数据库。 突然，了解JavaScript 不会把你自动归类在“前端开发者”中。如果你熟悉这门语言，你能建立服务器和数据库，以及丰富前端用户体验。现在，第一次有了开发者能通过只用JavaScript 就能建立整个Web应用。这种趋势常常被称为“全栈的JavaScript”或“纯JavaScript解决方案”。组...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2015/04/18/being-full-stack-developer/" title="成为全栈工程师">成为全栈工程师</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2015-04-17T16:00:00.000Z" title="发表于 2015-04-18 00:00:00">2015-04-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Full-Stack/">Full Stack</a></span></div><div class="content">更新时间：2019年9月18号 说明：更新图片，原文链接链接已失效，更新备用链接  **说明：**本文来自SitePoint，备用链接，作者：George Fekete 文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。成为Web开发者进入Web开发领域的门槛依然很低，但Web开发变得越来越复杂。 整个行业的动态特性使需求常常转移到最受欢迎和“下个更好”的工具以及编程语言。 从前开发者只需一种编程语言或者掌握某特定流程的要求已经一去不复返了。现在为了做更棒的事情，开发者需要了解跨领域的大量知识。 全栈工程师意味什么？全栈指的是工程师能懂得后端及前端的技术。 更详细的说，这意味着开发者能在PHP, HTML,CSS,JavaScript以及它们之间进行工作，并且能把PS的设计转化成前端代码 全栈工程师不需要成为所有领域和技术的大家，因为这几乎不可能。他只需要能在这些技术上掌握的知道即可，但这也是很多事情需要去做。 全栈在2000年和现在意味着什么？ 2000年已经是很久之前了，当时PHP 4.0才发布。是的，4.0。回到当年，一个优秀的开发者知道一些HTML，...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2015/04/15/comming-soon/" title="Coming Soon">Coming Soon</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2015-04-14T16:00:00.000Z" title="发表于 2015-04-15 00:00:00">2015-04-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%B0%B4/">水</a></span></div><div class="content">折腾了半天的hexo(时间肯定大于半天)终于搞定了。本人的博客是自己关于技术、生活，工作等等的感(tu)悟(cao)。所以想看就看，不想看就直接用Command + W 关闭本页面。 </div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/uploads/logo.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">RomeoMo</div><div class="author-info-description">关于技术、生活、工作的吐槽、感悟</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/21/designing-for-interaction/" title="《Designing for Interaction:Creating Innovative Applications and Devices》笔记">《Designing for Interaction:Creating Innovative Applications and Devices》笔记</a><time datetime="2025-06-20T16:00:00.000Z" title="发表于 2025-06-21 00:00:00">2025-06-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/25/ux-for-beginners-a-crash-course-in-100-short-lessons-3/" title="《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（3）">《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（3）</a><time datetime="2025-05-24T16:00:00.000Z" title="发表于 2025-05-25 00:00:00">2025-05-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/18/ux-for-beginners-a-crash-course-in-100-short-lessons-2/" title="《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（2）">《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（2）</a><time datetime="2025-05-17T16:00:00.000Z" title="发表于 2025-05-18 00:00:00">2025-05-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/10/ux-for-beginners-a-crash-course-in-100-short-lessons-1/" title="《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（1）">《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（1）</a><time datetime="2025-05-09T16:00:00.000Z" title="发表于 2025-05-10 00:00:00">2025-05-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/15/dont-make-me-think-revisited/" title="《Don't Make Me Think, Revisited》笔记">《Don't Make Me Think, Revisited》笔记</a><time datetime="2025-04-14T16:00:00.000Z" title="发表于 2025-04-15 00:00:00">2025-04-15</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CSS/"><span class="card-category-list-name">CSS</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Deno/"><span class="card-category-list-name">Deno</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Full-Stack/"><span class="card-category-list-name">Full Stack</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Functional-Programming/"><span class="card-category-list-name">Functional Programming</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HCI/"><span class="card-category-list-name">HCI</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HTTP/"><span class="card-category-list-name">HTTP</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JavaScript/"><span class="card-category-list-name">JavaScript</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8E%A8%E8%8D%90/"><span class="card-category-list-name">推荐</span><span class="card-category-list-count">3</span></a></li>
+          </ul></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2015 - 2026 By RomeoMo</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><div class="js-pjax"></div><script async data-pjax src="/"></script></div></body></html>

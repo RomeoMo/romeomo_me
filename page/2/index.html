@@ -1,1288 +1,152 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon-16x16.png">
-  <link rel="mask-icon" href="/uploads/logo.png" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
-
-    <meta name="description" content="关于技术、生活、工作的吐槽、感悟">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>RomeoMo - 种一棵树最好的时间是十年前，而后是现在</title><meta name="author" content="RomeoMo"><meta name="copyright" content="RomeoMo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="关于技术、生活、工作的吐槽、感悟">
 <meta property="og:type" content="website">
 <meta property="og:title" content="RomeoMo">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="https://romeomo.me/page/2/index.html">
 <meta property="og:site_name" content="RomeoMo">
 <meta property="og:description" content="关于技术、生活、工作的吐槽、感悟">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://romeomo.me/uploads/logo.png">
 <meta property="article:author" content="RomeoMo">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://romeomo.me/uploads/logo.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/uploads/favicon-32x32.png"><link rel="canonical" href="https://romeomo.me/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
 
-
-<link rel="canonical" href="http://example.com/page/2/">
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"page/2/index.html","title":""}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>RomeoMo</title>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LWY0FNC2T7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LWY0FNC2T7');
-</script>
-
-
-
-
-
-
-
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
-<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
 
-  
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
 
-
-
-
-
-
-  
-
-
-
-
-
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --></head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">RomeoMo</h1>
-      <i class="logo-line"></i>
-    </a>
-      <p class="site-subtitle" itemprop="description">种一棵树最好的时间是十年前，而后是现在</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-  </ul>
-</nav>
-
-
-
-
-</header>
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
         
-  
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="RomeoMo"
-      src="/uploads/logo.png">
-  <p class="site-author-name" itemprop="name">RomeoMo</p>
-  <div class="site-description" itemprop="description">关于技术、生活、工作的吐槽、感悟</div>
-</div>
-<div class="site-state-wrap animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">24</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">分类</span>
-      </div>
-  </nav>
-</div>
-
-          
-          
-            <div class="sidebar-inner sidebar-blogroll">
-              <div class="links-of-blogroll animated">
-                <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-                  友情链接
-                </div>
-                <ul class="links-of-blogroll-list">
-                    <li class="links-of-blogroll-item">
-                      <a href="https://sell.moe/" title="https:&#x2F;&#x2F;sell.moe&#x2F;" rel="noopener" target="_blank">橙的记事本</a>
-                    </li>
-                </ul>
-              </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </aside>
-
-
-    </div>
-
-    <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/05/24/what-is-deno-and-will-it-replace-nodejs/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/logo.png">
-      <meta itemprop="name" content="RomeoMo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RomeoMo">
-      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | RomeoMo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/05/24/what-is-deno-and-will-it-replace-nodejs/" class="post-title-link" itemprop="url">Deno 是什么，它能代替 NodeJS 吗？</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-05-24 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-24T00:00:00+08:00">2020-05-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Deno/" itemprop="url" rel="index"><span itemprop="name">Deno</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="说明：-本文来自Medium-作者：Fernando-Doglio"><a href="#说明：-本文来自Medium-作者：Fernando-Doglio" class="headerlink" title="说明： 本文来自Medium ,作者：Fernando Doglio"></a><strong>说明：</strong> 本文来自<a target="_blank" rel="noopener" href="https://blog.bitsrc.io/what-is-deno-and-will-it-replace-nodejs-a13aa1734a74">Medium</a> ,作者：<a target="_blank" rel="noopener" href="https://blog.bitsrc.io/@deleteman123?source=post_page-----a13aa1734a74----------------------">Fernando Doglio</a></h4><h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。</h3><p><em>Deno v1.0.0 计划于 5 月 13 号发布。这里有一些有趣的事实，可能对确定 Deno 起作用。</em></p>
-<p><img src="https://s1.ax1x.com/2020/06/08/tfNiOs.jpg" alt="Deno"></p>
-<p>确定的是，（显然）太早了来讨论这个事情，但这些事实可能可以确定 Deno。</p>
-<p>对于初学者来说，<a target="_blank" rel="noopener" href="https://deno.land/">Deno</a> 由创建过 Node.js 的 Ryan Dahl 编写，是不是听起来很熟？这是不是意味着 Deno 是 Node 的替代方案并且可以计划我们对重构进行冲刺了？当然不是！但如果你想了解更多，请继续读下去!</p>
-<h2 id="让我们从头开始"><a href="#让我们从头开始" class="headerlink" title="让我们从头开始"></a>让我们从头开始</h2><p>在 2018 年，Ryan 讲了他认为做 Node.js 时犯的错误的前十名，并且在演讲的最后，他揭示了 Deno，在那个时候，这只是一个可以称为 Node.js 第二的小项目，提供了更多的安全方案。</p>
-<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=M3BM9TB-8yA">点击这里观看视频（请自备梯子）</a>。</p>
-<p>两年后，Deno 1.0 官方发布日期确定了：5 月 13 号。为后端开发准备的全新的 JavasSript 运行时，使用 Rust 而不是 C++ 编写而成，基于 <a target="_blank" rel="noopener" href="https://tokio.rs/">Tokio</a> 平台（为 JavaScript 提供必备的异步运行时），依旧运行于 Google V8 引擎之上。</p>
-<h2 id="但还有什么新东西呢？"><a href="#但还有什么新东西呢？" class="headerlink" title="但还有什么新东西呢？"></a>但还有什么新东西呢？</h2><p>我们讨论的不仅仅是与当前的 Node.js 完全兼容的新的 JavaScript 运行时，取而代之的是，Ryan 为 Deno 添加了在创建 Node.js 时没有考虑到的特性。</p>
-<h3 id="安全集成"><a href="#安全集成" class="headerlink" title="安全集成"></a>安全集成</h3><p>一般来说，Node.js 允许你具有访问所有内容，意思是你可以在文件系统中进行读写操作，向外发布请求，访问环境变量等等。尽管对于开发者来说，获取这些权限是有益的，但代码可能不小心留下安全隐患。</p>
-<p>取而代之的是，Deno 使用命令行参数用于是否开启不同的安全措施。比如你的代码需要访问 &#x2F;etc 目录，则需要：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deno --allow-read=/etc myscript.ts</span><br></pre></td></tr></table></figure>
-
-<p>这允许代码读取该目录，除此之外会报安全错误。这与其他平台的安全措施类似。如果你是安卓用户，许多应用在使用时会向你询问是否能获取系统权限（比如联系人，通行记录，文件夹等），同样的原理也应用于此。通过使用这些选项来执行你的代码，提供了代码所需的权限。</p>
-<h3 id="更完整的标准库"><a href="#更完整的标准库" class="headerlink" title="更完整的标准库"></a>更完整的标准库</h3><p>自从第一个 Node 版本开始，JavaScript 改进了其标准库，但与其他语言相比，它还有很长的路要走。Deno 试图为开发者提供完善标准库用于完成基础任务，而使用外部库（也就是 NPM）用于更复杂的任务。</p>
-<p>实质上，开箱即用的是，Deno 为终端文字增加了<a target="_blank" rel="noopener" href="https://deno.land/std/fmt/colors.ts">颜色</a>，使用<a target="_blank" rel="noopener" href="https://deno.land/std/encoding/README.md">外部数据结构</a>（比如 binary, csv, yaml 等），生成 <a target="_blank" rel="noopener" href="https://deno.land/std/uuid/README.md">UUIDs</a> 甚至是编写 <a target="_blank" rel="noopener" href="https://deno.land/std/ws/README.md">websockets</a>。还有些其他的，更多可使用的基础模块，比如访问文件系统，日期助手（date helper）方法，http 关联方法以及<a target="_blank" rel="noopener" href="https://deno.land/std/">其他库</a>。</p>
-<h3 id="TypeScript-集成"><a href="#TypeScript-集成" class="headerlink" title="TypeScript 集成"></a>TypeScript 集成</h3><p>你没看错，如果你是 TypeScript 粉丝，那么 Deno 帮你解决了，而不需要额外工具，默认在内部完成编译为 JavaScript 。</p>
-<p>尽管在默认情况下，Deno 会解决许多问题，你可以使用 tsconfig.json 进行设定：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deno run -c tsconfig.json [your-script.ts]</span><br></pre></td></tr></table></figure>
-
-<p>默认情况下使用<strong>严格模式</strong>，因此，任何不良的编码将立即收到警告。</p>
-<h3 id="不再有-NPM-或-node-modules-目录"><a href="#不再有-NPM-或-node-modules-目录" class="headerlink" title="不再有 NPM 或 node_modules 目录"></a>不再有 NPM 或 node_modules 目录</h3><p>这是一个问题，因为每个包和其父类的都有依赖。这是不是显得太臃肿了？这是分发依赖关系的错误方式吗？这无疑是Node 最具争议的方面之一，而 Deno 确定彻底摆脱这种方式？</p>
-<p>所以 Deno 是如何处理依赖的？自此，允许你可从任意地方引用。换句话说，你可以这样做：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import * as <span class="built_in">log</span> from <span class="string">&quot;https://deno.land/std/log/mod.ts&quot;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>自身不再需要的集中式存储库，但需要小心进行实践，无法控制第三方导入的模块，导致处于暴露状态。</p>
-<p>事实上，我们也没有 package.json，使用包含模块列表以及其依赖的 URL 的 deps.ts 文件用于模块管理。但版本管理呢？我知道你会提问的。你可以在 URL 上标明版本号，这样并不优雅，但的确可行。</p>
-<p>deps.ts 文件示例如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> &#123; assert &#125; from <span class="string">&quot;https://deno.land/std@v0.39.0/testing/asserts.ts&quot;</span>;</span><br><span class="line"><span class="built_in">export</span> &#123; green, bold &#125; from <span class="string">&quot;https://deno.land/std@v0.39.0/fmt/colors.ts&quot;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>只需要简单的更改 URL ，你就可以重新导出模块并改变其版本。</p>
-<p>随便说一下，导入的代码会被缓存，第一次运行代码时，需要增加 –reload 标签进行重新构建。</p>
-<h3 id="还有什么呢？"><a href="#还有什么呢？" class="headerlink" title="还有什么呢？"></a>还有什么呢？</h3><p>Deno 还包括了另一些模块，比如开箱即用的工具，例如测试运行器（test runner）、调试、文件监听等等。但话又说过来，其中一些只是语言提供的 APIs，你需要编写自己的工具进行使用。</p>
-<p>比如文件监听 API，由 Deno.watchFs 提供，你可以使用类似于 <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/nodemon">nodemon</a> 进行构建。这里仅仅使用 23 行代码就能解决类似的问题：</p>
-<p><img src="https://s1.ax1x.com/2020/06/09/t4D5M6.png" alt="Deno.watchFs"></p>
-<p>这段代码是 Caesar2011 发布的其中一段，你可以在<a target="_blank" rel="noopener" href="https://github.com/Caesar2011/rhinoder/blob/master/mod.ts">这里</a>看到完整代码。</p>
-<h3 id="所以，Deno-会很快代替-Node-js-吗？"><a href="#所以，Deno-会很快代替-Node-js-吗？" class="headerlink" title="所以，Deno 会很快代替 Node.js 吗？"></a>所以，Deno 会很快代替 Node.js 吗？</h3><p>实话实说，并不会，这里有些标题党了。我们使用 Node.js 可以追溯到 0.10 版本，并且已经用在实际产品中了！告诉你真相可能有些恐怖，但我们这么做是因为当时没有其他可选方案。无论是 PHP、Python 还是 Ruby (更不用说 Java 或 . net )，都无法与后端同时使用 JavaScript 和异步 I&#x2F;O 模型相提并论。这些年来，Node（和 JavaScript ）已经成为工业的必备。这是不是很完美？当然不是！与生活类似，当涉及到编程语言时，没有是完美的。</p>
-<p>Deno 并没有区别，只是因为现在，它是花了两年时间在一个想法上的成果。其还没有在实际产品中进行编码和测试。尚未对 Deno 进行检测，也没有放入怪异和意外的用例中，以了解是如何处理边界情况的。直到这些完成，Deno 只是尝鲜者把玩的玩具。可能过了一年，我们开始听到公司是使用 Deno 的经历，他们是如何解决发现的问题，其背后的社区将对其进行怎样的调整，使其能够发挥作用。Deno 是否能代替 Node 呢？谁知道呢？只有时间才能给出答案。</p>
-<p>所以，你是怎样认为的呢？</p>
-
       
-    </div>
-
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
     
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
       
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
   
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/10/17/what-is-http-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/logo.png">
-      <meta itemprop="name" content="RomeoMo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RomeoMo">
-      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | RomeoMo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/10/17/what-is-http-3/" class="post-title-link" itemprop="url">HTTP/3 是什么？</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-10-17 00:00:00" itemprop="dateCreated datePublished" datetime="2019-10-17T00:00:00+08:00">2019-10-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/HTTP/" itemprop="url" rel="index"><span itemprop="name">HTTP</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="说明：-本文来自Medium，作者：Grigor-Khachatryan"><a href="#说明：-本文来自Medium，作者：Grigor-Khachatryan" class="headerlink" title="说明： 本文来自Medium，作者：Grigor Khachatryan"></a><strong>说明：</strong> 本文来自<a target="_blank" rel="noopener" href="https://medium.com/devgorilla/what-is-http-3-94335c57823f">Medium</a>，作者：<a target="_blank" rel="noopener" href="https://medium.com/@Grigorkh">Grigor Khachatryan</a></h4><h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>这段时间在研究 HTTP&#x2F;2 的相关知识，没想到 HTTP&#x2F;3 也在酝酿中，于是乎找到一篇介绍 HTTP&#x2F;3 的文章，学习并在此进行记录。</p>
-<p><img src="https://s1.ax1x.com/2020/06/08/tfEAd1.gif" alt="HTTP&#x2F;3"></p>
-<p>HTTP-over-QUIC 这个实验性的协议会被命名为 HTTP&#x2F;3，IETF 的一位成员披露了这条消息。</p>
-<p>从 HTTP&#x2F;1.1（发布于1999年）到  <a target="_blank" rel="noopener" href="https://medium.com/@Grigorkh/why-we-need-to-use-http-2-in-2017-e9e38d95a5e5">HTTP&#x2F;2</a> 已经过了许多年，而在 2019 年将大大推动 HTTP&#x2F;3 的发展。</p>
-<p>HTTP&#x2F;3 由 Google 的 QUIC 协议发展而来。它开始于 Mark Nottingham 的<a target="_blank" rel="noopener" href="https://mailarchive.ietf.org/arch/msg/quic/RLRs4nB1lwFCZ_7k0iuz0ZBa35s">建议</a>。</p>
-<p>所以啥是 QUIC ？</p>
-<p>QUIC（Quick UDP Internet Connections &#x2F; 快速 UDP 网络连接）是一种新的传输模式，与 TCP 相比减少了延迟。大体来说，QUIC 类似于 UDP 上实现 TCP + TLS + HTTP&#x2F;2。由于 TCP 在操作系统内核和中间件之上实现的，导致对于 TCP 进行重大更新几乎是不可能的。然而，QUIC 基于 UDP 之上实现，所以就没有这些限制。</p>
-<p>QUIC 于现有 TCP + TLS + HTTP&#x2F;2 上的主要功能包括:</p>
-<ul>
-<li>大大减少建立时间</li>
-<li>改善拥塞控制（congestion control）</li>
-<li>无队头阻塞（Head-of-line blocking）的多路复用</li>
-<li>前向纠错（Forward error correction）</li>
-<li>连接迁移（Connection migration）</li>
-</ul>
-<p>Google<a target="_blank" rel="noopener" href="https://blog.chromium.org/2015/04/a-quic-update-on-googles-experimental.html">说</a>，从 Chrome 到 Google 服务器的所有请求中，大约有一半是通过 QUIC 提供的，并且他们还在继续增加 QUIC 的占比，最终使其成为Google 客户端——Chrome 以及移动 apps 到 Google 服务器之间的默认传输方式。Google 计划正式向 IETF 提出 QUIC，使其成为一个网络标准，但首先还需要做一些工作，比如更新线路标准并将其实现从 SPDY-over-QUIC 更新为 HTTP2-over-QUIC（当前的 <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-ietf-quic-http-16#page-4">HTTP-over-QUIC 协议草案</a> 使用最新发布的 TLS 1.3 协议）。在接下来的几个月内，Google 打算减少握手开销以便用于更好的服务器扩展，提升前向纠错和改善拥塞避免，同时增加对多路径链接（multipath connections）的支持。</p>
-<p><img src="https://s1.ax1x.com/2020/06/08/tfu3wQ.gif" alt="HTTPS over TCP + TLS vs HTTPS over QUIC"></p>
-<p>reddit 的<a target="_blank" rel="noopener" href="https://www.reddit.com/user/AyrA_ch">一位用户</a>对 TCP 和 QUIC 的区分有个很好的解释：</p>
-<p>开发 TCP 的时候需要通过比现在更大丢包率的网络进行数据包传递，并且当时的计算机系统需要更长的时间来响应 TCP 消息。例如，即便在 5 秒内无法完成 TCP 握手，主机的链接超时仍为 20 秒，即使在你不太可能获得响应的情况下。长时间的延迟是网络应用存在停滞时间过长的原因。我们无法更改这个 70 年代产生的协议，尽管在看到可靠性以及速度有很大提升的情况下。</p>
-<p>在最大限度的与当前 TCP 兼容，而不是最终减少不会改变包的默认值的情况下，协议开发者开始使用 UDP 并在此基础上实现自己 TCP。 向 IPv6 的转变是修改 TCP 诸多问题的理想时间，例如大部分的超时，窗口尺寸（window size）以及 TCP 的慢启动。有些值可以在你的操作系统中调整，但是最烦人的超时是不能调整的。如果你终止已经有 5 秒超时的一条 TCP 套接字（TCP socket）， 操作系统依旧需要为此保持打开状态，直到 20 秒以后结束，这会消耗系统资源。</p>
-<p>参考资料：</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://http3-explained.haxx.se/zh/">HTTP&#x2F;3详解</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=RIFnXaiRs_o">What is QUIC?</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=idViw4anA6E">HTTP&#x2F;3 - HTTP over QUIC is the next generation by Daniel Stenberg</a> （墙裂推荐）</li>
-<li><a target="_blank" rel="noopener" href="https://www.slideshare.net/bagder/http3-129039527">上一条视频的幻灯片</a></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/09/27/cssom/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/logo.png">
-      <meta itemprop="name" content="RomeoMo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RomeoMo">
-      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | RomeoMo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/09/27/cssom/" class="post-title-link" itemprop="url">介绍 CSSOM</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-09-27 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-27T00:00:00+08:00">2019-09-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="说明：-本文来自Varvy，作者：Patrick-Sexton"><a href="#说明：-本文来自Varvy，作者：Patrick-Sexton" class="headerlink" title="说明： 本文来自Varvy，作者：Patrick Sexton"></a><strong>说明：</strong> 本文来自<a target="_blank" rel="noopener" href="https://varvy.com/performance/cssom.html">Varvy</a>，作者：<a target="_blank" rel="noopener" href="https://plus.google.com/+PatrickSexton">Patrick Sexton</a></h4><h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>前不久，在微博上看到貘吃馍香在吐槽</p>
-<p><img src="https://s1.ax1x.com/2020/06/08/tfECM4.png" alt="貘大的吐槽"></p>
-<p>于是去搜索和查阅了相关资料，也做了一些复习，加上 W3C Plus <a target="_blank" rel="noopener" href="https://www.w3cplus.com/javascript/cssom-css-typed-om.html">相关文章</a>收费，因此在此做个记录。</p>
-<h2 id="CSSOM-是什么？"><a href="#CSSOM-是什么？" class="headerlink" title="CSSOM 是什么？"></a>CSSOM 是什么？</h2><ul>
-<li>CSSOM 代表着 CSS Object Model</li>
-<li>CSSOM 基本上是页面中 CSS 的“映射”</li>
-<li>CSSOM 与 CSS 的关系类似于 DOM 之于 HTML</li>
-<li>CSSOM 与 DOM 相结合使浏览器渲染页面</li>
-</ul>
-<p><img src="https://s1.ax1x.com/2020/06/08/tfAzGT.png" alt="CSSOM"></p>
-<p>CSSOM 是页面渲染不可缺少的部分。</p>
-<p>CSSOM 是 关键路径渲染（<a target="_blank" rel="noopener" href="https://varvy.com/pagespeed/critical-render-path.html">critical rendering path</a>）的基础和关键，理解 CSSOM 做了什么是对页面优化（页面加载更快）的重要部分。</p>
-<h2 id="CSSOM-做了什么？"><a href="#CSSOM-做了什么？" class="headerlink" title="CSSOM 做了什么？"></a>CSSOM 做了什么？</h2><p>CSSOM 将样式表中的规则映射到页面上需要样式化的内容。</p>
-<p>为此，CSSOM 做了许多复杂的操作，但是 CSSOM 的最终是将样式映射到这些样式需要去的地方。</p>
-<p>（更精确的说，CSSOM 定义了令牌（token）并将其隐藏的链接到树结构的节点中。页面中节点及其样式的所有映射就是 CSS Object Mode）。</p>
-<h2 id="浏览器使用-CSSOM-渲染页面"><a href="#浏览器使用-CSSOM-渲染页面" class="headerlink" title="浏览器使用 CSSOM 渲染页面"></a>浏览器使用 CSSOM 渲染页面</h2><p>为了渲染页面，浏览器必须执行一些操作。此时，我们将其简化一下并讨论四个主要步骤，这些步骤将说明 CSSOM 的重要性。</p>
-<ol>
-<li>浏览器执行 HTML 并构建出 DOM（Document Object Model）。</li>
-<li>浏览器执行 CSS 并构建出 CSSOM（CSS Object Model）。</li>
-<li>浏览器组合 DOM 和 CSSOM 用于创建渲染树。</li>
-<li>浏览器展示 web 页面。</li>
-</ol>
-<p>如上所示，CSSOM 确实是展示 web 页面的重要部分。</p>
-<h2 id="好消息"><a href="#好消息" class="headerlink" title="好消息"></a>好消息</h2><p>为了优化 web 页面，其实你不需要了解 CSSOM 到底是如何工作的。</p>
-<p>你只需要知道 CSSOM 的几个关键点就可以对页面进行非常实际的优化。</p>
-<ol>
-<li>知道CSSOM 阻止任何东西的渲染。</li>
-<li>知道当载入新页面时，CSSOM 需要重新构建。</li>
-<li>知道渲染页面时，javascript 和 CSS 之间的关系。</li>
-</ol>
-<p>让我们快速的了解这几点，然后为了优化页面我们能做什么。</p>
-<h3 id="1-CSSOM-阻止任何东西的渲染"><a href="#1-CSSOM-阻止任何东西的渲染" class="headerlink" title="1. CSSOM 阻止任何东西的渲染"></a>1. CSSOM 阻止任何东西的渲染</h3><p>所有 CSS 是阻塞式渲染（意味着直到 CSS 处理完成，将不会展示任何东西）。</p>
-<p>这样做的原因是，如果在 CSS 执行之前就展现 web 页面，那你看到的 web 页面是没有样式的，然后过了一会，页面有了样式。如果这样做的话，体验是相当糟糕的。</p>
-<p><img src="https://s1.ax1x.com/2020/06/08/tfESRU.png" alt="CSS 阻塞式渲染"></p>
-<p>由于 CSSOM 用来帮助创建渲染树，如果在页面中的 CSS 不能高效的完成，那么将会产生严重的问题。</p>
-<p>主要问题是加载 web 页面时的白屏。</p>
-<h3 id="2-当载入新页面时，CSSOM-需要重新构建"><a href="#2-当载入新页面时，CSSOM-需要重新构建" class="headerlink" title="2. 当载入新页面时，CSSOM 需要重新构建"></a>2. 当载入新页面时，CSSOM 需要重新构建</h3><p>对你来说，这个可能不是相当明显，但确实是非常重要的一点。</p>
-<p>意思是尽管你的 CSS 被缓存了，并不意味着 CSSOM 是针对每个页面构建的。</p>
-<p>用户访问其他页面时，CSSOM 必须重新进行构建（尽管浏览器可能已经缓存了所需要的所有 CSS 文件）。</p>
-<p>换句话说，如果你的 CSS 是劣质和庞大并且编写相当糟糕的，那么在渲染页面时会带来副作用。</p>
-<h3 id="3-渲染页面时，javascript-和-CSS-之间的关系"><a href="#3-渲染页面时，javascript-和-CSS-之间的关系" class="headerlink" title="3. 渲染页面时，javascript 和 CSS 之间的关系"></a>3. 渲染页面时，javascript 和 CSS 之间的关系</h3><p>在 web 页面中使用 javascript 可能（或者说经常）会阻塞 CSSOM 的构建。</p>
-<p>简而言之—页面展现需要 CSSOM。如果 CSSOM 没有完成，页面将不会展现任何内容。如果阻塞了 CSSOM 的构建，那么 CSSOM 将会花费更长的时间，意思是页面展现将会花费更长的时间。如果 javascript 阻塞了 CSSOM 的构建，那么用户将会花费比原本更多时间停留在空白页面。</p>
-<h2 id="CSSOM-的优化方法"><a href="#CSSOM-的优化方法" class="headerlink" title="CSSOM 的优化方法"></a>CSSOM 的优化方法</h2><p>这里有些最佳实践用于加快 CSSOM 的构建（因此页面能加载的更快）。</p>
-<ul>
-<li>优化<a target="_blank" rel="noopener" href="https://varvy.com/pagespeed/critical-render-path.html">关键路径渲染</a></li>
-<li>确保页面在<a target="_blank" rel="noopener" href="https://varvy.com/pagespeed/style-script-order.html">加载 javascript 前加载 css</a></li>
-<li>确保<a target="_blank" rel="noopener" href="https://varvy.com/pagespeed/optimize-css-delivery.html">优化 CSS 交付（CSS delivery）</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/06/09/closures-and-currying-in-javascript/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/logo.png">
-      <meta itemprop="name" content="RomeoMo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RomeoMo">
-      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | RomeoMo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/06/09/closures-and-currying-in-javascript/" class="post-title-link" itemprop="url">函数式系列(2)：闭包和柯里化</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-06-09 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-09T00:00:00+08:00">2019-06-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Functional-Programming/" itemprop="url" rel="index"><span itemprop="name">Functional Programming</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="说明：-本文来自scotch，作者：Austin-Roy"><a href="#说明：-本文来自scotch，作者：Austin-Roy" class="headerlink" title="说明： 本文来自scotch，作者：Austin Roy"></a><strong>说明：</strong> 本文来自<a target="_blank" rel="noopener" href="https://scotch.io/tutorials/closures-and-currying-in-javascript">scotch</a>，作者：<a target="_blank" rel="noopener" href="https://scotch.io/@austinroy">Austin Roy</a></h4><h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。</h3><h2 id="什么是闭包？"><a href="#什么是闭包？" class="headerlink" title="什么是闭包？"></a>什么是闭包？</h2><p>如果经常写 JavaScript 代码，大概率你会遇到一个既有用又经常引起困惑的概念—闭包。但什么是闭包?</p>
-<pre><code>闭包是函数和声明该函数的词法环境（lexical environment）的组合。
-</code></pre>
-<p>但这到底是什么意思呢？词法环境 由函数创建时的所有局部变量组成。通过闭包，可以引用函数下的所有局部变量。这实际上是通过在一个函数中定义另一个函数来实现的，在函数中的这一函数称为闭包。一旦父函数被调用，一个包含所有局部变量的全新拷贝的执行上下文将创建。在全部变量中引用局部变量可以通过与全局变量进行链接，或者是返回父函数中的闭包。</p>
-<p>一个简单的示例将采用与此类似的:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">closuredFunc</span> (<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">closure</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="comment">// some logic</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>同样也可以通过以下方式让同一闭包返回多个方法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">closure</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">first</span>(<span class="params"></span>) &#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;I was declared first&#x27;</span>)&#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">second</span>(<span class="params"></span>) &#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;I was declared second&#x27;</span>)&#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">third</span>(<span class="params"></span>) &#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;I was declared third&#x27;</span>)&#125;</span><br><span class="line">    <span class="keyword">return</span> [first, second, third]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>为了引用这些方法，我们将闭包分配给一个全局变量，然后将其指向一组公开的方法。如下所示，每个方法分配了唯一的变量名称，以将它们带入全局范围。现在，可以调用它们了。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> f = <span class="title function_">closure</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> one = f[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">let</span> two = f[<span class="number">1</span>]</span><br><span class="line"><span class="keyword">let</span> three = f[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="title function_">one</span>() <span class="comment">// logs I was declared first</span></span><br><span class="line"><span class="title function_">two</span>() <span class="comment">// logs I was declared second</span></span><br><span class="line"><span class="title function_">three</span>() <span class="comment">// logs I was declared third</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="为什么使用闭包？"><a href="#为什么使用闭包？" class="headerlink" title="为什么使用闭包？"></a>为什么使用闭包？</h2><p>你可能想知道为什么要花这么多时间来写闭包。然而，闭包具有许多用途与优点。</p>
-<p>先前介绍了 ES6 中的 Class，闭包提供了类似于面向对象编程方法用于创建类似于类的隐私方法，允许我们遍历私有方法。这个也可称为 <strong>模块模式</strong>（module pattern），其允许我们更容易的维护代码，减少命名空间污染（namespace pollution）的同时增加可重用性。</p>
-<p>让我们看一个这样做的栗子。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> makeCounter = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> privateCounter = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">changeBy</span>(<span class="params">val</span>) &#123;</span><br><span class="line">    privateCounter += val;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">increment</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="title function_">changeBy</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">decrement</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="title function_">changeBy</span>(-<span class="number">1</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">value</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> privateCounter;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> counter1 = <span class="title function_">makeCounter</span>();</span><br><span class="line"><span class="keyword">var</span> counter2 = <span class="title function_">makeCounter</span>();</span><br><span class="line"></span><br><span class="line">counter1.<span class="title function_">value</span>(); <span class="comment">// returns 0</span></span><br><span class="line">counter1.<span class="title function_">increment</span>(); <span class="comment">// adds 1</span></span><br><span class="line">counter1.<span class="title function_">increment</span>(); <span class="comment">// adds 1</span></span><br><span class="line">counter1.<span class="title function_">value</span>(); <span class="comment">// returns 2</span></span><br><span class="line">counter1.<span class="title function_">decrement</span>(); <span class="comment">//subtracts 1</span></span><br><span class="line">counter1.<span class="title function_">value</span>(); <span class="comment">// returns 1</span></span><br><span class="line">counter2.<span class="title function_">value</span>(); <span class="comment">// returns 0</span></span><br></pre></td></tr></table></figure>
-
-<p>在上面的例子中， 我们定义了一个公共函数同时也可以访问一些私有变量如 privateCounter 和其中的函数的方法 makeCounter。创建 makeCounter 模仿了类的行为，其具有内置的功能和变量。这可以在创建两个不同的计数器 counter1 和counter2 时看到。每个计数器（counter）是独立于其他计数器，指向不同状态下的变量。</p>
-<p>闭包还允许我们使用函数来创建其他函数，这些函数会为其参数添加特定的值。在这种情况下，允许这种行为的父函数被称为 函数工厂 (function factory)，因为它实际上会创建其他函数。</p>
-<p>使用函数工厂，我们实现的这样行为称为 柯里化 （Currying）。我们将在下个部分详细描述。</p>
-<h2 id="柯里化"><a href="#柯里化" class="headerlink" title="柯里化"></a>柯里化</h2><p>柯里化是一种函数模式用于立即执行并且返回其他函数。这使得 JavaScript 函数返回其他函数的表达式成为可能。</p>
-<p>柯里化函数通过定义并立即返回其内部函数来链接闭包来构造。</p>
-<p>这里有柯里化的例子。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> greeting = <span class="keyword">function</span> (<span class="params">a</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params">b</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> a + <span class="string">&#x27; &#x27;</span> + b</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> hello = <span class="title function_">greeting</span>(<span class="string">&#x27;Hello&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> morning = <span class="title function_">greeting</span>(<span class="string">&#x27;Good morning&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="title function_">hello</span>(<span class="string">&#x27;Austin&#x27;</span>) <span class="comment">// returns Hello Austin</span></span><br><span class="line"><span class="title function_">hello</span>(<span class="string">&#x27;Roy&#x27;</span>) <span class="comment">// returns Hello Roy</span></span><br><span class="line"><span class="title function_">morning</span>(<span class="string">&#x27;Austin&#x27;</span>) <span class="comment">// returns Good morning Austin</span></span><br><span class="line"><span class="title function_">morning</span>(<span class="string">&#x27;Roy&#x27;</span>) <span class="comment">//returns Good Morning Roy</span></span><br></pre></td></tr></table></figure>
-
-<p>从 greeting 创建了两个函数（hello and morning），每个返回函数处理提供的输入用来生成问候语。它们还接受了一个参数用于要打招呼的人的名字。</p>
-<p>在上面的例子中，greeting 也作为函数工厂使用，hello 和 morning 由此生成。</p>
-<p>在第一次调用之后，还可以继续调用内部函数，如下所示：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">greeting</span>(<span class="string">&#x27;Hello There&#x27;</span>)(<span class="string">&#x27;General Kenobi&#x27;</span>) </span><br><span class="line"><span class="comment">//returns Hello There General Kenobi</span></span><br></pre></td></tr></table></figure>
-
-<p>柯里化认为是函数式编程的一部分，同时柯里化函数在使用 ES6 的箭头函数语法和新版本的 JavaScript 时，能更容易的书写清晰，优雅的代码。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">greeting</span> = (<span class="params">a</span>) =&gt; <span class="function">(<span class="params">b</span>) =&gt;</span> a + <span class="string">&#x27; &#x27;</span> + b </span><br><span class="line"></span><br><span class="line"><span class="title function_">greeting</span>(<span class="string">&#x27;Hello There&#x27;</span>)(<span class="string">&#x27;General Kenobi&#x27;</span>) </span><br><span class="line"><span class="comment">//returns Hello There General Kenobi</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>自从在 ES6 有了 Class，闭包可能不会经常使用，在编写清晰的可重用代码，闭包依旧占有一席之地。在本质上与面向对象编程中的私有方法具有相似用途的函数式编程中，闭包和柯里化是其重要的概念。</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures">Closures - JavaScript | MDN</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.sitepoint.com/currying-in-functional-javascript/">A Beginner’s Guide to Currying in Functional JavaScript</a>&#x2F;<a target="_blank" rel="noopener" href="http://romeomo.me/2016/04/21/currying-in-functional-javascript/">中文版</a></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/05/03/map-foreach-filter-reduce/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/logo.png">
-      <meta itemprop="name" content="RomeoMo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RomeoMo">
-      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | RomeoMo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/05/03/map-foreach-filter-reduce/" class="post-title-link" itemprop="url">函数式系列(1)：Map, ForEach 及 Filter, Reduce</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-05-03 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-03T00:00:00+08:00">2019-05-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Functional-Programming/" itemprop="url" rel="index"><span itemprop="name">Functional Programming</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Map-ForEach-及-Filter-Reduce"><a href="#Map-ForEach-及-Filter-Reduce" class="headerlink" title="Map, ForEach 及 Filter, Reduce"></a>Map, ForEach 及 Filter, Reduce</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map">map</a>, <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">foreach</a>, 及 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">filter</a>, <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">reduce</a> 为典型的函数式编程实践，均为高阶函数（Higher-Order Functions）。</p>
-<p>高阶函数指的是一个函数能作为值传递到另一个函数中，或者，一个函数可以作为另一个函数的输出。</p>
-<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><ul>
-<li>map filter 和 reduce 均有返回值，而 forEach 是没有返回值的</li>
-<li>forEach 能终止循化，而 map, filter 和 reduce 是无法终止的</li>
-</ul>
-<p>map filter 和 reduce 的区别如图所示。<br><img src="https://ftp.bmp.ovh/imgs/2019/09/cf6513f815170214.png" alt="map, filter 和 reduce"></p>
-<h2 id="map-filter-和-reduce"><a href="#map-filter-和-reduce" class="headerlink" title="map filter 和 reduce"></a>map filter 和 reduce</h2><h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>map 是将数组的每一项通过同样的操作进行变换，得到一个新的数组，且新数组与原数组的长度是一致的。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var array1 = [1, 4, 9, 16];</span><br><span class="line"></span><br><span class="line">const map1 = array1.map(x =&gt; x * 2);</span><br><span class="line"></span><br><span class="line">console.log(map1); // 输出：[2, 8, 18, 32]</span><br><span class="line"></span><br><span class="line">console.log(array1); // 输出： [1, 4, 9, 16]</span><br></pre></td></tr></table></figure>
-
-<h3 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h3><p>filter 是保留数组中符合条件的数据，得到一个新的数组，且新数组的长度不大于原数组的长度。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var array1 = [1, 4, 9, 16];</span><br><span class="line"></span><br><span class="line">const filter1 = array1.filter(x =&gt; x &gt; 0);</span><br><span class="line"></span><br><span class="line">console.log(filter1); // 输出：[1, 4, 9, 16]</span><br><span class="line"></span><br><span class="line">console.log(array1); // 输出： [1, 4, 9, 16]</span><br></pre></td></tr></table></figure>
-
-<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><p>reduce 是合并数组的每一项数据，最终返回一个新的数据。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var array1 = [1, 2, 3, 4];</span><br><span class="line"></span><br><span class="line">const reducer = (accumulator, currentValue) =&gt; accumulator + currentValue;</span><br><span class="line"></span><br><span class="line">console.log(array1.reduce(reducer, 5)); // 输出：10</span><br><span class="line"></span><br><span class="line">console.log(array1); // 输出： [1, 2, 3, 4]</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意：<strong>三个例子中，原来的数组是</strong>没有</strong>发生任何改变的。</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
-<li><p><a target="_blank" rel="noopener" href="https://medium.com/python-pandemonium/never-write-for-loops-again-91a5a4c84baf">“You (Probably) Don’t Need For-Loops”</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://medium.com/@RhinoDavid/processing-javascript-arrays-with-foreach-map-reduce-bf40d1e5eac4">“Breaking the Loop: How to use higher order functions to process arrays in JavaScript”</a>;</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://eloquentjavascript.net/05_higher_order.html">Higher-Order Functions</a></p>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2019/04/21/about-functional-programming/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/logo.png">
-      <meta itemprop="name" content="RomeoMo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RomeoMo">
-      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | RomeoMo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/04/21/about-functional-programming/" class="post-title-link" itemprop="url">函数式编程</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-04-21 00:00:00" itemprop="dateCreated datePublished" datetime="2019-04-21T00:00:00+08:00">2019-04-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Functional-Programming/" itemprop="url" rel="index"><span itemprop="name">Functional Programming</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>说明：这个系列来源于 <em>Fun Fun Function</em> 函数式编程系列视频，以《JavaScript函数式编程指南》和 《Hands-On Functional Programming with TypeScript》 等函数式书籍，加上在工作中总结的经验完成此系列。</p>
-<p><strong>注：</strong> 此系列文章的参考资料，是对文章的扩展及补充，请擅加利用。</p>
-<h2 id="总论"><a href="#总论" class="headerlink" title="总论"></a>总论</h2><p>函数式编程是声明式编程的一种实践，声明式编程目标是将程序的描述与求值分离开来。</p>
-<p>“To have a deep understanding of functional programs as a data transform pipeline, you need a way to define your data structures.”</p>
-<p>(摘自 <em>《Hands-On Functional Programming with TypeScript》</em> )</p>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
-<li><a target="_blank" rel="noopener" href="http://romeomo.me/2019/05/03/map-foreach-filter-reduce/">Map, ForEach 及 Filter, Reduce</a></li>
-<li>纯函数（Pure Function）</li>
-<li><a target="_blank" rel="noopener" href="http://romeomo.me/2019/06/09/closures-and-currying-in-javascript/">闭包和柯里化</a></li>
-<li></li>
-</ol>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=BMUiFMZr7vk&list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84">Fun Fun Function 函数式编程视频(需翻墙)</a></li>
-<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/30283769/">《JavaScript函数式编程指南》</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.amazon.com/dp/B07KSXLCNK/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1">《Hands-On Functional Programming with TypeScript》</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.goodreads.com/book/show/25847352-professor-frisby-s-mostly-adequate-guide-to-functional-programming">《Professor Frisby’s Mostly Adequate Guide to Functional Programming》</a></li>
-<li></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2018/02/24/javascript-event-loop-explained/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/logo.png">
-      <meta itemprop="name" content="RomeoMo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RomeoMo">
-      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | RomeoMo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/02/24/javascript-event-loop-explained/" class="post-title-link" itemprop="url">详解 JavaScript 事件循环</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-02-24 00:00:00" itemprop="dateCreated datePublished" datetime="2018-02-24T00:00:00+08:00">2018-02-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="说明：-本文来自Medium，作者：Anoop-Raveendran"><a href="#说明：-本文来自Medium，作者：Anoop-Raveendran" class="headerlink" title="说明： 本文来自Medium，作者：Anoop Raveendran"></a><strong>说明：</strong> 本文来自<a target="_blank" rel="noopener" href="https://medium.com/front-end-weekly/javascript-event-loop-explained-4cd26af121d4">Medium</a>，作者：<a target="_blank" rel="noopener" href="https://medium.com/@anooprav7">Anoop Raveendran</a></h4><h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>“JavaScript 的异步和单线程是怎样实现的？”简单来说，JavaScript 是单线程的但异步并不是在 JavaScript 中实现的，而是基于浏览器中 JavaScript 内核之上实现的并且通过浏览器 APIs 进行访问。</p>
-<p>现在我试着通过两个简单的片段详细解释事件循环。</p>
-<h2 id="基础结构"><a href="#基础结构" class="headerlink" title="基础结构"></a>基础结构</h2><p><img src="https://s1.ax1x.com/2020/06/09/tI0TXV.png" alt="浏览器主要组件概述"></p>
-<ul>
-<li><strong>堆（Heap）</strong>—— 对象存储在堆中，堆表示了内存中一个大的非结构化的区域。</li>
-<li><strong>栈（Stack）</strong>—— 这个表示了 JavaScript 代码执行时的单线程。函数的调用组成了栈的帧（详情见下面的描述）。</li>
-<li><strong>浏览器或是 Web APIs</strong> 是在浏览器中实现的，能从浏览器和电脑系统得到数据并且在此基础上执行复杂的事情。这些并不属于 JavaScript 语言本身，而是基于浏览器中 JavaScript 内核之上实现的，为你在使用 JavaScript 代码提供了额外的超能力。 举个栗子🌰，<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation">地理位置定位 API </a> 提供了一些简单的 JavaScript 方法来检索位置数据，例如在 Google Map 中标记你的位置。在其背后的实现，浏览器其实是调用了一些复杂的底层代码（比如 C++）和设备的 GPS 硬件（或是任何可以定义位置信息）来获取位置信息，返回到浏览器中并在你的 JavaScript 代码中使用。对开发者来言，这些 API 抽象了复杂度。</li>
-</ul>
-<h2 id="片段1：详细解释"><a href="#片段1：详细解释" class="headerlink" title="片段1：详细解释"></a>片段1：详细解释</h2><p>现在我们有一个主函数包含了在两个 console.log 语句分别在控制台输出 “A” 和 “C”。在两者之间，有一个等待 0 毫秒的 setTimeOut 打印 “B” 的函数。</p>
-<p><img src="https://s1.ax1x.com/2020/06/09/tI0HmT.png" alt="执行过程的内部实现"></p>
-<ol>
-<li>首先是调用主函数（作为帧）加入到栈中。随后浏览器把 console.log(‘A’) 作为第一条语句加入到栈。这条语句执行完成并且此帧弹出。于是在控制台展示了字母 “A”。</li>
-<li>下一条语句（ 回调为 exec() 且等待0毫秒，执行的setTimeout() ），推入了执行栈（call stack）并开始执行。setTimeout 函数调用的浏览器的 APIs 用于等待执行回调函数。这一帧（使用 setTimeOut）弹出并且完成交由浏览器。</li>
-<li>当浏览器的定时器（timer）执行回调方法 exec() 时，console.log(‘C’) 加入到栈中。在特定的时候，正如延迟 0 毫秒的时候，（理想情况下）一旦浏览器收到回调，这个回调函数加入到消息队列（message queue）。</li>
-<li>当执行完成主函数的最后一个语句时，这个 main() 函数从执行栈弹出，因此执行栈为空。浏览器从队列向执行栈传递数据时，必须执行栈为空作为前提。这就是为什么就算 setTimeout() 的等待时间为 0 毫秒，它的回调 exec() 必须等到执行栈的所有帧完成。</li>
-<li>现在回调函数 exec() 调入到执行栈并开始执行。控制台显示字母 “C”。这就是 JavaScript 的事件循环。</li>
-</ol>
-<blockquote><p>所以在 setTimeout（函数，延迟时间）中的延迟参数，并不是函数延迟执行的准确时间。它代表在此之后某个时间点执行功能的最短等待时间。</p>
-</blockquote>
-
-<h2 id="片段2：深入理解"><a href="#片段2：深入理解" class="headerlink" title="片段2：深入理解"></a>片段2：深入理解</h2><p><img src="https://s1.ax1x.com/2020/06/09/tI0o60.png" alt="深入解释事件循环"></p>
-<ul>
-<li>runWhileLoopForNSeconds() 函数表示的和名字一致。其会不停的检查经过的时间是否等于此函数传入的第二个参数。重要的是记住 while 循环（与其他语言类似）是一个阻塞语句，意味着，它的执行是发生在执行栈中并且不会使用浏览器 APIs。所以它会阻塞后续的语句，直到完成执行。</li>
-<li>所以就上方的代码，尽管 setTimeout 只需等待 0 毫秒并且 while 循环执行 3 秒， 回调函数 exec() 语句卡在消息队列 3 秒。直到 3 秒以后 while 循环一直在执行栈中运行（单线程）。在执行栈为空之后，回调函数 exec() 才移动到执行栈并开始执行。</li>
-<li>所以 setTimeout() 的等待参数并不保证一定等于执行开始到结束的时间。它是等待部分的最短时间。</li>
-</ul>
-<h2 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/33058983">详解JavaScript中的Event Loop（事件循环）机制</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=8aGhZQkoFbQ">JS Event Loop</a>(需翻墙，强烈推荐 12:50~17:20 之间的内容)</li>
-<li><a target="_blank" rel="noopener" href="http://latentflip.com/loupe/">JavaScript 事件循环可视化（”JS Event Loop” 演讲示例）</a></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2017/08/11/es6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/logo.png">
-      <meta itemprop="name" content="RomeoMo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RomeoMo">
-      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | RomeoMo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2017/08/11/es6/" class="post-title-link" itemprop="url">ES6 & ES7 脑图</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2017-08-11 17:32:08" itemprop="dateCreated datePublished" datetime="2017-08-11T17:32:08+08:00">2017-08-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="说明：本图基于-Nicholas-C-Zakas《深入理解ES6》豆瓣链接及相关-MDN-文档"><a href="#说明：本图基于-Nicholas-C-Zakas《深入理解ES6》豆瓣链接及相关-MDN-文档" class="headerlink" title="说明：本图基于 Nicholas C. Zakas《深入理解ES6》豆瓣链接及相关 MDN 文档"></a>说明：本图基于 Nicholas C. Zakas《深入理解ES6》<a target="_blank" rel="noopener" href="https://book.douban.com/subject/27072230/">豆瓣链接</a>及相关 MDN 文档</h3><p><img src="https://s1.ax1x.com/2022/08/25/v2CrjK.png" alt="ES6 &amp; ES7"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2016/04/21/currying-in-functional-javascript/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/logo.png">
-      <meta itemprop="name" content="RomeoMo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RomeoMo">
-      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | RomeoMo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/04/21/currying-in-functional-javascript/" class="post-title-link" itemprop="url">初学者的柯里化指南</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2016-04-21 00:00:00" itemprop="dateCreated datePublished" datetime="2016-04-21T00:00:00+08:00">2016-04-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Functional-Programming/" itemprop="url" rel="index"><span itemprop="name">Functional Programming</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="说明：-本文来自SitePoint，作者：M-David-Green"><a href="#说明：-本文来自SitePoint，作者：M-David-Green" class="headerlink" title="说明： 本文来自SitePoint，作者：M. David Green"></a><strong>说明：</strong> 本文来自<a target="_blank" rel="noopener" href="https://www.sitepoint.com/currying-in-functional-javascript/">SitePoint</a>，作者：<a target="_blank" rel="noopener" href="https://www.sitepoint.com/author/mdavidgreen/">M. David Green</a></h4><h3 id="文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。"><a href="#文章版权属于原网站-原作者。我依旧只是个搬运工-不称职的翻译。" class="headerlink" title="文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。"></a>文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。</h3><p>柯里化（Currying），或称为偏函数应用（Partial Application），是函数式编程中会给听起来给更熟悉传统的JavaScript编程的人带来困惑。但只要使用得当，柯里化会让你的函数式JavaScript更加易读。</p>
-<h2 id="更易读以及更具有扩展性"><a href="#更易读以及更具有扩展性" class="headerlink" title="更易读以及更具有扩展性"></a>更易读以及更具有扩展性</h2><p>函数式JavaScript的一个显而易见的优点是代码量更少、代码内聚更高、代码更少的重复，在代码行更少的情况下，也能输出正确的结果。在不熟悉函数是编程如何实现之前，有时会多花一些时间去阅读理解代码，代码的书写也会变得难以理解。</p>
-<p>如果你对柯里化这个词有影响，但从来不知道它的意思，你完全不用担心你曾经认为它是一种陌生或者神奇的技术。其实柯里化是一个相当简单的概念,当处理函数参数，它能处理一些常见的问题，并且为开发者开辟了更多的选择。</p>
-<h2 id="什么是柯里化？"><a href="#什么是柯里化？" class="headerlink" title="什么是柯里化？"></a>什么是柯里化？</h2><p>简而言之，柯里化是一种允许偏函数应用作为参数组成新的函数。意味着为了获取函数结果，你可以传递函数所需要的所有参数，或者也可以传递一部分参数得到结果作为其余函数的参数。情况就是这么简单。</p>
-<p>柯里化是如Haskell和Scala这样的函数式语言的基础。JavaScript具有函数式编写的能力，但柯里化并不实现于其中（至少在目前版本是这样的）。但我们已经知道一些函数式的方法，能让我们能在JavaScript中使用柯里化。</p>
-<p>为了给你展现柯里化是如何实现的，我们写了JavaScript中第一个入门的柯里化函数，使用熟悉的方法创建了柯里化函数。我们想通过名字用来打招呼作为例子。我们知道如何通过创造一个简单的、包含使用名字和处理的打招呼的函数，并使用控制台打印名字。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var greetCurried = function(greeting) &#123;</span><br><span class="line">  return function(name) &#123;</span><br><span class="line">    console.log(greeting + &quot;, &quot; + name);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>这个函数需要两个参数–名称和方式才能正常的使用。但是我们可以仅通过简单的嵌套柯里化重写此函数，使之基本函数只需要传递方式，返回一个函数用于接受我们任意传递的名称。</p>
-<h2 id="第一次柯里化"><a href="#第一次柯里化" class="headerlink" title="第一次柯里化"></a>第一次柯里化</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var greetCurried = function(greeting) &#123;</span><br><span class="line">  return function(name) &#123;</span><br><span class="line">    console.log(greeting + &quot;, &quot; + name);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>这个小小的改变，让我们创建了一个可为任何类型方式的新函数，并且接受我们任意传递的名称。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var greetHello = greetCurried(&quot;Hello&quot;);</span><br><span class="line">greetHello(&quot;Heidi&quot;); //&quot;Hello, Heidi&quot;</span><br><span class="line">greetHello(&quot;Eddie&quot;); //&quot;Hello, Eddie&quot;</span><br></pre></td></tr></table></figure>
-
-<p>我们也可以对原始函数进行柯里化调用，只需要使用左到右的方式从传入参数的集合中分离参数。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">greetCurried(&quot;Hi there&quot;)(&quot;Howard&quot;); //&quot;Hi there, Howard&quot;</span><br></pre></td></tr></table></figure>
-
-<p>为何不在浏览器中尝试一下此代码呢？</p>
-<p><a target="_blank" rel="noopener" href="https://jsbin.com/basoyi/1/edit">此为JS Bin的链接</a></p>
-<h2 id="全部柯里化！"><a href="#全部柯里化！" class="headerlink" title="全部柯里化！"></a>全部柯里化！</h2><p>最酷的是，现在我们学习了可以使用这种方式处理参数用于改变传统函数，我们能对任意数量的参数使用此方法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var greetDeeplyCurried = function(greeting) &#123;</span><br><span class="line">  return function(separator) &#123;</span><br><span class="line">    return function(emphasis) &#123;</span><br><span class="line">      return function(name) &#123;</span><br><span class="line">        console.log(greeting + separator + name + emphasis);</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>我们四个参数的函数和两个参数的函数有同样的灵活度。无论嵌套有多深，我们都可以创造出一个包含任意人数的函数来满足我们的预期：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var greetAwkwardly = greetDeeplyCurried(&quot;Hello&quot;)(&quot;...&quot;)(&quot;?&quot;);</span><br><span class="line">greetAwkwardly(&quot;Heidi&quot;); //&quot;Hello...Heidi?&quot;</span><br><span class="line">greetAwkwardly(&quot;Eddie&quot;); //&quot;Hello...Eddie?&quot;</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://jsbin.com/tetugu/2/edit">此为JS Bin的链接</a></p>
-<h2 id="柯里化传统函数"><a href="#柯里化传统函数" class="headerlink" title="柯里化传统函数"></a>柯里化传统函数</h2><p>你能看到这样的尝试非常强大，特别是如果你需要创造一堆具体的函数的情况下。唯一的问题在于语法。一旦写出柯里化的函数，你需要不停地嵌套返回函数，调用每个都包含自有参数变量的新函数。这样会变得相当复杂。</p>
-<p>为了解决这个问题，创造出一个包含不用包含所有嵌套返回的现存函数名称的快速和脏的柯里化函数。一个柯里化的函数需要放出参数列表，并且使用它们用于返回原始函数的当前版本。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var curryIt = function(uncurried) &#123;</span><br><span class="line">  var parameters = Array.prototype.slice.call(arguments, 1);</span><br><span class="line">  return function() &#123;</span><br><span class="line">    return uncurried.apply(this, parameters.concat(</span><br><span class="line">      Array.prototype.slice.call(arguments, 0)</span><br><span class="line">    ));</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>为了使用这个，我们设定号存放任何参数数量的函数，和我们初始设定的参数一致。然后我们获得了一个包含等待剩余参数的函数。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var greeter = function(greeting, separator, emphasis, name) &#123;</span><br><span class="line">  console.log(greeting + separator + name + emphasis);</span><br><span class="line">&#125;;</span><br><span class="line">var greetHello = curryIt(greeter, &quot;Hello&quot;, &quot;, &quot;, &quot;.&quot;);</span><br><span class="line">greetHello(&quot;Heidi&quot;); //&quot;Hello, Heidi.&quot;</span><br><span class="line">greetHello(&quot;Eddie&quot;); //&quot;Hello, Eddie.&quot;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>和之前一样，我们使用从原始函数中分离出没有限制参数的函数。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var greetGoodbye = curryIt(greeter, &quot;Goodbye&quot;, &quot;, &quot;);</span><br><span class="line">greetGoodbye(&quot;.&quot;, &quot;Joe&quot;); //&quot;Goodbye, Joe.&quot;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://jsbin.com/hayaka/2/edit?html,js,output">此为JS Bin的链接</a></p>
-<h2 id="开始严肃对待柯里化"><a href="#开始严肃对待柯里化" class="headerlink" title="开始严肃对待柯里化"></a>开始严肃对待柯里化</h2><p>我们的小柯里化函数并不包括所有情况，比如没有或者可选参数，但是它做的有意义同样严格按照语法传递参数。</p>
-<p>以**<a target="_blank" rel="noopener" href="https://ramdajs.com/">Ramda</a>**为代表的一些函数式JavaScript库又更灵活的柯里化方式以至于可以用来打破函数所必须的参数，并且可以让你挨个或者组团传递参数用于生成自定义的柯里化参数。如果你想更广泛的柯里化，这个可能是一种方法。</p>
-<p>不管你在自己的程序里如何增加柯里化，无论你想使用嵌套参数或者更喜欢健壮的柯里化函数，为当前的柯里化函数提出一个组合化的名称将会让你的代码更具有可读性。每一个参数都需要一个让其具有明确行为以及期望传递的名字。</p>
-<h2 id="参数顺序"><a href="#参数顺序" class="headerlink" title="参数顺序"></a>参数顺序</h2><p>一个需要注意的是柯里化时参数的顺序。正如我们的描述，你显然希望参数大多数情况下是一个接着一个传递直到原始函数最后一个。</p>
-<p>提早思考参数顺序会让你在工作中更容易的使用柯里化。并且思考参数顺序在设计函数大多数情况下都不是坏习惯。</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>柯里化在函数式编程中是一项难以置信的有用办法。它允许你生成代码少、易于配置且运行稳定的库，同时易于使用，让你的代码更易理解。在实际代码编写时，实现柯里化会让你更容易的在代码中使用偏函数应用，避免有可能产生的重复，并且能让你在命名和处理函数参数时养成良好习惯。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2015/06/22/maintainable-css/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/logo.png">
-      <meta itemprop="name" content="RomeoMo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RomeoMo">
-      <meta itemprop="description" content="关于技术、生活、工作的吐槽、感悟">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | RomeoMo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/06/22/maintainable-css/" class="post-title-link" itemprop="url">编写可维护的 CSS</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2015-06-22 00:00:00" itemprop="dateCreated datePublished" datetime="2015-06-22T00:00:00+08:00">2015-06-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="传统CSS书写"><a href="#传统CSS书写" class="headerlink" title="传统CSS书写"></a>传统CSS书写</h2><h3 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h3><ol>
-<li>就算加了注释,代码也很难维护</li>
-<li>为了保证样式被覆盖,CSS的权重可能会变得非常⾼</li>
-</ol>
-<h2 id="Sass方式书写"><a href="#Sass方式书写" class="headerlink" title="Sass方式书写"></a>Sass方式书写</h2><h3 id="何为Sass？"><a href="#何为Sass？" class="headerlink" title="何为Sass？"></a>何为Sass？</h3><p>Sass是CSS的预处理程序，其思想是用一种专门的编程语言，进行网页样式设计，然后再编译成正常的CSS文件。同样也有Less，Stylus等其他预处理程序，而本人在平常中没有实践过其他预处理程序，所以在此按下不表。SCSS实现了Sass的所有功能，并且有类似于css的句法，所以在工作中，我更偏爱SCSS。</p>
-<h3 id="存在的问题-1"><a href="#存在的问题-1" class="headerlink" title="存在的问题"></a>存在的问题</h3><p>使用SCSS容易造成嵌套层级过多，导致 CSS 权重过高的问题。大漠在<a target="_blank" rel="noopener" href="http://www.zhihu.com/question/30170210">知乎上的回答</a>写着**“别让你的嵌套层级超过四层”**，而腾讯的AlloyTeam在Code Guide上写着”<a target="_blank" rel="noopener" href="http://alloyteam.github.io/CodeGuide/#css-SCSS">嵌套最多不能超过5层</a>“。为了减少嵌套层级，我认为解决方法为：<strong>提取公因式</strong>。</p>
-<p>提取公因式就是把相同表现类似的css用同一个class表示，而独特表现的元素单独写。要熟练使用此方法需要透彻了解css的权重。</p>
-<h2 id="使用Compass"><a href="#使用Compass" class="headerlink" title="使用Compass"></a>使用Compass</h2><p>在使用SCSS中，最实用的是[@mixin](<a target="_blank" rel="noopener" href="http://sass-lang.com/guide#topic-6">http://sass-lang.com/guide#topic-6</a> “Mixins”), 类似于c语言中的宏，使用@mixin能大大提升写代码的效率。</p>
-<p>在平常工作中，特别是在使用css3时需要注意浏览器前缀问题。如果不想手写 CSS3 的浏览器前缀，想让工具生成这些属性，那<a target="_blank" rel="noopener" href="http://compass-style.org/">Compass</a> 就是一个很好的选择。</p>
-<h3 id="关于Compass应该知道的知识"><a href="#关于Compass应该知道的知识" class="headerlink" title="关于Compass应该知道的知识"></a>关于Compass应该知道的知识</h3><p>Compass是Sass的一种工具库（toolkit），引用阮一峰博客上的一句话：“<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2012/11/compass.html">Sass是一种”CSS预处理器”，可以让CSS的开发变得简单和可维护。但是，只有搭配Compass，它才能显出真正的威力</a>”。</p>
-<h3 id="Compass主要分为七部分"><a href="#Compass主要分为七部分" class="headerlink" title="Compass主要分为七部分"></a>Compass主要分为七部分</h3><ol>
-<li>reset(normalize)*：重写浏览器的默认样式</li>
-<li>layout：⻚面布局</li>
-<li>CSS3：跨浏览器的CSS3**（使用最为频繁）**</li>
-<li>typography：文本样式</li>
-<li>helper：类似于Sass语法的，一系列函数,</li>
-<li>utilities:除去以上5点的其他工具,多为@mixin</li>
-<li>Browser Support：浏览器支持，直接决定了以上6点的表现</li>
-</ol>
-<p><strong>PS</strong>：reset与<a target="_blank" rel="noopener" href="http://necolas.github.io/normalize.css/">Normalize</a>的区别：reset是“暴力”的重写浏览器默认样式。而Normalize分为8个部分进行重写，分别为：base, html5, links, typography, embeds, groups, forms以及tables。Normalize可以整体引入也可以分开引入。所以是使用reset还是Normalize，就看各位看官了（本人更偏向于Normalize）。</p>
-<h2 id="使用SCSS-Compass的总结"><a href="#使用SCSS-Compass的总结" class="headerlink" title="使用SCSS+Compass的总结"></a>使用SCSS+Compass的总结</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>CSS 权重尽可能低，容易修改、覆盖。加上适当注释后，更容易阅读代码<br>不⽤担⼼ CSS3 兼容性问题，直接配置解决</p>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>从 CSS 到 SCSS，再到 Compass, 难度逐渐增加。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/3/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-  <div class="copyright">
-    &copy; 2015 – 
-    <span itemprop="copyrightYear">2025</span>
-    <span class="with-love">
-      <i class="fa fa-face-kiss-wink-heart"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">RomeoMo</span>
-  </div>
-
-    </div>
-  </footer>
-
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-  <div class="sidebar-dimmer"></div>
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up fa-lg"></i>
-    <span>0%</span>
-  </div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-</body>
-</html>
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'RomeoMo',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/uploads/logo.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Links</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">RomeoMo</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Links</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">RomeoMo</h1></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/06/11/deno-v1/" title="Deno 1.0">Deno 1.0</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-06-10T16:00:00.000Z" title="发表于 2020-06-11 00:00:00">2020-06-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Deno/">Deno</a></span></div><div class="content">说明： 本文来自 Deno ,作者：Ryan Dahl, Bert Belder, and Bartek Iwańczuk文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。本文不翻译鸣谢部分。 动态语言是有用的工具。脚本允许用户快速高效的将复杂的系统连接在一起，并且在不需要关心诸如内存管理或者构建系统等细节中表达想法。最近几年，像 Rust 以及 Go 这样的语言，使机器代码更易生成；这些项目使得计算机基础架构获得了极大的发展。然而，我们认为拥有一个强大的脚本环境来处理各种问题依旧重要。 JavaScript 是最广泛使用的动态语言，运行于各种浏览器中。大量程序员精通 JavaScript，并且已经在优化其执行方面投入了大量精力。通过如 ECMA 这样的组织的建立，JavaScript 得到了谨慎并且持续的进步。我们相信 JavaScript 是动态语言工具的必然选择；无论是在浏览器环境还是作为独立进程。 我们是这块实践的先行者，Node.js 被证明是非常成功的平台。Node.js 足以构建 Web 开发工具、创建独立进程以及无数其他案例。在 2009 设...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/05/24/what-is-deno-and-will-it-replace-nodejs/" title="Deno 是什么，它能代替 NodeJS 吗？">Deno 是什么，它能代替 NodeJS 吗？</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-05-23T16:00:00.000Z" title="发表于 2020-05-24 00:00:00">2020-05-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Deno/">Deno</a></span></div><div class="content">说明： 本文来自Medium ,作者：Fernando Doglio文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。Deno v1.0.0 计划于 5 月 13 号发布。这里有一些有趣的事实，可能对确定 Deno 起作用。  确定的是，（显然）太早了来讨论这个事情，但这些事实可能可以确定 Deno。 对于初学者来说，Deno 由创建过 Node.js 的 Ryan Dahl 编写，是不是听起来很熟？这是不是意味着 Deno 是 Node 的替代方案并且可以计划我们对重构进行冲刺了？当然不是！但如果你想了解更多，请继续读下去! 让我们从头开始在 2018 年，Ryan 讲了他认为做 Node.js 时犯的错误的前十名，并且在演讲的最后，他揭示了 Deno，在那个时候，这只是一个可以称为 Node.js 第二的小项目，提供了更多的安全方案。 点击这里观看视频（请自备梯子）。 两年后，Deno 1.0 官方发布日期确定了：5 月 13 号。为后端开发准备的全新的 JavasSript 运行时，使用 Rust 而不是 C++ 编写而成，基于 Tokio 平台（为 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/10/17/what-is-http-3/" title="HTTP/3 是什么？">HTTP/3 是什么？</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-10-16T16:00:00.000Z" title="发表于 2019-10-17 00:00:00">2019-10-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/HTTP/">HTTP</a></span></div><div class="content">说明： 本文来自Medium，作者：Grigor Khachatryan文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。这段时间在研究 HTTP&#x2F;2 的相关知识，没想到 HTTP&#x2F;3 也在酝酿中，于是乎找到一篇介绍 HTTP&#x2F;3 的文章，学习并在此进行记录。  HTTP-over-QUIC 这个实验性的协议会被命名为 HTTP&#x2F;3，IETF 的一位成员披露了这条消息。 从 HTTP&#x2F;1.1（发布于1999年）到  HTTP&#x2F;2 已经过了许多年，而在 2019 年将大大推动 HTTP&#x2F;3 的发展。 HTTP&#x2F;3 由 Google 的 QUIC 协议发展而来。它开始于 Mark Nottingham 的建议。 所以啥是 QUIC ？ QUIC（Quick UDP Internet Connections &#x2F; 快速 UDP 网络连接）是一种新的传输模式，与 TCP 相比减少了延迟。大体来说，QUIC 类似于 UDP 上实现 TCP + TLS + HTTP&#x2F;2。由...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/09/27/cssom/" title="介绍 CSSOM">介绍 CSSOM</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-09-26T16:00:00.000Z" title="发表于 2019-09-27 00:00:00">2019-09-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/CSS/">CSS</a></span></div><div class="content">说明： 本文来自Varvy，作者：Patrick Sexton文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。前不久，在微博上看到貘吃馍香在吐槽  于是去搜索和查阅了相关资料，也做了一些复习，加上 W3C Plus 相关文章收费，因此在此做个记录。 CSSOM 是什么？ CSSOM 代表着 CSS Object Model CSSOM 基本上是页面中 CSS 的“映射” CSSOM 与 CSS 的关系类似于 DOM 之于 HTML CSSOM 与 DOM 相结合使浏览器渲染页面   CSSOM 是页面渲染不可缺少的部分。 CSSOM 是 关键路径渲染（critical rendering path）的基础和关键，理解 CSSOM 做了什么是对页面优化（页面加载更快）的重要部分。 CSSOM 做了什么？CSSOM 将样式表中的规则映射到页面上需要样式化的内容。 为此，CSSOM 做了许多复杂的操作，但是 CSSOM 的最终是将样式映射到这些样式需要去的地方。 （更精确的说，CSSOM 定义了令牌（token）并将其隐藏的链接到树结构的节点中。页面中节点及其样...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/06/09/closures-and-currying-in-javascript/" title="函数式系列(2)：闭包和柯里化">函数式系列(2)：闭包和柯里化</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-06-08T16:00:00.000Z" title="发表于 2019-06-09 00:00:00">2019-06-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Functional-Programming/">Functional Programming</a></span></div><div class="content">说明： 本文来自scotch，作者：Austin Roy文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。什么是闭包？如果经常写 JavaScript 代码，大概率你会遇到一个既有用又经常引起困惑的概念—闭包。但什么是闭包? 闭包是函数和声明该函数的词法环境（lexical environment）的组合。  但这到底是什么意思呢？词法环境 由函数创建时的所有局部变量组成。通过闭包，可以引用函数下的所有局部变量。这实际上是通过在一个函数中定义另一个函数来实现的，在函数中的这一函数称为闭包。一旦父函数被调用，一个包含所有局部变量的全新拷贝的执行上下文将创建。在全部变量中引用局部变量可以通过与全局变量进行链接，或者是返回父函数中的闭包。 一个简单的示例将采用与此类似的: 12345function closuredFunc ()&#123;    function closure()&#123;    // some logic    &#125;&#125;  同样也可以通过以下方式让同一闭包返回多个方法： 123456function closure()&#...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/05/03/map-foreach-filter-reduce/" title="函数式系列(1)：Map, ForEach 及 Filter, Reduce">函数式系列(1)：Map, ForEach 及 Filter, Reduce</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-05-02T16:00:00.000Z" title="发表于 2019-05-03 00:00:00">2019-05-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Functional-Programming/">Functional Programming</a></span></div><div class="content">Map, ForEach 及 Filter, Reduce概念map, foreach, 及 filter, reduce 为典型的函数式编程实践，均为高阶函数（Higher-Order Functions）。 高阶函数指的是一个函数能作为值传递到另一个函数中，或者，一个函数可以作为另一个函数的输出。 区别 map filter 和 reduce 均有返回值，而 forEach 是没有返回值的 forEach 能终止循化，而 map, filter 和 reduce 是无法终止的  map filter 和 reduce 的区别如图所示。 map filter 和 reducemapmap 是将数组的每一项通过同样的操作进行变换，得到一个新的数组，且新数组与原数组的长度是一致的。 1234567var array1 = [1, 4, 9, 16];const map1 = array1.map(x =&gt; x * 2);console.log(map1); // 输出：[2, 8, 18, 32]console.log(array1); // 输出： [1, 4, 9, 16...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/04/21/about-functional-programming/" title="函数式编程">函数式编程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-04-20T16:00:00.000Z" title="发表于 2019-04-21 00:00:00">2019-04-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Functional-Programming/">Functional Programming</a></span></div><div class="content">说明：这个系列来源于 Fun Fun Function 函数式编程系列视频，以《JavaScript函数式编程指南》和 《Hands-On Functional Programming with TypeScript》 等函数式书籍，加上在工作中总结的经验完成此系列。 注： 此系列文章的参考资料，是对文章的扩展及补充，请擅加利用。 总论函数式编程是声明式编程的一种实践，声明式编程目标是将程序的描述与求值分离开来。 “To have a deep understanding of functional programs as a data transform pipeline, you need a way to define your data structures.” (摘自 《Hands-On Functional Programming with TypeScript》 ) 目录 Map, ForEach 及 Filter, Reduce 纯函数（Pure Function） 闭包和柯里化   参考资料 Fun Fun Function 函数式编程视频(需翻墙) 《Java...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2018/02/24/javascript-event-loop-explained/" title="详解 JavaScript 事件循环">详解 JavaScript 事件循环</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-02-23T16:00:00.000Z" title="发表于 2018-02-24 00:00:00">2018-02-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/JavaScript/">JavaScript</a></span></div><div class="content">说明： 本文来自Medium，作者：Anoop Raveendran文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。“JavaScript 的异步和单线程是怎样实现的？”简单来说，JavaScript 是单线程的但异步并不是在 JavaScript 中实现的，而是基于浏览器中 JavaScript 内核之上实现的并且通过浏览器 APIs 进行访问。 现在我试着通过两个简单的片段详细解释事件循环。 基础结构  堆（Heap）—— 对象存储在堆中，堆表示了内存中一个大的非结构化的区域。 栈（Stack）—— 这个表示了 JavaScript 代码执行时的单线程。函数的调用组成了栈的帧（详情见下面的描述）。 浏览器或是 Web APIs 是在浏览器中实现的，能从浏览器和电脑系统得到数据并且在此基础上执行复杂的事情。这些并不属于 JavaScript 语言本身，而是基于浏览器中 JavaScript 内核之上实现的，为你在使用 JavaScript 代码提供了额外的超能力。 举个栗子🌰，地理位置定位 API  提供了一些简单的 JavaScript 方法来检索位...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2017/08/11/es6/" title="ES6 &amp; ES7 脑图">ES6 &amp; ES7 脑图</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2017-08-11T09:32:08.000Z" title="发表于 2017-08-11 17:32:08">2017-08-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/JavaScript/">JavaScript</a></span></div><div class="content">说明：本图基于 Nicholas C. Zakas《深入理解ES6》豆瓣链接及相关 MDN 文档 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2016/04/21/currying-in-functional-javascript/" title="初学者的柯里化指南">初学者的柯里化指南</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-04-20T16:00:00.000Z" title="发表于 2016-04-21 00:00:00">2016-04-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Functional-Programming/">Functional Programming</a></span></div><div class="content">说明： 本文来自SitePoint，作者：M. David Green文章版权属于原网站&#x2F;原作者。我依旧只是个搬运工+不称职的翻译。柯里化（Currying），或称为偏函数应用（Partial Application），是函数式编程中会给听起来给更熟悉传统的JavaScript编程的人带来困惑。但只要使用得当，柯里化会让你的函数式JavaScript更加易读。 更易读以及更具有扩展性函数式JavaScript的一个显而易见的优点是代码量更少、代码内聚更高、代码更少的重复，在代码行更少的情况下，也能输出正确的结果。在不熟悉函数是编程如何实现之前，有时会多花一些时间去阅读理解代码，代码的书写也会变得难以理解。 如果你对柯里化这个词有影响，但从来不知道它的意思，你完全不用担心你曾经认为它是一种陌生或者神奇的技术。其实柯里化是一个相当简单的概念,当处理函数参数，它能处理一些常见的问题，并且为开发者开辟了更多的选择。 什么是柯里化？简而言之，柯里化是一种允许偏函数应用作为参数组成新的函数。意味着为了获取函数结果，你可以传递函数所需要的所有参数，或者也可以传递一部分参数得到结果作为...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/uploads/logo.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">RomeoMo</div><div class="author-info-description">关于技术、生活、工作的吐槽、感悟</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/21/designing-for-interaction/" title="《Designing for Interaction:Creating Innovative Applications and Devices》笔记">《Designing for Interaction:Creating Innovative Applications and Devices》笔记</a><time datetime="2025-06-20T16:00:00.000Z" title="发表于 2025-06-21 00:00:00">2025-06-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/25/ux-for-beginners-a-crash-course-in-100-short-lessons-3/" title="《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（3）">《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（3）</a><time datetime="2025-05-24T16:00:00.000Z" title="发表于 2025-05-25 00:00:00">2025-05-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/18/ux-for-beginners-a-crash-course-in-100-short-lessons-2/" title="《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（2）">《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（2）</a><time datetime="2025-05-17T16:00:00.000Z" title="发表于 2025-05-18 00:00:00">2025-05-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/10/ux-for-beginners-a-crash-course-in-100-short-lessons-1/" title="《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（1）">《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（1）</a><time datetime="2025-05-09T16:00:00.000Z" title="发表于 2025-05-10 00:00:00">2025-05-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/15/dont-make-me-think-revisited/" title="《Don't Make Me Think, Revisited》笔记">《Don't Make Me Think, Revisited》笔记</a><time datetime="2025-04-14T16:00:00.000Z" title="发表于 2025-04-15 00:00:00">2025-04-15</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CSS/"><span class="card-category-list-name">CSS</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Deno/"><span class="card-category-list-name">Deno</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Full-Stack/"><span class="card-category-list-name">Full Stack</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Functional-Programming/"><span class="card-category-list-name">Functional Programming</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HCI/"><span class="card-category-list-name">HCI</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HTTP/"><span class="card-category-list-name">HTTP</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JavaScript/"><span class="card-category-list-name">JavaScript</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8E%A8%E8%8D%90/"><span class="card-category-list-name">推荐</span><span class="card-category-list-count">3</span></a></li>
+          </ul></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2015 - 2026 By RomeoMo</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><div class="js-pjax"></div><script async data-pjax src="/"></script></div></body></html>
