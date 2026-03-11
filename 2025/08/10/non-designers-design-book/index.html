@@ -1,0 +1,370 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>《The Non-Designer's Design Book》笔记 | RomeoMo</title><meta name="author" content="RomeoMo"><meta name="copyright" content="RomeoMo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="书名：《写给大家看的设计书》（第4版）豆瓣 原书名称：《The Non-Designer’s Design Book》(4th Edition)Goodreads  第1章 引言 4大基本原则  对比（Contrast）  对比的基本思想是，要避免页面上的元素太过相似。要让页面引人注目，对比通常是最重要的一个因素，正是它能使读者首先看这个页面。   重复（Repetition）  让设计中的视觉">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《The Non-Designer&#39;s Design Book》笔记">
+<meta property="og:url" content="https://romeomo.me/2025/08/10/non-designers-design-book/index.html">
+<meta property="og:site_name" content="RomeoMo">
+<meta property="og:description" content="书名：《写给大家看的设计书》（第4版）豆瓣 原书名称：《The Non-Designer’s Design Book》(4th Edition)Goodreads  第1章 引言 4大基本原则  对比（Contrast）  对比的基本思想是，要避免页面上的元素太过相似。要让页面引人注目，对比通常是最重要的一个因素，正是它能使读者首先看这个页面。   重复（Repetition）  让设计中的视觉">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://romeomo.me/uploads/logo.png">
+<meta property="article:published_time" content="2025-08-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-09T16:00:00.000Z">
+<meta property="article:author" content="RomeoMo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://romeomo.me/uploads/logo.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "《The Non-Designer's Design Book》笔记",
+  "url": "https://romeomo.me/2025/08/10/non-designers-design-book/",
+  "image": "https://romeomo.me/uploads/logo.png",
+  "datePublished": "2025-08-09T16:00:00.000Z",
+  "dateModified": "2025-08-09T16:00:00.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "RomeoMo",
+      "url": "https://romeomo.me"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/uploads/favicon-32x32.png"><link rel="canonical" href="https://romeomo.me/2025/08/10/non-designers-design-book/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-LWY0FNC2T7"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-LWY0FNC2T7')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-LWY0FNC2T7', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '《The Non-Designer\'s Design Book》笔记',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/uploads/logo.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Links</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">RomeoMo</span></a><a class="nav-page-title" href="/"><span class="site-name">《The Non-Designer's Design Book》笔记</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Links</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">《The Non-Designer's Design Book》笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-09T16:00:00.000Z" title="发表于 2025-08-10 00:00:00">2025-08-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/HCI/">HCI</a></span></div><div class="meta-secondline"></div></div></div><article class="container post-content" id="article-container"><ul>
+<li>书名：《写给大家看的设计书》（第4版）<a target="_blank" rel="noopener" href="https://book.douban.com/subject/26664522/">豆瓣</a></li>
+<li>原书名称：《The Non-Designer’s Design Book》(4th Edition)<a target="_blank" rel="noopener" href="https://www.goodreads.com/book/show/22251142-the-non-designer-s-design-book">Goodreads</a></li>
+</ul>
+<h2 id="第1章-引言">第1章 引言</h2>
+<h4 id="4大基本原则">4大基本原则</h4>
+<ul>
+<li>对比（Contrast）
+<ul>
+<li>对比的基本思想是，要避免页面上的元素太过相似。要让页面引人注目，对比通常是最重要的一个因素，正是它能使读者首先看这个页面。</li>
+</ul>
+</li>
+<li>重复（Repetition）
+<ul>
+<li>让设计中的视觉要素在整个作品中重复出现。既能增加条理性，还可以加强统一性。</li>
+</ul>
+</li>
+<li>对齐（Alignment）
+<ul>
+<li>任何东西都不能在页面上随意安放。每个元素都应当与页面上的另一个元素有某种视觉联系。这样能建立一种清晰、精巧而且清爽的外观。</li>
+</ul>
+</li>
+<li>亲密性（Proximity）
+<ul>
+<li>彼此相关的项应当靠近，归组在一起。有助于组织信息，减少混乱，读者提供清晰的结构。</li>
+</ul>
+</li>
+</ul>
+<h2 id="第2章-亲密性">第2章 亲密性</h2>
+<ul>
+<li>亲密性原则：<code>将相关的项组织在一起</code>。</li>
+<li>物理位置的接近就意味着存在关联。</li>
+<li>把相关的元素分在一组，使它们建立更近的亲密性。</li>
+<li>如果某些元素在理解上存在关联，或者相互之间存在某种关系，那么这些元素在视觉上也应当有关联。除此以外，其他孤立的元素或元素组则不应存在亲密性。位置是否靠近可以体现出元素之间是否存在关系。</li>
+<li>亲密性的根本目的是实现<code>组织性</code>。</li>
+<li>要避免的问题：
+<ul>
+<li>避免一个页面上有太多孤立的元素。</li>
+<li>不要在元素之间留出同样大小的空白，除非各组同属于一个子集。</li>
+<li>标题、子标题、图表标题、图片能否归入其相关材料？在这个问题上一定要非常清楚（哪怕只有一点含糊都要尽量避免）。在有很近亲密性的元素之间建立关系。</li>
+<li>不同属一组的元素之间不要建立关系！如果元素彼此无关，要把它们分开。</li>
+<li>不要仅仅因有空白就把元素放在角落或中央。</li>
+</ul>
+</li>
+</ul>
+<h2 id="第3章-对齐">第3章 对齐</h2>
+<ul>
+<li>对齐原则：<code>任何元素都不能在页面上随意安放。每一项都应当与页面上的某个内容存在某种视觉联系</code>。</li>
+<li><code>养成为元素画线的习惯，用线来明确哪里缺少关联</code>。</li>
+<li>居中对齐会创建一种更正式、更稳重的外观，这种外观显得更为中规中矩，但同产业很乏味。</li>
+<li><code>只使用一种对齐方式</code>。页面上只使用一种文本对齐，所有文本都左对齐，或右对齐，或者全部居中。</li>
+<li>两端对齐（方形左右对齐，块对齐），无论对齐方式叫什么，都要尽力避免，除非行足够长，能够避免单词之间出现难看的空隙。</li>
+<li>在页面上放其他项时，一定要确保每一项都与页面上的其他项存在某种对齐。</li>
+<li>只要你是有意为之，有时候完全可以任意地打破常规对齐。<code>但在打破规则之前必须清楚规则是什么</code>。</li>
+<li>对齐的根本目的是使页面<code>统一而且有条理</code>。</li>
+</ul>
+<h2 id="第4章-重复">第4章 重复</h2>
+<ul>
+<li><code>设计的某些方面需要在整个作品中重复</code>。</li>
+<li>重复有助于组织信息，可以帮助读者浏览各个页面，也有利于将设计中单独的部分统一起来。</li>
+<li>重复还会为你的作品带来一种专业性和权威性，不管它看起来多有趣。</li>
+<li>重复的目的就是<code>统一</code>，并<code>增强视觉效果</code>。</li>
+<li>要避免太多地重复一个元素，重复太多会让人讨厌。</li>
+</ul>
+<h2 id="第5章-对比">第5章 对比</h2>
+<ul>
+<li><code>页面上不同的元素之间要有对比效果，达到吸引读者的对比效果</code>。</li>
+<li>如果两个元素虽然不同，但是区别不大，这时候就不是对比，而是冲突。</li>
+<li>对比的根本目的：增强页面的效果；有助于信息的组织。</li>
+</ul>
+<h2 id="第7章-颜色运用">第7章 颜色运用</h2>
+<p><img src="/img/colorwheel.svg" alt="Colorwheel"></p>
+<ul>
+<li>色轮的基础是黄红和蓝3种颜色。这些颜色被称为<code>三原色</code>，因为这是唯一无法创建的颜色。</li>
+<li>将色轮上相邻的颜色等量混合，就会得到<code>三间色</code>（secondary color）。</li>
+<li>只需将两边的颜色按等量混合，得到的这些颜色称为<code>第三色</code>。</li>
+<li>互补：色轮上相对（即完全对立）的颜色为<code>互补色</code>。由于它们如此对立，所以最佳搭配是一种作为主色，另一种用于强调。</li>
+<li>三色组：彼此等距的三种颜色通常会形成一个让人愉悦的<code>三色组</code>。由三原色组合而成称为<code>基色三色组</code>。</li>
+<li><code>分裂互补三色组</code>：从色轮的一边选择一种颜色，再在色轮上找出它对面的互补色，不过并不直接使用这个互补色，而是使用该互补色两侧的颜色。</li>
+<li><code>类似色</code>组合由色轮上彼此相邻的颜色组成。</li>
+<li>暗色与亮色
+<ul>
+<li>纯色就是<code>色调</code>。</li>
+<li>向色调增加黑色就构成一个<code>暗色</code>。</li>
+<li>向色调增加白色就构成一个<code>亮色</code>。</li>
+</ul>
+</li>
+<li>色质
+<ul>
+<li>指某种颜色的特定明暗度、深浅度或色调。</li>
+<li>如果设计要求使用有类似色质的色调，一定要尽力避免它们挨在一起，另外每种色调的用量也不要完全相同。</li>
+</ul>
+</li>
+<li>冷暖色
+<ul>
+<li>冷色趋于做背色，而暖色是趋进型的。</li>
+<li>如果要组合暖色和冷色，一定要少用些暖色。</li>
+<li>由于冷色是后退型的，所以使用（有时则必须使用）更多的冷色才能产生效果或形成有效的对比。</li>
+</ul>
+</li>
+<li>不要让冷暖色太过均衡！一定要充分利用这种视觉现象。</li>
+<li>CMYK 和 RGB
+<ul>
+<li>需要印刷的项目应当使用 CMYK；</li>
+<li>需要在屏幕上看的内容则应使用 RGB。</li>
+</ul>
+</li>
+</ul>
+<h2 id="第8章-更多提示与技巧">第8章 更多提示与技巧</h2>
+<ul>
+<li>建立标识性包装时，最重要的特性之一是需要遵循重复原则：每一件作品中都必须有某个标识性图像或某种标识性风格。</li>
+</ul>
+<h2 id="第9章-字体的基本规则">第9章 字体的基本规则</h2>
+<ul>
+<li>标点后面一个空格。</li>
+<li>另一个业余设计师常犯的明晃晃的错误就是使用打字机引号('&quot;)，而不是印刷引号(’“)。</li>
+<li>撇号最常见的使用错误是：
+<ul>
+<li>使用打字机符号，</li>
+<li>把撇号放在错误的地方。</li>
+</ul>
+</li>
+<li>使用真正的破折号，而不是：–</li>
+<li>有时候全部大写也是绝妙的设计选择。但是你需要找到使用这种做法的理由，一个你说得出来的理由。</li>
+<li>不要使用下划线。</li>
+<li>字号越大，空间调整就越重要。</li>
+<li>跟随在有样式的文字后的标点：如果有一个单词的样式是粗体、斜体或另外一种字体，紧随最后一个字母的标点也应该是同样的样式。</li>
+<li>括号中的标点：如果你不清楚标点应该出现在括号的里面还是外面，就看看这条文法上的规定。
+<ul>
+<li>如果括号中的文字是整个句子的一部分，那么标点就应该在闭括号之外（就像这里的例子一样）。</li>
+<li>如果括号内的文字是一个完整单独的句子，标点应该出现在括号内。（这就是一个标点出现在括号内的例子。）</li>
+</ul>
+</li>
+<li>段落缩进</li>
+<li>段落缩进或段落间的空行：不要同时使用段落缩进或段落间空行。</li>
+<li>首段：根据前面讲述的原则的逻辑，应该可以理解为什么跟随在题目或小标题后的首段不需要缩进。</li>
+<li>把文字放进方框里：如果你确实要把文字放进方框里，那就要在四周都留足够的空间。</li>
+<li>在列表中使用项目符号或装饰符号，而不是连字符</li>
+</ul>
+<h2 id="第10章-字体（与人生）">第10章 字体（与人生）</h2>
+<ul>
+<li>如果只使用一个字体系列，在样式、大小、字体粗细等方面没有什么变化，就会产生一种<code>协调</code>的关系。</li>
+<li>如果结合使用了多种字体，它们在样式、大小、字体粗细等方面很类似（但并不相同），就会出现一种<code>冲突</code>的关系。</li>
+<li>如果结合的多种字体和元素彼此之间截然不同，就会出现一种<code>对比</code>关系。
+<ul>
+<li>字体对比有 6 种明确的不同方式：大小、粗细、结构、形状、方向和颜色。</li>
+<li>建立字体对比时要遵循这样一条规则：不要太保守 !</li>
+</ul>
+</li>
+</ul>
+<h2 id="第11章-字体类别">第11章 字体类别</h2>
+<ul>
+<li>Oldstyle（旧式体）：旧式体类别中的字体是基于手写体创建的。</li>
+<li>Modern（现代体）：结构很严格，笔划中有剧烈的粗 / 细过渡（或对比）。因为不存在笔的倾斜，所以强调线完全是垂直的。</li>
+<li>Slab serif（粗衬线体）：可以提供很好的可读性，这说明它们可以很好地用于显示大量文本。</li>
+<li>Sans serif（无衬线体）：无衬线体就是指笔划末端没有衬线的字体。</li>
+<li>Script（手写体）：绝对不能将大段文本设置为这些有趣的字体，而且绝对不能设置为全大写。不过手写体设置得非常大时可能会让人印象特别深刻。放手去做，千万不要保守！</li>
+<li>Decorative（花体）：使用要有限制。</li>
+</ul>
+<h2 id="第12章-字体对比">第12章 字体对比</h2>
+<ul>
+<li>Size（大小）：为了有效的使用大小对比，绝对不要保守。</li>
+<li>Weight（粗细）
+<ul>
+<li>粗细对比是为页面增加视觉效果最容易而且最有效的方法之一，而且无需重新做任何设计。</li>
+<li>粗细对比不仅能使页面更引人注目，也是组织信息的最有效的方式之一。</li>
+</ul>
+</li>
+<li>Structure（结构）
+<ul>
+<li>如果你要结合使用来自两种不同字体系列中的字体，就要使用不同结构的字体系列。</li>
+<li>不要把同一个类别中的两种字体放在同一个页面上。</li>
+</ul>
+</li>
+<li>Form（形状）
+<ul>
+<li>可以简单地把形状对比认为是大写与小写的对比。</li>
+</ul>
+</li>
+<li>Direction（方向）
+<ul>
+<li>不要设置方向。</li>
+<li>只有当你能明确地说出原因时才可以设置有方向的文本，你要能够说明为什么这种字体必须有方向，为什么它能增加美感或促进表达。</li>
+<li>实现字体方向对比时还可以介入布局中的其他部分，如结合图片或线条来强调方向或形成方向反差。</li>
+</ul>
+</li>
+<li>Color（颜色）
+<ul>
+<li>暖色（红色、橙色）是前进型的，会引起我们的注意。</li>
+<li>冷色（蓝色、绿色）则是远离型的，总是在我们的视线中后退。</li>
+<li>需要更多的冷色才能产生有效的对比。</li>
+</ul>
+</li>
+</ul>
+<h2 id="第13章-过程">第13章 过程</h2>
+<ol>
+<li><code>从中心点开始</code>。确定希望读者最先看什么。除非你已经决定要建立一个非常协调的设计，否则就应该创建一个有强烈对比的中心点。</li>
+<li><code>将信息分组</code>。按逻辑进行分组，确定这些组之间的关系。通过组之间的靠近与否（亲密性）来显示这些关系。</li>
+<li>在页面上组织文本和图片时，要<code>建立并维护明确的对齐</code>。</li>
+<li><code>创建重复</code>，或者找出可以重复的项。</li>
+<li>除非你已经决定创建一种协调的设计，否则一定要建立<code>强烈的对比</code>，这样会吸引读者的视线。要记住，对比要黑白分明。</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://romeomo.me">RomeoMo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://romeomo.me/2025/08/10/non-designers-design-book/">https://romeomo.me/2025/08/10/non-designers-design-book/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://romeomo.me" target="_blank">RomeoMo</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/uploads/logo.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/06/21/designing-for-interaction/" title="《Designing for Interaction:Creating Innovative Applications and Devices》笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">《Designing for Interaction:Creating Innovative Applications and Devices》笔记</div></div><div class="info-2"><div class="info-item-1"> 书名：《交互设计指南》豆瓣 原书名称：《Designing for Interaction: Creating Innovative Applications and Devices》Goodreads   第1章 什么是交互设计 交互和交互设计是什么  交互设计定义：  技术为中心的观点：交互设计师使技术、特别是数字技术变得有用、易用并且乐于被大家使用。 行为学派观点：交互设计是有关“定义人造物、环境和系统（如产品）的行为”，强调功能和反馈，即在人们使用产品时产品如何工作，如何反馈。 社会交往设计的观点：交互设计的本质具有社会性，利用产品来促进人与人之间的沟通。    为何需要交互设计  交互设计中使用的方法：  关注用户 寻找方案 使用构思法和原型法 协作和描述约束 创建合适的方案 汲取来自多领域的影响 引入感情因素    多学科的融合   交互设计都应该与技术无关，只应当关注与任务有关的合适技术。 设计产品时，主要关注人和人造物之间的互动。伟大的产品设计师在设计时会侧重考虑产品使用场景。在服务设计中，设计师必须创建连接人和人、人和机器、机器和机器的方法。必须考虑环境、通道...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/uploads/logo.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">RomeoMo</div><div class="author-info-description">关于技术、生活、工作的吐槽、感悟</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC1%E7%AB%A0-%E5%BC%95%E8%A8%80"><span class="toc-text">第1章 引言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E5%A4%A7%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99"><span class="toc-text">4大基本原则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC2%E7%AB%A0-%E4%BA%B2%E5%AF%86%E6%80%A7"><span class="toc-text">第2章 亲密性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC3%E7%AB%A0-%E5%AF%B9%E9%BD%90"><span class="toc-text">第3章 对齐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC4%E7%AB%A0-%E9%87%8D%E5%A4%8D"><span class="toc-text">第4章 重复</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC5%E7%AB%A0-%E5%AF%B9%E6%AF%94"><span class="toc-text">第5章 对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC7%E7%AB%A0-%E9%A2%9C%E8%89%B2%E8%BF%90%E7%94%A8"><span class="toc-text">第7章 颜色运用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC8%E7%AB%A0-%E6%9B%B4%E5%A4%9A%E6%8F%90%E7%A4%BA%E4%B8%8E%E6%8A%80%E5%B7%A7"><span class="toc-text">第8章 更多提示与技巧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC9%E7%AB%A0-%E5%AD%97%E4%BD%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99"><span class="toc-text">第9章 字体的基本规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC10%E7%AB%A0-%E5%AD%97%E4%BD%93%EF%BC%88%E4%B8%8E%E4%BA%BA%E7%94%9F%EF%BC%89"><span class="toc-text">第10章 字体（与人生）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC11%E7%AB%A0-%E5%AD%97%E4%BD%93%E7%B1%BB%E5%88%AB"><span class="toc-text">第11章 字体类别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC12%E7%AB%A0-%E5%AD%97%E4%BD%93%E5%AF%B9%E6%AF%94"><span class="toc-text">第12章 字体对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC13%E7%AB%A0-%E8%BF%87%E7%A8%8B"><span class="toc-text">第13章 过程</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/10/non-designers-design-book/" title="《The Non-Designer's Design Book》笔记">《The Non-Designer's Design Book》笔记</a><time datetime="2025-08-09T16:00:00.000Z" title="发表于 2025-08-10 00:00:00">2025-08-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/21/designing-for-interaction/" title="《Designing for Interaction:Creating Innovative Applications and Devices》笔记">《Designing for Interaction:Creating Innovative Applications and Devices》笔记</a><time datetime="2025-06-20T16:00:00.000Z" title="发表于 2025-06-21 00:00:00">2025-06-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/25/ux-for-beginners-a-crash-course-in-100-short-lessons-3/" title="《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（3）">《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（3）</a><time datetime="2025-05-24T16:00:00.000Z" title="发表于 2025-05-25 00:00:00">2025-05-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/18/ux-for-beginners-a-crash-course-in-100-short-lessons-2/" title="《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（2）">《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（2）</a><time datetime="2025-05-17T16:00:00.000Z" title="发表于 2025-05-18 00:00:00">2025-05-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/10/ux-for-beginners-a-crash-course-in-100-short-lessons-1/" title="《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（1）">《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（1）</a><time datetime="2025-05-09T16:00:00.000Z" title="发表于 2025-05-10 00:00:00">2025-05-10</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2015 - 2026 By RomeoMo</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><div class="js-pjax"></div><script async data-pjax src="/"></script></div></body></html>
