@@ -1,0 +1,875 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>《The Design of Everyday Things》笔记 | RomeoMo</title><meta name="author" content="RomeoMo"><meta name="copyright" content="RomeoMo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="书名：《设计心理学1：日常的设计》豆瓣 原书名称：《The Design of Everyday Things》Goodreads  第一章 日用品心理学  好的设计有两个重要特征：可视性（discoverability）及易通性（undestanding）  可视性指：所设计的产品能不能让用户明白怎样操作是合理的，在什么位置及如何操作。 易通性指：所有设计的意图是什么，产品的预设用途是什么，所">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《The Design of Everyday Things》笔记">
+<meta property="og:url" content="https://romeomo.me/2025/09/21/design-of-everyday-things/index.html">
+<meta property="og:site_name" content="RomeoMo">
+<meta property="og:description" content="书名：《设计心理学1：日常的设计》豆瓣 原书名称：《The Design of Everyday Things》Goodreads  第一章 日用品心理学  好的设计有两个重要特征：可视性（discoverability）及易通性（undestanding）  可视性指：所设计的产品能不能让用户明白怎样操作是合理的，在什么位置及如何操作。 易通性指：所有设计的意图是什么，产品的预设用途是什么，所">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://romeomo.me/uploads/logo.png">
+<meta property="article:published_time" content="2025-09-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-09-20T16:00:00.000Z">
+<meta property="article:author" content="RomeoMo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://romeomo.me/uploads/logo.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "《The Design of Everyday Things》笔记",
+  "url": "https://romeomo.me/2025/09/21/design-of-everyday-things/",
+  "image": "https://romeomo.me/uploads/logo.png",
+  "datePublished": "2025-09-20T16:00:00.000Z",
+  "dateModified": "2025-09-20T16:00:00.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "RomeoMo",
+      "url": "https://romeomo.me"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/uploads/favicon-32x32.png"><link rel="canonical" href="https://romeomo.me/2025/09/21/design-of-everyday-things/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-LWY0FNC2T7"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-LWY0FNC2T7')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-LWY0FNC2T7', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '《The Design of Everyday Things》笔记',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/uploads/logo.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Links</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">RomeoMo</span></a><a class="nav-page-title" href="/"><span class="site-name">《The Design of Everyday Things》笔记</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Links</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">《The Design of Everyday Things》笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-09-20T16:00:00.000Z" title="发表于 2025-09-21 00:00:00">2025-09-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/HCI/">HCI</a></span></div><div class="meta-secondline"></div></div></div><article class="container post-content" id="article-container"><ul>
+<li>书名：《设计心理学1：日常的设计》<a target="_blank" rel="noopener" href="https://book.douban.com/subject/26102860/">豆瓣</a></li>
+<li>原书名称：《The Design of Everyday Things》<a target="_blank" rel="noopener" href="https://www.goodreads.com/book/show/840.The_Design_of_Everyday_Things">Goodreads</a></li>
+</ul>
+<h2 id="第一章-日用品心理学">第一章 日用品心理学</h2>
+<ul>
+<li>好的设计有两个重要特征：可视性（discoverability）及易通性（undestanding）
+<ul>
+<li>可视性指：所设计的产品能不能让用户明白怎样操作是合理的，在什么位置及如何操作。</li>
+<li>易通性指：所有设计的意图是什么，产品的预设用途是什么，所有不同的控制和装置起到什么作用。</li>
+</ul>
+</li>
+</ul>
+<h4 id="复杂的现代设备">复杂的现代设备</h4>
+<ul>
+<li>最理想的情况是，产品应该宜人且合意，这就意味着设计不仅仅要满足工程、创造和人机工程的要求，还必须关注用户的整体体验，也就是要满足形式美和人机互动的质量。</li>
+<li>工业设计（Industrial design）：是一种专业的服务，为使用者和生产者双方的利益而创造和开发产品与系统的概念和规范，旨在优化功能、价值和外观。</li>
+<li>交互设计（Interaction design）：重点关注人与技术的互动。目标是增强人们理解可以做什么，正在发生什么，以及已经发生了什么。交互设计借鉴了心理学、设计、艺术和情感等基本原则来保证用户得到积极的、愉悦的体验。</li>
+<li>体验设计（Experience design）：设计产品、流程，服务，以及事件和环境的实践，重点关注整体体验的质量和愉悦感。</li>
+<li>我们为人们设计产品，因而需要同时了解技术和人。</li>
+</ul>
+<h4 id="以人为本的设计">以人为本的设计</h4>
+<ul>
+<li>以人为本的设计就是解决之道，这种理念将用户的需求、能力和行为方式先行分析，然后用设计来满足人们的需求、能力和行为方式。</li>
+<li>人们往往并不知道自己的真正需求，也不清楚他们将要面对的困难。</li>
+</ul>
+<h4 id="交互设计的基本原则">交互设计的基本原则</h4>
+<ul>
+<li>示能（Affordance)：
+<ul>
+<li>示能物品的特性与决定物品预设用途的主体的能力之间的关系。</li>
+<li>示能的体现，由物品的品质同与之交互的主体的能力共同决定。</li>
+<li>可见的示能对操控提供了有力线索。</li>
+<li>示能的符号提示功能叫作意符。</li>
+</ul>
+</li>
+<li>意符（Signifiers):
+<ul>
+<li>示能决定可能进行哪些操作。意符则点明操作的位置。</li>
+<li>优良的设计要求对产品的目的、结构和设备的操作与使用者进行良好的交代。</li>
+<li>意符是一种提示，特别告诉用户可以采取什么行为，以及应该怎么操作，意符必须是可感知的，否则它们不起作用。</li>
+</ul>
+</li>
+<li>映射（Mapping)
+<ul>
+<li>表示两组事物要素之间的关系。</li>
+<li>如果能清楚理解控制、行为和预期结果之间的映射，控制和结果之间的关系最容易了解。</li>
+<li>分组和邻近是格式塔心理学的重要原则，可以用于匹配控制与功能：相关控件应该组合在一起，而且控件应该靠近所要控制的对象。</li>
+</ul>
+</li>
+<li>反馈（Feedback)
+<ul>
+<li>反馈——沟通行动的结果——是控制论、信息论的著名概念。</li>
+<li>反馈必须是即时的：即使延迟1/10秒就会令人不安。</li>
+<li>反馈还必须提供信息。</li>
+<li>糟糕的反馈可能比没有反馈更差劲，因为它分散了注意力，不能提供详细信息．并且常常刺激和引发焦虑。</li>
+<li>过多的反馈可能比过少的反馈更恼人。</li>
+<li>反馈需要精心策划，需要以一种不显著的方式确认所有的操作。</li>
+<li>反馈也必须考虑优先权，以不经意的方式表现不重要的信息，使用引人注目的方式呈现重要的信号。</li>
+</ul>
+</li>
+<li>概念模型（Conceptual Models)
+<ul>
+<li>概念模型只要有用就行，不必完整或准确。</li>
+<li>事物如何操作的主要线索，来自它们可被感知的结构―尤其是意符、示能、约束和映射。</li>
+</ul>
+</li>
+</ul>
+<h4 id="系统映像">系统映像</h4>
+<ul>
+<li>良好沟通是建立良好的概念模型的关键。</li>
+</ul>
+<h4 id="科技的悖论">科技的悖论</h4>
+<ul>
+<li>技术为每个设备提供更多的功能以使生活更简单，但同样的技术也会让设备变得难学难用，使人们的生活更加复杂。这就是技术的悖论和设计师所面临的挑战。</li>
+</ul>
+<h4 id="设计的挑战">设计的挑战</h4>
+<ul>
+<li>设计的目标是产生一个出色的产品，一个成功的、客户喜爱的产品。</li>
+</ul>
+<h2 id="第二章-日常行为心理学">第二章 日常行为心理学</h2>
+<h4 id="人们如何做事：执行与评估的鸿沟">人们如何做事：执行与评估的鸿沟</h4>
+<ul>
+<li>当用户使用物品时，他们会面对两个心理鸿沟：一个是执行的鸿沟，在这里，用户试图弄清楚如何操作；另一个是评估的鸿沟，在那里，他们试图弄清楚操作的结果。设计师的作用是帮助使用者消除这两个鸿沟。</li>
+<li>评估的过程反映了努力的程度，人们必须对设备的物理状态做出解释，以便确定是否已经达到自己的期望和意图。</li>
+<li>我们可以使用意符、约束、映射和概念模型来消除执行的沟壑，也可以使用反馈和概念模型来消除评价的沟壑。</li>
+</ul>
+<h4 id="行动的七个阶段">行动的七个阶段</h4>
+<ul>
+<li>行动有两个步骤：执行动作，然后评估结果，给出解释。执行和评估需要达成共识：事物如何工作以及产生的结果是否一致。执行和评估会影响我们的情绪状态。</li>
+<li>行动的七个阶段：一个目标 + 三个执行步骤 + 三个评估步骤
+<ol>
+<li>目标（确立意图）</li>
+<li>计划（确定方案）</li>
+<li>确认（行动顺序）</li>
+<li>执行（实施行动）</li>
+<li>感知（外部世界的状态）</li>
+<li>诊释（知觉作用）</li>
+<li>对比（目标与结果）</li>
+</ol>
+</li>
+<li>不是所有阶段的活动都是有意识的。目标的设定或许是有意识的，但也有可能是潜意识的。</li>
+</ul>
+<h4 id="人的思想：潜意识主导">人的思想：潜意识主导</h4>
+<ul>
+<li>认知试图搞清楚这个世界，情感则赋予其价值。</li>
+<li>潜意识思维的匹配模式，就是找到过去经验与当前状况的最佳匹配。</li>
+</ul>
+<h4 id="人的认知和情感">人的认知和情感</h4>
+<ul>
+<li>
+<p>本能层次</p>
+<ul>
+<li>这是人类情感系统最基本的保护机制的一部分，能够对环境做出快速的判断：好或坏，安全或危险。</li>
+<li>本能系统能够使我们迅速地做出下意识的反应，不需要有意识地觉察或控制。</li>
+<li>本能系统的基础生物性降低了它的学习能力。本能学习主要通过对适应和经典条件反射这样的机制敏感化或不敏感化来实现的。</li>
+<li>本能层次是对当前状况产生反应而生成的某种情感状态，相对而言，它不会被前后背景或历史所影响。</li>
+<li>本能层次仅仅简单地评估周围的状况，不会探讨根源，没有责备，也没有表扬。</li>
+<li>本能层次与身体的肌肉―运动系统紧密相连。</li>
+<li>本能反应是迅速的，完全是潜意识的。它们只对事物的当前状态敏感。</li>
+</ul>
+</li>
+<li>
+<p>行为层次</p>
+<ul>
+<li>行为层次是学习能力之本，在适当的匹配模式下被触发。这一层次的行为和分析主要潜意识。</li>
+<li>对设计师来说，行为层次最重要的，是让每一个行动都与一个期望相关联。</li>
+<li>在评估的反馈回路中证实信息或违背期望，从而会产生满足或安慰，失望或沮丧的情绪。</li>
+<li>行为状态是可以习得的。当对行为的结果有很好的了解和预知时，就会产生控制感。</li>
+<li>反馈是管理预期的关键，优秀的设计提供了这一点。反馈，即对结果的预知，是满足期望，学习和发展熟练行为的关键。</li>
+</ul>
+</li>
+<li>
+<p>反思层次</p>
+<ul>
+<li>反思层次是有意识的认知之本。因此，这是发展深层理解的地方，是产生推理和有意识决策的地方。</li>
+<li>反思层次是认知的，有深度的而缓慢的。通常在事件发生以后才产生反思。</li>
+<li>反思层次常常对事件进行反思或回顾，评估发生的状况、行动和结果，并评判过失或责任。</li>
+</ul>
+</li>
+<li>
+<p>设计必须关注所有层次：本能、行为和反思</p>
+<ul>
+<li>本能、行为、反思三个层次一起发挥作用。在决定一个人喜欢或不喜欢产品或服务时，这几个层次都扮演着非常重要的角色。</li>
+<li>大脑的所有三个层次一起运作，以确定一个人的认知和情感状态。高层次的反思认知可以触发低层次的情绪。低层次的情绪会引发更高层次的反思认知。</li>
+</ul>
+</li>
+<li>
+<p>行动的7个阶段和大脑的三个层次<br>
+<img src="/assets/img/design-of-everyday-things_7stages.png" alt="Levels of Processing and the Stages of the Action Cycle"></p>
+</li>
+<li>
+<p>不当的自责</p>
+<ul>
+<li>人们的差错通常来源于糟糕的设计：它们应该被称为系统差错。</li>
+<li>设计师应努力减少不当行为发生的机会，首先利用示能、意符、良好的映射．还有约束等手段指导用户的行动。</li>
+<li>设计中最难的和必须注意的部分，就是当事情不按计划进行时，还阳顷利完成任务。</li>
+</ul>
+</li>
+<li>
+<p>行动的七个阶段：七个基本设计原则</p>
+<ol>
+<li><strong>可视性</strong>：让用户有机会确定哪些行动是合理的，以及呈现该设备的当前状态。</li>
+<li><strong>反馈</strong>：关于行动的后果，以及产品或服务当前状态的充分和持续的信息。当执行了一个动作之后，很容易确定新的状态。</li>
+<li><strong>概念模型</strong>：设计传达所有必要的信息，创造一个良好的系统概念模型，引导用户理解系统状态，带来掌控感。概念模型同时包括可视性和评估行动的结果。</li>
+<li><strong>示能</strong>：设计合理的示能，让期望的行动能够实施。</li>
+<li><strong>意符</strong>：有效地使用意符确保可视性，并且很好地沟通和理解反馈。</li>
+<li><strong>映射</strong>：使控制和控制结果之间的关系遵循良好的映射原则，尽可能地通过空间布局和时间的连续性来强化映射。</li>
+<li><strong>约束</strong>：提供物理、逻辑、语义、文化的约束来指导行动，容易理解。</li>
+</ol>
+</li>
+<li>
+<p>除非你做得更好，否则不要批评。</p>
+</li>
+<li>
+<p>优秀的设计需要考虑整个系统，以确保用户的需求、意向和每个阶段的要求都被忠实地理解，并且在所有其他阶段得到尊重。</p>
+</li>
+</ul>
+<h2 id="第三章-头脑中的知识与外界知识">第三章 头脑中的知识与外界知识</h2>
+<h4 id="含糊的知识引导精确的行为">含糊的知识引导精确的行为</h4>
+<ul>
+<li>精确的行为可以诞生于含糊不清的知识里，其原因有：
+<ol>
+<li>知识同时储存于头脑中和外部世界里。</li>
+<li>无须具备高度精确的知识。</li>
+<li>外界存在自然约束条件。</li>
+<li>头脑中有关于文化规范与习俗的知识。</li>
+</ol>
+</li>
+<li>人类能够最大限度地减少必学知识的数量，包括学习的广度、准确度、精确度和深度。人类甚至有意构建各种环境因素来支持自己的行为。</li>
+<li>一旦从事某项任务所需要的知识在外界唾手可得，学习这些信息的必要性就会大幅度降低。</li>
+<li>人们依赖两种类型的知识完成工作：是什么与怎么做。
+<ul>
+<li>是什么，被心理学家称作陈述性知识（declarative knowledge)，包括事实和规则的知识。</li>
+<li>怎么做，被心理学家称作程序性知识（procedural knowledge）。程序性知识很难甚至不可能用文字表述清楚，因此很难用言语来教授。最好的教授方法是示范，最佳的学习方法是练习。</li>
+<li>程序性知识大多是下意识的，隐藏在信息处理的行为层次之下。</li>
+</ul>
+</li>
+<li>通常，人们在做判断时不需要精确的知识。人们所需要的是结合外界的与头脑中的知识来做清楚的决定。除非外部环境发生变化，一切都会工作正常。</li>
+<li>什么东西会被混淆，严重依赖于历史，即过去那些让我们区分不同物品的特征。当辨识的规则改变以后，人们就会混淆和出错。随着时间的推移，他们将调整和适应新的识别特征，甚至会忘了刚开始的混淆。</li>
+<li>从设计原则看起来，好的设计，当进人现实世界时可能会失败。有时候，糟糕的产品会成功，优秀的产品会失败。</li>
+<li>约束是设计师的强大武器。</li>
+</ul>
+<h4 id="记忆的结构">记忆的结构</h4>
+<ul>
+<li>短时记忆（或工作记忆），和长时记忆（LTM）
+<ul>
+<li>短时记忆或工作记忆①储存的是当前最新的经验或思索的内容，是刚刚产生的记忆。信息自动进入短时记忆，人们可以毫不费力地回忆起来，但这种记忆的容量非常有限，一般短时记忆只能储存5一7个信息项目。</li>
+<li>记忆力同时受到时间和内容多少的影响。记忆的数量比时间的影响更重要，每一个新的内容都会降低我们记住所有以前内容的可能性。</li>
+<li>长时记忆储存的是过去的信息。一般说来，它的储存和还原需要花费更多的时间和精力。</li>
+<li>长时记忆的主要困难在于组织管理。</li>
+<li>回溯记忆是一个重建的过程，可能会犯错。我们可能会以自己喜好的方式重建事件，而不是我们曾经经历的方式。</li>
+</ul>
+</li>
+<li>随意的记忆与有意义的记忆
+<ul>
+<li>随意的记忆：似乎随意记忆的项目，没有意义，与另一个事情或已经知道的事情没有特别的联系。</li>
+<li>有意义的记忆：要记忆的项目与本人或与其他已知事物形成有意义的联系。</li>
+<li>设计的意义显而易见，即提供有意义的结构。或许更好的方法是不需要记忆，将所需的全部信息展现在外部世界。</li>
+</ul>
+</li>
+<li>近似模型：现实世界里的记忆
+<ul>
+<li>有意识的思维需要花费时间和精力。熟练的技巧可以绕过意识的监督和控制，只需要在初始阶段的学习和应对突发情况时接受意识的控制。不间断的练习会将动作转换为自动的行动，减少了大部分有意识的思维和解决问题的精力。</li>
+<li>简化思想的一种方式就是使用简化的模型，即近似模拟事情的真实基本状态。</li>
+<li>每个近似模型可能不对，但都有效地减轻了思维的负担，以便快速地得到结果，准确度“足够好”就行。</li>
+</ul>
+</li>
+</ul>
+<h4 id="头脑中的知识">头脑中的知识</h4>
+<ul>
+<li>高效的记忆会凭借任何可用的线索，包括外界的和头脑里的知识，结合外在与心灵。</li>
+<li>提醒本身有两个不同的层面：信号和信息。</li>
+<li>在提醒时也要区分信号——有件事要记住，与信息——这件事是什么。</li>
+<li>如果在正确的时间或地点提醒，环境线索足以提供足够的信息，来帮助回忆要记住的东西。</li>
+</ul>
+<h4 id="外界知识和头脑中知识的此消彼长">外界知识和头脑中知识的此消彼长</h4>
+<table>
+<thead>
+<tr>
+<th>外界知识</th>
+<th>头脑中的知识</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>只要觉察到，就可以快捷轻松地得到信息。</td>
+<td>在活跃的记忆中，信息容易获取，否则需要花时间在记忆中搜寻。</td>
+</tr>
+<tr>
+<td>以诠释替代学习。诠释的难易程度取决于设计师的水平。</td>
+<td>需要学习，有时甚至需要付出大量的时间和精力。如果学习材料的结构具有某种意义，或是具有好的概念模型，就可以简化学习过程。</td>
+</tr>
+<tr>
+<td>需要一个找寻和诠释的过程，速度比较慢。</td>
+<td>效率会很高。尤其是掌握得很好的知识会自动显现。</td>
+</tr>
+<tr>
+<td>在初次遇到时易用性高。</td>
+<td>在初次遇到时易用性低。</td>
+</tr>
+<tr>
+<td>可能不美观，若储存的信息量太大，就会有些凌乱。美观与否最终取决于设计师的能力。</td>
+<td>看不见，设计师可以获得更多的自由。在初次遇到时，以学习和记忆时的易用性为代价，可以获得更加简清、令人愉悦的外观设计。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="自然映射">自然映射</h4>
+<ul>
+<li>三个层次的映射，依据帮助记忆的有效性逐次递减：
+<ul>
+<li>最佳映射：控制组件直接安装在被控制的对象上。</li>
+<li>次好的映射：控制组件尽量靠近被控制对象。</li>
+<li>第三好的映射：控制组件与被控制对象的空间分布一致。</li>
+</ul>
+</li>
+</ul>
+<h4 id="文化与设计：自然映射随文化而异">文化与设计：自然映射随文化而异</h4>
+<ul>
+<li>对文化模式的选择将指导相对应的交互设计。</li>
+</ul>
+<h2 id="第四章-知晓：约束、可视化和反馈">第四章 知晓：约束、可视化和反馈</h2>
+<ul>
+<li>即使遇到一个从不熟悉的设备或状况，设计师如何提供重要的信息，以便人们知道怎么操作。</li>
+<li>约束是非常有力的线索，限定了一系列可能的操作。在设计中有效使用约束因素，即使在全新的情境下，也能够让用户轻而易举地找到合适的操作方法。</li>
+</ul>
+<h4 id="四种约束因素：物理、文化、语义和逻辑">四种约束因素：物理、文化、语义和逻辑</h4>
+<ul>
+<li>物理的约束
+<ul>
+<li>物理结构约束因素的价值在于物品的外部特性决定了它的操作方法，用户不需要经过专门的培训。</li>
+<li>如果设计人员恰当利用这种约束因素，就能有效地掌握可能的操作方法―或者，至少可以将正确的操作方法突显出来。</li>
+<li>更重要的解决方案就是解决最基础的需求―需要解决最根本的需求。</li>
+</ul>
+</li>
+<li>文化的约束
+<ul>
+<li>当我们置身于一种不熟悉的文化环境，原有的行为准则明显不适用，甚至会招来反感时，我们就会感到不自在。</li>
+<li>文化行为准则以范式（schemas）的形式在我们的头脑中得以体现。范式也就是知识结构，由一般规则和信息组成，主要用于诊释状况，指导人们的行为</li>
+</ul>
+</li>
+<li>语义的约束
+<ul>
+<li>语义约束是指利用某种境况的特殊含义来限定可能的操作方法。</li>
+<li>语义约束依据的是我们对现实情况和外部世界的理解，这种知识可以提供非常有效的、很重要的线索。</li>
+</ul>
+</li>
+<li>逻辑的约束
+<ul>
+<li>自然映射的应用就是提供逻辑约束。</li>
+</ul>
+</li>
+<li>文化规范、习俗和标准
+<ul>
+<li>习俗实际上是一种文化的约束，通常与人们的行为方式相联系。</li>
+</ul>
+</li>
+</ul>
+<h4 id="示能、意符和约束在日常用品设计中的应用">示能、意符和约束在日常用品设计中的应用</h4>
+<ul>
+<li>设计好基本的电器开关和控制器，应该是件相对容易的事，但要解决两类最基本的问题。
+<ol>
+<li>确定它们所要控制的设备类型</li>
+<li>映射问题</li>
+</ol>
+</li>
+<li>对于一个好用的设计，开始会先对实际的操作进行细致的观察，然后才是设计过程，设计出与实际执行任务最贴切的方法。</li>
+<li>如果要进行的活动都经过精心设计，符合实际要求，以活动为中心的控制是正确的方向。</li>
+</ul>
+<h4 id="引导行为的约束力">引导行为的约束力</h4>
+<ul>
+<li>强制功能
+<ul>
+<li>在行动受到限制的情况下，出现在某个阶段的差错不会蔓延，能够防止产生进一步的后果。</li>
+<li>强制功能是较强约束的极端情况，可以防止不当行为。</li>
+</ul>
+</li>
+<li>互锁
+<ul>
+<li>互锁促使行动按照正确的次序进行。</li>
+<li>在所有情况下，它们都是与安全相关的互锁装置，防止操作者在操作时突然失去操作能力。</li>
+</ul>
+</li>
+<li>自锁
+<ul>
+<li>自锁保持一个操作停留在激活状态，防止有人过早地停止操作。</li>
+</ul>
+</li>
+<li>反锁
+<ul>
+<li>相较于自锁是使某人待在一个空间，或在所需操作完成前防止误操作，反锁则是防止某人进人那些危险的区域，或者阻止事情的发生。</li>
+<li>通常由于安全原因使用反锁。</li>
+</ul>
+</li>
+</ul>
+<h4 id="惯例、约束和示能">惯例、约束和示能</h4>
+<ul>
+<li>习俗是一种特殊的文化约束。</li>
+<li>在设计中保持一致性很有效。这意味着在一个系统中已经习得的知识可以被轻而易举地带到另一个系统。</li>
+</ul>
+<h4 id="利用声音作为意符">利用声音作为意符</h4>
+<ul>
+<li>没有其他方法时，声音能够提供有用的信息。</li>
+<li>声音可以帮助提供有用的反馈信息，没有声音就会陷人缺乏反馈的困境，像我们之前遭遇的缺乏反馈的状况。</li>
+</ul>
+<h2 id="第五章-人为差错？不，拙劣的设计">第五章 人为差错？不，拙劣的设计</h2>
+<ul>
+<li>设计师能够很好地理解物理约束，但经常严重地误解心理的局限性。</li>
+<li>我们应该用同样的方式对待所有的失败：找到根本原因，重新设计系统，保证不再发生同样的问题</li>
+</ul>
+<h4 id="何以出错">何以出错</h4>
+<ul>
+<li>差错发生的原因有多种。最常见的一种原因是要求人们在任务和流程中做违背自然规律的事情。</li>
+<li>当差错发生时，如果分析根本原因，然后重新设计产品或程序，差错将不再发生，这样做的后遗症最小。</li>
+<li>根本原因分析意味着，如果有人真的做了错误的决定或者行动，我们应该确定是什么因素导致他们犯错。</li>
+<li>五个为什么：在寻找原因时，即使你已经找到了一个，不要停下来，要问问为什么是这个原因。然后再一次询问为什么，继续问，直到你发现真正的、隐藏的原因。</li>
+<li>当人们犯了错，最好改进系统，这样会减少或消除相同类型的错误。如果不可能完全消除，就进行重新设计以减少不良影响。</li>
+<li>除非人们承认存在问题，否则不能彻底解决问题。</li>
+<li>为什么人们会犯错？因为设计的重点关注于系统和设备的要求，而不是使用者的需求。</li>
+<li>差错的主要原因之一是时间压力。</li>
+</ul>
+<h4 id="故意违规">故意违规</h4>
+<ul>
+<li>在许多事故里，明知故犯扮演着重要的作用。</li>
+<li>在许多行业中，规则描述更多地以合规为目的，而不是解释工作要求。因而，如果工人遵守规则，就不可能完成任务。</li>
+<li>在某些情况下，违反规则或流程则可能是完成工作的唯一方法。</li>
+<li>不恰当的规则和流程是违规行为的一个主要原因，它不仅诱使且鼓励了违规。</li>
+</ul>
+<h4 id="差错的两种类型：失误和错误">差错的两种类型：失误和错误</h4>
+<p><img src="/assets/img/design-of-everyday-things_errors.jpeg" alt="Classification of Errors"></p>
+<ul>
+<li>失误：当某人打算做一件事，结果却做了另外一个事，就产生失误。失误发生时，所执行的行动与曾经预计的行动不一致。</li>
+<li>错误：为达到不正确的目的或者形成错误的计划，就会发生错误。</li>
+<li>失误是下意识的行为，却在中途出了问题。错误则产生于意识行为中。意识行为让我们具有创造力和洞察力，能从表面上毫不相关的事物中看出它们的联系，并使我们根据部分正确的，甚至是错误的证据迅速得出正确的结论。但意识行为过程同样可以导致差错。</li>
+</ul>
+<h4 id="失误的分类：">失误的分类：</h4>
+<ul>
+<li>撷取性失误（capture slips)
+<ul>
+<li>撷取性失误指某个经常做的动作，或刚刚做过的动作突然取代了想要做的动作，即某个曾经的动作挤占了需要完成的动作。</li>
+<li>设计师要避免有相同的起始步骤，然后再发散的流程。</li>
+</ul>
+</li>
+<li>描述相似性失误（description一similarity slips)
+<ul>
+<li>在描述相似性失误中，差错发生在与目标相似的对象上。</li>
+<li>在设计不同目的的控制和显示设备时，设计师需要确认它们之间具有明显差异。</li>
+<li>大多数因记忆失效导致差错的直接根源是记忆中断，即动作开始与动作完成之间介人了意外事件。</li>
+</ul>
+</li>
+<li>功能状态失误（mode errors)
+<ul>
+<li>当设备有不同的状态，而相同的控件具有不同的含义（我们称这些为状态模式），就可能发生功能状态失误。</li>
+<li>设计者必须尽量避免模式控制的设计，如果必须这样做，则必须使设备能够明显地显示所激活的功能模式。再者，设计师必须经常设计出可以抵消干扰活动对已设定模式带来影响的系统。</li>
+</ul>
+</li>
+</ul>
+<h4 id="错误的分类">错误的分类</h4>
+<ul>
+<li>基于规则的错误
+<ul>
+<li>发生方式
+<ul>
+<li>错误地理解了问题，从而采用错误的目标或计划，导致遵循不恰当的规则。</li>
+<li>采用了正确的规则，但规则本身就有问题，由于制定不当，或者实施的条件与设想的有差异，或者制定规则时的知识能力不足。所有这些都会导致基于知识的错误。</li>
+<li>采用了正确的规则，但不正确地评估行为的结果。</li>
+</ul>
+</li>
+<li>设计师应该提供尽可能多的指导，确保现状以一个连贯的和容易理解的形式呈现出来——最好是图像化。</li>
+<li>设计的挑战是将当前系统状态的信息，以易于理解和阐释的方式呈现出来，以及提供必要的说明和解释。</li>
+</ul>
+</li>
+<li>基于知识的错误
+<ul>
+<li>以知识为基础的行为发生时，人们在有意识地去解决问题。</li>
+<li>通常这意味着对人来说，机器做的部分是比较容易的，但当问题变得越来越复杂，正是人们应该得到援助的时候，也是机器通常不能胜任的时候。</li>
+</ul>
+</li>
+<li>记忆失效的错误
+<ul>
+<li>如果记忆出错导致遗忘了目标或行动计划，记忆的失误就会导致错误。</li>
+<li>目标、计划和对当前系统的评价非常重要，应该保持继续有效。</li>
+</ul>
+</li>
+</ul>
+<h4 id="社会和习俗压力">社会和习俗压力</h4>
+<ul>
+<li>永远不要低估社会压力对个人行为的影响力量，它可能促使原本理智的人们去做他们即使知道是错误或可能危险的事情。</li>
+<li>充分解决社会、经济和文化的压力，再依据公司的政策进行改善，是确保操作安全和行为安全的挑战。</li>
+<li>检查清单
+<ul>
+<li>检查清单是个功能强大的工具，经过验证，它可以增加行为的准确性和减少差错，特别是失误和记忆失效。</li>
+<li>设计好的清单需要反复修改，追求精益求精，采用以人为本的设计原则，不断调整列表直到它涵盖了基本的项目，却不会额外增加负担。</li>
+</ul>
+</li>
+</ul>
+<h4 id="差错报告">差错报告</h4>
+<ul>
+<li>减少差错发生的唯一方式就是承认它们的存在，收集关于差错的信息，从而为减少差错的发生做出相应的改变。</li>
+<li>”原则就是多问“为什么”，经过多次询问，直到找出问题的根本原因并解决它，这样它永远不会再发生。</li>
+<li>防呆措施之一是添加简单的工具、夹具或设备来限制操作，避免犯错。</li>
+</ul>
+<h4 id="甄别差错">甄别差错</h4>
+<ul>
+<li>置身事件里的人也许已经注意到每个问题，但漠然处之，而且习惯于对发现的异常情况找一个合乎逻辑的解释。</li>
+<li>大多数时候，人们给出的解释是正确的。困难在于如何区分真正的异常和表面异常。</li>
+</ul>
+<h4 id="为差错设计">为差错设计</h4>
+<ul>
+<li>错误常常源于对系统的当前状态模糊不明确或含糊不清的信息，缺乏良好的概念模型，还有不恰当的程序。</li>
+<li>系统对于选择目标和完成方式（执行计划）不能够提供充分的信息，还有对实际发生的结果缺乏良好的反馈。</li>
+<li>差错的主要来源，尤其是记忆失效性差错，是记忆的中断。</li>
+<li>通过研究差错得到的设计经验
+<ul>
+<li>增加约束以阻止差错的发生</li>
+<li>撤销</li>
+<li>差错信息确认
+<ul>
+<li>使正在操作的对象更加明显</li>
+<li>让操作可逆</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>合理性检查</li>
+<li>减小失误
+<ul>
+<li>通过去掉多余功能这种简单的办法就能消除功能状态失误，如果不行，让功能彼此容易区分和明确可见也是好的办法。</li>
+<li>防范失误最好的办祛是对正在实施的动作的特性，提供可以感受到的反馈，越是灵敏的反馈越能体现新的结果和状态，再伴之以能够撤销差错的机制。</li>
+</ul>
+</li>
+<li>在可能发生差错的地方，减少危及安全的操作的数量。</li>
+<li>冗余设计和多重保护措施。</li>
+</ul>
+<h4 id="良好的设计还不够">良好的设计还不够</h4>
+<ul>
+<li>糟糕的设计仍然占据事故原因的绝大部分，不论是设备的设计，还是像频繁发生的工业事故里需要遵循的程序的设计。</li>
+</ul>
+<h4 id="修补回复工程">修补回复工程</h4>
+<ul>
+<li>如何设计并管理这些系统，让它们能够以最小的破坏和损失恢复运转。</li>
+<li>小范围的测试和模拟反映不出系统的复杂性、抗压水平，以及比拟真实系统故障的意外事件。</li>
+</ul>
+<h4 id="自动化的悖论">自动化的悖论</h4>
+<ul>
+<li>自动化的悖论就是能够执行那些枯燥乏味、令人厌烦的工作，但是不能做太复杂的工作。</li>
+</ul>
+<h4 id="应对差错的设计原则">应对差错的设计原则</h4>
+<ul>
+<li>将所需的操作知识储存在外部世界，而不是全部储存在人的头脑中，但是如果用户已经把操作步骤熟记在心，应该能够提高操作效率。</li>
+<li>利用自然和非自然的约束因素，例如物理约束、逻辑约束、语义约束和文化约束；利用强迫性功能和自然匹配的原则。</li>
+<li>缩小动作执行阶段和评估阶段的鸿沟。在执行方面，要让用户很容易看到哪些操作是可行的。在评估方面，要把每一个操作的结果显示出来，使用户能够方便、迅速、准确地判断系统的工作状态。</li>
+</ul>
+<h1>第六章 设计思维</h1>
+<ul>
+<li>在设计中，成功设计的秘诀就是理解真正的问题是什么。</li>
+</ul>
+<h4 id="解决正确的问题">解决正确的问题</h4>
+<ul>
+<li>设计师首先不是聚焦于解决方案，而是发散式思考，先做用户研究，搞清楚要实现什么，产生一个又一个新点子。</li>
+<li>设计师拒绝从初始问题一步就跳到解决方案。相反，他们花时间确定真正的、根本的问题所在，然后，不是立即解决问题，而是停下来想一想更充分的潜在方案。只有这样才能最后得出新的建议。这个流程就叫作设计思维（design thinking）。</li>
+<li>设计思维有两个强大的工具，以人为本的设计思想和双钻（发散一聚焦）设计模式。
+<ul>
+<li>以人为本的设计，即确保满足用户的需求，设计出的产品具有易用性和可理解性，能够完成期待中的任务，并且拥有积极和愉悦的用户体验。</li>
+<li>强调两个方面：解决正确的问题，采用满足用户需求和能力的恰当方式。</li>
+<li>循环往复地进行四个步骤：观察、创意、打样和测试。</li>
+</ul>
+</li>
+</ul>
+<h4 id="双钻设计模式（double一diamond-design-process-model）">双钻设计模式（double一diamond design process model）</h4>
+<ul>
+<li>步骤：
+<ul>
+<li>“发现”和“定义”，确认正确问题的发散和聚焦阶段；</li>
+<li>“开发”和“交付”，制定正确方案的发散和聚焦阶段。</li>
+</ul>
+</li>
+</ul>
+<h4 id="以人为本的设计流程">以人为本的设计流程</h4>
+<p><img src="/assets/img/design-of-everyday-things_IterativeCycle.jpg" alt="The Iterative Cycle of Human-Centered Design"></p>
+<ul>
+<li>观察
+<ul>
+<li>设计调研者会找到潜在用户，观察他们的行为，试图理解他们的兴趣爱好、动机以及真实需求。为产品设计逐步进行问题定义，就来自深人了解用户想要完成的目标任务，以及他们要经历的障碍。</li>
+<li>调研对象应当与潜在用户一致，这一点非常重要。</li>
+<li>研究应当注重行动，以及它们如何被实施，同时观察本地环境和文化如何影响并改变行动。</li>
+</ul>
+</li>
+<li>设计调研与市场调查
+<ul>
+<li>设计想知道用户的真实需求，以及用户如何在实际条件下使用产品或服务。</li>
+<li>市场想知道人们买什么，包括了解他们如何做出购买决定。</li>
+<li>设计师了解用户的真实需求是什么，市场调研了解人们实际购买了什么。</li>
+</ul>
+</li>
+<li>激发创意
+<ul>
+<li>规则：
+<ul>
+<li>激发足够数量的创意。在设计流程的初期，如果只是拘泥于一两个点子，那将很危险。</li>
+<li>创意，不要受限制。避免批评任何点子，无论是你自己的还是别人的。</li>
+<li>质疑每一件事。我特别喜欢“愚蠢”的问题。愚蠢的问题可能会触及事情的本质，而每个人都认为答案是显而易见的。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>打样
+<ul>
+<li>想真正知道一个创意是否合理，唯一的方法就是测试。</li>
+<li>在厘清问题的阶段就制作样品模型，主要是确保很好地理解问题。</li>
+</ul>
+</li>
+<li>测试
+<ul>
+<li>汇集小部分与目标人群特征尽量符合的人，目标人群即未来使用产品的用户。</li>
+</ul>
+</li>
+<li>重复
+<ul>
+<li>以人为本的设计原则中，重复能够促使设计持续地改进和加强。</li>
+<li>通过观察用户在自然状态下使用产品，才能产生正确有效的设计要求。</li>
+</ul>
+</li>
+<li>以活动为中心的设计与以人为本的设计（activity-<br>
+centered design）
+<ul>
+<li>让操作方式来定义产品和结构。依据操作的概念模型来建立产品的概念模型。</li>
+</ul>
+</li>
+<li>关于任务与活动的区别
+<ul>
+<li>一项活动通常包含一系列的任务，但所有任务都向着一个共同的、更高层次的目标。</li>
+<li>目标有三个基本的层次来控制活动（查尔斯·卡弗(Charles Carver）和迈克尔·沙伊尔（Michael Scheier）提出）
+<ul>
+<li>“成为什么”(Be-goals）在最高的、最抽象的层面，支配人的存在：它们是最基础的，长久存在，决定人们为什么行动，确定人的自我</li>
+<li>“行动目标”(Do-goals）在下一级，贴近实用的日常行动。行动目标为活动制订将要执行的计划和手段。</li>
+<li>“执行目标”(Motor-goals)，详细定义如何执行这些手段：更多地在行动和操作层面，而不是活动层面。</li>
+</ul>
+</li>
+<li>为活动而设计，其结果适用于每一个人。</li>
+<li>如果新的设计要求与用户的活动相一致，用户会容忍复杂和新的要求，去学习新的东西：只要适应了任务，掌握了复杂和新的要求，用户会感到自然，认为这都是合理的。</li>
+</ul>
+</li>
+<li>循环往复的设计流程与线性流程
+<ul>
+<li>传统的设计流程是线性的，有时也叫“瀑布式方法”，因为设计过程趋向于单一方向，一旦做了决定，想回头就非常困难或几乎不可能。</li>
+<li>在以人为本的设计思想里，过程是循环的，不断改进，不断变化，允许改变主意，重新考虑早期的想法。</li>
+<li>循环往复的方法适用于产品设计的初期阶段，不适用于后期，而且这种方法很难控制设计流程的时间以适应大型的项目。</li>
+<li>循环往复地提炼问题，改善方案，在流程的关口处结合阶段评审。</li>
+</ul>
+</li>
+</ul>
+<h4 id="诺曼的产品研究法则">诺曼的产品研究法则</h4>
+<ul>
+<li>让设计调研者时常处于现场，一直研究潜在的产品和用户。</li>
+</ul>
+<h4 id="设计的挑战-2">设计的挑战</h4>
+<ul>
+<li>生产一个出色的产品，远不只是要求具备好的技术水平，还要求一个协调一致、畅通无阻、精诚合作、互相尊重的组织。</li>
+<li>具有多个互相冲突的需求的产品
+<ul>
+<li>让这个复杂的流程凝聚起来的唯一方法，就是所有相关的参与者像一个团队那样一起工作。</li>
+<li>为什么设计工作如此具有挑战，因为设计方案必须同时考虑销售和市场，服务和支持，工程和生产，成本和时间。</li>
+</ul>
+</li>
+<li>为特殊人群设计
+<ul>
+<li>不要局限于过分通用的、不正确的刻板形式。</li>
+</ul>
+</li>
+<li>面子问题
+<ul>
+<li>为特殊人群设计经常被称作“和合设计”(inclusive design）或“普遍设计”(universal design）。</li>
+<li>能够调节的物品至少可以给那些具有特殊需要的人提供一个机会。</li>
+</ul>
+</li>
+</ul>
+<h4 id="复杂是好事，混乱惹麻烦">复杂是好事，混乱惹麻烦</h4>
+<ul>
+<li>物品的复杂性是基本特性，混乱才是不必要的。</li>
+<li>一旦了解了事物何以复杂，复杂的事物就不再繁杂。</li>
+</ul>
+<h4 id="标准化和技术">标准化和技术</h4>
+<ul>
+<li>标准化实际上属于另一种类型的文化约束因素。</li>
+<li>最终确定的标准通常会折中处理不同竞争组织的利益，时常是最基本的妥协方案。有时候还会达成几个互不兼容的标准。</li>
+</ul>
+<h4 id="故意制造困难">故意制造困难</h4>
+<ul>
+<li>尽管有很多东西需要设计得难以理解、难以使用，但这并不意味着要抹杀设计原则的重要性。
+<ul>
+<li>首先，这类物品并没有完全排斥易用性，设计人员通常把物品的某一部分设计得很难使用，以便控制该物品的用户范围，但是物品的其他部分仍旧遵循优良设计的原则；</li>
+<li>其次，即便要增加使用某类物品的难度，也要让用户知道如何操作，在这种情况下，仍然要遵循一些规则，只不过恰恰为了任务而反向使用规则。</li>
+</ul>
+</li>
+<li>反向使用规则：
+<ul>
+<li>隐藏关键的部位，使用户看不出相关的操作信息。</li>
+<li>在任务执行阶段利用不自然的匹配关系，使控制器和受控物之间的关系不相称，或具有任意性。</li>
+<li>增加操作的物理难度。</li>
+<li>要求把握非常精确的操作时机和操作步骤。</li>
+<li>不提供任何反馈信息。</li>
+<li>在任务评估阶段利用不自然的匹配关系，使用户难以了解系统状态。</li>
+</ul>
+</li>
+</ul>
+<h2 id="第七章-全球商业化中的设计">第七章 全球商业化中的设计</h2>
+<ul>
+<li>产品创新与设计的两种形式：渐进式创新（没那么刺激，但很普遍），和颠覆式创新（很刺激，但很少成功）。</li>
+<li>科技产品的设计，必须满足人们的需求和能力，而这取决于人类的心理特点。所以，科技在发展，但人的本性不变。</li>
+</ul>
+<h4 id="竞争压力">竞争压力</h4>
+<ul>
+<li>竞争方式：价格、功能和质量</li>
+<li>公司碰到的真正的商业上的压力：对产品上市速度的要求，对成本的关注，竞争可能会迫使公司改变初衷，迎合几个不同的客户―投资者、经销商，当然，还有实际使用产品的用户。</li>
+<li>功能主义：致命的诱惑
+<ul>
+<li>体现：
+<ul>
+<li>新产品总是更加复杂，功能更强，形状尺寸也同第一个产品有区别。</li>
+<li>无论产品变得更大还是更小，每一个新版本总是比以前增加更多的功能。</li>
+</ul>
+</li>
+<li>不要盲目跟随；要关注优点，而不是缺点。</li>
+<li>关注真正的使用产品的用户的需求，才能设计出优秀的产品。</li>
+</ul>
+</li>
+</ul>
+<h4 id="新技术推动变革">新技术推动变革</h4>
+<ul>
+<li>技术在改变人们做事的方式，但最基本的需求仍未改变。</li>
+</ul>
+<h4 id="新产品上市需要多长时间">新产品上市需要多长时间</h4>
+<ul>
+<li>即使最先进的科技也遵循这个时间循环：迅速地被发明出来，慢慢地被接受，再慢慢地逐渐褪色，直至消亡。</li>
+<li>太超前的想法会失败，即使其他人最终成功地推出它们。</li>
+</ul>
+<h4 id="创新的两种形式：渐进式和颠覆式">创新的两种形式：渐进式和颠覆式</h4>
+<ul>
+<li>产品创新有两种主要形式：一种是顺其自然、缓慢的渐进式过程；另外一种，通过颠覆式的全新开发来实现。</li>
+<li>渐进式创新从现有的产品开始，使之更加完善。</li>
+<li>颠覆式创新则是全新的，经常来自能够衍生新功能的新技术。</li>
+</ul>
+<h4 id="设计思维与思考设计">设计思维与思考设计</h4>
+<ul>
+<li>这本书的设计原则将不会改变，有关可视性及反馈的原则，示能、意符、映射和概念模型的作用，将始终坚持。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://romeomo.me">RomeoMo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://romeomo.me/2025/09/21/design-of-everyday-things/">https://romeomo.me/2025/09/21/design-of-everyday-things/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://romeomo.me" target="_blank">RomeoMo</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/uploads/logo.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/08/10/non-designers-design-book/" title="《The Non-Designer's Design Book》笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">《The Non-Designer's Design Book》笔记</div></div><div class="info-2"><div class="info-item-1"> 书名：《写给大家看的设计书》（第4版）豆瓣 原书名称：《The Non-Designer’s Design Book》(4th Edition) Goodreads  第1章 引言 4大基本原则  对比（Contrast）  对比的基本思想是，要避免页面上的元素太过相似。要让页面引人注目，对比通常是最重要的一个因素，正是它能使读者首先看这个页面。   重复（Repetition）  让设计中的视觉要素在整个作品中重复出现。既能增加条理性，还可以加强统一性。   对齐（Alignment）  任何东西都不能在页面上随意安放。每个元素都应当与页面上的另一个元素有某种视觉联系。这样能建立一种清晰、精巧而且清爽的外观。   亲密性（Proximity）  彼此相关的项应当靠近，归组在一起。有助于组织信息，减少混乱，读者提供清晰的结构。    第2章 亲密性  亲密性原则：将相关的项组织在一起。 物理位置的接近就意味着存在关联。 把相关的元素分在一组，使它们建立更近的亲密性。 如果某些元素在理解上存在关联，或者相互之间存在某种关系，那么这些元素在视觉上也应当有关联。除此以外，其他孤立的元...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/uploads/logo.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">RomeoMo</div><div class="author-info-description">关于技术、生活、工作的吐槽、感悟</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%97%A5%E7%94%A8%E5%93%81%E5%BF%83%E7%90%86%E5%AD%A6"><span class="toc-text">第一章 日用品心理学</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E7%9A%84%E7%8E%B0%E4%BB%A3%E8%AE%BE%E5%A4%87"><span class="toc-text">复杂的现代设备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A5%E4%BA%BA%E4%B8%BA%E6%9C%AC%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-text">以人为本的设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99"><span class="toc-text">交互设计的基本原则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%98%A0%E5%83%8F"><span class="toc-text">系统映像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%91%E6%8A%80%E7%9A%84%E6%82%96%E8%AE%BA"><span class="toc-text">科技的悖论</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%8C%91%E6%88%98"><span class="toc-text">设计的挑战</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%97%A5%E5%B8%B8%E8%A1%8C%E4%B8%BA%E5%BF%83%E7%90%86%E5%AD%A6"><span class="toc-text">第二章 日常行为心理学</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%BA%E4%BB%AC%E5%A6%82%E4%BD%95%E5%81%9A%E4%BA%8B%EF%BC%9A%E6%89%A7%E8%A1%8C%E4%B8%8E%E8%AF%84%E4%BC%B0%E7%9A%84%E9%B8%BF%E6%B2%9F"><span class="toc-text">人们如何做事：执行与评估的鸿沟</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%8C%E5%8A%A8%E7%9A%84%E4%B8%83%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="toc-text">行动的七个阶段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%BA%E7%9A%84%E6%80%9D%E6%83%B3%EF%BC%9A%E6%BD%9C%E6%84%8F%E8%AF%86%E4%B8%BB%E5%AF%BC"><span class="toc-text">人的思想：潜意识主导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%BA%E7%9A%84%E8%AE%A4%E7%9F%A5%E5%92%8C%E6%83%85%E6%84%9F"><span class="toc-text">人的认知和情感</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%A4%B4%E8%84%91%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86%E4%B8%8E%E5%A4%96%E7%95%8C%E7%9F%A5%E8%AF%86"><span class="toc-text">第三章 头脑中的知识与外界知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%AB%E7%B3%8A%E7%9A%84%E7%9F%A5%E8%AF%86%E5%BC%95%E5%AF%BC%E7%B2%BE%E7%A1%AE%E7%9A%84%E8%A1%8C%E4%B8%BA"><span class="toc-text">含糊的知识引导精确的行为</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%B0%E5%BF%86%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-text">记忆的结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%B4%E8%84%91%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86"><span class="toc-text">头脑中的知识</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%96%E7%95%8C%E7%9F%A5%E8%AF%86%E5%92%8C%E5%A4%B4%E8%84%91%E4%B8%AD%E7%9F%A5%E8%AF%86%E7%9A%84%E6%AD%A4%E6%B6%88%E5%BD%BC%E9%95%BF"><span class="toc-text">外界知识和头脑中知识的此消彼长</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E7%84%B6%E6%98%A0%E5%B0%84"><span class="toc-text">自然映射</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E5%8C%96%E4%B8%8E%E8%AE%BE%E8%AE%A1%EF%BC%9A%E8%87%AA%E7%84%B6%E6%98%A0%E5%B0%84%E9%9A%8F%E6%96%87%E5%8C%96%E8%80%8C%E5%BC%82"><span class="toc-text">文化与设计：自然映射随文化而异</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%9F%A5%E6%99%93%EF%BC%9A%E7%BA%A6%E6%9D%9F%E3%80%81%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E5%8F%8D%E9%A6%88"><span class="toc-text">第四章 知晓：约束、可视化和反馈</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E7%A7%8D%E7%BA%A6%E6%9D%9F%E5%9B%A0%E7%B4%A0%EF%BC%9A%E7%89%A9%E7%90%86%E3%80%81%E6%96%87%E5%8C%96%E3%80%81%E8%AF%AD%E4%B9%89%E5%92%8C%E9%80%BB%E8%BE%91"><span class="toc-text">四种约束因素：物理、文化、语义和逻辑</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E8%83%BD%E3%80%81%E6%84%8F%E7%AC%A6%E5%92%8C%E7%BA%A6%E6%9D%9F%E5%9C%A8%E6%97%A5%E5%B8%B8%E7%94%A8%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">示能、意符和约束在日常用品设计中的应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E5%AF%BC%E8%A1%8C%E4%B8%BA%E7%9A%84%E7%BA%A6%E6%9D%9F%E5%8A%9B"><span class="toc-text">引导行为的约束力</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%83%AF%E4%BE%8B%E3%80%81%E7%BA%A6%E6%9D%9F%E5%92%8C%E7%A4%BA%E8%83%BD"><span class="toc-text">惯例、约束和示能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E5%A3%B0%E9%9F%B3%E4%BD%9C%E4%B8%BA%E6%84%8F%E7%AC%A6"><span class="toc-text">利用声音作为意符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E4%BA%BA%E4%B8%BA%E5%B7%AE%E9%94%99%EF%BC%9F%E4%B8%8D%EF%BC%8C%E6%8B%99%E5%8A%A3%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-text">第五章 人为差错？不，拙劣的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%95%E4%BB%A5%E5%87%BA%E9%94%99"><span class="toc-text">何以出错</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%85%E6%84%8F%E8%BF%9D%E8%A7%84"><span class="toc-text">故意违规</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%AE%E9%94%99%E7%9A%84%E4%B8%A4%E7%A7%8D%E7%B1%BB%E5%9E%8B%EF%BC%9A%E5%A4%B1%E8%AF%AF%E5%92%8C%E9%94%99%E8%AF%AF"><span class="toc-text">差错的两种类型：失误和错误</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%B1%E8%AF%AF%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-text">失误的分类：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">错误的分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BE%E4%BC%9A%E5%92%8C%E4%B9%A0%E4%BF%97%E5%8E%8B%E5%8A%9B"><span class="toc-text">社会和习俗压力</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%AE%E9%94%99%E6%8A%A5%E5%91%8A"><span class="toc-text">差错报告</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%84%E5%88%AB%E5%B7%AE%E9%94%99"><span class="toc-text">甄别差错</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E5%B7%AE%E9%94%99%E8%AE%BE%E8%AE%A1"><span class="toc-text">为差错设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%89%AF%E5%A5%BD%E7%9A%84%E8%AE%BE%E8%AE%A1%E8%BF%98%E4%B8%8D%E5%A4%9F"><span class="toc-text">良好的设计还不够</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E8%A1%A5%E5%9B%9E%E5%A4%8D%E5%B7%A5%E7%A8%8B"><span class="toc-text">修补回复工程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E7%9A%84%E6%82%96%E8%AE%BA"><span class="toc-text">自动化的悖论</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E5%AF%B9%E5%B7%AE%E9%94%99%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="toc-text">应对差错的设计原则</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">第六章 设计思维</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%AD%A3%E7%A1%AE%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">解决正确的问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E9%92%BB%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88double%E4%B8%80diamond-design-process-model%EF%BC%89"><span class="toc-text">双钻设计模式（double一diamond design process model）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A5%E4%BA%BA%E4%B8%BA%E6%9C%AC%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B"><span class="toc-text">以人为本的设计流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%BA%E6%9B%BC%E7%9A%84%E4%BA%A7%E5%93%81%E7%A0%94%E7%A9%B6%E6%B3%95%E5%88%99"><span class="toc-text">诺曼的产品研究法则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%8C%91%E6%88%98-2"><span class="toc-text">设计的挑战</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E6%98%AF%E5%A5%BD%E4%BA%8B%EF%BC%8C%E6%B7%B7%E4%B9%B1%E6%83%B9%E9%BA%BB%E7%83%A6"><span class="toc-text">复杂是好事，混乱惹麻烦</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E5%8C%96%E5%92%8C%E6%8A%80%E6%9C%AF"><span class="toc-text">标准化和技术</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%85%E6%84%8F%E5%88%B6%E9%80%A0%E5%9B%B0%E9%9A%BE"><span class="toc-text">故意制造困难</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%85%A8%E7%90%83%E5%95%86%E4%B8%9A%E5%8C%96%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-text">第七章 全球商业化中的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AB%9E%E4%BA%89%E5%8E%8B%E5%8A%9B"><span class="toc-text">竞争压力</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E6%8A%80%E6%9C%AF%E6%8E%A8%E5%8A%A8%E5%8F%98%E9%9D%A9"><span class="toc-text">新技术推动变革</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E4%BA%A7%E5%93%81%E4%B8%8A%E5%B8%82%E9%9C%80%E8%A6%81%E5%A4%9A%E9%95%BF%E6%97%B6%E9%97%B4"><span class="toc-text">新产品上市需要多长时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E6%96%B0%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%BD%A2%E5%BC%8F%EF%BC%9A%E6%B8%90%E8%BF%9B%E5%BC%8F%E5%92%8C%E9%A2%A0%E8%A6%86%E5%BC%8F"><span class="toc-text">创新的两种形式：渐进式和颠覆式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E7%BB%B4%E4%B8%8E%E6%80%9D%E8%80%83%E8%AE%BE%E8%AE%A1"><span class="toc-text">设计思维与思考设计</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/09/21/design-of-everyday-things/" title="《The Design of Everyday Things》笔记">《The Design of Everyday Things》笔记</a><time datetime="2025-09-20T16:00:00.000Z" title="发表于 2025-09-21 00:00:00">2025-09-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/10/non-designers-design-book/" title="《The Non-Designer's Design Book》笔记">《The Non-Designer's Design Book》笔记</a><time datetime="2025-08-09T16:00:00.000Z" title="发表于 2025-08-10 00:00:00">2025-08-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/21/designing-for-interaction/" title="《Designing for Interaction:Creating Innovative Applications and Devices》笔记">《Designing for Interaction:Creating Innovative Applications and Devices》笔记</a><time datetime="2025-06-20T16:00:00.000Z" title="发表于 2025-06-21 00:00:00">2025-06-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/25/ux-for-beginners-a-crash-course-in-100-short-lessons-3/" title="《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（3）">《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（3）</a><time datetime="2025-05-24T16:00:00.000Z" title="发表于 2025-05-25 00:00:00">2025-05-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/18/ux-for-beginners-a-crash-course-in-100-short-lessons-2/" title="《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（2）">《UX for Beginners:A Crash Course in 100 Short Lessons》笔记（2）</a><time datetime="2025-05-17T16:00:00.000Z" title="发表于 2025-05-18 00:00:00">2025-05-18</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2015 - 2026 By RomeoMo</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><div class="js-pjax"></div><script async data-pjax src="/"></script></div></body></html>
